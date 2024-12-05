@@ -1,5 +1,14 @@
 <script lang="ts">
-	import { ThemeSelector } from "$lib/components/ui/theme-selector";
+	import { FieldSet } from "$lib/components/ui/field-set";
 </script>
 
-<ThemeSelector/>
+<main class="h-svh flex place-items-center justify-center">
+	<FieldSet class="max-w-2xl" variant="default">
+		{#snippet content()}
+			Hello
+		{/snippet}
+		{#snippet footer()}
+			Footer
+		{/snippet}
+	</FieldSet>
+</main>

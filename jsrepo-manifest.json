@@ -9,8 +9,13 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": ["button.svelte", "index.ts"],
-				"localDependencies": ["utils/utils"],
+				"files": [
+					"button.svelte",
+					"index.ts"
+				],
+				"localDependencies": [
+					"utils/utils"
+				],
 				"dependencies": [],
 				"devDependencies": [],
 				"_imports_": {
@@ -50,9 +55,14 @@
 					"dropdown-menu-sub-trigger.svelte",
 					"index.ts"
 				],
-				"localDependencies": ["utils/utils"],
+				"localDependencies": [
+					"utils/utils"
+				],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.66", "lucide-svelte@^0.468.0"],
+				"devDependencies": [
+					"bits-ui@1.0.0-next.66",
+					"lucide-svelte@^0.468.0"
+				],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -64,11 +74,20 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [],
-				"localDependencies": [],
+				"files": [
+					"field-set.svelte",
+					"index.ts"
+				],
+				"localDependencies": [
+					"utils/utils"
+				],
 				"dependencies": [],
-				"devDependencies": [],
-				"_imports_": {}
+				"devDependencies": [
+					"tailwind-variants@^0.3.0"
+				],
+				"_imports_": {
+					"$lib/utils/utils": "{{utils/utils}}"
+				}
 			},
 			{
 				"name": "ipv4address-input",
@@ -90,10 +109,18 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": ["index.ts", "light-switch.svelte"],
-				"localDependencies": ["ui/button"],
+				"files": [
+					"index.ts",
+					"light-switch.svelte"
+				],
+				"localDependencies": [
+					"ui/button"
+				],
 				"dependencies": [],
-				"devDependencies": ["lucide-svelte@^0.468.0", "mode-watcher@^0.5.0"],
+				"devDependencies": [
+					"lucide-svelte@^0.468.0",
+					"mode-watcher@^0.5.0"
+				],
 				"_imports_": {
 					"$lib/components/ui/button/index.js": "{{ui/button}}/index.js"
 				}
@@ -131,10 +158,19 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": ["index.ts", "theme-selector.svelte"],
-				"localDependencies": ["ui/dropdown-menu", "ui/button"],
+				"files": [
+					"index.ts",
+					"theme-selector.svelte"
+				],
+				"localDependencies": [
+					"ui/dropdown-menu",
+					"ui/button"
+				],
 				"dependencies": [],
-				"devDependencies": ["lucide-svelte@^0.468.0", "mode-watcher@^0.5.0"],
+				"devDependencies": [
+					"lucide-svelte@^0.468.0",
+					"mode-watcher@^0.5.0"
+				],
 				"_imports_": {
 					"$lib/components/ui/dropdown-menu/index.js": "{{ui/dropdown-menu}}/index.js",
 					"$lib/components/ui/button/index.js": "{{ui/button}}/index.js"
@@ -156,11 +192,16 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": ["utils.ts"],
+				"files": [
+					"utils.ts"
+				],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
-				"devDependencies": ["clsx@^2.1.1", "tailwind-merge@^2.5.5"]
+				"devDependencies": [
+					"clsx@^2.1.1",
+					"tailwind-merge@^2.5.5"
+				]
 			}
 		]
 	}
