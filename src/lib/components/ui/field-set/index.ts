@@ -1,3 +1,3 @@
-import FieldSet from "./field-set.svelte";
+import FieldSet from './field-set.svelte';
 
-export { FieldSet }
+export { FieldSet };

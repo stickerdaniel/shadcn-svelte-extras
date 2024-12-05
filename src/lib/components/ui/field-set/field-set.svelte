@@ -18,7 +18,6 @@
 	type Variant = VariantProps<typeof style>['variant'];
 
 	interface Props extends HTMLFormAttributes {
-		form?: boolean;
 		variant?: Variant;
 
 		// snippets
@@ -27,7 +26,6 @@
 	}
 
 	let {
-		form = false,
 		variant = "default",
 		content,
 		footer,
