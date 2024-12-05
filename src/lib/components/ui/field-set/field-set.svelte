@@ -25,13 +25,7 @@
 		footer: Snippet<[]>;
 	}
 
-	let {
-		variant = "default",
-		content,
-		footer,
-		class: className,
-		...rest
-	}: Props = $props();
+	let { variant = 'default', content, footer, class: className, ...rest }: Props = $props();
 </script>
 
 <form {...rest} class={cn(style({ variant }), className)}>
