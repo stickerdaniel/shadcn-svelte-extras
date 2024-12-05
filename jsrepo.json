@@ -1,0 +1,14 @@
+{
+	"$schema": "https://unpkg.com/jsrepo@1.17.5/schemas/project-config.json",
+	"repos": ["github/ieedan/std"],
+	"includeTests": false,
+	"watermark": true,
+	"formatter": "prettier",
+	"paths": {
+		"*": "./src/blocks",
+		"types": "$lib/ts/types",
+		"utils": "$lib/utils",
+		"ui": "$lib/components/ui",
+		"hooks": "$lib/hooks"
+	}
+}

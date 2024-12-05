@@ -67,7 +67,7 @@ const config: Config = {
 			},
 			fontFamily: {
 				sans: ['Geist', 'sans-serif'],
-				mono: ['Geist Mono', 'monospace']
+				serif: ['Geist Mono', 'monospace']
 			},
 			keyframes: {
 				"accordion-down": {
