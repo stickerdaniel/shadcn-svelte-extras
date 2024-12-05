@@ -1,0 +1,167 @@
+[
+	{
+		"name": "ui",
+		"blocks": [
+			{
+				"name": "button",
+				"directory": "src/lib/components/ui/button",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["button.svelte", "index.ts"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": [],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
+				"name": "code-block",
+				"directory": "src/lib/components/ui/code-block",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [],
+				"localDependencies": [],
+				"dependencies": [],
+				"devDependencies": [],
+				"_imports_": {}
+			},
+			{
+				"name": "dropdown-menu",
+				"directory": "src/lib/components/ui/dropdown-menu",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [
+					"dropdown-menu-checkbox-item.svelte",
+					"dropdown-menu-content.svelte",
+					"dropdown-menu-group-heading.svelte",
+					"dropdown-menu-item.svelte",
+					"dropdown-menu-label.svelte",
+					"dropdown-menu-radio-item.svelte",
+					"dropdown-menu-separator.svelte",
+					"dropdown-menu-shortcut.svelte",
+					"dropdown-menu-sub-content.svelte",
+					"dropdown-menu-sub-trigger.svelte",
+					"index.ts"
+				],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.66", "lucide-svelte@^0.468.0"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
+				"name": "field-set",
+				"directory": "src/lib/components/ui/field-set",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [],
+				"localDependencies": [],
+				"dependencies": [],
+				"devDependencies": [],
+				"_imports_": {}
+			},
+			{
+				"name": "ipv4address-input",
+				"directory": "src/lib/components/ui/ipv4address-input",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [],
+				"localDependencies": [],
+				"dependencies": [],
+				"devDependencies": [],
+				"_imports_": {}
+			},
+			{
+				"name": "light-switch",
+				"directory": "src/lib/components/ui/light-switch",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["index.ts", "light-switch.svelte"],
+				"localDependencies": ["ui/button"],
+				"dependencies": [],
+				"devDependencies": ["lucide-svelte@^0.468.0", "mode-watcher@^0.5.0"],
+				"_imports_": {
+					"$lib/components/ui/button/index.js": "{{ui/button}}/index.js"
+				}
+			},
+			{
+				"name": "phone-input",
+				"directory": "src/lib/components/ui/phone-input",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [],
+				"localDependencies": [],
+				"dependencies": [],
+				"devDependencies": [],
+				"_imports_": {}
+			},
+			{
+				"name": "snippet",
+				"directory": "src/lib/components/ui/snippet",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [],
+				"localDependencies": [],
+				"dependencies": [],
+				"devDependencies": [],
+				"_imports_": {}
+			},
+			{
+				"name": "theme-selector",
+				"directory": "src/lib/components/ui/theme-selector",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["index.ts", "theme-selector.svelte"],
+				"localDependencies": ["ui/dropdown-menu", "ui/button"],
+				"dependencies": [],
+				"devDependencies": ["lucide-svelte@^0.468.0", "mode-watcher@^0.5.0"],
+				"_imports_": {
+					"$lib/components/ui/dropdown-menu/index.js": "{{ui/dropdown-menu}}/index.js",
+					"$lib/components/ui/button/index.js": "{{ui/button}}/index.js"
+				}
+			}
+		]
+	},
+	{
+		"name": "hooks",
+		"blocks": []
+	},
+	{
+		"name": "utils",
+		"blocks": [
+			{
+				"name": "utils",
+				"directory": "src/lib/utils",
+				"category": "utils",
+				"tests": false,
+				"subdirectory": false,
+				"list": false,
+				"files": ["utils.ts"],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [],
+				"devDependencies": ["clsx@^2.1.1", "tailwind-merge@^2.5.5"]
+			}
+		]
+	}
+]
