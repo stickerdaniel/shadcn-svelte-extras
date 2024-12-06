@@ -21,16 +21,16 @@
 		variant?: Variant;
 
 		// snippets
-		content: Snippet<[]>;
+		children: Snippet<[]>;
 		footer: Snippet<[]>;
 	}
 
-	let { variant = 'default', content, footer, class: className, ...rest }: Props = $props();
+	let { variant = 'default', children, footer, class: className, ...rest }: Props = $props();
 </script>
 
 <form {...rest} class={cn(style({ variant }), className)}>
 	<div class="p-6">
-		{@render content()}
+		{@render children()}
 	</div>
 	<div class="border-t border-inherit px-6 py-3">
 		{@render footer()}

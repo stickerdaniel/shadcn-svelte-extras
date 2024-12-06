@@ -9,6 +9,10 @@
 	import { map, type Route } from '$lib/map';
 	import { page } from '$app/stores';
 	import { checkIsActive } from '$lib/utils/active';
+	import { shiki } from '$lib/components/ui/code-block';
+	import PageWrapper from '$lib/components/page-wrapper.svelte';
+
+	shiki();
 
 	let { children } = $props();
 
@@ -47,6 +51,8 @@
 				</Breadcrumb.Root>
 			{/if}
 		</header>
-		{@render children()}
+		<PageWrapper route={currentDoc.doc}>
+			{@render children()}
+		</PageWrapper>
 	</Sidebar.Inset>
 </Sidebar.Provider>

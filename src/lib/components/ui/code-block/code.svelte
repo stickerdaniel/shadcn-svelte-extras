@@ -1,52 +1,46 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
-	import { onMount } from 'svelte';
+	import { cn } from '$lib/utils/utils';
+	import { getContext } from 'svelte';
 	import Copy from './copy.svelte';
-	import { highlighter, THEMES, type Lang } from '$lib/TS/highlighter';
-	import type { BundledLanguage, BundledTheme, HighlighterGeneric } from 'shiki';
+	import { type BundledLanguage } from 'shiki';
+	import type { HighlighterStore } from '.';
 
 	type Props = {
-		lang?: Lang;
+		lang?: BundledLanguage;
 		code: string;
 		class?: string;
 		copyButtonContainerClass?: string;
-		lines?: boolean;
+		hideLines?: boolean;
 	};
 
-	type $$Props = Props;
+	let {
+		lang = 'typescript',
+		code,
+		copyButtonContainerClass = undefined,
+		class: className = undefined,
+		hideLines = false
+	}: Props = $props();
 
-	export let lang: $$Props['lang'] = 'bash';
-	export let code: $$Props['code'];
-	export let copyButtonContainerClass: $$Props['copyButtonContainerClass'] = undefined;
-	let className: $$Props['class'] = undefined;
-	export { className as class };
-	export let showLines: $$Props['lines'] = true;
+	let lines = $derived(code.split('\n').length);
 
-	$: lines = code.split('\n').length;
+	const hl: HighlighterStore = getContext('highlighter');
 
-	let highlighted: string = code;
-
-	let hl: HighlighterGeneric<BundledLanguage, BundledTheme> | undefined = undefined;
-
-	$: if (hl !== undefined) {
-		highlighted = hl.codeToHtml(code, { lang: lang ?? 'bash', themes: THEMES });
-	}
-
-	onMount(async () => {
-		hl = await highlighter;
-
-		highlighted = hl.codeToHtml(code, {
-			lang: lang ?? 'bash',
-			themes: THEMES,
-		});
-	});
+	const highlighted = $derived(
+		$hl?.codeToHtml(code, {
+			lang: lang,
+			themes: {
+				light: 'vercel-light',
+				dark: 'vercel-dark'
+			}
+		}) ?? code
+	);
 </script>
 
 <div class={cn('not-prose relative rounded-lg border border-border bg-background', className)}>
 	<div
 		class="scrollbar-hide flex max-h-full max-w-full place-items-start overflow-x-auto overflow-y-auto py-6"
 	>
-		{#if showLines}
+		{#if !hideLines}
 			<div class="min-w-14 text-end text-sm leading-[19px]">
 				{#each new Array(lines).fill(0) as _, index}
 					<span class="text-end font-serif text-muted-foreground">{index + 1}</span>
@@ -64,8 +58,6 @@
 			copyButtonContainerClass
 		)}
 	>
-		<slot name="copy-button">
-			<Copy {code} />
-		</slot>
+		<Copy {code} />
 	</div>
 </div>
