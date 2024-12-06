@@ -1,24 +1,31 @@
 <script lang="ts">
 	import Playground from '$lib/components/playground.svelte';
-	import { Button } from '$lib/components/ui/button';
 	import { Code } from '$lib/components/ui/code';
 </script>
 
 <Playground>
-	<Button>Hello</Button>
-</Playground>
-<Code
+	<Code
 	lang="svelte"
+    class="w-full"
 	code={`<Button loading>
     Hello
 </Button>`}
 />
-<Playground>
-	<Button loading>Loading</Button>
 </Playground>
 <Code
 	lang="svelte"
-	code={`<Button loading>
+	code={`<Code
+	lang="svelte"
+    class="w-full"
+	code={\`<Button loading>
     Hello
-</Button>`}
+</Button>\`}
+/>`}
+/>
+<Code
+	lang="typescript"
+	code={`import { shiki } from '$lib/components/ui/code';
+
+// initialize highlighter context
+shiki();`}
 />

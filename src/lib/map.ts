@@ -19,6 +19,11 @@ const map: Record<string, Route[]> = {
 			href: '/components/button'
 		},
 		{
+			name: 'Code',
+			description: 'A code component.',
+			href: '/components/code'
+		},
+		{
 			name: 'Field Set',
 			description: 'A field set component.',
 			href: '/components/field-set'

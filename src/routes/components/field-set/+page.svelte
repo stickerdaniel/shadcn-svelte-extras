@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Playground from '$lib/components/playground.svelte';
 	import { FieldSet } from '$lib/components/ui/field-set';
-	import { Code } from '$lib/components/ui/code-block';
+	import { Code } from '$lib/components/ui/code';
 	import { Button } from '$lib/components/ui/button';
 	import { Label } from '$lib/components/ui/label';
 	import { Input } from '$lib/components/ui/input';

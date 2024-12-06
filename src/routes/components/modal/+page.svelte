@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Playground from '$lib/components/playground.svelte';
-	import { Code } from '$lib/components/ui/code-block';
+	import { Code } from '$lib/components/ui/code';
 	import { Modal } from '$lib/components/ui/modal';
 	import { Button } from '$lib/components/ui/button';
 

@@ -8,8 +8,8 @@
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb';
 	import { map, type Route } from '$lib/map';
 	import { page } from '$app/stores';
-	import { checkIsActive } from '$lib/utils/active';
-	import { shiki } from '$lib/components/ui/code-block';
+	import { checkIsActive } from '$lib/utils/is-active';
+	import { shiki } from '$lib/components/ui/code';
 	import PageWrapper from '$lib/components/page-wrapper.svelte';
 
 	shiki();

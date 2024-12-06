@@ -7,7 +7,7 @@
 		children: Snippet;
 	};
 
-	let { children, route } = $props();
+	let { children, route }: Props = $props();
 </script>
 
 <svelte:head>
@@ -15,7 +15,7 @@
 	<meta name="description" content={route.name} />
 </svelte:head>
 
-<div class="flex flex-col gap-5 p-6">
+<div class="flex flex-col gap-5 p-6 max-w-3xl">
 	<div class="flex flex-col gap-1">
 		<h1 class="text-4xl font-bold">
 			{route.name}

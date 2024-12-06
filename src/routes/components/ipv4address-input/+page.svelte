@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Playground from '$lib/components/playground.svelte';
-	import { Code } from '$lib/components/ui/code-block';
+	import { Code } from '$lib/components/ui/code';
 	import { Label } from '$lib/components/ui/label';
 	import { IPv4AddressInput } from '$lib/components/ui/ipv4address-input';
 </script>
