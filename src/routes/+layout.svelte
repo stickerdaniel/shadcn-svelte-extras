@@ -5,12 +5,14 @@
 	import '../app.css';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
-	import * as Breadcrumb from '$lib/components/ui/breadcrumb';
 	import { map, type Route } from '$lib/map';
 	import { page } from '$app/stores';
 	import { checkIsActive } from '$lib/utils/is-active';
 	import { shiki } from '$lib/components/ui/code';
 	import PageWrapper from '$lib/components/page-wrapper.svelte';
+	import { Button } from '$lib/components/ui/button';
+	import * as Icons from '$lib/components/icons';
+	import { ThemeSelector } from '$lib/components/ui/theme-selector';
 
 	shiki();
 
@@ -36,23 +38,18 @@
 <Sidebar.Provider>
 	<AppSidebar />
 	<Sidebar.Inset>
-		<header class="flex h-16 shrink-0 items-center gap-2 border-b px-4">
-			<Sidebar.Trigger class="md:hidden" />
-			{#if currentDoc}
-				<Breadcrumb.Root>
-					<Breadcrumb.List>
-						<Breadcrumb.Item class="hidden md:block">
-							{currentDoc.group}
-						</Breadcrumb.Item>
-						<Breadcrumb.Separator class="hidden md:block" />
-						<Breadcrumb.Item>
-							<Breadcrumb.Page>{currentDoc.doc.name}</Breadcrumb.Page>
-						</Breadcrumb.Item>
-					</Breadcrumb.List>
-				</Breadcrumb.Root>
-			{/if}
+		<header class="flex h-16 place-items-center justify-between border-b border-border pl-2 pr-6">
+			<div>
+				<Sidebar.Trigger class="md:hidden" />
+			</div>
+			<div class="flex place-items-center gap-1">
+				<Button variant="ghost" size="icon">
+					<Icons.GitHub class="size-4" />
+				</Button>
+				<ThemeSelector variant="ghost" />
+			</div>
 		</header>
-		<PageWrapper route={currentDoc.doc}>
+		<PageWrapper doc={currentDoc}>
 			{@render children()}
 		</PageWrapper>
 	</Sidebar.Inset>

@@ -1,13 +1,18 @@
 <script lang="ts">
 	import { Sun, Moon } from 'lucide-svelte';
-
 	import { resetMode, setMode } from 'mode-watcher';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { buttonVariants } from '$lib/components/ui/button/index.js';
+
+	type Props = {
+		variant?: 'outline' | 'ghost';
+	};
+
+	let { variant = 'outline' }: Props = $props();
 </script>
 
 <DropdownMenu.Root>
-	<DropdownMenu.Trigger class={buttonVariants({ variant: 'outline', size: 'icon' })}>
+	<DropdownMenu.Trigger class={buttonVariants({ variant, size: 'icon' })}>
 		<Sun
 			class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
 		/>

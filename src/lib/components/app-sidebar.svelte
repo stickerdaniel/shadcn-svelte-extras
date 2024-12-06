@@ -6,7 +6,7 @@
 </script>
 
 <Sidebar.Root bind:ref {...restProps}>
-	<Sidebar.Header class="flex h-16 justify-center border-b border-border pl-6">
+	<Sidebar.Header class="flex h-16 justify-center pl-6">
 		<span class="font-serif">shadcn-svelte-extras</span>
 	</Sidebar.Header>
 	<Sidebar.Content>
