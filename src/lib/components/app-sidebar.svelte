@@ -2,12 +2,29 @@
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import { map } from '$lib/map';
 	import type { ComponentProps } from 'svelte';
+	import Logo from './logo.svelte';
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
 
 <Sidebar.Root bind:ref {...restProps}>
 	<Sidebar.Header class="flex h-16 justify-center pl-6">
-		<span class="font-serif">shadcn-svelte-extras</span>
+		<Sidebar.Menu>
+			<Sidebar.MenuItem>
+				<Sidebar.MenuButton
+					size="lg"
+					class="hover:bg-background-secondary active:bg-background-secondary dark:hover:bg-background-secondary dark:active:bg-background-secondary [&>svg]:size-0 [&>svg]:h-7 [&>svg]:w-auto"
+				>
+					{#snippet child({ props })}
+						<a href="/" {...props}>
+							<div class="flex place-items-center gap-2">
+								<Logo class="size-8 shrink-0" />
+								<span class="text-lg font-semibold">shadcn-extras</span>
+							</div>
+						</a>
+					{/snippet}
+				</Sidebar.MenuButton>
+			</Sidebar.MenuItem>
+		</Sidebar.Menu>
 	</Sidebar.Header>
 	<Sidebar.Content>
 		<Sidebar.Group>
