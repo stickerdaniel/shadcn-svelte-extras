@@ -3,7 +3,7 @@
 	import { examples } from './examples';
 </script>
 
-<p>The same old button you know from shadcn-svelte but with a few extra touches.</p>
+<p>The same old button you know from shadcn-svelte with a few extra touches.</p>
 <h2 class="text-2xl font-semibold">Basic</h2>
 <Playground code={examples.basic.code} class="min-h-[225px]">
 	<examples.basic.Component />

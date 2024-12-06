@@ -3,6 +3,30 @@
 		"name": "ui",
 		"blocks": [
 			{
+				"name": "breadcrumb",
+				"directory": "src/lib/components/ui/breadcrumb",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [
+					"breadcrumb-ellipsis.svelte",
+					"breadcrumb-item.svelte",
+					"breadcrumb-link.svelte",
+					"breadcrumb-list.svelte",
+					"breadcrumb-page.svelte",
+					"breadcrumb-separator.svelte",
+					"breadcrumb.svelte",
+					"index.ts"
+				],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["lucide-svelte@^0.468.0", "bits-ui@1.0.0-next.66"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
 				"name": "button",
 				"directory": "src/lib/components/ui/button",
 				"category": "ui",
@@ -15,6 +39,22 @@
 				"devDependencies": ["lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
+				"name": "code",
+				"directory": "src/lib/components/ui/code",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["code.svelte", "copy.svelte", "dark.ts", "index.ts", "light.ts", "shiki.ts"],
+				"localDependencies": ["utils/utils", "ui/button"],
+				"dependencies": [],
+				"devDependencies": ["shiki@^1.24.0", "lucide-svelte@^0.468.0", "svelte@^5.0.0"],
+				"_imports_": {
+					"$lib/utils/utils": "{{utils/utils}}",
+					"$lib/components/ui/button": "{{ui/button}}"
 				}
 			},
 			{
@@ -108,6 +148,21 @@
 				}
 			},
 			{
+				"name": "input",
+				"directory": "src/lib/components/ui/input",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["index.ts", "input.svelte"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.66"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
 				"name": "ipv4address-input",
 				"directory": "src/lib/components/ui/ipv4address-input",
 				"category": "ui",
@@ -121,6 +176,21 @@
 				"_imports_": {
 					"$lib/utils/is-number": "{{utils/is-number}}",
 					"$lib/utils/utils": "{{utils/utils}}"
+				}
+			},
+			{
+				"name": "label",
+				"directory": "src/lib/components/ui/label",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["index.ts", "label.svelte"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.66"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
 			},
 			{
@@ -146,12 +216,167 @@
 				"subdirectory": true,
 				"list": true,
 				"files": ["index.ts", "modal.svelte"],
-				"localDependencies": ["ui/dialog", "ui/drawer"],
+				"localDependencies": ["ui/dialog", "ui/drawer", "utils/utils"],
 				"dependencies": [],
 				"devDependencies": ["runed@^0.17.0"],
 				"_imports_": {
 					"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
-					"$lib/components/ui/drawer/index.js": "{{ui/drawer}}/index.js"
+					"$lib/components/ui/drawer/index.js": "{{ui/drawer}}/index.js",
+					"$lib/utils/utils": "{{utils/utils}}"
+				}
+			},
+			{
+				"name": "phone-input",
+				"directory": "src/lib/components/ui/phone-input",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [],
+				"localDependencies": [],
+				"dependencies": [],
+				"devDependencies": [],
+				"_imports_": {}
+			},
+			{
+				"name": "separator",
+				"directory": "src/lib/components/ui/separator",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["index.ts", "separator.svelte"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.66"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
+				"name": "sheet",
+				"directory": "src/lib/components/ui/sheet",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [
+					"index.ts",
+					"sheet-content.svelte",
+					"sheet-description.svelte",
+					"sheet-footer.svelte",
+					"sheet-header.svelte",
+					"sheet-overlay.svelte",
+					"sheet-title.svelte"
+				],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.66", "lucide-svelte@^0.468.0"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
+				"name": "sidebar",
+				"directory": "src/lib/components/ui/sidebar",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [
+					"constants.ts",
+					"context.svelte.ts",
+					"index.ts",
+					"sidebar-content.svelte",
+					"sidebar-footer.svelte",
+					"sidebar-group-action.svelte",
+					"sidebar-group-content.svelte",
+					"sidebar-group-label.svelte",
+					"sidebar-group.svelte",
+					"sidebar-header.svelte",
+					"sidebar-input.svelte",
+					"sidebar-inset.svelte",
+					"sidebar-menu-action.svelte",
+					"sidebar-menu-badge.svelte",
+					"sidebar-menu-button.svelte",
+					"sidebar-menu-item.svelte",
+					"sidebar-menu-skeleton.svelte",
+					"sidebar-menu-sub-button.svelte",
+					"sidebar-menu-sub-item.svelte",
+					"sidebar-menu-sub.svelte",
+					"sidebar-menu.svelte",
+					"sidebar-provider.svelte",
+					"sidebar-rail.svelte",
+					"sidebar-separator.svelte",
+					"sidebar-trigger.svelte",
+					"sidebar.svelte"
+				],
+				"localDependencies": [
+					"hooks/is-mobile.svelte",
+					"utils/utils",
+					"ui/input",
+					"ui/tooltip",
+					"ui/skeleton",
+					"ui/separator",
+					"ui/button",
+					"ui/sheet"
+				],
+				"dependencies": [],
+				"devDependencies": ["svelte@^5.0.0", "bits-ui@1.0.0-next.66", "lucide-svelte@^0.468.0"],
+				"_imports_": {
+					"$lib/hooks/is-mobile.svelte.js": "{{hooks/is-mobile.svelte}}.js",
+					"$lib/utils/utils.js": "{{utils/utils}}.js",
+					"$lib/components/ui/input/index.js": "{{ui/input}}/index.js",
+					"$lib/components/ui/tooltip/index.js": "{{ui/tooltip}}/index.js",
+					"$lib/components/ui/skeleton/index.js": "{{ui/skeleton}}/index.js",
+					"$lib/components/ui/separator/index.js": "{{ui/separator}}/index.js",
+					"$lib/components/ui/button/index.js": "{{ui/button}}/index.js",
+					"$lib/components/ui/sheet/index.js": "{{ui/sheet}}/index.js"
+				}
+			},
+			{
+				"name": "skeleton",
+				"directory": "src/lib/components/ui/skeleton",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["index.ts", "skeleton.svelte"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.66"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
+				"name": "snippet",
+				"directory": "src/lib/components/ui/snippet",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["index.ts", "snippet.svelte"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["lucide-svelte@^0.468.0", "tailwind-variants@^0.3.0"],
+				"_imports_": {
+					"$lib/utils/utils": "{{utils/utils}}"
+				}
+			},
+			{
+				"name": "tabs",
+				"directory": "src/lib/components/ui/tabs",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["index.ts", "tabs-content.svelte", "tabs-list.svelte", "tabs-trigger.svelte"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.66"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
 			},
 			{
@@ -169,12 +394,58 @@
 					"$lib/components/ui/dropdown-menu/index.js": "{{ui/dropdown-menu}}/index.js",
 					"$lib/components/ui/button/index.js": "{{ui/button}}/index.js"
 				}
+			},
+			{
+				"name": "tooltip",
+				"directory": "src/lib/components/ui/tooltip",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["index.ts", "tooltip-content.svelte"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.66"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			}
+		]
+	},
+	{
+		"name": "hooks",
+		"blocks": [
+			{
+				"name": "is-mobile.svelte",
+				"directory": "src/lib/hooks",
+				"category": "hooks",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": ["is-mobile.svelte.ts"],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [],
+				"devDependencies": ["svelte@^5.0.0"]
 			}
 		]
 	},
 	{
 		"name": "utils",
 		"blocks": [
+			{
+				"name": "is-active",
+				"directory": "src/lib/utils",
+				"category": "utils",
+				"tests": false,
+				"subdirectory": false,
+				"list": false,
+				"files": ["is-active.ts"],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [],
+				"devDependencies": []
+			},
 			{
 				"name": "is-number",
 				"directory": "src/lib/utils",

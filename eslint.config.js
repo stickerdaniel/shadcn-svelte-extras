@@ -20,6 +20,15 @@ export default ts.config(
 				...globals.browser,
 				...globals.node
 			}
+		},
+		rules: {
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{
+					varsIgnorePattern: '^_',
+					argsIgnorePattern: '^_'
+				}
+			]
 		}
 	},
 	{
@@ -29,6 +38,9 @@ export default ts.config(
 			parserOptions: {
 				parser: ts.parser
 			}
+		},
+		rules: {
+			'svelte/no-at-html-tags': 'warn'
 		}
 	}
 );

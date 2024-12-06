@@ -26,7 +26,7 @@
 		</p>
 	</div>
 	{#if route.specifier}
-		<Snippet text="jsrepo add {route.specifier}" class="max-w-[350px]"/>
+		<Snippet text="jsrepo add {route.specifier}" class="max-w-[350px]" />
 	{/if}
 	{@render children()}
 </div>

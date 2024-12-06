@@ -13,7 +13,7 @@ const shiki = () => {
 
 	createHighlighter({
 		themes: [dark, light],
-		langs: ['typescript', 'javascript', 'svelte', 'diff']
+		langs: ['typescript', 'javascript', 'svelte', 'diff', 'json']
 	}).then((highlighter) => hl.set(highlighter));
 };
 
