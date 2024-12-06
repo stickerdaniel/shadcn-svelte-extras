@@ -1,14 +1,17 @@
 <script lang="ts">
+	import { Subheading } from '$lib/components/docs';
+	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import { examples } from './examples';
 </script>
 
 <p>The same old button you know from shadcn-svelte with a few extra touches.</p>
-<h2 class="text-2xl font-semibold">Basic</h2>
+<Subheading class="mt-0">Basic</Subheading>
 <Playground code={examples.basic.code} class="min-h-[225px]">
 	<examples.basic.Component />
 </Playground>
-<h2 class="text-2xl font-semibold">Loading</h2>
+<Installation specifier="ui/button" />
+<Subheading>Loading</Subheading>
 <Playground code={examples.loading.code} class="min-h-[225px]">
 	<examples.loading.Component />
 </Playground>

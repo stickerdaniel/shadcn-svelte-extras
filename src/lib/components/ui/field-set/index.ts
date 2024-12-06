@@ -1,3 +1,5 @@
-import FieldSet from './field-set.svelte';
+import Root from './field-set.svelte';
+import Content from './field-set-content.svelte';
+import Footer from './field-set-footer.svelte';
 
-export { FieldSet };
+export { Root, Content, Footer };

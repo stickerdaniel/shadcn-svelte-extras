@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Subheading } from '$lib/components/docs';
 	import ShadcnSvelteExtras from '$lib/components/shadcn-svelte-extras.svelte';
 	import { Code } from '$lib/components/ui/code';
 	import { Snippet } from '$lib/components/ui/snippet';
@@ -12,7 +13,7 @@
 		shadcn-svelte
 	</a>.
 </p>
-<h2 class="text-2xl font-semibold">Setup</h2>
+<Subheading>Setup</Subheading>
 <p>Install jsrepo:</p>
 <Snippet text="npm install jsrepo@latest -g" />
 <p>

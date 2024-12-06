@@ -7,14 +7,15 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@fontsource/inter':
+        specifier: ^5.1.0
+        version: 5.1.0
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.3
         version: 1.2.4(eslint@9.16.0(jiti@1.21.6))
       '@fontsource/geist-mono':
-        specifier: ^5.1.0
-        version: 5.1.0
-      '@fontsource/geist-sans':
         specifier: ^5.1.0
         version: 5.1.0
       '@sveltejs/adapter-auto':
@@ -351,8 +352,8 @@ packages:
   '@fontsource/geist-mono@5.1.0':
     resolution: {integrity: sha512-MDFgmKUdDbV357vD2bOZAro597Nd2md01GAdr3GSZteCJQdPT/UhHUBCAxl9KUiH03aMPFM9Rx7x8/EtrJmpKg==}
 
-  '@fontsource/geist-sans@5.1.0':
-    resolution: {integrity: sha512-4AI/UxIcZiYgK6/cTo4R9oM4VHHLcFdHVv7m2+M42VyY16hhKJADrGe4HPjTxvolmce2IZX/jc6sFJ+GkLB64w==}
+  '@fontsource/inter@5.1.0':
+    resolution: {integrity: sha512-zKZR3kf1G0noIes1frLfOHP5EXVVm0M7sV/l9f/AaYf+M/DId35FO4LkigWjqWYjTJZGgplhdv4cB+ssvCqr5A==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2317,7 +2318,7 @@ snapshots:
 
   '@fontsource/geist-mono@5.1.0': {}
 
-  '@fontsource/geist-sans@5.1.0': {}
+  '@fontsource/inter@5.1.0': {}
 
   '@humanfs/core@0.19.1': {}
 

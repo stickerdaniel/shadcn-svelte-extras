@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import type { Snippet } from 'svelte';
-	import type { HTMLFormAttributes } from 'svelte/elements';
+	import type { WithElementRef } from 'bits-ui';
+	import type { HTMLAttributes } from 'svelte/elements';
 	import { tv, type VariantProps } from 'tailwind-variants';
 
 	const style = tv({
@@ -17,22 +17,13 @@
 
 	type Variant = VariantProps<typeof style>['variant'];
 
-	interface Props extends HTMLFormAttributes {
+	interface Props extends WithElementRef<HTMLAttributes<HTMLDivElement>> {
 		variant?: Variant;
-
-		// snippets
-		children: Snippet<[]>;
-		footer: Snippet<[]>;
 	}
 
-	let { variant = 'default', children, footer, class: className, ...rest }: Props = $props();
+	let { variant = 'default', children, class: className, ...restProps }: Props = $props();
 </script>
 
-<form {...rest} class={cn(style({ variant }), className)}>
-	<div class="p-6">
-		{@render children()}
-	</div>
-	<div class="border-t border-inherit px-6 py-3">
-		{@render footer()}
-	</div>
-</form>
+<div class={cn(style({ variant }), className)} {...restProps}>
+	{@render children?.()}
+</div>
