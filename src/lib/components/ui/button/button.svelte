@@ -50,6 +50,7 @@
 		href = undefined,
 		type = 'button',
 		loading = false,
+		disabled = false,
 		children,
 		...restProps
 	}: ButtonProps = $props();
@@ -63,6 +64,7 @@
 	<button
 		bind:this={ref}
 		class={cn(buttonVariants({ variant, size, className }))}
+		disabled={disabled || loading}
 		{type}
 		{...restProps}
 	>

@@ -2,6 +2,7 @@ export type Route = {
 	name: string;
 	description: string;
 	href: string;
+	specifier?: `${string}/${string}`;
 };
 
 const map: Record<string, Route[]> = {
@@ -16,42 +17,50 @@ const map: Record<string, Route[]> = {
 		{
 			name: 'Button',
 			description: 'An extended button component.',
-			href: '/components/button'
+			href: '/components/button',
+			specifier: "ui/button"
 		},
 		{
 			name: 'Code',
 			description: 'A code component.',
-			href: '/components/code'
+			href: '/components/code',
+			specifier: "ui/code"
 		},
 		{
 			name: 'Field Set',
 			description: 'A field set component.',
-			href: '/components/field-set'
+			href: '/components/field-set',
+			specifier: "ui/field-set"
 		},
 		{
 			name: 'IPv4Address Input',
 			description: 'An ip address component.',
-			href: '/components/ipv4address-input'
+			href: '/components/ipv4address-input',
+			specifier: "ui/ipv4address-input"
 		},
 		{
 			name: 'Light Switch',
 			description: 'A light switch component.',
-			href: '/components/light-switch'
+			href: '/components/light-switch',
+			specifier: "ui/light-switch"
 		},
 		{
 			name: 'Modal',
 			description: 'A responsive dialog component.',
-			href: '/components/modal'
+			href: '/components/modal',
+			specifier: "ui/code"
 		},
 		{
 			name: 'Snippet',
 			description: 'A snippet component.',
-			href: '/components/snippet'
+			href: '/components/snippet',
+			specifier: "ui/snippet"
 		},
 		{
 			name: 'Theme Selector',
 			description: 'A theme selector component.',
-			href: '/components/theme-selector'
+			href: '/components/theme-selector',
+			specifier: "ui/theme-selector"
 		}
 	]
 };

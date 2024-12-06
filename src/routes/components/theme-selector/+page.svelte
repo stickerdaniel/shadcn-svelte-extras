@@ -1,10 +1,8 @@
 <script lang="ts">
 	import Playground from '$lib/components/playground.svelte';
-	import { Code } from '$lib/components/ui/code';
-	import { ThemeSelector } from '$lib/components/ui/theme-selector';
+	import { examples } from './examples';
 </script>
 
-<Playground>
-	<ThemeSelector />
+<Playground code={examples.basic.code}>
+	<examples.basic.Component />
 </Playground>
-<Code lang="svelte" code={`<ThemeSelector />`} />

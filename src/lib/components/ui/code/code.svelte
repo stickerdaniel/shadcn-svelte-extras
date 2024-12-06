@@ -11,6 +11,7 @@
 		class?: string;
 		copyButtonContainerClass?: string;
 		hideLines?: boolean;
+		hideCopy?: boolean;
 	};
 
 	let {
@@ -18,7 +19,8 @@
 		code,
 		copyButtonContainerClass = undefined,
 		class: className = undefined,
-		hideLines = false
+		hideLines = false,
+		hideCopy = false
 	}: Props = $props();
 
 	let lines = $derived(code.split('\n').length);
@@ -52,12 +54,14 @@
 			{@html highlighted}
 		</div>
 	</div>
-	<div
-		class={cn(
-			'absolute right-1 top-1 flex place-items-center justify-center',
-			copyButtonContainerClass
-		)}
-	>
-		<Copy {code} />
-	</div>
+	{#if !hideCopy}
+		<div
+			class={cn(
+				'absolute right-1 top-1 flex place-items-center justify-center',
+				copyButtonContainerClass
+			)}
+		>
+			<Copy {code} />
+		</div>
+	{/if}
 </div>

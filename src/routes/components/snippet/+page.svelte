@@ -1,34 +1,17 @@
 <script lang="ts">
 	import Playground from '$lib/components/playground.svelte';
-	import { Code } from '$lib/components/ui/code';
-	import { Snippet } from '$lib/components/ui/snippet';
+	import { examples } from './examples';
 </script>
 
-<Playground>
-	<Snippet text="npx jsrepo add ui/snippet" class="max-w-[300px]" />
+<h2 class="text-2xl font-semibold">Basic</h2>
+<Playground code={examples.basic.code}>
+	<examples.basic.Component />
 </Playground>
-<Code lang="svelte" code={`<Snippet text="npx jsrepo add ui/snippet" class="max-w-[300px]"/>`} />
-<Playground>
-	<div class="flex w-full max-w-[300px] flex-col gap-2">
-		<Snippet text="npx jsrepo add ui/snippet" />
-		<Snippet variant="primary" text="npx jsrepo add ui/snippet" />
-		<Snippet variant="secondary" text="npx jsrepo add ui/snippet" />
-		<Snippet variant="destructive" text="npx jsrepo add ui/snippet" />
-	</div>
+<h2 class="text-2xl font-semibold">Variants</h2>
+<Playground code={examples.variants.code}>
+	<examples.variants.Component />
 </Playground>
-<Code
-	lang="svelte"
-	code={`<div class="flex flex-col gap-2 w-full max-w-[300px]">
-    <Snippet text="npx jsrepo add ui/snippet" />
-    <Snippet variant="primary" text="npx jsrepo add ui/snippet" />
-    <Snippet variant="secondary" text="npx jsrepo add ui/snippet" />
-    <Snippet variant="destructive" text="npx jsrepo add ui/snippet" />
-</div>`}
-/>
-<Playground>
-	<Snippet text={['npx jsrepo add', 'npx jsrepo add ui/snippet']} class="max-w-[300px]" />
+<h2 class="text-2xl font-semibold">Multiline</h2>
+<Playground code={examples.multiline.code}>
+	<examples.multiline.Component />
 </Playground>
-<Code
-	lang="svelte"
-	code={`<Snippet text={["npx jsrepo add", "npx jsrepo add ui/snippet"]} class="max-w-[300px]"/>`}
-/>

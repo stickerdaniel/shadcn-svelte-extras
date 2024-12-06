@@ -63,7 +63,7 @@
 
 <div
 	class={cn(
-		'flex h-10 place-items-center rounded-md border border-border px-3 font-serif',
+		'flex h-10 w-fit place-items-center rounded-md border border-border px-3 font-serif',
 		className
 	)}
 >

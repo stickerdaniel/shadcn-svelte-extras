@@ -3,26 +3,28 @@
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import * as Drawer from '$lib/components/ui/drawer/index.js';
 	import type { Snippet } from 'svelte';
+	import { cn } from '$lib/utils/utils';
 
 	type Props = {
 		open?: boolean;
+		class?: string;
 		children: Snippet<[]>;
 	};
 
 	const isDesktop = new MediaQuery('(min-width: 768px)');
 
-	let { open = $bindable(false), children }: Props = $props();
+	let { open = $bindable(false), children, class: className = undefined }: Props = $props();
 </script>
 
 {#if isDesktop.matches}
 	<Dialog.Root bind:open>
-		<Dialog.Content class="sm:max-w-xl">
+		<Dialog.Content class={cn('sm:max-w-xl', className)}>
 			{@render children()}
 		</Dialog.Content>
 	</Dialog.Root>
 {:else}
 	<Drawer.Root bind:open>
-		<Drawer.Content>
+		<Drawer.Content class={cn('', className)}>
 			{@render children()}
 		</Drawer.Content>
 	</Drawer.Root>
