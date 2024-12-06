@@ -1,9 +1,25 @@
 {
-	"$schema": "https://unpkg.com/jsrepo@1.17.5/schemas/registry-config.json",
+	"$schema": "https://unpkg.com/jsrepo@1.18.0/schemas/registry-config.json",
 	"dirs": ["./src/lib/components", "./src/lib"],
-	"doNotListBlocks": ["utils"],
+	"doNotListBlocks": [
+		"utils",
+		"is-mobile.svelte",
+		"breadcrumb",
+		"dialog",
+		"drawer",
+		"dropdown-menu",
+		"input",
+		"label",
+		"separator",
+		"sheet",
+		"sidebar",
+		"skeleton",
+		"tabs",
+		"tooltip"
+	],
 	"doNotListCategories": ["utils"],
 	"excludeDeps": [],
 	"includeBlocks": [],
-	"includeCategories": ["ui", "hooks", "utils"]
+	"includeCategories": ["ui", "hooks", "utils"],
+	"preview": true
 }
