@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-import ShadcnSvelteExtras from '$lib/components/shadcn-svelte-extras.svelte';
+	import ShadcnSvelteExtras from '$lib/components/shadcn-svelte-extras.svelte';
 	import { Code } from '$lib/components/ui/code';
 	import { Snippet } from '$lib/components/ui/snippet';
 </script>

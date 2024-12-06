@@ -19,8 +19,8 @@
 	{/if}
 </svelte:head>
 
-<div class="flex flex-col p-6 md:px-10 lg:px-20 lg:place-items-center">
-	<div class="flex max-w-3xl flex-col gap-5 w-full">
+<div class="flex flex-col p-6 md:px-10 lg:place-items-center lg:px-20">
+	<div class="flex w-full max-w-3xl flex-col gap-5">
 		{#if doc}
 			<div class="flex flex-col gap-1">
 				<h1 class="text-4xl font-bold">

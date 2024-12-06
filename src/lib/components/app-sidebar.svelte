@@ -16,7 +16,7 @@
 				>
 					{#snippet child({ props })}
 						<a href="/" {...props}>
-							<div class="flex place-items-center gap-2 -ml-2.5">
+							<div class="-ml-2.5 flex place-items-center gap-2">
 								<Logo class="size-8 shrink-0" />
 								<span class="text-lg font-semibold">shadcn-extras</span>
 							</div>

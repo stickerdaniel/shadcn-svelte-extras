@@ -2,7 +2,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
-	import * as FieldSet from "$lib/components/ui/field-set"
+	import * as FieldSet from '$lib/components/ui/field-set';
 </script>
 
 <div class="w-full p-6">

@@ -9,7 +9,7 @@
 <Playground code={examples.basic.code}>
 	<examples.basic.Component />
 </Playground>
-<Installation specifier="ui/light-switch"/>
+<Installation specifier="ui/light-switch" />
 <Subheading>Ghost</Subheading>
 <Playground code={examples.variants.code}>
 	<examples.variants.Component />

@@ -10,7 +10,7 @@
 <Playground code={examples.basic.code} class="min-h-[225px]">
 	<examples.basic.Component />
 </Playground>
-<Installation specifier="ui/button"/>
+<Installation specifier="ui/button" />
 <Subheading>Loading</Subheading>
 <Playground code={examples.loading.code} class="min-h-[225px]">
 	<examples.loading.Component />
