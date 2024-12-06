@@ -7,11 +7,14 @@
 
 <Playground>
 	<div>
-        <Label>IP Address</Label>
-        <IPv4AddressInput value={[192, 168, 1, 1]} />
-    </div>
+		<Label>IP Address</Label>
+		<IPv4AddressInput value={[192, 168, 1, 1]} />
+	</div>
 </Playground>
-<Code lang="svelte" code={`<div>
+<Code
+	lang="svelte"
+	code={`<div>
     <Label>IP Address</Label>
     <IPv4AddressInput value={[192, 168, 1, 1]} />
-</div>`} />
+</div>`}
+/>

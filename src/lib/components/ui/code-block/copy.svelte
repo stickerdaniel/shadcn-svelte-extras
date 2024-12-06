@@ -9,7 +9,7 @@
 		code: string;
 	};
 
-    let { code, class: className }: Props = $props();
+	let { code, class: className }: Props = $props();
 
 	let copied = $state(false);
 

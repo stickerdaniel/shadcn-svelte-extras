@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Playground from '$lib/components/playground.svelte';
 	import { Code } from '$lib/components/ui/code-block';
-    import { ThemeSelector } from '$lib/components/ui/theme-selector';
+	import { ThemeSelector } from '$lib/components/ui/theme-selector';
 </script>
 
 <Playground>
