@@ -1,16 +1,19 @@
 <script lang="ts">
+	import { CodeSpan, Subheading } from '$lib/components/docs';
+	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import { Code } from '$lib/components/ui/code';
 	import { examples } from './examples';
 </script>
 
-<h2 class="text-2xl font-semibold">Basic</h2>
+<Subheading class="mt-0">Basic</Subheading>
 <Playground code={examples.basic.code}>
 	<examples.basic.Component />
 </Playground>
+<Installation specifier="ui/code" />
 <p>
-	The Code component makes use of a highlighter context to highlight the code add the following code
-	to your ./src/routes/+layout.svelte.
+	To highlight the code you'll need a to initialize the highlighter context you can do that by
+	adding the following code to your <CodeSpan>./src/routes/+layout.svelte</CodeSpan>.
 </p>
 <Code
 	lang="typescript"

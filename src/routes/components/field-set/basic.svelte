@@ -1,21 +1,23 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import { FieldSet } from '$lib/components/ui/field-set';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
+	import * as FieldSet from "$lib/components/ui/field-set"
 </script>
 
 <div class="w-full p-6">
-	<FieldSet>
-		<div>
-			<Label>Username</Label>
-			<Input value="ieedan" class="max-w-[225px]" />
-		</div>
-		{#snippet footer()}
+	<FieldSet.Root>
+		<FieldSet.Content>
+			<div>
+				<Label>Username</Label>
+				<Input value="ieedan" class="max-w-[225px]" />
+			</div>
+		</FieldSet.Content>
+		<FieldSet.Footer>
 			<div class="flex w-full place-items-center justify-between">
 				<span class="text-sm text-muted-foreground">Save your username.</span>
 				<Button>Save</Button>
 			</div>
-		{/snippet}
-	</FieldSet>
+		</FieldSet.Footer>
+	</FieldSet.Root>
 </div>

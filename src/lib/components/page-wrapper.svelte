@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { Route } from '$lib/map';
 	import type { Snippet as SnippetType } from 'svelte';
-	import { Snippet } from '$lib/components/ui/snippet';
+	import { Badge } from '$lib/components/ui/badge';
+	import { Code } from 'lucide-svelte';
 
 	type Props = {
 		doc: { group: string; doc: Route } | undefined;
@@ -18,19 +19,32 @@
 	{/if}
 </svelte:head>
 
-<div class="flex max-w-3xl flex-col gap-5 p-6">
-	{#if doc}
-		<div class="flex flex-col gap-1">
-			<h1 class="text-4xl font-bold">
-				{doc.doc.name}
-			</h1>
-			<p class="text-lg text-muted-foreground">
-				{doc.doc.description}
-			</p>
-		</div>
-		{#if doc.doc.specifier}
-			<Snippet text="jsrepo add {doc.doc.specifier}" class="max-w-[350px]" />
+<div class="flex flex-col p-6 md:px-10 lg:px-20 lg:place-items-center">
+	<div class="flex max-w-3xl flex-col gap-5 w-full">
+		{#if doc}
+			<div class="flex flex-col gap-1">
+				<h1 class="text-4xl font-bold">
+					{doc.doc.name}
+				</h1>
+				<p class="text-lg text-muted-foreground">
+					{doc.doc.description}
+				</p>
+				{#if doc.doc.source}
+					<Badge
+						href={new URL(
+							doc.doc.source,
+							'https://github.com/ieedan/shadcn-svelte-extras/tree/main/'
+						).toString()}
+						variant="secondary"
+						target="_blank"
+						class="flex w-fit place-items-center gap-1 rounded-md"
+					>
+						<span class="font-semibold">Component Source</span>
+						<Code class="size-3.5" />
+					</Badge>
+				{/if}
+			</div>
 		{/if}
-	{/if}
-	{@render children()}
+		{@render children()}
+	</div>
 </div>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '@fontsource/geist-mono';
-	import '@fontsource/geist-sans';
+	import '@fontsource/inter';
 	import { ModeWatcher } from 'mode-watcher';
 	import '../app.css';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';

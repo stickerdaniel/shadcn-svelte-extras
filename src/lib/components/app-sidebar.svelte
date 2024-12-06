@@ -12,11 +12,11 @@
 			<Sidebar.MenuItem>
 				<Sidebar.MenuButton
 					size="lg"
-					class="hover:bg-background-secondary active:bg-background-secondary dark:hover:bg-background-secondary dark:active:bg-background-secondary [&>svg]:size-0 [&>svg]:h-7 [&>svg]:w-auto"
+					class="hover:bg-background-secondary active:bg-background-secondary dark:hover:bg-background-secondary dark:active:bg-background-secondary"
 				>
 					{#snippet child({ props })}
 						<a href="/" {...props}>
-							<div class="flex place-items-center gap-2">
+							<div class="flex place-items-center gap-2 -ml-2.5">
 								<Logo class="size-8 shrink-0" />
 								<span class="text-lg font-semibold">shadcn-extras</span>
 							</div>
