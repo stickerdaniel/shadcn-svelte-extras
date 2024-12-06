@@ -3,6 +3,21 @@
 		"name": "ui",
 		"blocks": [
 			{
+				"name": "badge",
+				"directory": "src/lib/components/ui/badge",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["badge.svelte", "index.ts"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.66"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
 				"name": "button",
 				"directory": "src/lib/components/ui/button",
 				"category": "ui",
@@ -115,10 +130,15 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": ["field-set.svelte", "index.ts"],
+				"files": [
+					"field-set-content.svelte",
+					"field-set-footer.svelte",
+					"field-set.svelte",
+					"index.ts"
+				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.3.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.66", "tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/utils/utils": "{{utils/utils}}"
 				}
@@ -170,19 +190,6 @@
 					"$lib/components/ui/drawer/index.js": "{{ui/drawer}}/index.js",
 					"$lib/utils/utils": "{{utils/utils}}"
 				}
-			},
-			{
-				"name": "phone-input",
-				"directory": "src/lib/components/ui/phone-input",
-				"category": "ui",
-				"tests": false,
-				"subdirectory": true,
-				"list": true,
-				"files": [],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [],
-				"_imports_": {}
 			},
 			{
 				"name": "snippet",
