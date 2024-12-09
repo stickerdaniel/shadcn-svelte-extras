@@ -3,21 +3,6 @@
 		"name": "ui",
 		"blocks": [
 			{
-				"name": "badge",
-				"directory": "src/lib/components/ui/badge",
-				"category": "ui",
-				"tests": false,
-				"subdirectory": true,
-				"list": true,
-				"files": ["badge.svelte", "index.ts"],
-				"localDependencies": ["utils/utils"],
-				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.66"],
-				"_imports_": {
-					"$lib/utils/utils.js": "{{utils/utils}}.js"
-				}
-			},
-			{
 				"name": "button",
 				"directory": "src/lib/components/ui/button",
 				"category": "ui",
@@ -49,6 +34,34 @@
 				}
 			},
 			{
+				"name": "command",
+				"directory": "src/lib/components/ui/command",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": false,
+				"files": [
+					"command-dialog.svelte",
+					"command-empty.svelte",
+					"command-group.svelte",
+					"command-input.svelte",
+					"command-item.svelte",
+					"command-link-item.svelte",
+					"command-list.svelte",
+					"command-separator.svelte",
+					"command-shortcut.svelte",
+					"command.svelte",
+					"index.ts"
+				],
+				"localDependencies": ["ui/dialog", "utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.69", "lucide-svelte@^0.468.0"],
+				"_imports_": {
+					"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
 				"name": "dialog",
 				"directory": "src/lib/components/ui/dialog",
 				"category": "ui",
@@ -66,7 +79,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.66", "lucide-svelte@^0.468.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.69", "lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -91,7 +104,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.66"],
+				"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.69"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -118,7 +131,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.66", "lucide-svelte@^0.468.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.69", "lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -138,7 +151,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.66", "tailwind-variants@^0.3.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.69", "tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/utils/utils": "{{utils/utils}}"
 				}
@@ -189,6 +202,61 @@
 					"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 					"$lib/components/ui/drawer/index.js": "{{ui/drawer}}/index.js",
 					"$lib/utils/utils": "{{utils/utils}}"
+				}
+			},
+			{
+				"name": "phone-input",
+				"directory": "src/lib/components/ui/phone-input",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["country-selector.svelte", "flag.svelte", "index.ts", "phone-input.svelte"],
+				"localDependencies": [
+					"ui/popover",
+					"ui/button",
+					"ui/command",
+					"ui/scroll-area",
+					"utils/utils"
+				],
+				"dependencies": [],
+				"devDependencies": ["lucide-svelte@^0.468.0", "svelte-tel-input@^3.5.2"],
+				"_imports_": {
+					"$lib/components/ui/popover": "{{ui/popover}}",
+					"$lib/components/ui/button": "{{ui/button}}",
+					"$lib/components/ui/command": "{{ui/command}}",
+					"$lib/components/ui/scroll-area": "{{ui/scroll-area}}",
+					"$lib/utils/utils": "{{utils/utils}}"
+				}
+			},
+			{
+				"name": "popover",
+				"directory": "src/lib/components/ui/popover",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": false,
+				"files": ["index.ts", "popover-content.svelte"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.69"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
+				"name": "scroll-area",
+				"directory": "src/lib/components/ui/scroll-area",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": false,
+				"files": ["index.ts", "scroll-area-scrollbar.svelte", "scroll-area.svelte"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.69"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
 			},
 			{
