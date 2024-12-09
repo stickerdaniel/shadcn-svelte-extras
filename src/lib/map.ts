@@ -43,7 +43,7 @@ const map: Record<string, Route[]> = {
 		},
 		{
 			name: 'IPv4Address Input',
-			description: 'An IPv4 address input with all the behavior you\'d expect.',
+			description: "An IPv4 address input with all the behavior you'd expect.",
 			href: '/components/ipv4address-input',
 			specifier: 'ui/ipv4address-input',
 			source: 'src/lib/components/ui/ipv4address-input'

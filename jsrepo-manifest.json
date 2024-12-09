@@ -9,17 +9,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"button.svelte",
-					"index.ts"
-				],
-				"localDependencies": [
-					"utils/utils"
-				],
+				"files": ["button.svelte", "index.ts"],
+				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"lucide-svelte@^0.468.0"
-				],
+				"devDependencies": ["lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -31,24 +24,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"code.svelte",
-					"copy.svelte",
-					"dark.ts",
-					"index.ts",
-					"light.ts",
-					"shiki.ts"
-				],
-				"localDependencies": [
-					"utils/utils",
-					"ui/button"
-				],
+				"files": ["code.svelte", "copy.svelte", "dark.ts", "index.ts", "light.ts", "shiki.ts"],
+				"localDependencies": ["utils/utils", "ui/button"],
 				"dependencies": [],
-				"devDependencies": [
-					"shiki@^1.24.0",
-					"lucide-svelte@^0.468.0",
-					"svelte@^5.0.0"
-				],
+				"devDependencies": ["shiki@^1.24.0", "lucide-svelte@^0.468.0", "svelte@^5.0.0"],
 				"_imports_": {
 					"$lib/utils/utils": "{{utils/utils}}",
 					"$lib/components/ui/button": "{{ui/button}}"
@@ -74,15 +53,9 @@
 					"command.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"ui/dialog",
-					"utils/utils"
-				],
+				"localDependencies": ["ui/dialog", "utils/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.69",
-					"lucide-svelte@^0.468.0"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.69", "lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
@@ -104,14 +77,9 @@
 					"dialog-title.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"utils/utils"
-				],
+				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.69",
-					"lucide-svelte@^0.468.0"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.69", "lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -134,14 +102,9 @@
 					"drawer.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"utils/utils"
-				],
+				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"vaul-svelte@1.0.0-next.3",
-					"bits-ui@1.0.0-next.69"
-				],
+				"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.69"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -166,14 +129,9 @@
 					"dropdown-menu-sub-trigger.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"utils/utils"
-				],
+				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.69",
-					"lucide-svelte@^0.468.0"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.69", "lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -191,14 +149,9 @@
 					"field-set.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"utils/utils"
-				],
+				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.69",
-					"tailwind-variants@^0.3.0"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.69", "tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/utils/utils": "{{utils/utils}}"
 				}
@@ -210,15 +163,8 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"ipv4address-input-input.svelte",
-					"ipv4address-input.svelte"
-				],
-				"localDependencies": [
-					"utils/is-number",
-					"utils/utils"
-				],
+				"files": ["index.ts", "ipv4address-input-input.svelte", "ipv4address-input.svelte"],
+				"localDependencies": ["utils/is-number", "utils/utils"],
 				"dependencies": [],
 				"devDependencies": [],
 				"_imports_": {
@@ -233,18 +179,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"light-switch.svelte"
-				],
-				"localDependencies": [
-					"ui/button"
-				],
+				"files": ["index.ts", "light-switch.svelte"],
+				"localDependencies": ["ui/button"],
 				"dependencies": [],
-				"devDependencies": [
-					"lucide-svelte@^0.468.0",
-					"mode-watcher@^0.5.0"
-				],
+				"devDependencies": ["lucide-svelte@^0.468.0", "mode-watcher@^0.5.0"],
 				"_imports_": {
 					"$lib/components/ui/button/index.js": "{{ui/button}}/index.js"
 				}
@@ -256,19 +194,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"modal.svelte"
-				],
-				"localDependencies": [
-					"ui/dialog",
-					"ui/drawer",
-					"utils/utils"
-				],
+				"files": ["index.ts", "modal.svelte"],
+				"localDependencies": ["ui/dialog", "ui/drawer", "utils/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"runed@^0.17.0"
-				],
+				"devDependencies": ["runed@^0.17.0"],
 				"_imports_": {
 					"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 					"$lib/components/ui/drawer/index.js": "{{ui/drawer}}/index.js",
@@ -282,12 +211,7 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"country-selector.svelte",
-					"flag.svelte",
-					"index.ts",
-					"phone-input.svelte"
-				],
+				"files": ["country-selector.svelte", "flag.svelte", "index.ts", "phone-input.svelte"],
 				"localDependencies": [
 					"ui/popover",
 					"ui/button",
@@ -296,10 +220,7 @@
 					"utils/utils"
 				],
 				"dependencies": [],
-				"devDependencies": [
-					"lucide-svelte@^0.468.0",
-					"svelte-tel-input@^3.5.2"
-				],
+				"devDependencies": ["lucide-svelte@^0.468.0", "svelte-tel-input@^3.5.2"],
 				"_imports_": {
 					"$lib/components/ui/popover": "{{ui/popover}}",
 					"$lib/components/ui/button": "{{ui/button}}",
@@ -315,17 +236,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": false,
-				"files": [
-					"index.ts",
-					"popover-content.svelte"
-				],
-				"localDependencies": [
-					"utils/utils"
-				],
+				"files": ["index.ts", "popover-content.svelte"],
+				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.69"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.69"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -337,18 +251,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": false,
-				"files": [
-					"index.ts",
-					"scroll-area-scrollbar.svelte",
-					"scroll-area.svelte"
-				],
-				"localDependencies": [
-					"utils/utils"
-				],
+				"files": ["index.ts", "scroll-area-scrollbar.svelte", "scroll-area.svelte"],
+				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.69"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.69"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -360,18 +266,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"snippet.svelte"
-				],
-				"localDependencies": [
-					"utils/utils"
-				],
+				"files": ["index.ts", "snippet.svelte"],
+				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"lucide-svelte@^0.468.0",
-					"tailwind-variants@^0.3.0"
-				],
+				"devDependencies": ["lucide-svelte@^0.468.0", "tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/utils/utils": "{{utils/utils}}"
 				}
@@ -383,19 +281,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"theme-selector.svelte"
-				],
-				"localDependencies": [
-					"ui/dropdown-menu",
-					"ui/button"
-				],
+				"files": ["index.ts", "theme-selector.svelte"],
+				"localDependencies": ["ui/dropdown-menu", "ui/button"],
 				"dependencies": [],
-				"devDependencies": [
-					"lucide-svelte@^0.468.0",
-					"mode-watcher@^0.5.0"
-				],
+				"devDependencies": ["lucide-svelte@^0.468.0", "mode-watcher@^0.5.0"],
 				"_imports_": {
 					"$lib/components/ui/dropdown-menu/index.js": "{{ui/dropdown-menu}}/index.js",
 					"$lib/components/ui/button/index.js": "{{ui/button}}/index.js"
@@ -413,9 +302,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"is-number.ts"
-				],
+				"files": ["is-number.ts"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -428,16 +315,11 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"utils.ts"
-				],
+				"files": ["utils.ts"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
-				"devDependencies": [
-					"clsx@^2.1.1",
-					"tailwind-merge@^2.5.5"
-				]
+				"devDependencies": ["clsx@^2.1.1", "tailwind-merge@^2.5.5"]
 			}
 		]
 	}
