@@ -14,8 +14,8 @@
 
 <svelte:head>
 	{#if doc}
-		<title>{doc.doc.description} - shadcn-svelte-extras</title>
-		<meta name="description" content={doc.doc.name} />
+		<title>{doc.doc.name} - shadcn-svelte-extras</title>
+		<meta name="description" content={doc.doc.description} />
 	{/if}
 </svelte:head>
 
