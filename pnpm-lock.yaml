@@ -31,8 +31,8 @@ importers:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.49)
       bits-ui:
-        specifier: 1.0.0-next.66
-        version: 1.0.0-next.66(svelte@5.7.1)
+        specifier: 1.0.0-next.69
+        version: 1.0.0-next.69(svelte@5.7.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -78,6 +78,9 @@ importers:
       svelte-check:
         specifier: ^4.0.0
         version: 4.1.1(picomatch@4.0.2)(svelte@5.7.1)(typescript@5.7.2)
+      svelte-tel-input:
+        specifier: ^3.5.2
+        version: 3.5.2(svelte@5.7.1)
       tailwind-merge:
         specifier: ^2.5.5
         version: 2.5.5
@@ -860,8 +863,8 @@ packages:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
 
-  bits-ui@1.0.0-next.66:
-    resolution: {integrity: sha512-2cvX2dhtlp79dq3D79sw/e/w2tib+ySI4RScXwSK9JLSOLVWgVM6XvnT3g8dYRSsSCnQ+hlTZ1ydJJc209HiZw==}
+  bits-ui@1.0.0-next.69:
+    resolution: {integrity: sha512-XN7Uso5gmI4GFtb/5zzce9sSzH/39gX3q6pxoSkV9bAa5mN9Lc+R6hZUDgx3cGY/quWBF/wFPqXgk27Nw2VkSw==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
     peerDependencies:
       svelte: ^5.0.0-next.1
@@ -1374,6 +1377,9 @@ packages:
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
+
+  libphonenumber-js@1.10.43:
+    resolution: {integrity: sha512-M/iPACJGsTvEy8QmUY4K0SoIFB71X2j7y2JvUMYzUXUxCNmiU+NTfHdz7gt+dC48BVfBzZi2oO6s9TDGllCfxA==}
 
   lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
@@ -1892,6 +1898,12 @@ packages:
     peerDependenciesMeta:
       svelte:
         optional: true
+
+  svelte-tel-input@3.5.2:
+    resolution: {integrity: sha512-YEkr+Ij8keasqC8nHhZh4oF+T/N2QW4ij8jLtAmL0ZI6sc4c7taGL0d8HfvDR+wSmE7yjt7AeLpmM0RTbkkbUg==}
+    engines: {node: '>= 18', npm: '>= 8', pnpm: '>= 8', yarn: '>= 1'}
+    peerDependencies:
+      svelte: ^3.58.0 || ^4.0.0 || ^5.0.0
 
   svelte-toolbelt@0.4.6:
     resolution: {integrity: sha512-k8OUvXBUifHZcAlWeY/HLg/4J0v5m2iOfOhn8fDmjt4AP8ZluaDh9eBFus9lFiLX6O5l6vKqI1dKL5wy7090NQ==}
@@ -2874,7 +2886,7 @@ snapshots:
 
   binary-extensions@2.3.0: {}
 
-  bits-ui@1.0.0-next.66(svelte@5.7.1):
+  bits-ui@1.0.0-next.69(svelte@5.7.1):
     dependencies:
       '@floating-ui/core': 1.6.8
       '@floating-ui/dom': 1.6.12
@@ -3435,6 +3447,8 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
+  libphonenumber-js@1.10.43: {}
+
   lilconfig@2.1.0: {}
 
   lilconfig@3.1.3: {}
@@ -3882,6 +3896,11 @@ snapshots:
     optionalDependencies:
       svelte: 5.7.1
 
+  svelte-tel-input@3.5.2(svelte@5.7.1):
+    dependencies:
+      libphonenumber-js: 1.10.43
+      svelte: 5.7.1
+
   svelte-toolbelt@0.4.6(svelte@5.7.1):
     dependencies:
       clsx: 2.1.1
@@ -4053,7 +4072,7 @@ snapshots:
 
   vaul-svelte@1.0.0-next.3(svelte@5.7.1):
     dependencies:
-      bits-ui: 1.0.0-next.66(svelte@5.7.1)
+      bits-ui: 1.0.0-next.69(svelte@5.7.1)
       svelte: 5.7.1
       svelte-toolbelt: 0.4.6(svelte@5.7.1)
 

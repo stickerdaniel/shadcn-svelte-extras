@@ -24,7 +24,7 @@
 <Code
 	lang="json"
 	code={`{
-    paths: {
+    "paths": {
         "*": "$lib/blocks",
         "ui": "$lib/components/ui",
 		"hooks": "$lib/hooks",
