@@ -27,7 +27,7 @@
 				"files": ["code.svelte", "copy.svelte", "dark.ts", "index.ts", "light.ts", "shiki.ts"],
 				"localDependencies": ["utils/utils", "ui/button"],
 				"dependencies": [],
-				"devDependencies": ["shiki@^1.24.0", "lucide-svelte@^0.468.0", "svelte@^5.0.0"],
+				"devDependencies": ["shiki@^1.24.1", "lucide-svelte@^0.468.0", "svelte@^5.10.0"],
 				"_imports_": {
 					"$lib/utils/utils": "{{utils/utils}}",
 					"$lib/components/ui/button": "{{ui/button}}"
@@ -197,7 +197,7 @@
 				"files": ["index.ts", "modal.svelte"],
 				"localDependencies": ["ui/dialog", "ui/drawer", "utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["runed@^0.17.0"],
+				"devDependencies": ["runed@^0.18.0"],
 				"_imports_": {
 					"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 					"$lib/components/ui/drawer/index.js": "{{ui/drawer}}/index.js",
