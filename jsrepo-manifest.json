@@ -34,7 +34,7 @@
 				],
 				"localDependencies": ["utils/utils", "ui/button", "utils/context-provider"],
 				"dependencies": [],
-				"devDependencies": ["shiki@^1.24.1", "lucide-svelte@^0.468.0"],
+				"devDependencies": ["shiki@^1.24.2", "lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/utils/utils": "{{utils/utils}}",
 					"$lib/components/ui/button": "{{ui/button}}",
