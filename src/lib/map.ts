@@ -83,6 +83,15 @@ const map: Record<string, Route[]> = {
 			specifier: 'ui/theme-selector',
 			source: 'src/lib/components/ui/theme-selector/theme-selector.svelte'
 		}
+	],
+	Utils: [
+		{
+			name: 'Context Provider',
+			description: 'A context provider for safely shared state.',
+			href: '/utils/context-provider',
+			specifier: 'utils/context-provider',
+			source: 'src/lib/utils/context-provider.ts'
+		}
 	]
 };
 

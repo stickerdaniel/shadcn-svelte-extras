@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import { getContext } from 'svelte';
 	import Copy from './copy.svelte';
 	import { type BundledLanguage } from 'shiki';
-	import type { HighlighterStore } from '.';
+	import { shikiContext } from '.';
 
 	type Props = {
 		lang?: BundledLanguage;
@@ -25,7 +24,7 @@
 
 	let lines = $derived(code.split('\n').length);
 
-	const hl: HighlighterStore = getContext('highlighter');
+	const hl = shikiContext.get();
 
 	const highlighted = $derived(
 		$hl?.codeToHtml(code, {

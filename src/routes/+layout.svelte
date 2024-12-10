@@ -8,13 +8,11 @@
 	import { map, type Route } from '$lib/map';
 	import { page } from '$app/stores';
 	import { checkIsActive } from '$lib/utils/is-active';
-	import { shiki } from '$lib/components/ui/code';
+	import { ShikiProvider } from '$lib/components/ui/code';
 	import PageWrapper from '$lib/components/page-wrapper.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Icons from '$lib/components/icons';
 	import { ThemeSelector } from '$lib/components/ui/theme-selector';
-
-	shiki();
 
 	let { children } = $props();
 
@@ -35,22 +33,24 @@
 </script>
 
 <ModeWatcher />
-<Sidebar.Provider>
-	<AppSidebar />
-	<Sidebar.Inset class="relative max-w-full">
-		<header class="flex h-16 place-items-center justify-between border-b border-border pl-2 pr-6">
-			<div>
-				<Sidebar.Trigger class="md:hidden" />
-			</div>
-			<div class="flex place-items-center gap-1">
-				<Button variant="ghost" size="icon">
-					<Icons.GitHub class="size-4" />
-				</Button>
-				<ThemeSelector variant="ghost" />
-			</div>
-		</header>
-		<PageWrapper doc={currentDoc}>
-			{@render children()}
-		</PageWrapper>
-	</Sidebar.Inset>
-</Sidebar.Provider>
+<ShikiProvider>
+	<Sidebar.Provider>
+		<AppSidebar />
+		<Sidebar.Inset class="relative max-w-full">
+			<header class="flex h-16 place-items-center justify-between border-b border-border pl-2 pr-6">
+				<div>
+					<Sidebar.Trigger class="md:hidden" />
+				</div>
+				<div class="flex place-items-center gap-1">
+					<Button variant="ghost" size="icon">
+						<Icons.GitHub class="size-4" />
+					</Button>
+					<ThemeSelector variant="ghost" />
+				</div>
+			</header>
+			<PageWrapper doc={currentDoc}>
+				{@render children()}
+			</PageWrapper>
+		</Sidebar.Inset>
+	</Sidebar.Provider>
+</ShikiProvider>

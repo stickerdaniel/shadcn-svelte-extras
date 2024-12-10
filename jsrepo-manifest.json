@@ -24,13 +24,21 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": ["code.svelte", "copy.svelte", "dark.ts", "index.ts", "light.ts", "shiki.ts"],
-				"localDependencies": ["utils/utils", "ui/button"],
+				"files": [
+					"code.svelte",
+					"copy.svelte",
+					"dark.ts",
+					"index.ts",
+					"light.ts",
+					"shiki-provider.svelte"
+				],
+				"localDependencies": ["utils/utils", "ui/button", "utils/context-provider"],
 				"dependencies": [],
-				"devDependencies": ["shiki@^1.24.1", "lucide-svelte@^0.468.0", "svelte@^5.10.0"],
+				"devDependencies": ["shiki@^1.24.1", "lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/utils/utils": "{{utils/utils}}",
-					"$lib/components/ui/button": "{{ui/button}}"
+					"$lib/components/ui/button": "{{ui/button}}",
+					"$lib/utils/context-provider": "{{utils/context-provider}}"
 				}
 			},
 			{
@@ -295,6 +303,19 @@
 	{
 		"name": "utils",
 		"blocks": [
+			{
+				"name": "context-provider",
+				"directory": "src/lib/utils",
+				"category": "utils",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": ["context-provider.ts"],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [],
+				"devDependencies": []
+			},
 			{
 				"name": "is-number",
 				"directory": "src/lib/utils",
