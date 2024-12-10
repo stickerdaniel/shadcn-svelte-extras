@@ -16,7 +16,9 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.2.3",
 		"@fontsource/geist-mono": "^5.1.0",
-		"@sveltejs/kit": "^2.9.1",
+		"@fontsource/inter": "^5.1.0",
+		"@sveltejs/adapter-vercel": "^5.5.2",
+		"@sveltejs/kit": "^2.10.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"autoprefixer": "^10.4.20",
 		"bits-ui": "1.0.0-next.69",
@@ -25,14 +27,14 @@
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.45.1",
 		"globals": "^15.0.0",
-		"jsrepo": "^1.19.0",
+		"jsrepo": "^1.19.1",
 		"lucide-svelte": "^0.468.0",
 		"mode-watcher": "^0.5.0",
 		"prettier": "^3.3.2",
 		"prettier-plugin-svelte": "^3.2.6",
 		"prettier-plugin-tailwindcss": "^0.6.5",
 		"runed": "^0.18.0",
-		"shiki": "^1.24.1",
+		"shiki": "^1.24.2",
 		"svelte": "^5.10.0",
 		"svelte-check": "^4.0.0",
 		"svelte-tel-input": "^3.5.2",
@@ -43,8 +45,6 @@
 		"typescript": "^5.5.0",
 		"typescript-eslint": "^8.18.0",
 		"vaul-svelte": "1.0.0-next.3",
-		"vite": "^6.0.0",
-		"@fontsource/inter": "^5.1.0",
-		"@sveltejs/adapter-vercel": "^5.5.1"
+		"vite": "^6.0.0"
 	}
 }
