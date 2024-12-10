@@ -8,6 +8,7 @@
 		"is-number",
 		"badge",
 		"breadcrumb",
+		"card",
 		"command",
 		"dialog",
 		"drawer",

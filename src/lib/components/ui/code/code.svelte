@@ -42,7 +42,7 @@
 		class="scrollbar-hide flex max-h-full max-w-full place-items-start overflow-x-auto overflow-y-auto py-6"
 	>
 		{#if !hideLines}
-			<div class="min-w-14 text-end text-sm leading-[19px]">
+			<div class="pl-4 text-end text-sm leading-[19px]">
 				{#each new Array(lines).fill(0) as _, index}
 					<span class="text-end font-serif text-muted-foreground">{index + 1}</span>
 					<br />
