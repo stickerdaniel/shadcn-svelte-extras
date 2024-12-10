@@ -15,10 +15,4 @@
 	To highlight the code you'll need a to initialize the highlighter context you can do that by
 	adding the following code to your <CodeSpan>./src/routes/+layout.svelte</CodeSpan>.
 </p>
-<Code
-	lang="typescript"
-	code={`import { shiki } from '$lib/components/ui/code';
-
-// initialize highlighter context
-shiki();`}
-/>
+<Code lang="svelte" code={examples.providerCode} />

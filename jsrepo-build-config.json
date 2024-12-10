@@ -3,7 +3,9 @@
 	"dirs": ["./src/lib/components", "./src/lib"],
 	"doNotListBlocks": [
 		"utils",
+		"is-active",
 		"is-mobile.svelte",
+		"is-number",
 		"badge",
 		"breadcrumb",
 		"command",
@@ -21,8 +23,8 @@
 		"tabs",
 		"tooltip"
 	],
-	"doNotListCategories": ["utils"],
-	"excludeDeps": [],
+	"doNotListCategories": [],
+	"excludeDeps": ["svelte"],
 	"includeBlocks": [],
 	"includeCategories": ["ui", "hooks", "utils"],
 	"preview": true

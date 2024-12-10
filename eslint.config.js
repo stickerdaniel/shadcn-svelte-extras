@@ -28,7 +28,8 @@ export default ts.config(
 					varsIgnorePattern: '^_',
 					argsIgnorePattern: '^_'
 				}
-			]
+			],
+			'no-useless-escape': 'warn'
 		}
 	},
 	{
