@@ -4,7 +4,7 @@
 	import { Code } from '$lib/components/ui/code';
 </script>
 
-<Installation specifier={'utils/context-provider'}/>
+<Installation specifier={'utils/context-provider'} />
 <Subheading>Usage</Subheading>
 <p>Create a share context instance.</p>
 <Code
