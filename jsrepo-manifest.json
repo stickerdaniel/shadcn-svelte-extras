@@ -63,7 +63,7 @@
 				],
 				"localDependencies": ["ui/dialog", "utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.69", "lucide-svelte@^0.468.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.70", "lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
@@ -87,7 +87,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.69", "lucide-svelte@^0.468.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.70", "lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -112,7 +112,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.69"],
+				"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.70"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -139,7 +139,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.69", "lucide-svelte@^0.468.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.70", "lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -154,14 +154,16 @@
 				"files": [
 					"field-set-content.svelte",
 					"field-set-footer.svelte",
+					"field-set-title.svelte",
 					"field-set.svelte",
 					"index.ts"
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.69", "tailwind-variants@^0.3.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.70", "tailwind-variants@^0.3.0"],
 				"_imports_": {
-					"$lib/utils/utils": "{{utils/utils}}"
+					"$lib/utils/utils": "{{utils/utils}}",
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
 			},
 			{
@@ -247,7 +249,7 @@
 				"files": ["index.ts", "popover-content.svelte"],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.69"],
+				"devDependencies": ["bits-ui@1.0.0-next.70"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -262,7 +264,7 @@
 				"files": ["index.ts", "scroll-area-scrollbar.svelte", "scroll-area.svelte"],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.69"],
+				"devDependencies": ["bits-ui@1.0.0-next.70"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
