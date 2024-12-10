@@ -5,7 +5,7 @@
 	import { tv, type VariantProps } from 'tailwind-variants';
 
 	const style = tv({
-		base: 'border border-border rounded-lg flex flex-col w-full',
+		base: 'border border-border rounded-lg flex flex-col w-full h-fit',
 		variants: {
 			variant: {
 				default: 'border-border',

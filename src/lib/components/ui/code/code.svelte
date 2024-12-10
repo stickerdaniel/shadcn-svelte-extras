@@ -22,8 +22,6 @@
 		hideCopy = false
 	}: Props = $props();
 
-	let lines = $derived(code.split('\n').length);
-
 	const hl = shikiContext.get();
 
 	const highlighted = $derived(
@@ -41,17 +39,9 @@
 	<div
 		class="scrollbar-hide flex max-h-full max-w-full place-items-start overflow-x-auto overflow-y-auto py-6"
 	>
-		{#if !hideLines}
-			<div class="min-w-14 text-end text-sm leading-[19px]">
-				{#each new Array(lines).fill(0) as _, index}
-					<span class="text-end font-serif text-muted-foreground">{index + 1}</span>
-					<br />
-				{/each}
-			</div>
-		{/if}
-		<div class="w-full flex-grow pl-6 text-sm">
-			{@html highlighted}
-		</div>
+		<pre
+			class="w-full flex-grow pl-6 text-sm"
+			class:line-numbers={!hideLines}>{@html highlighted}</pre>
 	</div>
 	{#if !hideCopy}
 		<div
@@ -64,3 +54,23 @@
 		</div>
 	{/if}
 </div>
+
+<style lang="postcss">
+	:global(pre.line-numbers) {
+		counter-reset: step;
+		counter-increment: step 0;
+	}
+
+	:global(pre.line-numbers .line::before) {
+		content: counter(step);
+		counter-increment: step;
+		width: 0.5rem;
+		margin-right: 1rem;
+		display: inline-block;
+		text-align: right;
+	}
+
+	:global(pre.line-numbers .line::before) {
+		@apply text-muted-foreground;
+	}
+</style>

@@ -1,5 +1,6 @@
 import type { HTMLAttributes } from 'svelte/elements';
 import GitHub from './github.svelte';
+import Svelte from './svelte.svelte';
 
 export interface Props extends HTMLAttributes<SVGElement> {
 	class?: string;
@@ -7,4 +8,4 @@ export interface Props extends HTMLAttributes<SVGElement> {
 	height?: number;
 }
 
-export { GitHub };
+export { GitHub, Svelte };

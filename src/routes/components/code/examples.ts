@@ -11,9 +11,9 @@ const examples = {
 	// ...
 \</script\>
 
-<ShikiProvider>;
+\<ShikiProvider\>
 		{@render children()}
-</ShikiProvider>`
+\</ShikiProvider\>`
 };
 
 export { examples };

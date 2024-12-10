@@ -1,5 +1,6 @@
 import type { Writable } from 'svelte/store';
 import Code from './code.svelte';
+import Copy from './copy.svelte';
 import ShikiProvider from './shiki-provider.svelte';
 import { type BundledLanguage, type HighlighterGeneric, type BundledTheme } from 'shiki';
 import { context } from '$lib/utils/context-provider';
@@ -13,4 +14,4 @@ export type Highlighter = HighlighterGeneric<BundledLanguage, BundledTheme>;
 
 export type HighlighterStore = Writable<Highlighter | undefined>;
 
-export { Code, ShikiProvider };
+export { Code, Copy, ShikiProvider };
