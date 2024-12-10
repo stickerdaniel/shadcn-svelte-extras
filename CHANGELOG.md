@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.1.0...v1.2.0) (2024-12-10)
+
+
+### Features
+
+* Update `context-provider` documentation ([67b5281](https://github.com/ieedan/shadcn-svelte-extras/commit/67b5281a6fa01d6348ba24f2cc4984718e2a01de))
+
 ## [1.1.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.0.0...v1.1.0) (2024-12-10)
 
 
