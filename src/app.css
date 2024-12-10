@@ -85,3 +85,13 @@ html.dark .shiki span {
 	font-weight: var(--shiki-dark-font-weight) !important;
 	text-decoration: var(--shiki-dark-text-decoration) !important;
 }
+
+/* For components that need horizontal scrolling */
+.scrollbar-hide {
+	-ms-overflow-style: none; /* Internet Explorer and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, and Opera */
+}

@@ -37,7 +37,7 @@
 <ModeWatcher />
 <Sidebar.Provider>
 	<AppSidebar />
-	<Sidebar.Inset>
+	<Sidebar.Inset class="relative max-w-full">
 		<header class="flex h-16 place-items-center justify-between border-b border-border pl-2 pr-6">
 			<div>
 				<Sidebar.Trigger class="md:hidden" />
