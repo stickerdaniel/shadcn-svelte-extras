@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.2.0...v1.2.1) (2024-12-10)
+
+
+### Bug Fixes
+
+* `&lt;Code/&gt;` ensure line numbers are always aligned ([485d11d](https://github.com/ieedan/shadcn-svelte-extras/commit/485d11d097978c0976d27270e7a81dc7f56b292b))
+* code example ([d677bb2](https://github.com/ieedan/shadcn-svelte-extras/commit/d677bb21abf804764916541ef0c8eccc009c2066))
+* Reduce padding on line numbers for code component ([1a1fb7a](https://github.com/ieedan/shadcn-svelte-extras/commit/1a1fb7a360a9ede398c01f524b8f61fb4bd8de7a))
+
 ## [1.2.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.1.0...v1.2.0) (2024-12-10)
 
 
