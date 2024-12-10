@@ -16,16 +16,22 @@
 
 	let { children } = $props();
 
-	const getCurrentDoc = (url: URL): { group: string; doc: Route } | undefined => {
-		for (const [group, routes] of Object.entries(map)) {
-			for (const route of routes) {
-				const isActive = checkIsActive(new URL(route.href, url.origin).toString(), {
-					activeForSubdirectories: false,
-					url
-				});
+	const getCurrentDoc = (
+		url: URL
+	): { group: string; doc: Route; next?: Route; prev?: Route } | undefined => {
+		const docs = Object.entries(map).flatMap(([group, routes]) =>
+			routes.map((r) => ({ group, ...r }))
+		);
 
-				if (isActive) return { group, doc: route };
-			}
+		for (let i = 0; i < docs.length; i++) {
+			const doc = docs[i];
+
+			const isActive = checkIsActive(new URL(doc.href, url.origin).toString(), {
+				activeForSubdirectories: false,
+				url
+			});
+
+			if (isActive) return { group: doc.group, doc: doc, prev: docs[i - 1], next: docs[i + 1] };
 		}
 	};
 
