@@ -6,7 +6,7 @@
 	"formatter": "prettier",
 	"paths": {
 		"*": "./src/blocks",
-		"types": "$lib/ts/types",
+		"types": "$lib/utils/types",
 		"utils": "$lib/utils",
 		"ui": "$lib/components/ui",
 		"hooks": "$lib/hooks"

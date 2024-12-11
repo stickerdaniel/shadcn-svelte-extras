@@ -3,6 +3,8 @@
 	"dirs": ["./src/lib/components", "./src/lib"],
 	"doNotListBlocks": [
 		"utils",
+		"ipv4-address",
+		"types",
 		"is-mobile.svelte",
 		"is-number",
 		"badge",

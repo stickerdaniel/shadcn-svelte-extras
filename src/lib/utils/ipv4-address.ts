@@ -4,7 +4,7 @@
 	12-11-2024
 */
 
-import { Err, Ok, type Result } from '$lib/ts/types/result';
+import { Err, Ok, type Result } from '$lib/utils/types/result';
 import { isNumber } from '$lib/utils/is-number';
 
 type Octets = [number, number, number, number];

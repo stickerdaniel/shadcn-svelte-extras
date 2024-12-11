@@ -174,12 +174,13 @@
 				"subdirectory": true,
 				"list": true,
 				"files": ["index.ts", "ipv4address-input-input.svelte", "ipv4address-input.svelte"],
-				"localDependencies": ["utils/is-number", "utils/utils"],
+				"localDependencies": ["utils/is-number", "utils/utils", "utils/ipv4-address"],
 				"dependencies": [],
 				"devDependencies": [],
 				"_imports_": {
 					"$lib/utils/is-number": "{{utils/is-number}}",
-					"$lib/utils/utils": "{{utils/utils}}"
+					"$lib/utils/utils": "{{utils/utils}}",
+					"$lib/utils/ipv4-address": "{{utils/ipv4-address}}"
 				}
 			},
 			{
@@ -390,6 +391,22 @@
 				"devDependencies": []
 			},
 			{
+				"name": "ipv4-address",
+				"directory": "src/lib/utils",
+				"category": "utils",
+				"tests": false,
+				"subdirectory": false,
+				"list": false,
+				"files": ["ipv4-address.ts"],
+				"localDependencies": ["utils/types", "utils/is-number"],
+				"_imports_": {
+					"$lib/utils/types/result": "{{utils/types}}/result",
+					"$lib/utils/is-number": "{{utils/is-number}}"
+				},
+				"dependencies": [],
+				"devDependencies": []
+			},
+			{
 				"name": "is-number",
 				"directory": "src/lib/utils",
 				"category": "utils",
@@ -401,6 +418,19 @@
 				"_imports_": {},
 				"dependencies": [],
 				"devDependencies": []
+			},
+			{
+				"name": "types",
+				"directory": "src/lib/utils/types",
+				"category": "utils",
+				"tests": false,
+				"subdirectory": true,
+				"list": false,
+				"files": ["result.ts"],
+				"localDependencies": [],
+				"dependencies": [],
+				"devDependencies": [],
+				"_imports_": {}
 			},
 			{
 				"name": "utils",
