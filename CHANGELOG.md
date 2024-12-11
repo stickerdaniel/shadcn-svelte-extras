@@ -5,7 +5,7 @@
 
 ### Features
 
-* Add `&lt;Kbd/&gt;` component ([b8a0416](https://github.com/ieedan/shadcn-svelte-extras/commit/b8a0416ed70d0262f1e3cf335f18c18048203c1f))
+* Add `<Kbd/>` component ([b8a0416](https://github.com/ieedan/shadcn-svelte-extras/commit/b8a0416ed70d0262f1e3cf335f18c18048203c1f))
 * Add `shortcut` and `active` actions ([ac3815d](https://github.com/ieedan/shadcn-svelte-extras/commit/ac3815d68f8d001bdc8328bc9a642f8d14db6434))
 
 ## [1.2.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.2.0...v1.2.1) (2024-12-10)
@@ -13,7 +13,7 @@
 
 ### Bug Fixes
 
-* `&lt;Code/&gt;` ensure line numbers are always aligned ([485d11d](https://github.com/ieedan/shadcn-svelte-extras/commit/485d11d097978c0976d27270e7a81dc7f56b292b))
+* `<Code/>` ensure line numbers are always aligned ([485d11d](https://github.com/ieedan/shadcn-svelte-extras/commit/485d11d097978c0976d27270e7a81dc7f56b292b))
 * code example ([d677bb2](https://github.com/ieedan/shadcn-svelte-extras/commit/d677bb21abf804764916541ef0c8eccc009c2066))
 * Reduce padding on line numbers for code component ([1a1fb7a](https://github.com/ieedan/shadcn-svelte-extras/commit/1a1fb7a360a9ede398c01f524b8f61fb4bd8de7a))
 
