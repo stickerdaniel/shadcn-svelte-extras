@@ -1,9 +1,4 @@
-/*
-	jsrepo 1.17.5
-	Installed from github/ieedan/shadcn-ipv4address-input-svelte
-	12-5-2024
-*/
-
+import { isNumber } from '$lib/utils/is-number';
 import IPv4AddressInput from './ipv4address-input.svelte';
 
 /** Attempts to parse the provided address into a valid IP. Returns undefined for
@@ -29,10 +24,24 @@ export const safeParseIPv4Address = (
 		segments.push(null);
 	}
 
+	for (let i = 0; i < segments.length; i++) {
+		if (!isNumber(segments[i]) || segments[i] === null) {
+			segments[i] = null;
+			continue;
+		}
+
+		const num = Number.parseInt(segments[i]!);
+
+		if (num < 0 || num > 255) {
+			segments[i] = null;
+			continue;
+		}
+
+		segments[i] = num.toString();
+	}
+
 	// @ts-expect-error We know this is 4 we just made sure
 	return segments;
 };
-
-export type IPv4Address = [number | null, number | null, number | null, number | null];
 
 export { IPv4AddressInput };

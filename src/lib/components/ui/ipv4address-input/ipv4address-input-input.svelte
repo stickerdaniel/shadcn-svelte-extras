@@ -1,15 +1,9 @@
-<!--
-	jsrepo 1.17.5
-	Installed from github/ieedan/shadcn-ipv4address-input-svelte
-	12-5-2024
--->
-
 <script lang="ts">
 	import { isNumber } from '$lib/utils/is-number';
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	type Props = {
-		value?: number | null;
+		value?: number | string | null;
 		goNext?: () => void;
 		goPrevious?: () => void;
 		ref?: HTMLInputElement;

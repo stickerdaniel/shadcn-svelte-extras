@@ -16,11 +16,11 @@
 		<div class="flex flex-col gap-2">
 			<div class="flex place-items-center justify-between gap-2">
 				<Label>IP Address</Label>
-				<IPv4AddressInput value={[172, 16, 230, 22]} />
+				<IPv4AddressInput value="172 16 230 22" />
 			</div>
 			<div class="flex place-items-center justify-between gap-2">
 				<Label>Subnet Mask</Label>
-				<IPv4AddressInput value={[255, 255, 255, 0]} />
+				<IPv4AddressInput value="255 255 255 0" />
 			</div>
 			<div class="flex place-items-center justify-between gap-2">
 				<Label>Gateway</Label>

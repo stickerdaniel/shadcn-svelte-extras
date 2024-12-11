@@ -1,7 +1,7 @@
 /*
-	jsrepo 1.17.5
+	jsrepo 1.19.1
 	Installed from github/ieedan/std
-	12-5-2024
+	12-11-2024
 */
 
 /** Checks if provided value is actually a number.

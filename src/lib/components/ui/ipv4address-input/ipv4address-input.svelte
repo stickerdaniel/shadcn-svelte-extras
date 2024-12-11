@@ -1,36 +1,41 @@
-<!--
-	jsrepo 1.17.5
-	Installed from github/ieedan/shadcn-ipv4address-input-svelte
-	12-5-2024
--->
-
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
+	import Input from './ipv4address-input-input.svelte';
 	import { safeParseIPv4Address } from '.';
 	import { isNumber } from '$lib/utils/is-number';
-	import Input from './ipv4address-input-input.svelte';
+	import * as ipv4address from '$lib/utils/ipv4-address';
 
 	type Props = {
-		separator?: string;
+		separator?: '.' | ' ' | '_';
 		/** An IP Address placeholder `0.0.0.0` or `0_0_0_0` or `0 0 0 0` */
 		placeholder?: string;
-		value?: [number | null, number | null, number | null, number | null];
+		value?: string | null;
 		class?: string;
+		valid?: boolean;
+		name?: string;
 	};
 
 	let {
 		separator = '.',
-		value = $bindable([null, null, null, null]),
+		value = $bindable(null),
 		placeholder,
-		class: className
+		class: className,
+		name,
+		valid = $bindable(false)
 	}: Props = $props();
 
-	let parsedPlaceholder = safeParseIPv4Address(placeholder);
+	const parsedPlaceholder = $derived(safeParseIPv4Address(placeholder));
 
 	let firstInput = $state<HTMLInputElement>();
 	let secondInput = $state<HTMLInputElement>();
 	let thirdInput = $state<HTMLInputElement>();
 	let fourthInput = $state<HTMLInputElement>();
+
+	type PartialOctet = number | string | null;
+
+	type PartialOctets = [PartialOctet, PartialOctet, PartialOctet, PartialOctet];
+
+	const octets: PartialOctets = $derived(safeParseIPv4Address(value ?? '') ?? [0, 0, 0, 0]);
 
 	const paste = (e: ClipboardEvent) => {
 		const data = e.clipboardData?.getData('text');
@@ -42,10 +47,10 @@
 		if (!parsed) return;
 
 		// validates each octet if invalid then sets to null
-		value[0] = validate(parsed[0]);
-		value[1] = validate(parsed[1]);
-		value[2] = validate(parsed[2]);
-		value[3] = validate(parsed[3]);
+		octets[0] = validate(parsed[0]);
+		octets[1] = validate(parsed[1]);
+		octets[2] = validate(parsed[2]);
+		octets[3] = validate(parsed[3]);
 	};
 
 	const validate = (octet: string | null): number | null => {
@@ -59,18 +64,36 @@
 
 		return val;
 	};
+
+	const format = (octets: PartialOctets): string => octets.join(separator);
+
+	$effect(() => {
+		valid = ipv4address.parse(value ?? '').isOk();
+	});
 </script>
 
 <div
+	aria-invalid={!valid}
 	class={cn(
-		'flex h-10 w-fit place-items-center rounded-md border border-border px-3 font-serif',
+		'flex h-10 w-fit place-items-center rounded-md border border-border px-3 font-serif ring-2 ring-transparent ring-offset-2 ring-offset-background focus-within:ring-ring',
 		className
 	)}
 >
 	<Input
 		bind:ref={firstInput}
 		goNext={() => secondInput?.focus()}
-		bind:value={value[0]}
+		bind:value={() => octets[0],
+		(v) => {
+			const tempOctets = octets;
+
+			if (v == null || v === '') {
+				tempOctets[0] = null;
+			} else {
+				tempOctets[0] = v;
+			}
+
+			value = format(tempOctets);
+		}}
 		placeholder={parsedPlaceholder ? parsedPlaceholder[0] : undefined}
 		onpaste={paste}
 	/>
@@ -79,7 +102,18 @@
 		bind:ref={secondInput}
 		goNext={() => thirdInput?.focus()}
 		goPrevious={() => firstInput?.focus()}
-		bind:value={value[1]}
+		bind:value={() => octets[1],
+		(v) => {
+			const tempOctets = octets;
+
+			if (v == null || v === '') {
+				tempOctets[1] = null;
+			} else {
+				tempOctets[1] = v;
+			}
+
+			value = format(tempOctets);
+		}}
 		placeholder={parsedPlaceholder ? parsedPlaceholder[1] : undefined}
 		onpaste={paste}
 	/>
@@ -88,7 +122,18 @@
 		bind:ref={thirdInput}
 		goNext={() => fourthInput?.focus()}
 		goPrevious={() => secondInput?.focus()}
-		bind:value={value[2]}
+		bind:value={() => octets[2],
+		(v) => {
+			const tempOctets = octets;
+
+			if (v == null || v === '') {
+				tempOctets[2] = null;
+			} else {
+				tempOctets[2] = v;
+			}
+
+			value = format(tempOctets);
+		}}
 		placeholder={parsedPlaceholder ? parsedPlaceholder[2] : undefined}
 		onpaste={paste}
 	/>
@@ -96,8 +141,20 @@
 	<Input
 		bind:ref={fourthInput}
 		goPrevious={() => thirdInput?.focus()}
-		bind:value={value[3]}
+		bind:value={() => octets[3],
+		(v) => {
+			const tempOctets = octets;
+
+			if (v == null || v === '') {
+				tempOctets[3] = null;
+			} else {
+				tempOctets[3] = v;
+			}
+
+			value = format(tempOctets);
+		}}
 		placeholder={parsedPlaceholder ? parsedPlaceholder[3] : undefined}
 		onpaste={paste}
 	/>
 </div>
+<input class="hidden" {name} {value} />
