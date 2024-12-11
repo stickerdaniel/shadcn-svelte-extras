@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.2.1...v1.3.0) (2024-12-11)
+
+
+### Features
+
+* Add `&lt;Kbd/&gt;` component ([b8a0416](https://github.com/ieedan/shadcn-svelte-extras/commit/b8a0416ed70d0262f1e3cf335f18c18048203c1f))
+* Add `shortcut` and `active` actions ([ac3815d](https://github.com/ieedan/shadcn-svelte-extras/commit/ac3815d68f8d001bdc8328bc9a642f8d14db6434))
+
 ## [1.2.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.2.0...v1.2.1) (2024-12-10)
 
 
