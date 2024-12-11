@@ -49,6 +49,13 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/ipv4address-input'
 		},
 		{
+			name: 'Keyboard Input',
+			description: 'Denotes user input from a keyboard.',
+			href: '/components/kbd',
+			specifier: 'ui/kbd',
+			source: 'src/lib/components/ui/kbd/kbd.svelte'
+		},
+		{
 			name: 'Light Switch',
 			description: 'Click and change the theme.',
 			href: '/components/light-switch',
@@ -82,6 +89,22 @@ const map: Record<string, Route[]> = {
 			href: '/components/theme-selector',
 			specifier: 'ui/theme-selector',
 			source: 'src/lib/components/ui/theme-selector/theme-selector.svelte'
+		}
+	],
+	Actions: [
+		{
+			name: 'Active',
+			description: 'An action to determine if a link is active.',
+			href: '/actions/active',
+			specifier: 'actions/active.svelte',
+			source: 'src/lib/actions/active.svelte.ts'
+		},
+		{
+			name: 'Shortcut',
+			description: 'An action to create shortcuts for your application.',
+			href: '/actions/shortcut',
+			specifier: 'actions/shortcut.svelte',
+			source: 'src/lib/actions/shortcut.svelte.ts'
 		}
 	],
 	Utils: [

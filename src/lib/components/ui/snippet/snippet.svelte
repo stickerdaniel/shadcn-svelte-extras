@@ -5,7 +5,7 @@
 	import { tv, type VariantProps } from 'tailwind-variants';
 
 	const style = tv({
-		base: 'relative max-w-full w-full rounded-md border bg-background py-2.5 pl-3 pr-12',
+		base: 'relative w-full max-w-full rounded-md border bg-background py-2.5 pl-3 pr-12',
 		variants: {
 			variant: {
 				default: 'border-border',

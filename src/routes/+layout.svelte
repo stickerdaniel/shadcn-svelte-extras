@@ -7,14 +7,21 @@
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
 	import { map, type Route } from '$lib/map';
 	import { page } from '$app/stores';
-	import { checkIsActive } from '$lib/utils/is-active';
+	import { checkIsActive } from '$lib/actions/active.svelte';
 	import { ShikiProvider } from '$lib/components/ui/code';
 	import PageWrapper from '$lib/components/page-wrapper.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Icons from '$lib/components/icons';
 	import { ThemeSelector } from '$lib/components/ui/theme-selector';
+	import { Toaster } from '$lib/components/ui/sonner/index.js';
+	import { commandContext } from '$lib/context';
+	import { shortcut } from '$lib/actions/shortcut.svelte';
+	import { Command } from '$lib/components/docs/command';
+	import SearchButton from '$lib/components/search-button.svelte';
 
 	let { children } = $props();
+
+	const commandState = commandContext.init(false);
 
 	const getCurrentDoc = (
 		url: URL
@@ -38,14 +45,28 @@
 	const currentDoc = $derived(getCurrentDoc($page.url));
 </script>
 
+<svelte:window
+	use:shortcut={{
+		ctrl: true,
+		key: 'k',
+		callback: () => {
+			$commandState = true;
+		}
+	}}
+/>
+
 <ModeWatcher />
+<Toaster />
+<Command />
 <ShikiProvider>
 	<Sidebar.Provider>
 		<AppSidebar />
-		<Sidebar.Inset class="relative max-w-full">
+		<!-- Do NOT ask me why this is here it makes it work that's what matters -->
+		<Sidebar.Inset class="w-[200px]">
 			<header class="flex h-16 place-items-center justify-between border-b border-border pl-2 pr-6">
-				<div>
+				<div class="flex place-items-center gap-2">
 					<Sidebar.Trigger class="md:hidden" />
+					<SearchButton class="w-[200px] transition-all sm:w-[250px]" />
 				</div>
 				<div class="flex place-items-center gap-1">
 					<Button variant="ghost" size="icon">

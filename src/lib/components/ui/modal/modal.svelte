@@ -8,17 +8,23 @@
 	type Props = {
 		open?: boolean;
 		class?: string;
+		hideClose?: boolean;
 		children: Snippet<[]>;
 	};
 
 	const isDesktop = new MediaQuery('(min-width: 768px)');
 
-	let { open = $bindable(false), children, class: className = undefined }: Props = $props();
+	let {
+		open = $bindable(false),
+		children,
+		class: className = undefined,
+		hideClose = false
+	}: Props = $props();
 </script>
 
 {#if isDesktop.matches}
 	<Dialog.Root bind:open>
-		<Dialog.Content class={cn('sm:max-w-xl', className)}>
+		<Dialog.Content class={cn('sm:max-w-xl', className)} {hideClose}>
 			{@render children()}
 		</Dialog.Content>
 	</Dialog.Root>
