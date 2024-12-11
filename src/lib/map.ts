@@ -49,7 +49,7 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/ipv4address-input'
 		},
 		{
-			name: 'Kbd',
+			name: 'Keyboard Input',
 			description: 'Denotes user input from a keyboard.',
 			href: '/components/kbd',
 			specifier: 'ui/kbd',

@@ -44,7 +44,8 @@
 <ShikiProvider>
 	<Sidebar.Provider>
 		<AppSidebar />
-		<Sidebar.Inset class="relative max-w-full">
+		<!-- Do NOT ask me why this is here it makes it work that's what matters -->
+		<Sidebar.Inset class="w-[200px]">
 			<header class="flex h-16 place-items-center justify-between border-b border-border pl-2 pr-6">
 				<div>
 					<Sidebar.Trigger class="md:hidden" />

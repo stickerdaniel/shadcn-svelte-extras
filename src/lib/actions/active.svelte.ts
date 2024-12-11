@@ -1,3 +1,6 @@
+import { get } from 'svelte/store';
+import { page } from '$app/stores';
+
 export type Options = {
 	/** Determines if the route should be active for subdirectories.
 	 *
@@ -9,14 +12,18 @@ export type Options = {
 	 *  @default false
 	 */
 	isHash?: boolean;
-	/** Pass the `$page.url` store here */
 	url: URL;
 };
 
 /** Sets the `data-active` attribute on an `<a/>` tag based on its 'active' state. */
-export const active = (node: HTMLAnchorElement, opts: Options) => {
-	$effect(() => {
-		node.setAttribute('data-active', checkIsActive(node.href, opts).toString());
+export const active = (node: HTMLAnchorElement, opts: Omit<Options, 'url'>) => {
+	checkIsActive(node.href, { ...opts, url: get(page).url }).toString();
+
+	page.subscribe((val) => {
+		node.setAttribute(
+			'data-active',
+			checkIsActive(node.href, { ...opts, url: val.url }).toString()
+		);
 	});
 };
 
