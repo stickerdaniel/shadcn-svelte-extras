@@ -17,7 +17,7 @@ const examples = {
 	variants: {
 		code: variantsRaw,
 		Component: Variants
-	},
+	}
 };
 
 export { examples };

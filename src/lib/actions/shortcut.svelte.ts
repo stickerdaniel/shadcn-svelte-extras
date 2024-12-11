@@ -18,15 +18,15 @@ export type Options = {
 };
 
 /** Allows you to configure one or more shortcuts based on the key events of an element.
- * 
+ *
  * ## Usage
  * ```svelte
  * <!-- Ctrl + K Shortcut -->
  * <svelte:window use:shortcut={
- * 			{ 
- * 				ctrl: true, 
- * 				key: 'k', 
- * 				callback: commandMenu.toggle 
+ * 			{
+ * 				ctrl: true,
+ * 				key: 'k',
+ * 				callback: commandMenu.toggle
  * 			}
  * 		}
  * />

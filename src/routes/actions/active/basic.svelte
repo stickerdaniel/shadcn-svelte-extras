@@ -29,7 +29,7 @@
 				use:active={{ isHash }}
 				class="rounded-r-md border-l-2 border-transparent px-4 py-1 text-muted-foreground
 				transition-all data-[active=true]:border-l-primary data-[active=true]:bg-secondary
-				data-[active=true]:text-primary data-[active=false]:hover:border-l-secondary 
+				data-[active=true]:text-primary data-[active=false]:hover:border-l-secondary
 				data-[active=false]:hover:bg-secondary/50"
 			>
 				{title}

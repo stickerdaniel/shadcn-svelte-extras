@@ -13,9 +13,15 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Icons from '$lib/components/icons';
 	import { ThemeSelector } from '$lib/components/ui/theme-selector';
-	import { Toaster } from "$lib/components/ui/sonner/index.js"
+	import { Toaster } from '$lib/components/ui/sonner/index.js';
+	import { commandContext } from '$lib/context';
+	import { shortcut } from '$lib/actions/shortcut.svelte';
+	import { Command } from '$lib/components/docs/command';
+	import SearchButton from '$lib/components/search-button.svelte';
 
 	let { children } = $props();
+
+	const commandState = commandContext.init(false);
 
 	const getCurrentDoc = (
 		url: URL
@@ -39,16 +45,28 @@
 	const currentDoc = $derived(getCurrentDoc($page.url));
 </script>
 
+<svelte:window
+	use:shortcut={{
+		ctrl: true,
+		key: 'k',
+		callback: () => {
+			$commandState = true;
+		}
+	}}
+/>
+
 <ModeWatcher />
-<Toaster/>
+<Toaster />
+<Command />
 <ShikiProvider>
 	<Sidebar.Provider>
 		<AppSidebar />
 		<!-- Do NOT ask me why this is here it makes it work that's what matters -->
 		<Sidebar.Inset class="w-[200px]">
 			<header class="flex h-16 place-items-center justify-between border-b border-border pl-2 pr-6">
-				<div>
+				<div class="flex place-items-center gap-2">
 					<Sidebar.Trigger class="md:hidden" />
+					<SearchButton class="w-[200px] transition-all sm:w-[250px]" />
 				</div>
 				<div class="flex place-items-center gap-1">
 					<Button variant="ghost" size="icon">

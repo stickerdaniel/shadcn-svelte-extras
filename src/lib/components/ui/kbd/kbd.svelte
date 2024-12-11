@@ -4,7 +4,7 @@
 	import { tv, type VariantProps } from 'tailwind-variants';
 
 	const style = tv({
-		base: 'place-items-center justify-center gap-1 rounded-md p-0.5 inline-flex',
+		base: 'inline-flex place-items-center justify-center gap-1 rounded-md p-0.5',
 		variants: {
 			variant: {
 				outline: 'border border-border bg-background text-muted-foreground',
@@ -12,9 +12,9 @@
 				primary: 'bg-primary text-primary-foreground'
 			},
 			size: {
-				sm: 'min-w-6 p-0.5 px-1 text-sm gap-1.5',
-				default: 'min-w-8 p-1 px-2 gap-1.5',
-				lg: 'min-w-9 p-1 px-3 text-lg gap-2'
+				sm: 'min-w-6 gap-1.5 p-0.5 px-1 text-sm',
+				default: 'min-w-8 gap-1.5 p-1 px-2',
+				lg: 'min-w-9 gap-2 p-1 px-3 text-lg'
 			}
 		}
 	});
