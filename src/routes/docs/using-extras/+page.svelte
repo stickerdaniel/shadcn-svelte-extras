@@ -25,10 +25,11 @@
 	lang="json"
 	code={`{
     "paths": {
-        "*": "$lib/blocks",
-        "ui": "$lib/components/ui",
-		"hooks": "$lib/hooks",
-		"utils": "$lib/utils"
+			"*": "$lib/blocks",
+			"ui": "$lib/components/ui",
+			"hooks": "$lib/hooks",
+			"actions": "$lib/actions",
+			"utils": "$lib/utils"
     }
 }`}
 />
