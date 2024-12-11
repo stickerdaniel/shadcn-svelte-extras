@@ -7,12 +7,13 @@
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
 	import { map, type Route } from '$lib/map';
 	import { page } from '$app/stores';
-	import { checkIsActive } from '$lib/utils/is-active';
+	import { checkIsActive } from '$lib/actions/active.svelte';
 	import { ShikiProvider } from '$lib/components/ui/code';
 	import PageWrapper from '$lib/components/page-wrapper.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Icons from '$lib/components/icons';
 	import { ThemeSelector } from '$lib/components/ui/theme-selector';
+	import { Toaster } from "$lib/components/ui/sonner/index.js"
 
 	let { children } = $props();
 
@@ -39,6 +40,7 @@
 </script>
 
 <ModeWatcher />
+<Toaster/>
 <ShikiProvider>
 	<Sidebar.Provider>
 		<AppSidebar />

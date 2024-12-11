@@ -15,15 +15,9 @@ export type Options = {
 
 /** Sets the `data-active` attribute on an `<a/>` tag based on its 'active' state. */
 export const active = (node: HTMLAnchorElement, opts: Options) => {
-	node.setAttribute('data-active', checkIsActive(node.href, opts).toString());
-
-	return {
-		destroy: () => {},
-
-		update: (opts: Options) => {
-			node.setAttribute('data-active', checkIsActive(node.href, opts).toString());
-		}
-	};
+	$effect(() => {
+		node.setAttribute('data-active', checkIsActive(node.href, opts).toString());
+	});
 };
 
 export const checkIsActive = (

@@ -77,6 +77,9 @@ importers:
       svelte-check:
         specifier: ^4.0.0
         version: 4.1.1(picomatch@4.0.2)(svelte@5.10.0)(typescript@5.7.2)
+      svelte-sonner:
+        specifier: ^0.3.28
+        version: 0.3.28(svelte@5.10.0)
       svelte-tel-input:
         specifier: ^3.5.2
         version: 3.5.2(svelte@5.10.0)
@@ -2002,6 +2005,11 @@ packages:
     peerDependenciesMeta:
       svelte:
         optional: true
+
+  svelte-sonner@0.3.28:
+    resolution: {integrity: sha512-K3AmlySeFifF/cKgsYNv5uXqMVNln0NBAacOYgmkQStLa/UoU0LhfAACU6Gr+YYC8bOCHdVmFNoKuDbMEsppJg==}
+    peerDependencies:
+      svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
 
   svelte-tel-input@3.5.2:
     resolution: {integrity: sha512-YEkr+Ij8keasqC8nHhZh4oF+T/N2QW4ij8jLtAmL0ZI6sc4c7taGL0d8HfvDR+wSmE7yjt7AeLpmM0RTbkkbUg==}
@@ -4137,6 +4145,10 @@ snapshots:
       postcss: 8.4.49
       postcss-scss: 4.0.9(postcss@8.4.49)
     optionalDependencies:
+      svelte: 5.10.0
+
+  svelte-sonner@0.3.28(svelte@5.10.0):
+    dependencies:
       svelte: 5.10.0
 
   svelte-tel-input@3.5.2(svelte@5.10.0):

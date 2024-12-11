@@ -37,6 +37,7 @@
 		"shiki": "^1.24.2",
 		"svelte": "^5.10.0",
 		"svelte-check": "^4.0.0",
+		"svelte-sonner": "^0.3.28",
 		"svelte-tel-input": "^3.5.2",
 		"tailwind-merge": "^2.5.5",
 		"tailwind-variants": "^0.3.0",

@@ -3,7 +3,6 @@
 	"dirs": ["./src/lib/components", "./src/lib"],
 	"doNotListBlocks": [
 		"utils",
-		"is-active",
 		"is-mobile.svelte",
 		"is-number",
 		"badge",
@@ -22,13 +21,14 @@
 		"sheet",
 		"sidebar",
 		"skeleton",
+		"sonner",
 		"tabs",
 		"tooltip"
 	],
 	"doNotListCategories": [],
 	"excludeDeps": ["svelte"],
 	"includeBlocks": [],
-	"includeCategories": ["ui", "hooks", "utils"],
+	"includeCategories": ["ui", "hooks", "utils", "actions"],
 	"preview": true,
 	"rules": {
 		"no-category-index-file-dependency": "warn",
