@@ -183,6 +183,21 @@
 				}
 			},
 			{
+				"name": "kbd",
+				"directory": "src/lib/components/ui/kbd",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["index.ts", "kbd.svelte"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["tailwind-variants@^0.3.0"],
+				"_imports_": {
+					"$lib/utils/utils": "{{utils/utils}}"
+				}
+			},
+			{
 				"name": "light-switch",
 				"directory": "src/lib/components/ui/light-switch",
 				"category": "ui",
@@ -285,6 +300,31 @@
 				}
 			},
 			{
+				"name": "table",
+				"directory": "src/lib/components/ui/table",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [
+					"index.ts",
+					"table-body.svelte",
+					"table-caption.svelte",
+					"table-cell.svelte",
+					"table-footer.svelte",
+					"table-head.svelte",
+					"table-header.svelte",
+					"table-row.svelte",
+					"table.svelte"
+				],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.70"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
 				"name": "theme-selector",
 				"directory": "src/lib/components/ui/theme-selector",
 				"category": "ui",
@@ -299,6 +339,37 @@
 					"$lib/components/ui/dropdown-menu/index.js": "{{ui/dropdown-menu}}/index.js",
 					"$lib/components/ui/button/index.js": "{{ui/button}}/index.js"
 				}
+			}
+		]
+	},
+	{
+		"name": "actions",
+		"blocks": [
+			{
+				"name": "active.svelte",
+				"directory": "src/lib/actions",
+				"category": "actions",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": ["active.svelte.ts"],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [],
+				"devDependencies": []
+			},
+			{
+				"name": "shortcut.svelte",
+				"directory": "src/lib/actions",
+				"category": "actions",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": ["shortcut.svelte.ts"],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [],
+				"devDependencies": []
 			}
 		]
 	},
