@@ -301,31 +301,6 @@
 				}
 			},
 			{
-				"name": "table",
-				"directory": "src/lib/components/ui/table",
-				"category": "ui",
-				"tests": false,
-				"subdirectory": true,
-				"list": true,
-				"files": [
-					"index.ts",
-					"table-body.svelte",
-					"table-caption.svelte",
-					"table-cell.svelte",
-					"table-footer.svelte",
-					"table-head.svelte",
-					"table-header.svelte",
-					"table-row.svelte",
-					"table.svelte"
-				],
-				"localDependencies": ["utils/utils"],
-				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.71"],
-				"_imports_": {
-					"$lib/utils/utils.js": "{{utils/utils}}.js"
-				}
-			},
-			{
 				"name": "theme-selector",
 				"directory": "src/lib/components/ui/theme-selector",
 				"category": "ui",
