@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.4.0...v1.4.1) (2024-12-12)
+
+
+### Bug Fixes
+
+* unlist table ([6803f7d](https://github.com/ieedan/shadcn-svelte-extras/commit/6803f7d6dd5513c8c945c023b4b31fb06231505c))
+
 ## [1.4.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.3.0...v1.4.0) (2024-12-12)
 
 
