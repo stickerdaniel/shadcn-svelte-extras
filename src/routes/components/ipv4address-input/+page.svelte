@@ -14,3 +14,11 @@
 <Playground code={examples.placeholder.code}>
 	<examples.placeholder.Component />
 </Playground>
+<Subheading>Reactive</Subheading>
+<Playground code={examples.reactive.code}>
+	<examples.reactive.Component />
+</Playground>
+<Subheading>Validation</Subheading>
+<Playground code={examples.valid.code}>
+	<examples.valid.Component />
+</Playground>
