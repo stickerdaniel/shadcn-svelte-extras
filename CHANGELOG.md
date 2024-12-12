@@ -5,7 +5,7 @@
 
 ### Features
 
-* `&lt;IPv4AddressInput/&gt;` updates ([b886d49](https://github.com/ieedan/shadcn-svelte-extras/commit/b886d4921369e5666080188274d799f848303ca8))
+* `<IPv4AddressInput/>` updates ([b886d49](https://github.com/ieedan/shadcn-svelte-extras/commit/b886d4921369e5666080188274d799f848303ca8))
 
 ## [1.3.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.2.1...v1.3.0) (2024-12-11)
 
