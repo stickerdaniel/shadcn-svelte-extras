@@ -6,7 +6,7 @@
 
 <Installation specifier={'utils/context-provider'} />
 <Subheading>Usage</Subheading>
-<p>Create a share context instance.</p>
+<p>Create a shared context instance.</p>
 <Code
 	lang="typescript"
 	code={`const MY_CONTEXT_KEY = 'my-context-key';
