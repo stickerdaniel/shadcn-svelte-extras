@@ -13,7 +13,7 @@
 	<div class="flex place-items-center justify-between border-b border-border p-2">
 		<div class="flex place-items-center gap-2">
 			<Svelte class="size-4" />
-			<span class="font-serif text-sm text-muted-foreground"> src/routes/+layout.svelte </span>
+			<span class="font-mono text-sm text-muted-foreground"> src/routes/+layout.svelte </span>
 		</div>
 		<Copy {code} class="size-7" />
 	</div>

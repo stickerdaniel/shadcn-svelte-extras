@@ -48,8 +48,8 @@ importers:
         specifier: ^15.0.0
         version: 15.13.0
       jsrepo:
-        specifier: ^1.19.1
-        version: 1.19.1(typescript@5.7.2)
+        specifier: ^1.22.0
+        version: 1.22.0(typescript@5.7.2)
       lucide-svelte:
         specifier: ^0.468.0
         version: 0.468.0(svelte@5.11.2)
@@ -984,8 +984,8 @@ packages:
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
-  conf@13.0.1:
-    resolution: {integrity: sha512-l9Uwc9eOnz39oADzGO2cSBDi7siv8lwO+31ocQ2nOJijnDiW3pxqm9VV10DPYUO28wW83DjABoUqY1nfHRR2hQ==}
+  conf@13.1.0:
+    resolution: {integrity: sha512-Bi6v586cy1CoTFViVO4lGTtx780lfF96fUmS1lSX6wpZf6330NvHUu6fReVuDP1de8Mg0nkZb01c8tAQdz1o3w==}
     engines: {node: '>=18'}
 
   consola@3.2.3:
@@ -1163,6 +1163,9 @@ packages:
   esrap@1.2.3:
     resolution: {integrity: sha512-ZlQmCCK+n7SGoqo7DnfKaP1sJZa49P01/dXzmjCASSo04p72w8EksT2NMK8CEX8DhKsfJXANioIw8VyHNsBfvQ==}
 
+  esrap@1.3.2:
+    resolution: {integrity: sha512-C4PXusxYhFT98GjLSmb20k9PREuUdporer50dhzGuJu9IJXktbMddVCMLAERl5dAHyAi73GWWCE4FVHGP1794g==}
+
   esrecurse@4.3.0:
     resolution: {integrity: sha512-KmfKL3b6G+RXvP8N1vr3Tq1kL/oCFgn2NYXEtqP8/L3pKapUA4G8cFVaoF3SU323CD4XypR/ffioHmkti6/Tag==}
     engines: {node: '>=4.0'}
@@ -1181,8 +1184,8 @@ packages:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
 
-  execa@9.5.1:
-    resolution: {integrity: sha512-QY5PPtSonnGwhhHDNI7+3RvY285c7iuJFFB+lU+oEzMY/gEGJ808owqJsrr8Otd1E/x07po1LkUBmdAc5duPAg==}
+  execa@9.5.2:
+    resolution: {integrity: sha512-EHlpxMCpHWSAh1dgS6bVeoLAXGnJNdR93aabr4QCGbzOM73o5XmRfM/e5FUqsw3aagP8S8XEWUWFAxnRBnAF0Q==}
     engines: {node: ^18.19.0 || >=20.5.0}
 
   fast-deep-equal@3.1.3:
@@ -1425,8 +1428,8 @@ packages:
   json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
 
-  jsrepo@1.19.1:
-    resolution: {integrity: sha512-0x2TTUWuBUBku4Bt3jMPhkPaoBmJPQpkAFO3WYmZtd1O3l3faQmPorSL0vOpbXmx5vt4TDeZbQAkISoK+Uarmg==}
+  jsrepo@1.22.0:
+    resolution: {integrity: sha512-Ucl6p594Nb9K49foiu4bbaw7IbBwxM3KyuQHb75D9+Sn5M5koyDo2ruxZ9GsaxXiVLizGquOC5zlGaEMyCp6yg==}
     hasBin: true
 
   keyv@4.5.4:
@@ -2025,6 +2028,10 @@ packages:
 
   svelte@5.11.2:
     resolution: {integrity: sha512-kGWswlBaohYxZHML9jp8ZYXkwjKd+WTpyAK1CCDmNzsefZHQjvsa7kbrKUckcFloNmdzwQwaZq+NyunuNOE6lw==}
+    engines: {node: '>=18'}
+
+  svelte@5.14.5:
+    resolution: {integrity: sha512-Qk4LbKHo8K6RtdSuiwI7w66Q+Ypab0V8E7WSZHEKKym4em8n+a0rl3VyRBpGV+/MnNmoi7xlGEjS2omwe0RzhA==}
     engines: {node: '>=18'}
 
   tailwind-merge@2.5.5:
@@ -3160,7 +3167,7 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  conf@13.0.1:
+  conf@13.1.0:
     dependencies:
       ajv: 8.17.1
       ajv-formats: 3.0.1(ajv@8.17.1)
@@ -3371,6 +3378,10 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
       '@types/estree': 1.0.6
 
+  esrap@1.3.2:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.0
+
   esrecurse@4.3.0:
     dependencies:
       estraverse: 5.3.0
@@ -3385,7 +3396,7 @@ snapshots:
 
   esutils@2.0.3: {}
 
-  execa@9.5.1:
+  execa@9.5.2:
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
       cross-spawn: 7.0.6
@@ -3627,7 +3638,7 @@ snapshots:
 
   json-stable-stringify-without-jsonify@1.0.1: {}
 
-  jsrepo@1.19.1(typescript@5.7.2):
+  jsrepo@1.22.0(typescript@5.7.2):
     dependencies:
       '@biomejs/js-api': 0.7.1(@biomejs/wasm-nodejs@1.9.4)
       '@biomejs/wasm-nodejs': 1.9.4
@@ -3636,18 +3647,18 @@ snapshots:
       ansi-regex: 6.1.0
       chalk: 5.3.0
       commander: 12.1.0
-      conf: 13.0.1
+      conf: 13.1.0
       diff: 7.0.0
       escape-string-regexp: 5.0.0
       estree-walker: 3.0.3
-      execa: 9.5.1
+      execa: 9.5.2
       get-tsconfig: 4.8.1
       node-fetch: 3.3.2
       octokit: 4.0.2
       package-manager-detector: 0.2.7
       pathe: 1.1.2
       prettier: 3.4.2
-      svelte: 5.11.2
+      svelte: 5.14.5
       ts-morph: 24.0.0
       valibot: 0.42.1(typescript@5.7.2)
       validate-npm-package-name: 6.0.0
@@ -4173,6 +4184,22 @@ snapshots:
       axobject-query: 4.1.0
       esm-env: 1.2.1
       esrap: 1.2.3
+      is-reference: 3.0.3
+      locate-character: 3.0.0
+      magic-string: 0.30.14
+      zimmerframe: 1.1.2
+
+  svelte@5.14.5:
+    dependencies:
+      '@ampproject/remapping': 2.3.0
+      '@jridgewell/sourcemap-codec': 1.5.0
+      '@types/estree': 1.0.6
+      acorn: 8.14.0
+      acorn-typescript: 1.4.13(acorn@8.14.0)
+      aria-query: 5.3.2
+      axobject-query: 4.1.0
+      esm-env: 1.2.1
+      esrap: 1.3.2
       is-reference: 3.0.3
       locate-character: 3.0.0
       magic-string: 0.30.14
