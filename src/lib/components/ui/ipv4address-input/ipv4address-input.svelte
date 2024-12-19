@@ -75,7 +75,7 @@
 <div
 	aria-invalid={!valid}
 	class={cn(
-		'flex h-10 w-fit place-items-center rounded-md border border-border px-3 font-serif ring-2 ring-transparent ring-offset-2 ring-offset-background focus-within:ring-ring',
+		'flex h-10 w-fit place-items-center rounded-md border border-border px-3 font-mono ring-2 ring-transparent ring-offset-2 ring-offset-background focus-within:ring-ring',
 		className
 	)}
 >
@@ -97,7 +97,7 @@
 		placeholder={parsedPlaceholder ? parsedPlaceholder[0] : undefined}
 		onpaste={paste}
 	/>
-	<span class="font-serif">{separator}</span>
+	<span class="font-mono">{separator}</span>
 	<Input
 		bind:ref={secondInput}
 		goNext={() => thirdInput?.focus()}
@@ -117,7 +117,7 @@
 		placeholder={parsedPlaceholder ? parsedPlaceholder[1] : undefined}
 		onpaste={paste}
 	/>
-	<span class="font-serif">{separator}</span>
+	<span class="font-mono">{separator}</span>
 	<Input
 		bind:ref={thirdInput}
 		goNext={() => fourthInput?.focus()}
@@ -137,7 +137,7 @@
 		placeholder={parsedPlaceholder ? parsedPlaceholder[2] : undefined}
 		onpaste={paste}
 	/>
-	<span class="font-serif">{separator}</span>
+	<span class="font-mono">{separator}</span>
 	<Input
 		bind:ref={fourthInput}
 		goPrevious={() => thirdInput?.focus()}

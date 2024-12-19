@@ -46,12 +46,12 @@
 
 <div class={cn(style({ variant, className: className }))}>
 	{#if typeof text == 'string'}
-		<pre class={cn('overflow-y-auto whitespace-nowrap text-left font-serif text-sm')}>
+		<pre class={cn('overflow-y-auto whitespace-nowrap text-left font-mono text-sm')}>
 			{text}
 		</pre>
 	{:else}
 		{#each text as line}
-			<pre class={cn('overflow-y-auto whitespace-nowrap text-left font-serif text-sm')}>
+			<pre class={cn('overflow-y-auto whitespace-nowrap text-left font-mono text-sm')}>
 			{line}
 		</pre>
 		{/each}
