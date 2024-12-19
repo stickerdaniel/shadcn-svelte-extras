@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.4.1...v1.4.2) (2024-12-19)
+
+
+### Bug Fixes
+
+* update jsrepo to correctly resolve dependencies ([de78376](https://github.com/ieedan/shadcn-svelte-extras/commit/de783769d415f3ccfdb633237b2f9d6ab64170b2))
+
 ## [1.4.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.4.0...v1.4.1) (2024-12-12)
 
 
