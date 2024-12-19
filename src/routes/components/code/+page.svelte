@@ -16,3 +16,5 @@
 	adding the following code to your <CodeSpan>./src/routes/+layout.svelte</CodeSpan>.
 </p>
 <Code lang="svelte" code={examples.providerCode} />
+<p>You will also need to add the following code to your global css file.</p>
+<Code lang="css" code={examples.cssCode} />

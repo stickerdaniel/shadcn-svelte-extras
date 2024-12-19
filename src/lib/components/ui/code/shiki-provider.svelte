@@ -13,7 +13,7 @@
 		createHighlighter({
 			themes: [dark, light],
 			// make sure you setup any languages you are going to use here
-			langs: ['typescript', 'javascript', 'svelte', 'diff', 'json', 'tsx']
+			langs: ['typescript', 'javascript', 'svelte', 'diff', 'json', 'tsx', 'css']
 		}).then((highlighter) => shiki.set(highlighter));
 
 		return () => $shiki?.dispose();

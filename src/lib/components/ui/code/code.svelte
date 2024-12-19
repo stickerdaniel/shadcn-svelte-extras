@@ -64,8 +64,8 @@
 	:global(pre.line-numbers .line::before) {
 		content: counter(step);
 		counter-increment: step;
-		width: 0.5rem;
-		margin-right: 1rem;
+		width: 1rem;
+		margin-right: 1.5rem;
 		display: inline-block;
 		text-align: right;
 	}

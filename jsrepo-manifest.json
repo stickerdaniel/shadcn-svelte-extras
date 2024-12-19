@@ -12,7 +12,11 @@
 				"files": ["button.svelte", "index.ts"],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["lucide-svelte@^0.468.0"],
+				"devDependencies": [
+					"lucide-svelte@^0.468.0",
+					"bits-ui@1.0.0-next.71",
+					"tailwind-variants@^0.3.0"
+				],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
