@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { createHighlighter } from 'shiki';
-	import dark from './dark';
-	import light from './light';
 	import { shikiContext } from '.';
 
 	const shiki = shikiContext.init(undefined);
@@ -11,7 +9,7 @@
 
 	onMount(() => {
 		createHighlighter({
-			themes: [dark, light],
+			themes: ['github-dark-default', 'github-light-default'],
 			// make sure you setup any languages you are going to use here
 			langs: ['typescript', 'javascript', 'svelte', 'diff', 'json', 'tsx', 'css']
 		}).then((highlighter) => shiki.set(highlighter));

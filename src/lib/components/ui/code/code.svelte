@@ -3,8 +3,22 @@
 	import Copy from './copy.svelte';
 	import { type BundledLanguage } from 'shiki';
 	import { shikiContext } from '.';
+	import { tv, type VariantProps } from 'tailwind-variants';
+
+	const style = tv({
+		base: 'not-prose relative rounded-lg border bg-accent py-4',
+		variants: {
+			variant: {
+				default: 'bg-transparent border-border',
+				secondary: 'bg-secondary/50 border-transparent'
+			}
+		}
+	})
+
+	type Variant = VariantProps<typeof style>['variant'];
 
 	type Props = {
+		variant?: Variant;
 		lang?: BundledLanguage;
 		code: string;
 		class?: string;
@@ -14,6 +28,7 @@
 	};
 
 	let {
+		variant = 'default',
 		lang = 'typescript',
 		code,
 		copyButtonContainerClass = undefined,
@@ -22,22 +37,22 @@
 		hideCopy = false
 	}: Props = $props();
 
-	const hl = shikiContext.get();
+	const highlighter = shikiContext.get();
 
 	const highlighted = $derived(
-		$hl?.codeToHtml(code, {
+		$highlighter?.codeToHtml(code, {
 			lang: lang,
 			themes: {
-				light: 'vercel-light',
-				dark: 'vercel-dark'
+				light: 'github-light-default',
+				dark: 'github-dark-default'
 			}
 		}) ?? code
 	);
 </script>
 
-<div class={cn('not-prose relative rounded-lg border border-border bg-background', className)}>
+<div class={cn(style({ variant }), className)}>
 	<div
-		class="scrollbar-hide flex max-h-full max-w-full place-items-start overflow-x-auto overflow-y-auto py-6"
+		class="scrollbar-hide flex max-h-full max-w-full place-items-start overflow-x-auto overflow-y-auto selection:bg-blue-500/25"
 	>
 		<pre
 			class="w-full flex-grow pl-6 text-sm"
@@ -46,7 +61,7 @@
 	{#if !hideCopy}
 		<div
 			class={cn(
-				'absolute right-1 top-1 flex place-items-center justify-center',
+				'absolute right-1.5 top-1.5 flex place-items-center justify-center',
 				copyButtonContainerClass
 			)}
 		>
