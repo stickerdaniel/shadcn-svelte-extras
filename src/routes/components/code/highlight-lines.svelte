@@ -46,6 +46,6 @@ export type Rule = {
 };`;
 </script>
 
-<div class="w-full p-6 relative h-[300px]">
-	<Code lang="typescript" {code} highlightLines={[[7, 10], 4]}/>
+<div class="relative h-[300px] w-full p-6">
+	<Code lang="typescript" {code} highlightLines={[[7, 10], 4]} />
 </div>
