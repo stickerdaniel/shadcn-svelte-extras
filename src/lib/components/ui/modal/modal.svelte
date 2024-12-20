@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MediaQuery } from 'runed';
+	import { MediaQuery } from 'svelte/reactivity';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import * as Drawer from '$lib/components/ui/drawer/index.js';
 	import type { Snippet } from 'svelte';
@@ -22,7 +22,7 @@
 	}: Props = $props();
 </script>
 
-{#if isDesktop.matches}
+{#if isDesktop.current}
 	<Dialog.Root bind:open>
 		<Dialog.Content class={cn('sm:max-w-xl', className)} {hideClose}>
 			{@render children()}
