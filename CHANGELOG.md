@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.4.2...v1.5.0) (2024-12-20)
+
+
+### Features
+
+* Improve `<Code/>` styling ([897178f](https://github.com/ieedan/shadcn-svelte-extras/commit/897178fa620f126e3e8439748d11bddc0bbbca93))
+
 ## [1.4.2](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.4.1...v1.4.2) (2024-12-19)
 
 
