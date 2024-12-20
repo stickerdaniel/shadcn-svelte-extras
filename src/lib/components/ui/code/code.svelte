@@ -9,11 +9,11 @@
 		base: 'not-prose relative rounded-lg border bg-accent py-4',
 		variants: {
 			variant: {
-				default: 'bg-transparent border-border',
-				secondary: 'bg-secondary/50 border-transparent'
+				default: 'border-border bg-transparent',
+				secondary: 'border-transparent bg-secondary/50'
 			}
 		}
-	})
+	});
 
 	type Variant = VariantProps<typeof style>['variant'];
 

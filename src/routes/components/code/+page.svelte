@@ -4,7 +4,7 @@
 	import Playground from '$lib/components/playground.svelte';
 	import { Code } from '$lib/components/ui/code';
 	import { examples } from './examples';
-	import shikiProviderRaw from '$lib/components/ui/code/shiki-provider.svelte?raw'
+	import shikiProviderRaw from '$lib/components/ui/code/shiki-provider.svelte?raw';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -22,7 +22,7 @@
 <p>
 	The highlighter can be configured from <CodeSpan>shiki-provider.svelte</CodeSpan>.
 </p>
-<Code lang="svelte" code={shikiProviderRaw}/>
+<Code lang="svelte" code={shikiProviderRaw} />
 <Subheading>No Line Numbers</Subheading>
 <Playground code={examples.noLineNumbers.code}>
 	<examples.noLineNumbers.Component />
