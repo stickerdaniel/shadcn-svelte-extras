@@ -12,12 +12,12 @@
 	import PageWrapper from '$lib/components/page-wrapper.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Icons from '$lib/components/icons';
-	import { ThemeSelector } from '$lib/components/ui/theme-selector';
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
 	import { commandContext } from '$lib/context';
 	import { shortcut } from '$lib/actions/shortcut.svelte';
 	import { Command } from '$lib/components/docs/command';
 	import SearchButton from '$lib/components/search-button.svelte';
+	import { LightSwitch } from '$lib/components/ui/light-switch';
 
 	let { children } = $props();
 
@@ -72,7 +72,7 @@
 					<Button variant="ghost" size="icon">
 						<Icons.GitHub class="size-4" />
 					</Button>
-					<ThemeSelector variant="ghost" />
+					<LightSwitch variant="ghost" />
 				</div>
 			</header>
 			<PageWrapper doc={currentDoc}>

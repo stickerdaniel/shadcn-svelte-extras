@@ -2,9 +2,9 @@
 	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
-	import { Blockquote } from '$lib/components/ui/blockquote';
 	import { Code } from '$lib/components/ui/code';
 	import { examples } from './examples';
+	import shikiProviderRaw from '$lib/components/ui/code/shiki-provider.svelte?raw';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -19,8 +19,15 @@
 <Code lang="svelte" code={examples.providerCode} />
 <p>You will also need to add the following code to your global css file:</p>
 <Code lang="css" code={examples.cssCode} />
-<Blockquote>
-	To configure languages open the <span class="font-mono">shiki-provider.svelte</span> file and add
-	them to the <span class="font-mono">langs</span> option of
-	<span class="font-mono">createHighlighter</span>.
-</Blockquote>
+<p>
+	The highlighter can be configured from <CodeSpan>shiki-provider.svelte</CodeSpan>.
+</p>
+<Code lang="svelte" code={shikiProviderRaw} />
+<Subheading>No Line Numbers</Subheading>
+<Playground code={examples.noLineNumbers.code}>
+	<examples.noLineNumbers.Component />
+</Playground>
+<Subheading>Variants</Subheading>
+<Playground code={examples.variants.code}>
+	<examples.variants.Component />
+</Playground>
