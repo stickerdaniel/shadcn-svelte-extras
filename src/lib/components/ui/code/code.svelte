@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
 	import Copy from './copy.svelte';
-	import { type BundledLanguage } from 'shiki';
 	import { shikiContext } from '.';
 	import { tv, type VariantProps } from 'tailwind-variants';
+	import type { SupportedLanguage } from './langs';
 
 	const style = tv({
-		base: 'not-prose no-scrollbar relative h-full max-h-[650px] overflow-auto rounded-lg border',
+		base: 'not-prose relative h-full max-h-[650px] overflow-auto rounded-lg border',
 		variants: {
 			variant: {
 				default: 'border-border bg-transparent',
@@ -19,7 +19,7 @@
 
 	type Props = {
 		variant?: Variant;
-		lang?: BundledLanguage;
+		lang?: SupportedLanguage;
 		code: string;
 		class?: string;
 		copyButtonContainerClass?: string;
@@ -119,8 +119,14 @@
 	}
 
 	:global(pre.shiki) {
-		@apply no-scrollbar overflow-auto rounded-lg bg-inherit py-4 text-sm;
+		@apply overflow-auto rounded-lg bg-inherit py-4 text-sm;
 		max-height: min(100%, 650px);
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+
+	:global(pre.shiki::-webkit-scrollbar) {
+		display: none;
 	}
 
 	:global(pre.shiki code) {

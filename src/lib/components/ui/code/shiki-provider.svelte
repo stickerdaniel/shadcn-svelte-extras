@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { createHighlighter } from 'shiki';
 	import { shikiContext } from '.';
+	import { LANGUAGES } from './langs';
 
 	const shiki = shikiContext.init(undefined);
 
@@ -10,8 +11,7 @@
 	onMount(() => {
 		createHighlighter({
 			themes: ['github-dark-default', 'github-light-default'],
-			// make sure you setup any languages you are going to use here
-			langs: ['typescript', 'javascript', 'svelte', 'diff', 'json', 'tsx', 'css']
+			langs: [...LANGUAGES]
 		}).then((highlighter) => shiki.set(highlighter));
 
 		return () => $shiki?.dispose();
