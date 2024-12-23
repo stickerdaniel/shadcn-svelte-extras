@@ -1,51 +1,30 @@
 <script lang="ts">
 	import { Code } from '$lib/components/ui/code';
 
-	const code = `export type CheckOptions = {
-	categories: Category[];
-	options: (string | number)[];
-	config: RegistryConfig;
-};
-
-export type Rule = {
-	description: string;
-	check: (block: Block, { categories }: CheckOptions) => string[] | undefined;
-};
-
-export type CheckOptions = {
-	categories: Category[];
-	options: (string | number)[];
-	config: RegistryConfig;
-};
-
-export type Rule = {
-	description: string;
-	check: (block: Block, { categories }: CheckOptions) => string[] | undefined;
-};
-
-export type CheckOptions = {
-	categories: Category[];
-	options: (string | number)[];
-	config: RegistryConfig;
-};
-
-export type Rule = {
-	description: string;
-	check: (block: Block, { categories }: CheckOptions) => string[] | undefined;
-};
-
-export type CheckOptions = {
-	categories: Category[];
-	options: (string | number)[];
-	config: RegistryConfig;
-};
-
-export type Rule = {
-	description: string;
-	check: (block: Block, { categories }: CheckOptions) => string[] | undefined;
-};`;
+	const code = `export type Language = 
+| 'English (US)' 
+| 'English (UK)' 
+| 'Español (MX)';
+	
+export const greet = (name: string, language: Language): string => {
+	switch (language) {
+		case 'English (US)':
+			return \`Hello \${name}!\`
+		case 'English (UK)':
+			return \`Hello \${name}, mate!\` 
+		case 'Español (MX)':
+			return \`¡Hola \${name}!\`
+	}
+}`;
 </script>
 
-<div class="relative h-[300px] w-full p-6">
-	<Code lang="typescript" {code} highlightLines={[[7, 10], 4]} />
+<div class="w-full p-6">
+	<Code
+		lang="typescript"
+		{code}
+		highlight={[
+			[3, 4],
+			[10, 13]
+		]}
+	/>
 </div>

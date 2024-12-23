@@ -16,13 +16,13 @@
 	To highlight the code you'll need a to initialize the highlighter context you can do that by
 	adding the following code to your <CodeSpan>./src/routes/+layout.svelte</CodeSpan>:
 </p>
-<Code lang="svelte" code={examples.providerCode} />
+<Code lang="svelte" code={examples.providerCode} class="h-fit" highlight={[2, [6, 8]]} />
 <p>You will also need to add the following code to your global css file:</p>
-<Code lang="css" code={examples.cssCode} />
+<Code lang="css" code={examples.cssCode} class="h-fit" />
 <p>
 	The highlighter can be configured from <CodeSpan>shiki-provider.svelte</CodeSpan>.
 </p>
-<Code lang="svelte" code={shikiProviderRaw} />
+<Code lang="svelte" code={shikiProviderRaw} highlight={[[11, 15]]} />
 <Subheading>No Line Numbers</Subheading>
 <Playground code={examples.noLineNumbers.code}>
 	<examples.noLineNumbers.Component />
@@ -32,6 +32,6 @@
 	<examples.variants.Component />
 </Playground>
 <Subheading>Highlight Lines</Subheading>
-<Playground code={examples.highlightLines.code}>
+<Playground code={examples.highlightLines.code} class="h-[500px]">
 	<examples.highlightLines.Component />
 </Playground>

@@ -6,7 +6,7 @@
 	import { tv, type VariantProps } from 'tailwind-variants';
 
 	const style = tv({
-		base: 'not-prose relative max-h-full rounded-lg border bg-accent py-4',
+		base: 'not-prose no-scrollbar relative h-full max-h-[650px] overflow-auto rounded-lg border',
 		variants: {
 			variant: {
 				default: 'border-border bg-transparent',
@@ -25,10 +25,10 @@
 		copyButtonContainerClass?: string;
 		hideLines?: boolean;
 		hideCopy?: boolean;
-		highlightLines?: (number | [number, number])[];
+		highlight?: (number | [number, number])[];
 	};
 
-	const within = (num: number, range: Props['highlightLines']) => {
+	const within = (num: number, range: Props['highlight']) => {
 		if (!range) return false;
 
 		let within = false;
@@ -59,7 +59,7 @@
 		class: className = undefined,
 		hideLines = false,
 		hideCopy = false,
-		highlightLines = []
+		highlight = []
 	}: Props = $props();
 
 	const highlighter = shikiContext.get();
@@ -76,10 +76,14 @@
 					pre: (el) => {
 						el.properties.style = '';
 
+						if (!hideLines) {
+							el.properties.class += ' line-numbers';
+						}
+
 						return el;
 					},
 					line: (node, line) => {
-						if (within(line, highlightLines)) {
+						if (within(line, highlight)) {
 							node.properties.class = node.properties.class + ' line--highlighted';
 						}
 
@@ -92,9 +96,7 @@
 </script>
 
 <div class={cn(style({ variant }), className)}>
-	<div class:line-numbers={!hideLines} class="text-sm">
-		{@html highlighted}
-	</div>
+	{@html highlighted}
 	{#if !hideCopy}
 		<div
 			class={cn(
@@ -108,16 +110,17 @@
 </div>
 
 <style lang="postcss">
-	:global(.line-numbers pre) {
-		counter-reset: step;
-		counter-increment: step 0;
+	/* Shiki see: https://shiki.matsu.io/guide/dual-themes#class-based-dark-mode */
+	:global(html.dark .shiki, html.dark .shiki span) {
+		color: var(--shiki-dark) !important;
+		font-style: var(--shiki-dark-font-style) !important;
+		font-weight: var(--shiki-dark-font-weight) !important;
+		text-decoration: var(--shiki-dark-text-decoration) !important;
 	}
 
 	:global(pre.shiki) {
-		@apply no-scrollbar bg-inherit;
-		overflow-y: auto;
-		overflow-x: auto;
-		max-height: 100%;
+		@apply no-scrollbar overflow-auto rounded-lg bg-inherit py-4 text-sm;
+		max-height: min(100%, 650px);
 	}
 
 	:global(pre.shiki code) {
@@ -126,7 +129,12 @@
 		box-decoration-break: clone;
 	}
 
-	:global(.line-numbers pre .line::before) {
+	:global(pre.line-numbers) {
+		counter-reset: step;
+		counter-increment: step 0;
+	}
+
+	:global(pre.line-numbers .line::before) {
 		content: counter(step);
 		counter-increment: step;
 		display: inline-block;
@@ -135,7 +143,7 @@
 		text-align: right;
 	}
 
-	:global(.line-numbers pre .line::before) {
+	:global(pre.line-numbers .line::before) {
 		@apply text-muted-foreground;
 	}
 
@@ -148,10 +156,10 @@
 	}
 
 	:global(pre .line) {
-		@apply inline-block min-h-[1rem] w-full px-4 py-0.5;
+		@apply inline-block min-h-4 w-full px-4 py-0.5;
 	}
 
-	:global(.line-numbers pre .line) {
+	:global(pre.line-numbers .line) {
 		@apply px-2;
 	}
 </style>
