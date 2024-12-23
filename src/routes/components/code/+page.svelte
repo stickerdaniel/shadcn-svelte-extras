@@ -13,10 +13,10 @@
 	<examples.basic.Component />
 </Playground>
 <Installation specifier="ui/code" />
-<!-- <p>
+<p>
 	To highlight the code you'll need a to initialize the highlighter context you can do that by
 	adding the following code to your <CodeSpan>./src/routes/+layout.svelte</CodeSpan>:
-</p> -->
+</p>
 <Code lang="svelte" code={examples.providerCode} class="h-fit" highlight={[2, [6, 8]]} />
 <p>
 	The highlighter can be configured from <CodeSpan>shiki-provider.svelte</CodeSpan>.
