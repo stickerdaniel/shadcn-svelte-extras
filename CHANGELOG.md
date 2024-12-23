@@ -5,7 +5,7 @@
 
 ### Features
 
-* Highlight lines of `&lt;Code/&gt;` component ([0e67c78](https://github.com/ieedan/shadcn-svelte-extras/commit/0e67c781483b1cb16c2738378baf4e396c132fdc))
+* Highlight lines of `<Code/>` component ([0e67c78](https://github.com/ieedan/shadcn-svelte-extras/commit/0e67c781483b1cb16c2738378baf4e396c132fdc))
 
 ## [1.5.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.4.2...v1.5.0) (2024-12-20)
 
