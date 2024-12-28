@@ -17,5 +17,5 @@
 		</div>
 		<Copy {code} class="size-7" />
 	</div>
-	<Code lang="svelte" hideCopy class="border-none" {code} />
+	<Code lang="svelte" hideCopy class="border-none" {code} highlight={[2, 5]} />
 </div>

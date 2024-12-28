@@ -2,19 +2,21 @@
 	import type { Snippet } from 'svelte';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import { Folder, FolderOpen } from 'lucide-svelte';
+	import { cn } from '$lib/utils/utils';
 
 	type Props = {
 		name: string;
 		open?: boolean;
+		class?: string;
 		icon?: Snippet<[{ name: string; open: boolean }]>;
 		children?: Snippet<[]>;
 	};
 
-	let { name, open = $bindable(true), icon, children }: Props = $props();
+	let { name, open = $bindable(true), class: className, icon, children }: Props = $props();
 </script>
 
 <Collapsible.Root bind:open>
-	<Collapsible.Trigger class="flex place-items-center gap-1">
+	<Collapsible.Trigger class={cn('flex place-items-center gap-1', className)}>
 		{#if icon}
 			{@render icon({ name, open })}
 		{:else if open}
