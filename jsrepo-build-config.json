@@ -18,6 +18,7 @@
 		"phone-input",
 		"snippet",
 		"theme-selector",
+		"tree-view",
 		"active.svelte",
 		"shortcut.svelte",
 		"context-provider"

@@ -3,7 +3,8 @@
 		LoginForm,
 		ConfigureDevice,
 		PhoneNumberSetting,
-		CodeBlock
+		CodeBlock,
+		EditorFileTree
 	} from '$lib/components/docs/examples';
 	import ShadcnSvelteExtras from '$lib/components/shadcn-svelte-extras.svelte';
 	import { Snippet } from '$lib/components/ui/snippet';
@@ -23,5 +24,6 @@
 		<PhoneNumberSetting />
 		<Snippet text="npx shadcn-svelte@next init" />
 		<ConfigureDevice />
+		<EditorFileTree />
 	</div>
 </div>

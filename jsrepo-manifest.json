@@ -14,7 +14,7 @@
 				"dependencies": [],
 				"devDependencies": [
 					"lucide-svelte@^0.469.0",
-					"bits-ui@1.0.0-next.71",
+					"bits-ui@1.0.0-next.74",
 					"tailwind-variants@^0.3.0"
 				],
 				"_imports_": {
@@ -39,6 +39,19 @@
 				}
 			},
 			{
+				"name": "collapsible",
+				"directory": "src/lib/components/ui/collapsible",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": false,
+				"files": ["index.ts"],
+				"localDependencies": [],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.74"],
+				"_imports_": {}
+			},
+			{
 				"name": "command",
 				"directory": "src/lib/components/ui/command",
 				"category": "ui",
@@ -60,7 +73,7 @@
 				],
 				"localDependencies": ["ui/dialog", "utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.71", "lucide-svelte@^0.469.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.74", "lucide-svelte@^0.469.0"],
 				"_imports_": {
 					"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
@@ -84,7 +97,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.71", "lucide-svelte@^0.469.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.74", "lucide-svelte@^0.469.0"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -109,7 +122,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.71"],
+				"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.74"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -136,7 +149,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.71", "lucide-svelte@^0.469.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.74", "lucide-svelte@^0.469.0"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -157,7 +170,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.71", "tailwind-variants@^0.3.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.74", "tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/utils/utils": "{{utils/utils}}",
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
@@ -262,7 +275,7 @@
 				"files": ["index.ts", "popover-content.svelte"],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.71"],
+				"devDependencies": ["bits-ui@1.0.0-next.74"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -277,7 +290,7 @@
 				"files": ["index.ts", "scroll-area-scrollbar.svelte", "scroll-area.svelte"],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.71"],
+				"devDependencies": ["bits-ui@1.0.0-next.74"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -311,6 +324,27 @@
 				"_imports_": {
 					"$lib/components/ui/dropdown-menu/index.js": "{{ui/dropdown-menu}}/index.js",
 					"$lib/components/ui/button/index.js": "{{ui/button}}/index.js"
+				}
+			},
+			{
+				"name": "tree-view",
+				"directory": "src/lib/components/ui/tree-view",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [
+					"index.ts",
+					"tree-view-file.svelte",
+					"tree-view-folder.svelte",
+					"tree-view.svelte"
+				],
+				"localDependencies": ["utils/utils", "ui/collapsible"],
+				"dependencies": [],
+				"devDependencies": ["lucide-svelte@^0.469.0"],
+				"_imports_": {
+					"$lib/utils/utils": "{{utils/utils}}",
+					"$lib/components/ui/collapsible/index.js": "{{ui/collapsible}}/index.js"
 				}
 			}
 		]
