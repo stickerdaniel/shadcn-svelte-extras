@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.6.1...v1.7.0) (2024-12-28)
+
+
+### Features
+
+* `<TreeView/>` component ([3775e20](https://github.com/ieedan/shadcn-svelte-extras/commit/3775e203d39e9b6697505fd86097462023adfd45))
+
 ## [1.6.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.6.0...v1.6.1) (2024-12-28)
 
 
