@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.6.0...v1.6.1) (2024-12-28)
+
+
+### Bug Fixes
+
+* Move className to correct position in cn function ([ebada09](https://github.com/ieedan/shadcn-svelte-extras/commit/ebada0939963380c528d968828a60e980b657bdd))
+
 ## [1.6.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.5.0...v1.6.0) (2024-12-23)
 
 
