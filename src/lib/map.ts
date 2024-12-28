@@ -89,6 +89,13 @@ const map: Record<string, Route[]> = {
 			href: '/components/theme-selector',
 			specifier: 'ui/theme-selector',
 			source: 'src/lib/components/ui/theme-selector/theme-selector.svelte'
+		},
+		{
+			name: 'Tree View',
+			description: 'A file tree component.',
+			href: '/components/tree-view',
+			specifier: 'ui/tree-view',
+			source: 'src/lib/components/ui/tree-view'
 		}
 	],
 	Actions: [
