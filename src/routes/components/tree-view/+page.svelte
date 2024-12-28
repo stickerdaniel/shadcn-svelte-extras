@@ -7,12 +7,12 @@
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
-<Playground code={examples.basic.code} class="min-h-[225px]">
+<Playground code={examples.basic.code} class="min-h-[300px]">
 	<examples.basic.Component />
 </Playground>
 <Installation specifier="ui/tree-view" />
 <Subheading>Custom Icons</Subheading>
-<Playground code={examples.customIcons.code} class="min-h-[225px]">
+<Playground code={examples.customIcons.code} class="min-h-[300px]">
 	<examples.customIcons.Component />
 </Playground>
 <p>
