@@ -31,7 +31,7 @@
 				"files": ["code.svelte", "copy.svelte", "index.ts", "langs.ts", "shiki-provider.svelte"],
 				"localDependencies": ["utils/utils", "ui/button", "utils/context-provider"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.3.0", "lucide-svelte@^0.469.0", "shiki@^1.24.3"],
+				"devDependencies": ["tailwind-variants@^0.3.0", "lucide-svelte@^0.469.0", "shiki@^1.24.4"],
 				"_imports_": {
 					"$lib/utils/utils": "{{utils/utils}}",
 					"$lib/components/ui/button": "{{ui/button}}",
@@ -415,7 +415,7 @@
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
-				"devDependencies": ["clsx@^2.1.1", "tailwind-merge@^2.5.5"]
+				"devDependencies": ["clsx@^2.1.1", "tailwind-merge@^2.6.0"]
 			}
 		]
 	}
