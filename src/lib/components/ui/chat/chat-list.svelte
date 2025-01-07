@@ -25,7 +25,10 @@
 				// prevent scroll when adding the scroll to bottom button
 				for (const record of records) {
 					for (const node of record.addedNodes) {
-						if (node.hasOwnProperty('getAttribute') && (node as HTMLElement).getAttribute('data-scroll-to-bottom')) {
+						if (
+							node.hasOwnProperty('getAttribute') &&
+							(node as HTMLElement).getAttribute('data-scroll-to-bottom')
+						) {
 							return;
 						}
 					}

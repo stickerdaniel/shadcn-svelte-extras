@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Root } from '$lib/components/ui/avatar';
 	import { Avatar as AvatarPrimitive } from 'bits-ui';
 	import { cn } from '$lib/utils/utils.js';
 
@@ -6,11 +7,11 @@
 		ref = $bindable(null),
 		class: className,
 		...restProps
-	}: AvatarPrimitive.FallbackProps = $props();
+	}: AvatarPrimitive.RootProps = $props();
 </script>
 
-<AvatarPrimitive.Fallback
+<Root
 	bind:ref
-	class={cn('flex h-full w-full items-center justify-center rounded-full bg-muted', className)}
+	class={cn("order-1 group-data-[variant='sent']/chat-bubble:order-2", className)}
 	{...restProps}
 />

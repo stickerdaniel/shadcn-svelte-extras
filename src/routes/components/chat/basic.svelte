@@ -4,83 +4,31 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Info, Paperclip, Phone, Send, VideoIcon } from 'lucide-svelte';
 	import { Input } from '$lib/components/ui/input';
+	import * as data from './data';
 
 	let message = $state('');
 
-	type User = {
-		id: string;
-		username: string;
-		name: string;
-		img: string;
-	};
+	const messages = $state(data.messages);
 
-	type Message = {
-		senderId: string;
-		message: string;
-		sentAt: string;
-	};
-
-	const user: User = {
-		id: '123456',
-		name: 'Jane Doe',
-		username: '@janedoe',
-		img: 'https://images.freeimages.com/images/large-previews/971/basic-shape-avatar-1632968.jpg?fmt=webp&h=350'
-	};
-
-	const friend: User = {
-		id: '654321',
-		name: 'John Doe',
-		username: '@johndoe',
-		img: 'https://images.freeimages.com/images/large-previews/fdd/man-avatar-1632964.jpg?fmt=webp&h=35'
-	};
-
-	const users = [user, friend];
-
-	const messages: Message[] = $state([
-		{
-			senderId: '123456',
-			message: 'Hey, hows it going!',
-			sentAt: '11:05 AM'
-		},
-		{
-			senderId: '654321',
-			message: 'Good! How about you?',
-			sentAt: '11:10 AM'
-		},
-		{
-			senderId: '654321',
-			message: 'I have been working on something verry big!',
-			sentAt: '11:12 AM'
-		},
-		{
-			senderId: '123456',
-			message: 'Oh really well you will have to show me when you are done!',
-			sentAt: '11:14 AM'
-		},
-		{
-			senderId: '654321',
-			message:
-				'Basically it is a library where you can copy paste the code and it will just work in your project. But the real hook is that it comes with a CLI!',
-			sentAt: '11:17 AM'
-		}
-	]);
+	const getInitials = (name: string) =>
+		name
+			.split(' ')
+			.map((n) => n[0])
+			.join('');
 </script>
 
 <div class="w-full p-2">
 	<div class="w-full border border-border">
-		<div class="flex place-items-center justify-between border-b p-2 bg-background">
+		<div class="flex place-items-center justify-between border-b bg-background p-2">
 			<div class="flex place-items-center gap-2">
 				<Avatar.Root>
-					<Avatar.Image src={friend.img} alt={friend.username} />
+					<Avatar.Image src={data.friend.img} alt={data.friend.username} />
 					<Avatar.Fallback>
-						{friend.name
-							.split(' ')
-							.map((n) => n[0])
-							.join('')}
+						{getInitials(data.friend.name)}
 					</Avatar.Fallback>
 				</Avatar.Root>
 				<div class="flex flex-col">
-					<span class="text-sm font-medium">{friend.name}</span>
+					<span class="text-sm font-medium">{data.friend.name}</span>
 					<span class="text-xs">Active 2 mins ago</span>
 				</div>
 			</div>
@@ -98,28 +46,32 @@
 		</div>
 		<Chat.List class="max-h-[400px]">
 			{#each messages as message}
-				{@const sender = users.find((u) => u.id === message.senderId)}
+				{@const sender = data.users.find((u) => u.id === message.senderId)}
 
-				<Chat.Bubble variant={message.senderId === user.id ? 'sent' : 'received'}>
-					{#snippet avatar()}
-						<Avatar.Root>
-							<Avatar.Image src={sender?.img} alt={sender?.username} />
-							<Avatar.Fallback>
-								{sender?.name
-									.split(' ')
-									.map((n) => n[0])
-									.join('')}
-							</Avatar.Fallback>
-						</Avatar.Root>
-					{/snippet}
-					<div class="flex flex-col gap-1">
+				<Chat.Bubble variant={message.senderId === data.user.id ? 'sent' : 'received'}>
+					<Chat.BubbleAvatar>
+						<Chat.BubbleAvatarImage src={sender?.img} alt={sender?.username} />
+						<Chat.BubbleAvatarFallback>
+							{getInitials(sender?.name ?? '')}
+						</Chat.BubbleAvatarFallback>
+					</Chat.BubbleAvatar>
+					<Chat.BubbleMessage class="flex flex-col gap-1">
 						<p>{message.message}</p>
 						<div class="w-full text-xs group-data-[variant='sent']/chat-bubble:text-end">
 							{message.sentAt}
 						</div>
-					</div>
+					</Chat.BubbleMessage>
 				</Chat.Bubble>
 			{/each}
+			<Chat.Bubble variant="received">
+				<Chat.BubbleAvatar>
+					<Chat.BubbleAvatarImage src={data.friend.img} alt={data.friend.username} />
+					<Chat.BubbleAvatarFallback>
+						{getInitials(data.friend.name)}
+					</Chat.BubbleAvatarFallback>
+				</Chat.BubbleAvatar>
+				<Chat.BubbleMessage typing />
+			</Chat.Bubble>
 		</Chat.List>
 		<form
 			onsubmit={(e) => {
