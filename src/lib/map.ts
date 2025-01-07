@@ -28,6 +28,13 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/button/button.svelte'
 		},
 		{
+			name: 'Chat',
+			description: 'Components for creating live chats.',
+			href: '/components/chat',
+			specifier: 'ui/chat',
+			source: 'src/lib/components/ui/chat'
+		},
+		{
 			name: 'Code',
 			description: 'A code component.',
 			href: '/components/code',

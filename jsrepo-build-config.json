@@ -9,6 +9,7 @@
 	"doNotListCategories": [],
 	"listBlocks": [
 		"button",
+		"chat",
 		"code",
 		"field-set",
 		"ipv4address-input",
