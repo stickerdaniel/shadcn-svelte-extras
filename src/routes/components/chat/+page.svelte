@@ -7,7 +7,7 @@
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
-<Playground code={examples.basic.code} class="min-h-[700px]">
+<Playground code={examples.basic.code} class="min-h-[625px] p-4">
 	<examples.basic.Component />
 </Playground>
 <Installation specifier="ui/chat" />

@@ -46,6 +46,12 @@
 	});
 </script>
 
+<svelte:window
+	onresize={() => {
+		ref?.scrollTo(0, ref.scrollHeight);
+	}}
+/>
+
 <div class="relative">
 	<div
 		class={cn('flex h-full w-full flex-col gap-4 overflow-y-auto p-4', className, {

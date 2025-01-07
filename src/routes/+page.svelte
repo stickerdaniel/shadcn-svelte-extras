@@ -9,6 +9,7 @@
 	import ShadcnSvelteExtras from '$lib/components/shadcn-svelte-extras.svelte';
 	import { Snippet } from '$lib/components/ui/snippet';
 	import SearchButton from '$lib/components/search-button.svelte';
+	import ChatExample from './components/chat/basic.svelte';
 </script>
 
 <p>
@@ -19,6 +20,7 @@
 		<LoginForm />
 		<CodeBlock />
 		<SearchButton />
+		<ChatExample />
 	</div>
 	<div class="flex flex-col gap-4 lg:col-start-2">
 		<PhoneNumberSetting />
