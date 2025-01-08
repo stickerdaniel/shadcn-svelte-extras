@@ -3,6 +3,21 @@
 		"name": "ui",
 		"blocks": [
 			{
+				"name": "avatar",
+				"directory": "src/lib/components/ui/avatar",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": false,
+				"files": ["avatar-fallback.svelte", "avatar-image.svelte", "avatar.svelte", "index.ts"],
+				"localDependencies": ["utils/utils"],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.77"],
+				"_imports_": {
+					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
 				"name": "button",
 				"directory": "src/lib/components/ui/button",
 				"category": "ui",
@@ -14,11 +29,42 @@
 				"dependencies": [],
 				"devDependencies": [
 					"lucide-svelte@^0.469.0",
-					"bits-ui@1.0.0-next.74",
+					"bits-ui@1.0.0-next.77",
 					"tailwind-variants@^0.3.0"
 				],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
+				}
+			},
+			{
+				"name": "chat",
+				"directory": "src/lib/components/ui/chat",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": [
+					"chat-bubble-avatar.svelte",
+					"chat-bubble-message.svelte",
+					"chat-bubble.svelte",
+					"chat-list.svelte",
+					"index.ts",
+					"loading-dots.svelte"
+				],
+				"localDependencies": [
+					"ui/avatar",
+					"utils/utils",
+					"ui/button",
+					"hooks/use-auto-scroll.svelte"
+				],
+				"dependencies": [],
+				"devDependencies": ["bits-ui@1.0.0-next.77", "lucide-svelte@^0.469.0"],
+				"_imports_": {
+					"$lib/components/ui/avatar": "{{ui/avatar}}",
+					"$lib/utils/utils.js": "{{utils/utils}}.js",
+					"$lib/utils/utils": "{{utils/utils}}",
+					"$lib/components/ui/button": "{{ui/button}}",
+					"$lib/hooks/use-auto-scroll.svelte.js": "{{hooks/use-auto-scroll.svelte}}.js"
 				}
 			},
 			{
@@ -31,7 +77,7 @@
 				"files": ["code.svelte", "copy.svelte", "index.ts", "langs.ts", "shiki-provider.svelte"],
 				"localDependencies": ["utils/utils", "ui/button", "utils/context-provider"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.3.0", "lucide-svelte@^0.469.0", "shiki@^1.24.4"],
+				"devDependencies": ["tailwind-variants@^0.3.0", "lucide-svelte@^0.469.0", "shiki@^1.26.1"],
 				"_imports_": {
 					"$lib/utils/utils": "{{utils/utils}}",
 					"$lib/components/ui/button": "{{ui/button}}",
@@ -48,7 +94,7 @@
 				"files": ["index.ts"],
 				"localDependencies": [],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.74"],
+				"devDependencies": ["bits-ui@1.0.0-next.77"],
 				"_imports_": {}
 			},
 			{
@@ -73,7 +119,7 @@
 				],
 				"localDependencies": ["ui/dialog", "utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.74", "lucide-svelte@^0.469.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.77", "lucide-svelte@^0.469.0"],
 				"_imports_": {
 					"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
@@ -97,7 +143,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.74", "lucide-svelte@^0.469.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.77", "lucide-svelte@^0.469.0"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -122,7 +168,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.74"],
+				"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.77"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -149,7 +195,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.74", "lucide-svelte@^0.469.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.77", "lucide-svelte@^0.469.0"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -170,7 +216,7 @@
 				],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.74", "tailwind-variants@^0.3.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.77", "tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/utils/utils": "{{utils/utils}}",
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
@@ -275,7 +321,7 @@
 				"files": ["index.ts", "popover-content.svelte"],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.74"],
+				"devDependencies": ["bits-ui@1.0.0-next.77"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -290,7 +336,7 @@
 				"files": ["index.ts", "scroll-area-scrollbar.svelte", "scroll-area.svelte"],
 				"localDependencies": ["utils/utils"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.74"],
+				"devDependencies": ["bits-ui@1.0.0-next.77"],
 				"_imports_": {
 					"$lib/utils/utils.js": "{{utils/utils}}.js"
 				}
@@ -373,6 +419,24 @@
 				"subdirectory": false,
 				"list": true,
 				"files": ["shortcut.svelte.ts"],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [],
+				"devDependencies": []
+			}
+		]
+	},
+	{
+		"name": "hooks",
+		"blocks": [
+			{
+				"name": "use-auto-scroll.svelte",
+				"directory": "src/lib/hooks",
+				"category": "hooks",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": ["use-auto-scroll.svelte.ts"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],

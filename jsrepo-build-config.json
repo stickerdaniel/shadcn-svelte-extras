@@ -22,7 +22,8 @@
 		"tree-view",
 		"active.svelte",
 		"shortcut.svelte",
-		"context-provider"
+		"context-provider",
+		"use-auto-scroll.svelte"
 	],
 	"listCategories": [],
 	"excludeDeps": ["svelte"],
