@@ -29,6 +29,7 @@ export default ts.config(
 					argsIgnorePattern: '^_'
 				}
 			],
+			'no-prototype-builtins': 'off',
 			'no-useless-escape': 'warn'
 		}
 	},

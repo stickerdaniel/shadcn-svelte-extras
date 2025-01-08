@@ -28,6 +28,13 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/button/button.svelte'
 		},
 		{
+			name: 'Chat',
+			description: 'Components for creating live chats.',
+			href: '/components/chat',
+			specifier: 'ui/chat',
+			source: 'src/lib/components/ui/chat'
+		},
+		{
 			name: 'Code',
 			description: 'A code component.',
 			href: '/components/code',
@@ -112,6 +119,16 @@ const map: Record<string, Route[]> = {
 			href: '/actions/shortcut',
 			specifier: 'actions/shortcut.svelte',
 			source: 'src/lib/actions/shortcut.svelte.ts'
+		}
+	],
+	Hooks: [
+		{
+			name: 'UseAutoScroll',
+			description:
+				'A hook to enable the creation of containers that automatically scroll to the bottom of their content.',
+			href: '/hooks/use-auto-scroll',
+			specifier: 'hooks/use-auto-scroll.svelte',
+			source: 'src/lib/hooks/use-auto-scroll.svelte.ts'
 		}
 	],
 	Utils: [
