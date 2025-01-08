@@ -5,6 +5,7 @@
 	import { Info, Paperclip, Phone, Send, VideoIcon } from 'lucide-svelte';
 	import { Input } from '$lib/components/ui/input';
 	import * as data from './data';
+	import { formatShortTime } from './utils';
 
 	let message = $state('');
 
@@ -76,7 +77,7 @@
 		onsubmit={(e) => {
 			e.preventDefault();
 
-			messages.push({ message, senderId: '123456', sentAt: '11:20 AM' });
+			messages.push({ message, senderId: '123456', sentAt: formatShortTime(new Date()) });
 
 			message = '';
 		}}

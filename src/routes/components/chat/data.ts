@@ -1,31 +1,61 @@
 import type { Message, User } from './types';
+import { formatShortTime } from './utils';
+
+const firstMessageMinutesAgo = 25;
+
+const now = new Date();
+const baseTime = new Date(now.getTime() - firstMessageMinutesAgo * 60000);
 
 export const messages: Message[] = [
 	{
 		senderId: '123456',
-		message: 'Hey, hows it going!',
-		sentAt: '11:05 AM'
+		message: 'Hey, did you see Svelte 5 just got released?',
+		sentAt: formatShortTime(new Date(baseTime.getTime()))
 	},
 	{
 		senderId: '654321',
-		message: 'Good! How about you?',
-		sentAt: '11:10 AM'
-	},
-	{
-		senderId: '654321',
-		message: 'I have been working on something verry big!',
-		sentAt: '11:12 AM'
+		message: 'Yes! The runes system looks really interesting!',
+		sentAt: formatShortTime(new Date(baseTime.getTime() + 3 * 60000))
 	},
 	{
 		senderId: '123456',
-		message: 'Oh really well you will have to show me when you are done!',
-		sentAt: '11:14 AM'
+		message: 'Right? Such a big change from the previous reactive system',
+		sentAt: formatShortTime(new Date(baseTime.getTime() + 5 * 60000))
 	},
 	{
 		senderId: '654321',
-		message:
-			'Basically it is a library where you can copy paste the code and it will just work in your project. But the real hook is that it comes with a CLI!',
-		sentAt: '11:17 AM'
+		message: 'Have you tried migrating any projects to it yet?',
+		sentAt: formatShortTime(new Date(baseTime.getTime() + 8 * 60000))
+	},
+	{
+		senderId: '123456',
+		message: 'Just started with a small one. The migration guide is super helpful',
+		sentAt: formatShortTime(new Date(baseTime.getTime() + 10 * 60000))
+	},
+	{
+		senderId: '654321',
+		message: 'Any breaking changes causing issues?',
+		sentAt: formatShortTime(new Date(baseTime.getTime() + 13 * 60000))
+	},
+	{
+		senderId: '123456',
+		message: 'The new $state syntax took some getting used to, but its cleaner now',
+		sentAt: formatShortTime(new Date(baseTime.getTime() + 15 * 60000))
+	},
+	{
+		senderId: '654321',
+		message: 'The performance improvements are impressive too',
+		sentAt: formatShortTime(new Date(baseTime.getTime() + 18 * 60000))
+	},
+	{
+		senderId: '123456',
+		message: 'Yeah, the compiler optimizations are amazing. Much faster now',
+		sentAt: formatShortTime(new Date(baseTime.getTime() + 20 * 60000))
+	},
+	{
+		senderId: '654321',
+		message: 'Looking forward to using it in our next project!',
+		sentAt: formatShortTime(new Date(baseTime.getTime() + 23 * 60000))
 	}
 ];
 
