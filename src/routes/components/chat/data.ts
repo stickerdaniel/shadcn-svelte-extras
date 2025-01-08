@@ -54,7 +54,7 @@ export const messages: Message[] = [
 	},
 	{
 		senderId: '654321',
-		message: 'Looking forward to using it in our next project!',
+		message: 'Looking forward to using it in my next project!',
 		sentAt: formatShortTime(new Date(baseTime.getTime() + 23 * 60000))
 	}
 ];

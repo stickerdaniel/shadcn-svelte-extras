@@ -121,6 +121,16 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/actions/shortcut.svelte.ts'
 		}
 	],
+	Hooks: [
+		{
+			name: 'UseAutoScroll',
+			description:
+				'A hook to enable the creation of containers that automatically scroll to the bottom of their content.',
+			href: '/hooks/use-auto-scroll',
+			specifier: 'hooks/use-auto-scroll.svelte',
+			source: 'src/lib/hooks/use-auto-scroll.svelte.ts'
+		}
+	],
 	Utils: [
 		{
 			name: 'Context Provider',

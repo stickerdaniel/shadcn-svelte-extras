@@ -5,17 +5,11 @@
 	import { Info, Paperclip, Phone, Send, VideoIcon } from 'lucide-svelte';
 	import { Input } from '$lib/components/ui/input';
 	import * as data from './data';
-	import { formatShortTime } from './utils';
+	import { formatShortTime, initials } from './utils';
 
 	let message = $state('');
 
 	const messages = $state(data.messages);
-
-	const getInitials = (name: string) =>
-		name
-			.split(' ')
-			.map((n) => n[0])
-			.join('');
 </script>
 
 <div class="w-full border border-border">
@@ -24,7 +18,7 @@
 			<Avatar.Root>
 				<Avatar.Image src={data.friend.img} alt={data.friend.username} />
 				<Avatar.Fallback>
-					{getInitials(data.friend.name)}
+					{initials(data.friend.name)}
 				</Avatar.Fallback>
 			</Avatar.Root>
 			<div class="flex flex-col">
@@ -52,7 +46,7 @@
 				<Chat.BubbleAvatar>
 					<Chat.BubbleAvatarImage src={sender?.img} alt={sender?.username} />
 					<Chat.BubbleAvatarFallback>
-						{getInitials(sender?.name ?? '')}
+						{initials(sender?.name ?? '')}
 					</Chat.BubbleAvatarFallback>
 				</Chat.BubbleAvatar>
 				<Chat.BubbleMessage class="flex flex-col gap-1">
@@ -67,7 +61,7 @@
 			<Chat.BubbleAvatar>
 				<Chat.BubbleAvatarImage src={data.friend.img} alt={data.friend.username} />
 				<Chat.BubbleAvatarFallback>
-					{getInitials(data.friend.name)}
+					{initials(data.friend.name)}
 				</Chat.BubbleAvatarFallback>
 			</Chat.BubbleAvatar>
 			<Chat.BubbleMessage typing />
@@ -77,7 +71,7 @@
 		onsubmit={(e) => {
 			e.preventDefault();
 
-			messages.push({ message, senderId: '123456', sentAt: formatShortTime(new Date()) });
+			messages.push({ message, senderId: data.user.id, sentAt: formatShortTime(new Date()) });
 
 			message = '';
 		}}

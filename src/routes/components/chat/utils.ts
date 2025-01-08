@@ -5,3 +5,9 @@ export const formatShortTime = (date: Date) => {
 		hour12: true
 	});
 };
+
+export const initials = (name: string) =>
+	name
+		.split(' ')
+		.map((n) => n[0])
+		.join('');
