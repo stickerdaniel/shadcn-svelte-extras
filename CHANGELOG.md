@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.7.0...v1.8.0) (2025-01-08)
+
+
+### Features
+
+* `<Chat/>` and `use-auto-scroll` blocks ([b8a5d46](https://github.com/ieedan/shadcn-svelte-extras/commit/b8a5d46e6763e2db98f18780258e1b5e65c4f851))
+
 ## [1.7.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.6.1...v1.7.0) (2024-12-28)
 
 
