@@ -11,7 +11,7 @@ Turn key shadcn-svelte components to help finish you your app.
 **Initialize jsrepo**:
 
 ```bash
-jsrepo init --project --repos github/ieedan/shadcn-svelte-extras
+jsrepo init github/ieedan/shadcn-svelte-extras
 ```
 
 **Install components**:
