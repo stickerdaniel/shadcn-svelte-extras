@@ -69,7 +69,12 @@
 					<SearchButton class="w-[200px] transition-all sm:w-[250px]" />
 				</div>
 				<div class="flex place-items-center gap-1">
-					<Button variant="ghost" size="icon">
+					<Button
+						variant="ghost"
+						size="icon"
+						href="https://github.com/ieedan/shadcn-svelte-extras"
+						target="_blank"
+					>
 						<Icons.GitHub class="size-4" />
 					</Button>
 					<LightSwitch variant="ghost" />
