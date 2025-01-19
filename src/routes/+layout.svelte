@@ -63,13 +63,20 @@
 		<AppSidebar />
 		<!-- Do NOT ask me why this is here it makes it work that's what matters -->
 		<Sidebar.Inset class="w-[200px]">
-			<header class="flex h-16 place-items-center justify-between border-b border-border pl-2 pr-6">
+			<header
+				class="sticky top-0 z-10 flex h-16 place-items-center justify-between border-b border-border bg-background pl-2 pr-6"
+			>
 				<div class="flex place-items-center gap-2">
 					<Sidebar.Trigger class="md:hidden" />
 					<SearchButton class="w-[200px] transition-all sm:w-[250px]" />
 				</div>
 				<div class="flex place-items-center gap-1">
-					<Button variant="ghost" size="icon">
+					<Button
+						variant="ghost"
+						size="icon"
+						href="https://github.com/ieedan/shadcn-svelte-extras"
+						target="_blank"
+					>
 						<Icons.GitHub class="size-4" />
 					</Button>
 					<LightSwitch variant="ghost" />
