@@ -11,9 +11,10 @@
 </Playground>
 <Installation specifier={'actions/shortcut.svelte'} />
 <Subheading>Usage</Subheading>
-<Code
-	lang="svelte"
-	code={`<!-- Ctrl/Command + K shortcut -->
+<div>
+	<Code
+		lang="svelte"
+		code={`<!-- Ctrl/Command + K shortcut -->
 <svelte:window
 		use:shortcut={{
 			key: 'k',
@@ -21,12 +22,14 @@
 			callback: commandMenu.toggle
 		}}
 />`}
-/>
+	/>
+</div>
 <Subheading>Multiple</Subheading>
 <p>Configure multiple shortcuts by providing an array of options.</p>
-<Code
-	lang="svelte"
-	code={`<svelte:window
+<div>
+	<Code
+		lang="svelte"
+		code={`<svelte:window
 		use:shortcut={[
 			{
 				key: 'k',
@@ -40,4 +43,5 @@
 			}
 		]}
 />`}
-/>
+	/>
+</div>
