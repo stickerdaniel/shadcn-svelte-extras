@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex place-items-end gap-2">
-	<Kbd size="sm">K</Kbd>
-	<Kbd>K</Kbd>
-	<Kbd size="lg">K</Kbd>
+	<Kbd size="sm">A</Kbd>
+	<Kbd>B</Kbd>
+	<Kbd size="lg">C</Kbd>
 </div>
