@@ -82,18 +82,20 @@
 	<Input
 		bind:ref={firstInput}
 		goNext={() => secondInput?.focus()}
-		bind:value={() => octets[0],
-		(v) => {
-			const tempOctets = octets;
+		bind:value={
+			() => octets[0],
+			(v) => {
+				const tempOctets = octets;
 
-			if (v == null || v === '') {
-				tempOctets[0] = null;
-			} else {
-				tempOctets[0] = v;
+				if (v == null || v === '') {
+					tempOctets[0] = null;
+				} else {
+					tempOctets[0] = v;
+				}
+
+				value = format(tempOctets);
 			}
-
-			value = format(tempOctets);
-		}}
+		}
 		placeholder={parsedPlaceholder ? parsedPlaceholder[0] : undefined}
 		onpaste={paste}
 	/>
@@ -102,18 +104,20 @@
 		bind:ref={secondInput}
 		goNext={() => thirdInput?.focus()}
 		goPrevious={() => firstInput?.focus()}
-		bind:value={() => octets[1],
-		(v) => {
-			const tempOctets = octets;
+		bind:value={
+			() => octets[1],
+			(v) => {
+				const tempOctets = octets;
 
-			if (v == null || v === '') {
-				tempOctets[1] = null;
-			} else {
-				tempOctets[1] = v;
+				if (v == null || v === '') {
+					tempOctets[1] = null;
+				} else {
+					tempOctets[1] = v;
+				}
+
+				value = format(tempOctets);
 			}
-
-			value = format(tempOctets);
-		}}
+		}
 		placeholder={parsedPlaceholder ? parsedPlaceholder[1] : undefined}
 		onpaste={paste}
 	/>
@@ -122,18 +126,20 @@
 		bind:ref={thirdInput}
 		goNext={() => fourthInput?.focus()}
 		goPrevious={() => secondInput?.focus()}
-		bind:value={() => octets[2],
-		(v) => {
-			const tempOctets = octets;
+		bind:value={
+			() => octets[2],
+			(v) => {
+				const tempOctets = octets;
 
-			if (v == null || v === '') {
-				tempOctets[2] = null;
-			} else {
-				tempOctets[2] = v;
+				if (v == null || v === '') {
+					tempOctets[2] = null;
+				} else {
+					tempOctets[2] = v;
+				}
+
+				value = format(tempOctets);
 			}
-
-			value = format(tempOctets);
-		}}
+		}
 		placeholder={parsedPlaceholder ? parsedPlaceholder[2] : undefined}
 		onpaste={paste}
 	/>
@@ -141,18 +147,20 @@
 	<Input
 		bind:ref={fourthInput}
 		goPrevious={() => thirdInput?.focus()}
-		bind:value={() => octets[3],
-		(v) => {
-			const tempOctets = octets;
+		bind:value={
+			() => octets[3],
+			(v) => {
+				const tempOctets = octets;
 
-			if (v == null || v === '') {
-				tempOctets[3] = null;
-			} else {
-				tempOctets[3] = v;
+				if (v == null || v === '') {
+					tempOctets[3] = null;
+				} else {
+					tempOctets[3] = v;
+				}
+
+				value = format(tempOctets);
 			}
-
-			value = format(tempOctets);
-		}}
+		}
 		placeholder={parsedPlaceholder ? parsedPlaceholder[3] : undefined}
 		onpaste={paste}
 	/>
