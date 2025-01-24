@@ -168,7 +168,7 @@
 
 <div
 	class={cn(
-		'flex min-h-12 w-full flex-wrap place-items-center gap-2 rounded-md border border-input bg-background px-2 py-2 disabled:opacity-50 aria-disabled:cursor-not-allowed',
+		'flex min-h-[50px] w-full flex-wrap place-items-center gap-2 rounded-md border border-input bg-background px-2 py-2 disabled:opacity-50 aria-disabled:cursor-not-allowed',
 		className
 	)}
 	aria-disabled={disabled}
@@ -184,6 +184,6 @@
 		{placeholder}
 		data-invalid={invalid}
 		onkeydown={keydown}
-		class="min-w-16 flex-grow border-none bg-transparent px-2 outline-none placeholder:text-muted-foreground focus:outline-none disabled:cursor-not-allowed data-[invalid=true]:text-red-500 md:text-sm"
+		class="min-w-16 shrink grow basis-0 border-none bg-transparent px-2 outline-none placeholder:text-muted-foreground focus:outline-none disabled:cursor-not-allowed data-[invalid=true]:text-red-500 md:text-sm"
 	/>
 </div>

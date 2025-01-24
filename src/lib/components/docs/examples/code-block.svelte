@@ -9,7 +9,7 @@
 <ModeWatcher/>`;
 </script>
 
-<div class="rounded-lg border border-border">
+<div class="overflow-hidden rounded-lg border border-border">
 	<div class="flex place-items-center justify-between border-b border-border p-2">
 		<div class="flex place-items-center gap-2">
 			<Svelte class="size-4" />
