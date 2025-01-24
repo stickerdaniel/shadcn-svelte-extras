@@ -10,6 +10,9 @@
 	import { Snippet } from '$lib/components/ui/snippet';
 	import SearchButton from '$lib/components/search-button.svelte';
 	import ChatExample from './components/chat/basic.svelte';
+	import { TagsInput } from '$lib/components/ui/tags-input';
+
+	let tags = $state(['shadcn-svelte', 'extras']);
 </script>
 
 <p>
@@ -19,8 +22,9 @@
 	<div class="flex flex-col gap-4 lg:col-start-1">
 		<LoginForm />
 		<CodeBlock />
-		<SearchButton />
+		<TagsInput bind:value={tags} placeholder="Add a tag" />
 		<ChatExample />
+		<SearchButton />
 	</div>
 	<div class="flex flex-col gap-4 lg:col-start-2">
 		<PhoneNumberSetting />
