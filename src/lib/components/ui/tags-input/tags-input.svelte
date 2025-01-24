@@ -1,26 +1,19 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import type { HTMLInputAttributes } from 'svelte/elements';
+	import type { TagsInputProps } from './types';
 	import TagsInputTag from './tags-input-tag.svelte';
 	import { untrack } from 'svelte';
 
-	interface Props extends HTMLInputAttributes {
-		value?: string[];
-		class?: string;
-		placeholder?: string;
-		disabled?: boolean;
-		validate?: (val: string, tags: string[]) => string | undefined;
-	}
+	const defaultValidate: TagsInputProps['validate'] = (val, tags) => {
+		const transformed = val.trim();
 
-	const defaultValidate: Props['validate'] = (val, tags) => {
 		// disallow empties
-		if (val.trim().length === 0) return undefined;
+		if (transformed.length === 0) return undefined;
 
 		// disallow duplicates
-		if (tags.find((t) => val.trim() === t)) return undefined;
+		if (tags.find((t) => transformed === t)) return undefined;
 
-		// trim before submit
-		return val.trim();
+		return transformed;
 	};
 
 	let {
@@ -30,7 +23,7 @@
 		disabled = false,
 		validate = defaultValidate,
 		...rest
-	}: Props = $props();
+	}: TagsInputProps = $props();
 
 	let inputValue = $state('');
 	let tagIndex = $state<number>();
