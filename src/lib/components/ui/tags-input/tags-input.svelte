@@ -96,15 +96,17 @@
 
 		if (e.key === 'Delete') {
 			if (isAtBeginning) {
-				if (tagIndex !== undefined) {
-					e.preventDefault();
+				if (inputValue.length === 0) {
+					if (tagIndex !== undefined) {
+						e.preventDefault();
 
-					deleteIndex(tagIndex);
+						deleteIndex(tagIndex);
 
-					// stay focused on the same index unless value.length === 0
-					if (value.length === 0) tagIndex = undefined;
+						// stay focused on the same index unless value.length === 0
+						if (value.length === 0) tagIndex = undefined;
 
-					shouldResetIndex = false;
+						shouldResetIndex = false;
+					}
 				}
 			}
 		}
