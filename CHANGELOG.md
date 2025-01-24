@@ -5,7 +5,7 @@
 
 ### Features
 
-* `&lt;TagsInput/&gt;` component ([e7f42c5](https://github.com/ieedan/shadcn-svelte-extras/commit/e7f42c5e0f73f096a004543445076d457a320831))
+* `<TagsInput/>` component ([e7f42c5](https://github.com/ieedan/shadcn-svelte-extras/commit/e7f42c5e0f73f096a004543445076d457a320831))
 
 ## [1.8.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.7.0...v1.8.0) (2025-01-08)
 
