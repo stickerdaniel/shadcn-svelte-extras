@@ -27,7 +27,7 @@
 	For most of the validation and transformation you will need to do you can use the
 	<CodeSpan>validate</CodeSpan> property.
 </p>
-<p>For example let's say you want to make all of the tags lowercase:</p>
+<p>For example let's say you want to make all of the tags lowercase.</p>
 <p>Write a custom validate function:</p>
 <div>
 	<Code lang="typescript" code={examples.customValidateCode} />
