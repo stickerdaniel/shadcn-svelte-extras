@@ -91,6 +91,13 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/snippet/snippet.svelte'
 		},
 		{
+			name: 'Tags Input',
+			description: 'A tags input component.',
+			href: '/components/tags-input',
+			specifier: 'ui/tags-input',
+			source: 'src/lib/components/ui/tags-input'
+		},
+		{
 			name: 'Theme Selector',
 			description: 'Click to select the theme.',
 			href: '/components/theme-selector',
