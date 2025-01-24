@@ -18,6 +18,7 @@
 		"modal",
 		"phone-input",
 		"snippet",
+		"tags-input",
 		"theme-selector",
 		"tree-view",
 		"active.svelte",
