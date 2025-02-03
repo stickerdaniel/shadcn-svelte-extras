@@ -5,7 +5,7 @@
 
 ### Bug Fixes
 
-* Prevent default on `enter` for `&lt;TagsInput/&gt;` ([f4595a9](https://github.com/ieedan/shadcn-svelte-extras/commit/f4595a9d65eee410782633f0f2044308d4f9e7c8))
+* Prevent default on `enter` for `<TagsInput/>` ([f4595a9](https://github.com/ieedan/shadcn-svelte-extras/commit/f4595a9d65eee410782633f0f2044308d4f9e7c8))
 
 ## [1.9.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.8.0...v1.9.0) (2025-01-24)
 
