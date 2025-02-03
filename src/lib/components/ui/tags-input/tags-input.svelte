@@ -56,6 +56,9 @@
 		const target = e.target as HTMLInputElement;
 
 		if (e.key === 'Enter') {
+			// prevent form submit
+			e.preventDefault();
+
 			enter();
 			return;
 		}
