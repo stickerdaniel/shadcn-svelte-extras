@@ -1,5 +1,13 @@
 {
-	"$schema": "https://unpkg.com/jsrepo@1.21.0/schemas/registry-config.json",
+	"$schema": "https://unpkg.com/jsrepo@1.30.1/schemas/registry-config.json",
+	"meta": {
+		"authors": ["Aidan Bleser"],
+		"bugs": "https://github.com/ieedan/shadcn-svelte-extras/issues",
+		"description": "Turn key shadcn-svelte components to help finish your app.",
+		"homepage": "https://www.shadcn-svelte-extras.com/",
+		"repository": "https://github.com/ieedan/shadcn-svelte-extras",
+		"tags": ["svelte", "shadcn", "typescript", "components", "utilities"]
+	},
 	"dirs": ["./src/lib/components", "./src/lib"],
 	"includeBlocks": [],
 	"includeCategories": ["ui", "hooks", "utils", "actions", "styles"],
