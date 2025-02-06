@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Svelte } from '$lib/components/icons';
-	import { Code, Copy } from '$lib/components/ui/code';
+	import { Code } from '$lib/components/ui/code';
+	import { CopyButton } from '$lib/components/ui/copy-button';
 
 	let code = `\<script\>
     import { ModeWatcher } from "mode-watcher";    
@@ -15,7 +16,7 @@
 			<Svelte class="size-4" />
 			<span class="font-mono text-sm text-muted-foreground"> src/routes/+layout.svelte </span>
 		</div>
-		<Copy {code} class="size-7" />
+		<CopyButton text={code} class="size-7" />
 	</div>
 	<Code lang="svelte" hideCopy class="border-none" {code} highlight={[2, 5]} />
 </div>

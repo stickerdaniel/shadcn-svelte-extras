@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { Copy, Check } from 'lucide-svelte';
 	import { cn } from '$lib/utils/utils';
-	import { scale } from 'svelte/transition';
 	import { tv, type VariantProps } from 'tailwind-variants';
+	import { CopyButton } from '../copy-button';
 
 	const style = tv({
 		base: 'relative w-full max-w-full rounded-md border bg-background py-2.5 pl-3 pr-12',
@@ -25,23 +24,7 @@
 		onCopy?: () => void;
 	};
 
-	let { text, variant = 'default', onCopy = undefined, class: className }: Props = $props();
-
-	let copied = $state(false);
-
-	async function copy() {
-		if (typeof text == 'string') {
-			await navigator.clipboard.writeText(text);
-		} else {
-			await navigator.clipboard.writeText(text.join('\n'));
-		}
-
-		copied = true;
-
-		onCopy?.();
-
-		setTimeout(() => (copied = false), 750);
-	}
+	let { text, variant = 'default', onCopy, class: className }: Props = $props();
 </script>
 
 <div class={cn(style({ variant, className: className }))}>
@@ -57,21 +40,9 @@
 		{/each}
 	{/if}
 
-	<button
-		onclick={copy}
-		type="button"
-		class="absolute right-3 top-1/2 -translate-y-1/2 transition-opacity ease-in-out hover:text-opacity-80"
-	>
-		{#if copied}
-			<div in:scale={{ start: 0.75, duration: 250 }}>
-				<Check class="size-3.5" />
-				<span class="sr-only">Copied</span>
-			</div>
-		{:else}
-			<div in:scale={{ start: 0.75, duration: 250 }}>
-				<Copy class="size-3.5" />
-				<span class="sr-only">Copy</span>
-			</div>
-		{/if}
-	</button>
+	<CopyButton
+		class="absolute right-2 top-1/2 size-7 -translate-y-1/2 transition-opacity ease-in-out hover:bg-transparent hover:text-opacity-80"
+		text={typeof text === 'string' ? text : text.join('\n')}
+		{onCopy}
+	/>
 </div>

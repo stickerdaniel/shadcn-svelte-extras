@@ -4,6 +4,7 @@ export type Route = {
 	href: string;
 	specifier?: `${string}/${string}`;
 	source?: string;
+	status?: 'New' | 'Updated';
 };
 
 const map: Record<string, Route[]> = {
@@ -39,7 +40,16 @@ const map: Record<string, Route[]> = {
 			description: 'A code component.',
 			href: '/components/code',
 			specifier: 'ui/code',
-			source: 'src/lib/components/ui/code/code.svelte'
+			source: 'src/lib/components/ui/code/code.svelte',
+			status: 'Updated'
+		},
+		{
+			name: 'Copy Button',
+			description: 'A button used to copy text to the clipboard.',
+			href: '/components/copy-button',
+			specifier: 'ui/copy-button',
+			source: 'src/lib/components/ui/copy-button/copy-button.svelte',
+			status: 'New'
 		},
 		{
 			name: 'Field Set',
@@ -84,11 +94,20 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/phone-input'
 		},
 		{
+			name: 'PMCommand',
+			description: 'A package manager command component.',
+			href: '/components/pm-command',
+			specifier: 'ui/pm-command',
+			source: 'src/lib/components/ui/pm-command/pm-command.svelte',
+			status: 'New'
+		},
+		{
 			name: 'Snippet',
 			description: 'A snippet component.',
 			href: '/components/snippet',
 			specifier: 'ui/snippet',
-			source: 'src/lib/components/ui/snippet/snippet.svelte'
+			source: 'src/lib/components/ui/snippet/snippet.svelte',
+			status: 'Updated'
 		},
 		{
 			name: 'Tags Input',
@@ -136,6 +155,14 @@ const map: Record<string, Route[]> = {
 			href: '/hooks/use-auto-scroll',
 			specifier: 'hooks/use-auto-scroll.svelte',
 			source: 'src/lib/hooks/use-auto-scroll.svelte.ts'
+		},
+		{
+			name: 'UseClipboard',
+			description: 'A hook to simplify copying text to the clipboard.',
+			href: '/hooks/use-clipboard',
+			specifier: 'hooks/use-clipboard.svelte',
+			source: 'src/lib/hooks/use-clipboard.svelte.ts',
+			status: 'New'
 		}
 	],
 	Utils: [

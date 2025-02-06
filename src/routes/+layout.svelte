@@ -6,9 +6,8 @@
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
 	import { map, type Route } from '$lib/map';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { checkIsActive } from '$lib/actions/active.svelte';
-	import { ShikiProvider } from '$lib/components/ui/code';
 	import PageWrapper from '$lib/components/page-wrapper.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Icons from '$lib/components/icons';
@@ -42,7 +41,7 @@
 		}
 	};
 
-	const currentDoc = $derived(getCurrentDoc($page.url));
+	const currentDoc = $derived(getCurrentDoc(page.url));
 </script>
 
 <svelte:window
@@ -58,33 +57,31 @@
 <ModeWatcher />
 <Toaster />
 <Command />
-<ShikiProvider>
-	<Sidebar.Provider>
-		<AppSidebar />
-		<!-- Do NOT ask me why this is here it makes it work that's what matters -->
-		<Sidebar.Inset class="w-[200px]">
-			<header
-				class="sticky top-0 z-10 flex h-16 place-items-center justify-between border-b border-border bg-background pl-2 pr-6"
-			>
-				<div class="flex place-items-center gap-2">
-					<Sidebar.Trigger class="md:hidden" />
-					<SearchButton class="w-[200px] transition-all sm:w-[250px]" />
-				</div>
-				<div class="flex place-items-center gap-1">
-					<Button
-						variant="ghost"
-						size="icon"
-						href="https://github.com/ieedan/shadcn-svelte-extras"
-						target="_blank"
-					>
-						<Icons.GitHub class="size-4" />
-					</Button>
-					<LightSwitch variant="ghost" />
-				</div>
-			</header>
-			<PageWrapper doc={currentDoc}>
-				{@render children()}
-			</PageWrapper>
-		</Sidebar.Inset>
-	</Sidebar.Provider>
-</ShikiProvider>
+<Sidebar.Provider>
+	<AppSidebar />
+	<!-- Do NOT ask me why this is here it makes it work that's what matters -->
+	<Sidebar.Inset class="w-[200px]">
+		<header
+			class="sticky top-0 z-10 flex h-16 place-items-center justify-between border-b border-border bg-background pl-2 pr-6"
+		>
+			<div class="flex place-items-center gap-2">
+				<Sidebar.Trigger class="md:hidden" />
+				<SearchButton class="w-[200px] transition-all sm:w-[250px]" />
+			</div>
+			<div class="flex place-items-center gap-1">
+				<Button
+					variant="ghost"
+					size="icon"
+					href="https://github.com/ieedan/shadcn-svelte-extras"
+					target="_blank"
+				>
+					<Icons.GitHub class="size-4" />
+				</Button>
+				<LightSwitch variant="ghost" />
+			</div>
+		</header>
+		<PageWrapper doc={currentDoc}>
+			{@render children()}
+		</PageWrapper>
+	</Sidebar.Inset>
+</Sidebar.Provider>
