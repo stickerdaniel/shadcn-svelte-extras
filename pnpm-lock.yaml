@@ -57,8 +57,8 @@ importers:
         specifier: ^2.21.0
         version: 2.21.0
       jsrepo:
-        specifier: ^1.31.0
-        version: 1.31.0(typescript@5.7.3)(ws@8.18.0)
+        specifier: ^1.32.0
+        version: 1.32.0(typescript@5.7.3)(ws@8.18.0)
       lucide-svelte:
         specifier: ^0.474.0
         version: 0.474.0(svelte@5.19.8)
@@ -1610,8 +1610,8 @@ packages:
   json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
 
-  jsrepo@1.31.0:
-    resolution: {integrity: sha512-RoeyAkcxx2hBEnYOExrmyiF+bDF9r+Wg2DrLEgm1T4e/6WmNRDk9ZnlzD4Y16TSj5kjWj+lcbNl3pvbV8FQl0w==}
+  jsrepo@1.32.0:
+    resolution: {integrity: sha512-89MKCZXsSSjlhWc3ioIz6XkjeW1mLi+SF8I4EvT7ZmHIvygSinWcPfIGaD5TyCb2ha/Cdi1MIu6GBs6PijoFKg==}
     hasBin: true
 
   keyv@4.5.4:
@@ -3364,7 +3364,7 @@ snapshots:
       '@vue/shared': 3.5.13
       estree-walker: 2.0.2
       magic-string: 0.30.17
-      postcss: 8.4.49
+      postcss: 8.5.1
       source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.5.13':
@@ -4169,7 +4169,7 @@ snapshots:
 
   json-stable-stringify-without-jsonify@1.0.1: {}
 
-  jsrepo@1.31.0(typescript@5.7.3)(ws@8.18.0):
+  jsrepo@1.32.0(typescript@5.7.3)(ws@8.18.0):
     dependencies:
       '@anthropic-ai/sdk': 0.36.3
       '@biomejs/js-api': 0.7.1(@biomejs/wasm-nodejs@1.9.4)

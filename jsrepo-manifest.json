@@ -167,7 +167,9 @@
 						"tailwind-variants@^0.3.1",
 						"isomorphic-dompurify@^2.21.0",
 						"lucide-svelte@^0.474.0",
-						"shiki@^2.3.1"
+						"shiki@^2.3.1",
+						"@shikijs/langs@^2.3.1",
+						"@shikijs/themes@^2.3.1"
 					],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
