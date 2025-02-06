@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.10.1...v1.11.0) (2025-02-06)
+
+
+### Features
+
+* `ui/pm-command` `ui/copy-button` `hooks/use-clipboard` and more ([133d128](https://github.com/ieedan/shadcn-svelte-extras/commit/133d128be8e151a7a13a4dcfc2755aaacfb7a2d6))
+
 ## [1.10.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.10.0...v1.10.1) (2025-02-06)
 
 
