@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.11.0...v1.11.1) (2025-02-06)
+
+
+### Bug Fixes
+
+* bump jsrepo to prune unused blocks ([270f3cb](https://github.com/ieedan/shadcn-svelte-extras/commit/270f3cb38bbae662cf15cb27de6fbc8f6356381f))
+
 ## [1.11.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.10.1...v1.11.0) (2025-02-06)
 
 
