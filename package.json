@@ -31,7 +31,7 @@
 		"eslint-plugin-svelte": "^2.45.1",
 		"globals": "^15.14.0",
 		"isomorphic-dompurify": "^2.21.0",
-		"jsrepo": "^1.32.0",
+		"jsrepo": "^1.32.1",
 		"lucide-svelte": "^0.474.0",
 		"mode-watcher": "^0.5.1",
 		"package-manager-detector": "^0.2.9",
