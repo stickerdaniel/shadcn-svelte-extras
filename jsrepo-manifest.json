@@ -160,21 +160,19 @@
 					"tests": false,
 					"subdirectory": true,
 					"list": true,
-					"files": ["code.svelte", "copy.svelte", "index.ts", "shiki-provider.svelte", "shiki.ts"],
-					"localDependencies": ["utils/utils", "ui/button", "utils/context-provider"],
+					"files": ["code.svelte", "index.ts", "shiki.ts"],
+					"localDependencies": ["utils/utils", "ui/copy-button"],
 					"dependencies": [],
 					"devDependencies": [
 						"tailwind-variants@^0.3.1",
 						"isomorphic-dompurify@^2.21.0",
-						"lucide-svelte@^0.474.0",
 						"shiki@^2.3.1",
 						"@shikijs/langs@^2.3.1",
 						"@shikijs/themes@^2.3.1"
 					],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
-						"$lib/components/ui/button": "{{ui/button}}",
-						"$lib/utils/context-provider": "{{utils/context-provider}}"
+						"$lib/components/ui/copy-button": "{{ui/copy-button}}"
 					}
 				},
 				{
@@ -216,6 +214,23 @@
 					"_imports_": {
 						"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
+					}
+				},
+				{
+					"name": "copy-button",
+					"directory": "src/lib/components/ui/copy-button",
+					"category": "ui",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": ["copy-button.svelte", "index.ts"],
+					"localDependencies": ["ui/button", "hooks/use-clipboard.svelte", "utils/utils"],
+					"dependencies": [],
+					"devDependencies": ["lucide-svelte@^0.474.0"],
+					"_imports_": {
+						"$lib/components/ui/button": "{{ui/button}}",
+						"$lib/hooks/use-clipboard.svelte": "{{hooks/use-clipboard.svelte}}",
+						"$lib/utils/utils": "{{utils/utils}}"
 					}
 				},
 				{
@@ -435,6 +450,26 @@
 					}
 				},
 				{
+					"name": "pm-command",
+					"directory": "src/lib/components/ui/pm-command",
+					"category": "ui",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": ["index.ts", "pm-command.svelte"],
+					"localDependencies": ["utils/utils", "ui/copy-button"],
+					"dependencies": [],
+					"devDependencies": [
+						"tailwind-variants@^0.3.1",
+						"package-manager-detector@^0.2.9",
+						"lucide-svelte@^0.474.0"
+					],
+					"_imports_": {
+						"$lib/utils/utils": "{{utils/utils}}",
+						"../copy-button/copy-button.svelte": "{{ui/copy-button}}/copy-button.svelte"
+					}
+				},
+				{
 					"name": "popover",
 					"directory": "src/lib/components/ui/popover",
 					"category": "ui",
@@ -607,11 +642,12 @@
 					"subdirectory": true,
 					"list": true,
 					"files": ["index.ts", "snippet.svelte"],
-					"localDependencies": ["utils/utils"],
+					"localDependencies": ["utils/utils", "ui/copy-button"],
 					"dependencies": [],
-					"devDependencies": ["lucide-svelte@^0.474.0", "tailwind-variants@^0.3.1"],
+					"devDependencies": ["tailwind-variants@^0.3.1"],
 					"_imports_": {
-						"$lib/utils/utils": "{{utils/utils}}"
+						"$lib/utils/utils": "{{utils/utils}}",
+						"../copy-button": "{{ui/copy-button}}"
 					}
 				},
 				{
@@ -791,6 +827,19 @@
 					"subdirectory": false,
 					"list": true,
 					"files": ["use-auto-scroll.svelte.ts"],
+					"localDependencies": [],
+					"_imports_": {},
+					"dependencies": [],
+					"devDependencies": []
+				},
+				{
+					"name": "use-clipboard.svelte",
+					"directory": "src/lib/hooks",
+					"category": "hooks",
+					"tests": false,
+					"subdirectory": false,
+					"list": true,
+					"files": ["use-clipboard.svelte.ts"],
 					"localDependencies": [],
 					"_imports_": {},
 					"dependencies": [],
