@@ -1,18 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { createHighlighter } from 'shiki';
+	import { highlighter } from './shiki';
 	import { shikiContext } from '.';
-	import { LANGUAGES } from './langs';
 
 	const shiki = shikiContext.init(undefined);
 
 	let { children } = $props();
 
 	onMount(() => {
-		createHighlighter({
-			themes: ['github-dark-default', 'github-light-default'],
-			langs: [...LANGUAGES]
-		}).then((highlighter) => shiki.set(highlighter));
+		highlighter.then((highlighter) => shiki.set(highlighter));
 
 		return () => $shiki?.dispose();
 	});
