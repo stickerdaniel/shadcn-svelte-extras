@@ -3,7 +3,8 @@
 	import Copy from './copy.svelte';
 	import { shikiContext } from '.';
 	import { tv, type VariantProps } from 'tailwind-variants';
-	import type { SupportedLanguage } from './langs';
+	import type { SupportedLanguage } from './shiki';
+	import DOMPurify from 'isomorphic-dompurify';
 
 	const style = tv({
 		base: 'not-prose relative h-full max-h-[650px] overflow-auto rounded-lg border',
@@ -65,33 +66,35 @@
 	const highlighter = shikiContext.get();
 
 	const highlighted = $derived(
-		$highlighter?.codeToHtml(code, {
-			lang: lang,
-			themes: {
-				light: 'github-light-default',
-				dark: 'github-dark-default'
-			},
-			transformers: [
-				{
-					pre: (el) => {
-						el.properties.style = '';
+		DOMPurify.sanitize(
+			$highlighter?.codeToHtml(code, {
+				lang: lang,
+				themes: {
+					light: 'github-light-default',
+					dark: 'github-dark-default'
+				},
+				transformers: [
+					{
+						pre: (el) => {
+							el.properties.style = '';
 
-						if (!hideLines) {
-							el.properties.class += ' line-numbers';
+							if (!hideLines) {
+								el.properties.class += ' line-numbers';
+							}
+
+							return el;
+						},
+						line: (node, line) => {
+							if (within(line, highlight)) {
+								node.properties.class = node.properties.class + ' line--highlighted';
+							}
+
+							return node;
 						}
-
-						return el;
-					},
-					line: (node, line) => {
-						if (within(line, highlight)) {
-							node.properties.class = node.properties.class + ' line--highlighted';
-						}
-
-						return node;
 					}
-				}
-			]
-		}) ?? code
+				]
+			}) ?? code
+		)
 	);
 </script>
 

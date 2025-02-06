@@ -4,8 +4,7 @@
 	import Playground from '$lib/components/playground.svelte';
 	import { Code } from '$lib/components/ui/code';
 	import { examples } from './examples';
-	import shikiProviderRaw from '$lib/components/ui/code/shiki-provider.svelte?raw';
-	import langsRaw from '$lib/components/ui/code/langs.ts?raw';
+	import shikiRaw from '$lib/components/ui/code/shiki.ts?raw';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -19,13 +18,17 @@
 </p>
 <Code lang="svelte" code={examples.providerCode} class="h-fit" highlight={[2, [6, 8]]} />
 <p>
-	The highlighter can be configured from <CodeSpan>shiki-provider.svelte</CodeSpan>.
+	The highlighter and languages can be configured from <CodeSpan>shiki.ts</CodeSpan>.
 </p>
-<Code lang="svelte" code={shikiProviderRaw} highlight={[[12, 15]]} />
-<p>
-	The supported languages can be configured from <CodeSpan>langs.ts</CodeSpan>.
-</p>
-<Code lang="typescript" code={langsRaw} class="h-fit" highlight={[2]} />
+<Code
+	lang="typescript"
+	code={shikiRaw}
+	class="h-fit"
+	highlight={[
+		[5, 12],
+		[18, 25]
+	]}
+/>
 <Subheading>No Line Numbers</Subheading>
 <Playground code={examples.noLineNumbers.code}>
 	<examples.noLineNumbers.Component />
