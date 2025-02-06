@@ -5,6 +5,7 @@
 	import { Code } from '$lib/components/ui/code';
 	import { examples } from './examples';
 	import shikiRaw from '$lib/components/ui/code/shiki.ts?raw';
+	import { Blockquote } from '$lib/components/ui/blockquote';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -12,6 +13,10 @@
 	<examples.basic.Component />
 </Playground>
 <Installation specifier="ui/code" />
+<Blockquote>
+	You will also need to install <CodeSpan>@shikijs/themes</CodeSpan> and
+	<CodeSpan>@shikijs/langs</CodeSpan> the following since we are using the fine-grained bundle.
+</Blockquote>
 <p>
 	To highlight the code you'll need a to initialize the highlighter context you can do that by
 	adding the following code to your <CodeSpan>./src/routes/+layout.svelte</CodeSpan>:
