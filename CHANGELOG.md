@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.10.0...v1.10.1) (2025-02-06)
+
+
+### Bug Fixes
+
+* Ensure [@shikijs](https://github.com/shikijs) dependencies are included in manifest ([5803cae](https://github.com/ieedan/shadcn-svelte-extras/commit/5803cae578495e439777f86aa08edf679d5cfa50))
+
 ## [1.10.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.9.1...v1.10.0) (2025-02-06)
 
 
