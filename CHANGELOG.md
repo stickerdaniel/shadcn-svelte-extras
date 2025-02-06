@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.9.1...v1.10.0) (2025-02-06)
+
+
+### Features
+
+* Improve `shiki` usage in `ui/code` ([d21c66a](https://github.com/ieedan/shadcn-svelte-extras/commit/d21c66ad1275c24c077e188f8412207967825fbd))
+
 ## [1.9.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.9.0...v1.9.1) (2025-02-03)
 
 
