@@ -160,10 +160,15 @@
 					"tests": false,
 					"subdirectory": true,
 					"list": true,
-					"files": ["code.svelte", "copy.svelte", "index.ts", "langs.ts", "shiki-provider.svelte"],
+					"files": ["code.svelte", "copy.svelte", "index.ts", "shiki-provider.svelte", "shiki.ts"],
 					"localDependencies": ["utils/utils", "ui/button", "utils/context-provider"],
 					"dependencies": [],
-					"devDependencies": ["tailwind-variants@^0.3.1", "lucide-svelte@^0.474.0", "shiki@^2.3.1"],
+					"devDependencies": [
+						"tailwind-variants@^0.3.1",
+						"isomorphic-dompurify@^2.21.0",
+						"lucide-svelte@^0.474.0",
+						"shiki@^2.3.1"
+					],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
 						"$lib/components/ui/button": "{{ui/button}}",
