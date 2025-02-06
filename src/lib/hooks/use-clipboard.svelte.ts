@@ -75,7 +75,7 @@ export class UseClipboard {
 		return this.#copiedStatus === 'success';
 	}
 
-	/**	Indicates whether a copy has occurred 
+	/**	Indicates whether a copy has occurred
 	 * and gives a status of either `success` or `failure`. */
 	get status() {
 		return this.#copiedStatus;
