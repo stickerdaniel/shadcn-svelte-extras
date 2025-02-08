@@ -37,7 +37,7 @@
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
 					"devDependencies": [
-						"lucide-svelte@^0.474.0",
+						"lucide-svelte@^0.475.0",
 						"bits-ui@1.0.0-next.86",
 						"tailwind-variants@^0.3.1"
 					],
@@ -67,7 +67,7 @@
 						"hooks/use-auto-scroll.svelte"
 					],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86", "lucide-svelte@^0.474.0"],
+					"devDependencies": ["bits-ui@1.0.0-next.86", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/components/ui/avatar": "{{ui/avatar}}",
 						"$lib/utils/utils.js": "{{utils/utils}}.js",
@@ -89,9 +89,9 @@
 					"devDependencies": [
 						"tailwind-variants@^0.3.1",
 						"isomorphic-dompurify@^2.21.0",
-						"shiki@^2.3.1",
-						"@shikijs/langs@^2.3.1",
-						"@shikijs/themes@^2.3.1"
+						"shiki@^2.3.2",
+						"@shikijs/langs@^2.3.2",
+						"@shikijs/themes@^2.3.2"
 					],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
@@ -133,7 +133,7 @@
 					],
 					"localDependencies": ["ui/dialog", "utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86", "lucide-svelte@^0.474.0"],
+					"devDependencies": ["bits-ui@1.0.0-next.86", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
@@ -149,7 +149,7 @@
 					"files": ["copy-button.svelte", "index.ts"],
 					"localDependencies": ["ui/button", "hooks/use-clipboard.svelte", "utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["lucide-svelte@^0.474.0"],
+					"devDependencies": ["lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/components/ui/button": "{{ui/button}}",
 						"$lib/hooks/use-clipboard.svelte": "{{hooks/use-clipboard.svelte}}",
@@ -174,7 +174,7 @@
 					],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86", "lucide-svelte@^0.474.0"],
+					"devDependencies": ["bits-ui@1.0.0-next.86", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -226,7 +226,7 @@
 					],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86", "lucide-svelte@^0.474.0"],
+					"devDependencies": ["bits-ui@1.0.0-next.86", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -295,7 +295,7 @@
 					"files": ["index.ts", "light-switch.svelte"],
 					"localDependencies": ["ui/button"],
 					"dependencies": [],
-					"devDependencies": ["lucide-svelte@^0.474.0", "mode-watcher@^0.5.1"],
+					"devDependencies": ["lucide-svelte@^0.475.0", "mode-watcher@^0.5.1"],
 					"_imports_": {
 						"$lib/components/ui/button/index.js": "{{ui/button}}/index.js"
 					}
@@ -333,7 +333,7 @@
 						"utils/utils"
 					],
 					"dependencies": [],
-					"devDependencies": ["lucide-svelte@^0.474.0", "svelte-tel-input@^3.5.2"],
+					"devDependencies": ["lucide-svelte@^0.475.0", "svelte-tel-input@^3.5.2"],
 					"_imports_": {
 						"$lib/components/ui/popover": "{{ui/popover}}",
 						"$lib/components/ui/button": "{{ui/button}}",
@@ -355,7 +355,7 @@
 					"devDependencies": [
 						"tailwind-variants@^0.3.1",
 						"package-manager-detector@^0.2.9",
-						"lucide-svelte@^0.474.0"
+						"lucide-svelte@^0.475.0"
 					],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
@@ -418,7 +418,7 @@
 					"files": ["index.ts", "tags-input-tag.svelte", "tags-input.svelte", "types.ts"],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["lucide-svelte@^0.474.0"],
+					"devDependencies": ["lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}"
 					}
@@ -433,7 +433,7 @@
 					"files": ["index.ts", "theme-selector.svelte"],
 					"localDependencies": ["ui/dropdown-menu", "ui/button"],
 					"dependencies": [],
-					"devDependencies": ["lucide-svelte@^0.474.0", "mode-watcher@^0.5.1"],
+					"devDependencies": ["lucide-svelte@^0.475.0", "mode-watcher@^0.5.1"],
 					"_imports_": {
 						"$lib/components/ui/dropdown-menu/index.js": "{{ui/dropdown-menu}}/index.js",
 						"$lib/components/ui/button/index.js": "{{ui/button}}/index.js"
@@ -454,7 +454,7 @@
 					],
 					"localDependencies": ["utils/utils", "ui/collapsible"],
 					"dependencies": [],
-					"devDependencies": ["lucide-svelte@^0.474.0"],
+					"devDependencies": ["lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
 						"$lib/components/ui/collapsible/index.js": "{{ui/collapsible}}/index.js"
@@ -593,7 +593,7 @@
 					"localDependencies": [],
 					"_imports_": {},
 					"dependencies": [],
-					"devDependencies": ["clsx@^2.1.1", "tailwind-merge@^3.0.1"]
+					"devDependencies": ["clsx@^2.1.1", "tailwind-merge@^2.6.0"]
 				}
 			]
 		}
