@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.11.1...v1.12.0) (2025-02-08)
+
+
+### Features
+
+* Refactor `actions/active.svelte` to use `$state` apis ([626ba4b](https://github.com/ieedan/shadcn-svelte-extras/commit/626ba4b7a3de6ae31a7690b7abb1edd819f98597))
+
 ## [1.11.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.11.0...v1.11.1) (2025-02-06)
 
 
