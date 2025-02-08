@@ -2,6 +2,7 @@
 	import '@fontsource/geist-mono';
 	import '@fontsource-variable/inter';
 	import { ModeWatcher } from 'mode-watcher';
+	import { UmamiAnalytics } from '@lukulent/svelte-umami';
 	import '../app.css';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
@@ -17,6 +18,7 @@
 	import { Command } from '$lib/components/docs/command';
 	import SearchButton from '$lib/components/search-button.svelte';
 	import { LightSwitch } from '$lib/components/ui/light-switch';
+	import { dev } from '$app/environment';
 
 	let { children } = $props();
 
@@ -54,6 +56,13 @@
 	}}
 />
 
+<!-- only inject analytics in production -->
+{#if !dev}
+	<UmamiAnalytics
+		srcURL="https://cloud.umami.is/script.js"
+		websiteID="07b288db-9239-4fbf-9d68-4f2ca9b63f89"
+	/>
+{/if}
 <ModeWatcher />
 <Toaster />
 <Command />
