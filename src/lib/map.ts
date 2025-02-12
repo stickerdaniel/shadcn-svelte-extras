@@ -87,6 +87,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/modal/modal.svelte'
 		},
 		{
+			name: 'NLPDateInput',
+			description: 'A natural language date input with suggestions.',
+			href: '/components/nlp-date-input',
+			specifier: 'ui/nlp-date-input',
+			source: 'src/lib/components/ui/nlp-date-input/nlp-date-input.svelte',
+			status: 'New'
+		},
+		{
 			name: 'Phone Input',
 			description: 'A phone number input component.',
 			href: '/components/phone-input',
