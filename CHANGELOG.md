@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.12.0...v1.13.0) (2025-02-12)
+
+
+### Features
+
+* Add `ui/nlp-date-input` (Natural language parser date input) ([1ac25fc](https://github.com/ieedan/shadcn-svelte-extras/commit/1ac25fcb9c019d93f6dad2bf294bb3eb2bab7d45))
+
 ## [1.12.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.11.1...v1.12.0) (2025-02-08)
 
 
