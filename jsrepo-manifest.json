@@ -21,7 +21,7 @@
 					"files": ["avatar-fallback.svelte", "avatar-image.svelte", "avatar.svelte", "index.ts"],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86"],
+					"devDependencies": ["bits-ui@1.0.0-next.95"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -38,7 +38,7 @@
 					"dependencies": [],
 					"devDependencies": [
 						"lucide-svelte@^0.475.0",
-						"bits-ui@1.0.0-next.86",
+						"bits-ui@1.0.0-next.95",
 						"tailwind-variants@^0.3.1"
 					],
 					"_imports_": {
@@ -67,7 +67,7 @@
 						"hooks/use-auto-scroll.svelte"
 					],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86", "lucide-svelte@^0.475.0"],
+					"devDependencies": ["bits-ui@1.0.0-next.95", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/components/ui/avatar": "{{ui/avatar}}",
 						"$lib/utils/utils.js": "{{utils/utils}}.js",
@@ -108,7 +108,7 @@
 					"files": ["index.ts"],
 					"localDependencies": [],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86"],
+					"devDependencies": ["bits-ui@1.0.0-next.95"],
 					"_imports_": {}
 				},
 				{
@@ -133,7 +133,7 @@
 					],
 					"localDependencies": ["ui/dialog", "utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86", "lucide-svelte@^0.475.0"],
+					"devDependencies": ["bits-ui@1.0.0-next.95", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
@@ -174,7 +174,7 @@
 					],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86", "lucide-svelte@^0.475.0"],
+					"devDependencies": ["bits-ui@1.0.0-next.95", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -199,7 +199,7 @@
 					],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.86"],
+					"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.95"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -226,7 +226,7 @@
 					],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86", "lucide-svelte@^0.475.0"],
+					"devDependencies": ["bits-ui@1.0.0-next.95", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -247,7 +247,7 @@
 					],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86", "tailwind-variants@^0.3.1"],
+					"devDependencies": ["bits-ui@1.0.0-next.95", "tailwind-variants@^0.3.1"],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
@@ -318,6 +318,21 @@
 					}
 				},
 				{
+					"name": "nlp-date-input",
+					"directory": "src/lib/components/ui/nlp-date-input",
+					"category": "ui",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": ["index.ts", "nlp-date-input.svelte"],
+					"localDependencies": ["ui/command"],
+					"dependencies": [],
+					"devDependencies": ["yeezy-dates@^1.0.1"],
+					"_imports_": {
+						"$lib/components/ui/command": "{{ui/command}}"
+					}
+				},
+				{
 					"name": "phone-input",
 					"directory": "src/lib/components/ui/phone-input",
 					"category": "ui",
@@ -372,7 +387,7 @@
 					"files": ["index.ts", "popover-content.svelte"],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86"],
+					"devDependencies": ["bits-ui@1.0.0-next.95"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -387,7 +402,7 @@
 					"files": ["index.ts", "scroll-area-scrollbar.svelte", "scroll-area.svelte"],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.86"],
+					"devDependencies": ["bits-ui@1.0.0-next.95"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
