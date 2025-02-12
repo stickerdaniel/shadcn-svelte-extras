@@ -68,6 +68,9 @@ importers:
       mode-watcher:
         specifier: ^0.5.1
         version: 0.5.1(svelte@5.19.10)
+      package-manager-detector:
+        specifier: ^0.2.9
+        version: 0.2.9
       prettier:
         specifier: ^3.5.0
         version: 3.5.0
