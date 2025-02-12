@@ -91,7 +91,8 @@ const map: Record<string, Route[]> = {
 			description: 'A natural language date input with suggestions.',
 			href: '/components/nlp-date-input',
 			specifier: 'ui/nlp-date-input',
-			source: 'src/lib/components/ui/nlp-date-input/nlp-date-input.svelte'
+			source: 'src/lib/components/ui/nlp-date-input/nlp-date-input.svelte',
+			status: 'New'
 		},
 		{
 			name: 'Phone Input',
