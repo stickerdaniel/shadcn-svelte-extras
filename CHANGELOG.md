@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.12.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.11.1...v1.12.0) (2025-02-08)
+
+
+### Features
+
+* Refactor `actions/active.svelte` to use `$state` apis ([626ba4b](https://github.com/ieedan/shadcn-svelte-extras/commit/626ba4b7a3de6ae31a7690b7abb1edd819f98597))
+
+## [1.11.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.11.0...v1.11.1) (2025-02-06)
+
+
+### Bug Fixes
+
+* bump jsrepo to prune unused blocks ([270f3cb](https://github.com/ieedan/shadcn-svelte-extras/commit/270f3cb38bbae662cf15cb27de6fbc8f6356381f))
+
+## [1.11.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.10.1...v1.11.0) (2025-02-06)
+
+
+### Features
+
+* `ui/pm-command` `ui/copy-button` `hooks/use-clipboard` and more ([133d128](https://github.com/ieedan/shadcn-svelte-extras/commit/133d128be8e151a7a13a4dcfc2755aaacfb7a2d6))
+
 ## [1.10.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.10.0...v1.10.1) (2025-02-06)
 
 

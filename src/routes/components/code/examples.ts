@@ -23,15 +23,7 @@ const examples = {
 	highlightLines: {
 		code: highlightLinesRaw,
 		Component: HighlightLines
-	},
-	providerCode: `\<script lang="ts"\>
-	import { ShikiProvider } from '$lib/components/ui/code';
-	// ...
-\</script\>
-
-\<ShikiProvider\>
-		{@render children()}
-\</ShikiProvider\>`
+	}
 };
 
 export { examples };

@@ -3,6 +3,7 @@
 	import { map } from '$lib/map';
 	import type { ComponentProps } from 'svelte';
 	import Logo from './logo.svelte';
+	import { Badge } from './ui/badge';
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
 
@@ -34,11 +35,24 @@
 						<Sidebar.GroupLabel>{group}</Sidebar.GroupLabel>
 						<Sidebar.GroupContent>
 							<Sidebar.Menu>
-								{#each routes as { name, href } (name)}
+								{#each routes as { name, href, status } (name)}
 									<Sidebar.MenuItem>
 										<Sidebar.MenuButton>
 											{#snippet child({ props })}
-												<a {href} {...props}>{name}</a>
+												<a {href} {...props}>
+													{name}
+													{#if status}
+														{#if status === 'New'}
+															<Badge class="bg-brand text-white hover:bg-brand">
+																{status}
+															</Badge>
+														{:else}
+															<Badge variant="secondary">
+																{status}
+															</Badge>
+														{/if}
+													{/if}
+												</a>
 											{/snippet}
 										</Sidebar.MenuButton>
 									</Sidebar.MenuItem>

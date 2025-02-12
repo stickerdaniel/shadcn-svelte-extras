@@ -16,7 +16,7 @@
 	} = $props();
 
 	const attrs = $derived({
-		class: cn('hover:text-foreground transition-colors', className),
+		class: cn('text-foreground hover:underline', className),
 		href,
 		...restProps
 	});

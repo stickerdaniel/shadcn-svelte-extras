@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import Copy from './copy.svelte';
-	import { shikiContext } from '.';
 	import { tv, type VariantProps } from 'tailwind-variants';
-	import type { SupportedLanguage } from './shiki';
+	import { highlighter, type SupportedLanguage } from './shiki';
 	import DOMPurify from 'isomorphic-dompurify';
+	import { onMount } from 'svelte';
+	import type { HighlighterCore } from 'shiki';
+	import { CopyButton } from '$lib/components/ui/copy-button';
 
 	const style = tv({
 		base: 'not-prose relative h-full max-h-[650px] overflow-auto rounded-lg border',
@@ -63,11 +64,11 @@
 		highlight = []
 	}: Props = $props();
 
-	const highlighter = shikiContext.get();
+	let hl = $state<HighlighterCore>();
 
 	const highlighted = $derived(
 		DOMPurify.sanitize(
-			$highlighter?.codeToHtml(code, {
+			hl?.codeToHtml(code, {
 				lang: lang,
 				themes: {
 					light: 'github-light-default',
@@ -96,6 +97,10 @@
 			}) ?? code
 		)
 	);
+
+	onMount(() => {
+		highlighter.then((highlighter) => (hl = highlighter));
+	});
 </script>
 
 <div class={cn(style({ variant }), className)}>
@@ -107,7 +112,7 @@
 				copyButtonContainerClass
 			)}
 		>
-			<Copy {code} />
+			<CopyButton text={code} />
 		</div>
 	{/if}
 </div>
