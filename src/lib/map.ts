@@ -40,16 +40,14 @@ const map: Record<string, Route[]> = {
 			description: 'A code component.',
 			href: '/components/code',
 			specifier: 'ui/code',
-			source: 'src/lib/components/ui/code/code.svelte',
-			status: 'Updated'
+			source: 'src/lib/components/ui/code/code.svelte'
 		},
 		{
 			name: 'Copy Button',
 			description: 'A button used to copy text to the clipboard.',
 			href: '/components/copy-button',
 			specifier: 'ui/copy-button',
-			source: 'src/lib/components/ui/copy-button/copy-button.svelte',
-			status: 'New'
+			source: 'src/lib/components/ui/copy-button/copy-button.svelte'
 		},
 		{
 			name: 'Field Set',
@@ -57,6 +55,14 @@ const map: Record<string, Route[]> = {
 			href: '/components/field-set',
 			specifier: 'ui/field-set',
 			source: 'src/lib/components/ui/field-set'
+		},
+		{
+			name: 'File Drop Zone',
+			description: 'A file drop zone component.',
+			href: '/components/file-drop-zone',
+			specifier: 'ui/file-drop-zone',
+			source: 'src/lib/components/ui/file-drop-zone/file-drop-zone.svelte',
+			status: 'New'
 		},
 		{
 			name: 'IPv4Address Input',
@@ -106,16 +112,14 @@ const map: Record<string, Route[]> = {
 			description: 'A package manager command component.',
 			href: '/components/pm-command',
 			specifier: 'ui/pm-command',
-			source: 'src/lib/components/ui/pm-command/pm-command.svelte',
-			status: 'New'
+			source: 'src/lib/components/ui/pm-command/pm-command.svelte'
 		},
 		{
 			name: 'Snippet',
 			description: 'A snippet component.',
 			href: '/components/snippet',
 			specifier: 'ui/snippet',
-			source: 'src/lib/components/ui/snippet/snippet.svelte',
-			status: 'Updated'
+			source: 'src/lib/components/ui/snippet/snippet.svelte'
 		},
 		{
 			name: 'Tags Input',
