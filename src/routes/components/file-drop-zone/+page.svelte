@@ -1,0 +1,45 @@
+<script lang="ts">
+	import { Subheading } from '$lib/components/docs';
+	import Installation from '$lib/components/installation.svelte';
+	import Playground from '$lib/components/playground.svelte';
+	import { Code } from '$lib/components/ui/code';
+	import { Link } from '$lib/components/ui/link';
+	import { examples } from './examples';
+</script>
+
+<Subheading class="mt-0">Basic</Subheading>
+<Playground code={examples.basic.code} class="min-h-[300px]">
+	<examples.basic.Component />
+</Playground>
+<Installation specifier="ui/file-drop-zone" />
+<Subheading>Usage</Subheading>
+<div>
+	<Code
+		lang="svelte"
+		code={`\<script lang="ts"\>
+	import { FileDropZone } from "$lib/components/ui/file-drop-zone";
+\<\/script\>
+
+<FileDropZone/>`}
+	/>
+</div>
+<p>Custom placeholder:</p>
+<div>
+	<Code
+		lang="svelte"
+		code={`\<script lang="ts"\>
+	import { FileDropZone } from "$lib/components/ui/file-drop-zone";
+\<\/script\>
+
+<FileDropZone>
+	Upload files
+</FileDropZone>`}
+	/>
+</div>
+<Subheading>Acknowledgements</Subheading>
+<p>
+	This component takes inspiration from
+	<Link href="https://github.com/sadmann7/file-uploader" target="_blank">
+		sadmann/file-uploader
+	</Link>.
+</p>

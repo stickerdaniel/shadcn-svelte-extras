@@ -59,9 +59,9 @@
 \<\/script\>
 
 <button onclick={clipboard.copy('Hello, World!')}>
-    {#if clipboard.copied === 'success'}
+    {#if clipboard.status === 'success'}
         Copied!
-    {:else if clipboard.copied === 'failure'}
+    {:else if clipboard.status === 'failure'}
         Failed to copy!
     {:else}
         Copy

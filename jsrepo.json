@@ -9,6 +9,7 @@
 		"types": "$lib/utils/types",
 		"utils": "$lib/utils",
 		"ui": "$lib/components/ui",
-		"hooks": "$lib/hooks"
+		"hooks": "$lib/hooks",
+		"ts": "$lib/utils"
 	}
 }
