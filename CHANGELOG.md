@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.14.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.13.0...v1.14.0) (2025-02-13)
+
+
+### Features
+
+* `ui/file-drop-zone` component ([05f888f](https://github.com/ieedan/shadcn-svelte-extras/commit/05f888f134e9764978ae845d16f9096e2e681c71))
+* `ui/link` component ([f1c6b3d](https://github.com/ieedan/shadcn-svelte-extras/commit/f1c6b3d1a404f245decbf2fd5adbb248dee71a57))
+
+
+### Bug Fixes
+
+* **docs:** fix use-clipboard docs for status ([5a4ac8f](https://github.com/ieedan/shadcn-svelte-extras/commit/5a4ac8fc7cc3feb5e8f617bd09853a0da058a89a))
+
 ## [1.13.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.12.0...v1.13.0) (2025-02-12)
 
 
