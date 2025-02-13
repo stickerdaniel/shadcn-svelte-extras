@@ -12,7 +12,7 @@
 		 *
 		 * @param files
 		 */
-		onUpload?: (files: File[]) => Promise<void>;
+		onUpload: (files: File[]) => Promise<void>;
 		/** The maximum amount files allowed to be uploaded */
 		maxFiles?: number;
 		fileCount?: number;
@@ -48,6 +48,7 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
 	import { Upload } from 'lucide-svelte';
+	import { displaySize } from '.';
 
 	let {
 		id = 'attachments',
@@ -149,7 +150,7 @@
 			validFiles.push(file);
 		}
 
-		await onUpload?.(validFiles);
+		await onUpload(validFiles);
 
 		uploading = false;
 	};
@@ -180,7 +181,24 @@
 			>
 				<Upload class="size-7" />
 			</div>
-			<span class="text-muted-foreground">Drag 'n' drop files here, or click to select files</span>
+			<div class="flex flex-col gap-0.5 text-center">
+				<span class="font-medium text-muted-foreground">
+					Drag 'n' drop files here, or click to select files
+				</span>
+				{#if maxFiles || maxFileSize}
+					<span class="text-sm text-muted-foreground/75">
+						{#if maxFiles}
+							<span>You can upload {maxFiles} files</span>
+						{/if}
+						{#if maxFiles && maxFileSize}
+							<span>(up to {displaySize(maxFileSize)} each)</span>
+						{/if}
+						{#if maxFileSize && !maxFiles}
+							<span>Maximum size {displaySize(maxFileSize)}</span>
+						{/if}
+					</span>
+				{/if}
+			</div>
 		</div>
 	{/if}
 	<input

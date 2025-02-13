@@ -86,6 +86,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/light-switch/light-switch.svelte'
 		},
 		{
+			name: 'Link',
+			description: 'A simple link component.',
+			href: '/components/link',
+			specifier: 'ui/link',
+			source: 'src/lib/components/ui/link/link.svelte',
+			status: 'New'
+		},
+		{
 			name: 'Modal',
 			description: 'A responsive dialog component.',
 			href: '/components/modal',

@@ -2,6 +2,7 @@
 	import { Subheading } from '$lib/components/docs';
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
+	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
 </script>
 
@@ -22,3 +23,10 @@
 <Playground code={examples.customOrdering.code}>
 	<examples.customOrdering.Component />
 </Playground>
+<Subheading>Acknowledgements</Subheading>
+<p>
+	This component takes inspiration from
+	<Link href="https://github.com/omeralpi/shadcn-phone-input" target="_blank">
+		omeralpi/shadcn-phone-input
+	</Link>.
+</p>

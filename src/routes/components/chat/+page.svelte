@@ -3,6 +3,7 @@
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import { Code } from '$lib/components/ui/code';
+	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
 </script>
 
@@ -35,3 +36,10 @@
 	</Chat.Bubble>
 </Chat.List>`}
 />
+<Subheading>Acknowledgements</Subheading>
+<p>
+	This component takes inspiration from
+	<Link href="https://github.com/jakobhoeg/shadcn-chat" target="_blank">
+		jakobhoeg/shadcn-chat
+	</Link>.
+</p>

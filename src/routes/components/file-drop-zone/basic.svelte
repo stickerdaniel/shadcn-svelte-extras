@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import {
+		displaySize,
 		FileDropZone,
 		MEGABYTE,
 		type FileDropZoneProps
@@ -21,6 +22,9 @@
 	};
 
 	const uploadFile = async (file: File) => {
+		// don't upload duplicate files
+		if (files.find((f) => f.name === file.name)) return;
+
 		const urlPromise = new Promise<string>((resolve) => {
 			// add some fake loading time
 			sleep(1000).then(() => resolve(URL.createObjectURL(file)));
@@ -66,7 +70,7 @@
 	});
 </script>
 
-<div class="flex w-full flex-col gap-2">
+<div class="flex w-full flex-col gap-2 p-6">
 	<FileDropZone
 		{onUpload}
 		{onFileRejected}
@@ -79,10 +83,10 @@
 		{#each files as file, i}
 			<div class="flex place-items-center justify-between gap-2">
 				<div class="flex place-items-center gap-2">
-					{#await file.url then url}
+					{#await file.url then src}
 						<div class="relative size-9 overflow-clip">
 							<img
-								src={url}
+								{src}
 								alt={file.name}
 								class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-clip"
 							/>
@@ -90,7 +94,7 @@
 					{/await}
 					<div class="flex flex-col">
 						<span>{file.name}</span>
-						<span class="text-xs text-muted-foreground">{file.size}</span>
+						<span class="text-xs text-muted-foreground">{displaySize(file.size)}</span>
 					</div>
 				</div>
 				{#await file.url}
