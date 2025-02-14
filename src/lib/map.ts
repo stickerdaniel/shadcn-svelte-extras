@@ -137,6 +137,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/tags-input'
 		},
 		{
+			name: 'Terminal',
+			description: 'A terminal window component.',
+			href: '/components/terminal',
+			specifier: 'ui/terminal',
+			source: 'src/lib/components/ui/terminal',
+			status: 'New'
+		},
+		{
 			name: 'Theme Selector',
 			description: 'Click to select the theme.',
 			href: '/components/theme-selector',
@@ -149,6 +157,14 @@ const map: Record<string, Route[]> = {
 			href: '/components/tree-view',
 			specifier: 'ui/tree-view',
 			source: 'src/lib/components/ui/tree-view'
+		},
+		{
+			name: 'Window',
+			description: 'A window component.',
+			href: '/components/window',
+			specifier: 'ui/window',
+			source: 'src/lib/components/ui/window',
+			status: 'New'
 		}
 	],
 	Actions: [

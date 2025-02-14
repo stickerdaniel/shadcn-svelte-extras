@@ -3,14 +3,19 @@
 	import * as Tabs from '$lib/components/ui/tabs';
 	import { Code } from '$lib/components/ui/code';
 	import { cn } from '$lib/utils/utils';
+	import { Button } from './ui/button';
+	import { RefreshCw } from 'lucide-svelte';
 
 	type Props = {
 		code: string;
+		replay?: boolean;
 		class?: string;
 		children: Snippet<[]>;
 	};
 
-	let { children, code, class: className = undefined }: Props = $props();
+	let { children, code, class: className = undefined, replay = false }: Props = $props();
+
+	let remountCount = $state(0);
 
 	let tab: 'preview' | 'code' = $state('preview');
 </script>
@@ -27,9 +32,19 @@
 			<Tabs.Trigger value="code">Code</Tabs.Trigger>
 		</Tabs.List>
 		<Tabs.Content value="preview" class="size-full">
-			<div class="flex size-full place-items-center justify-center">
-				{@render children()}
-			</div>
+			<Button
+				size="icon"
+				variant="outline"
+				class="absolute left-3 top-3"
+				onclick={() => remountCount++}
+			>
+				<RefreshCw class="size-4" />
+			</Button>
+			{#key remountCount}
+				<div class="flex size-full place-items-center justify-center">
+					{@render children()}
+				</div>
+			{/key}
 		</Tabs.Content>
 		<Tabs.Content value="code" class="size-full pb-4">
 			<Code lang="svelte" {code} class="size-full border-none" hideLines hideCopy />
