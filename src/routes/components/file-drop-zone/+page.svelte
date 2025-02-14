@@ -5,6 +5,8 @@
 	import { Code } from '$lib/components/ui/code';
 	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
+
+	let { data } = $props();
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -35,6 +37,28 @@
 	Upload files
 </FileDropZone>`}
 	/>
+</div>
+<Subheading>Form</Subheading>
+<div>
+	<span> Resources: </span>
+	<ul class="list-disc pl-4">
+		<li>
+			<Link href="https://superforms.rocks/concepts/files#file-uploads" target="_blank">
+				https://superforms.rocks/concepts/files#file-uploads
+			</Link>
+		</li>
+	</ul>
+</div>
+<Playground code={examples.form.code} class="min-h-[300px]">
+	<examples.form.Component {data} />
+</Playground>
+<p>Schema:</p>
+<div>
+	<Code lang="typescript" code={examples.schema} />
+</div>
+<p>Server:</p>
+<div>
+	<Code lang="typescript" code={examples.server} />
 </div>
 <Subheading>Acknowledgements</Subheading>
 <p>
