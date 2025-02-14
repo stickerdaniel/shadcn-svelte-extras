@@ -137,6 +137,15 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/tags-input'
 		},
 		{
+			name: 'Terminal',
+			description:
+				'An implementation of the MacOS terminal. Useful for showcasing a command line interface.',
+			href: '/components/terminal',
+			specifier: 'ui/terminal',
+			source: 'src/lib/components/ui/terminal',
+			status: 'New'
+		},
+		{
 			name: 'Theme Selector',
 			description: 'Click to select the theme.',
 			href: '/components/theme-selector',
@@ -149,6 +158,14 @@ const map: Record<string, Route[]> = {
 			href: '/components/tree-view',
 			specifier: 'ui/tree-view',
 			source: 'src/lib/components/ui/tree-view'
+		},
+		{
+			name: 'Window',
+			description: 'A window component.',
+			href: '/components/window',
+			specifier: 'ui/window',
+			source: 'src/lib/components/ui/window',
+			status: 'New'
 		}
 	],
 	Actions: [
@@ -181,7 +198,14 @@ const map: Record<string, Route[]> = {
 			description: 'A hook to simplify copying text to the clipboard.',
 			href: '/hooks/use-clipboard',
 			specifier: 'hooks/use-clipboard.svelte',
-			source: 'src/lib/hooks/use-clipboard.svelte.ts',
+			source: 'src/lib/hooks/use-clipboard.svelte.ts'
+		},
+		{
+			name: 'UseBoolean',
+			description: 'A hook to simplify working with boolean values.',
+			href: '/hooks/use-boolean',
+			specifier: 'hooks/use-boolean.svelte',
+			source: 'src/lib/hooks/use-boolean.svelte.ts',
 			status: 'New'
 		}
 	],
