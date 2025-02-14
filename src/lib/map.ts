@@ -181,7 +181,14 @@ const map: Record<string, Route[]> = {
 			description: 'A hook to simplify copying text to the clipboard.',
 			href: '/hooks/use-clipboard',
 			specifier: 'hooks/use-clipboard.svelte',
-			source: 'src/lib/hooks/use-clipboard.svelte.ts',
+			source: 'src/lib/hooks/use-clipboard.svelte.ts'
+		},
+		{
+			name: 'UseBoolean',
+			description: 'A hook to simplify working with boolean values.',
+			href: '/hooks/use-boolean',
+			specifier: 'hooks/use-boolean.svelte',
+			source: 'src/lib/hooks/use-boolean.svelte.ts',
 			status: 'New'
 		}
 	],
