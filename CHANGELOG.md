@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.14.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.14.0...v1.14.1) (2025-02-14)
+
+
+### Bug Fixes
+
+* Ensure default id or `ui/file-drop-zone` is unique ([5ec18e3](https://github.com/ieedan/shadcn-svelte-extras/commit/5ec18e3510344d578deebb51f7c1de8eccfd233d))
+* Ensure size constants are the correct size ([c580da5](https://github.com/ieedan/shadcn-svelte-extras/commit/c580da5a4d067772a602632da3959dc4d1963fe2))
+
 ## [1.14.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.13.0...v1.14.0) (2025-02-13)
 
 
