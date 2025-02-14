@@ -25,7 +25,7 @@
 />
 <p>
 	You can add a delay to <CodeSpan>{`<Terminal.Root/>`}</CodeSpan> to delay every animation by that amount
-	of time.
+	of time:
 </p>
 <Code
 	lang="svelte"
@@ -35,6 +35,22 @@
 \<\/script\>
 
 <Terminal.Root delay={250}>
+	<Terminal.TypingAnimation/>
+	<Terminal.AnimatedSpan/>
+</Terminal.Root>`}
+/>
+<p>
+	You can also change the speed of all animations from <CodeSpan>{`<Terminal.Root/>`}</CodeSpan>:
+</p>
+<Code
+	lang="svelte"
+	highlight={[5, 6]}
+	code={`\<script lang="ts"\>
+	import * as Terminal from '$lib/components/ui/terminal';
+\<\/script\>
+
+<!-- half speed -->
+<Terminal.Root speed={0.5}>
 	<Terminal.TypingAnimation/>
 	<Terminal.AnimatedSpan/>
 </Terminal.Root>`}
