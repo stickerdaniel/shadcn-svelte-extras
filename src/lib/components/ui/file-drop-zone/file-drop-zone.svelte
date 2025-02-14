@@ -49,9 +49,10 @@
 	import { cn } from '$lib/utils/utils';
 	import { Upload } from 'lucide-svelte';
 	import { displaySize } from '.';
+	import { useId } from '$lib/hooks/use-id';
 
 	let {
-		id = 'attachments',
+		id = useId('file-drop-zone'),
 		children,
 		maxFiles,
 		maxFileSize,

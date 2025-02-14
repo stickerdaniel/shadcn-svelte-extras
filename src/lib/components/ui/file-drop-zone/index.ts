@@ -15,9 +15,9 @@ export const displaySize = (bytes: number): string => {
 
 // Utilities for working with file sizes
 export const BYTE = 1;
-export const KILOBYTE = 1_000;
-export const MEGABYTE = 1_000_000;
-export const GIGABYTE = 1_000_000_000;
+export const KILOBYTE = 1024;
+export const MEGABYTE = 1024 * KILOBYTE;
+export const GIGABYTE = 1024 * MEGABYTE;
 
 // utilities for limiting accepted files
 export const ACCEPT_IMAGE = 'image/*';
