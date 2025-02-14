@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.15.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.14.1...v1.15.0) (2025-02-14)
+
+
+### Features
+
+* `ui/window` + `ui/terminal` ([43bc351](https://github.com/ieedan/shadcn-svelte-extras/commit/43bc351230ff2b459b1e0f4899c4a0b03d66973a))
+* Add `hooks/use-boolean.svelte` ([d11834e](https://github.com/ieedan/shadcn-svelte-extras/commit/d11834e6af54dcdd7dba0424511784800f055f9a))
+
 ## [1.14.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.14.0...v1.14.1) (2025-02-14)
 
 
