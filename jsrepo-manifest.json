@@ -470,6 +470,30 @@
 					}
 				},
 				{
+					"name": "terminal",
+					"directory": "src/lib/components/ui/terminal",
+					"category": "ui",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.ts",
+						"state.svelte.ts",
+						"terminal-animated-span.svelte",
+						"terminal-typing-animation.svelte",
+						"terminal.svelte",
+						"types.ts"
+					],
+					"localDependencies": ["utils/utils", "actions/typewriter.svelte", "ui/window"],
+					"dependencies": [],
+					"devDependencies": ["runed@^0.23.3", "bits-ui@1.1.0"],
+					"_imports_": {
+						"$lib/utils/utils": "{{utils/utils}}",
+						"$lib/actions/typewriter.svelte": "{{actions/typewriter.svelte}}",
+						"$lib/components/ui/window": "{{ui/window}}"
+					}
+				},
+				{
 					"name": "theme-selector",
 					"directory": "src/lib/components/ui/theme-selector",
 					"category": "ui",
@@ -505,6 +529,21 @@
 						"$lib/utils/utils": "{{utils/utils}}",
 						"$lib/components/ui/collapsible/index.js": "{{ui/collapsible}}/index.js"
 					}
+				},
+				{
+					"name": "window",
+					"directory": "src/lib/components/ui/window",
+					"category": "ui",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": ["index.ts", "window.svelte"],
+					"localDependencies": ["utils/utils"],
+					"dependencies": [],
+					"devDependencies": ["bits-ui@1.1.0"],
+					"_imports_": {
+						"$lib/utils/utils": "{{utils/utils}}"
+					}
 				}
 			]
 		},
@@ -536,6 +575,19 @@
 					"_imports_": {},
 					"dependencies": [],
 					"devDependencies": []
+				},
+				{
+					"name": "typewriter.svelte",
+					"directory": "src/lib/actions",
+					"category": "actions",
+					"tests": false,
+					"subdirectory": false,
+					"list": false,
+					"files": ["typewriter.svelte.ts"],
+					"localDependencies": [],
+					"_imports_": {},
+					"dependencies": [],
+					"devDependencies": []
 				}
 			]
 		},
@@ -550,6 +602,19 @@
 					"subdirectory": false,
 					"list": true,
 					"files": ["use-auto-scroll.svelte.ts"],
+					"localDependencies": [],
+					"_imports_": {},
+					"dependencies": [],
+					"devDependencies": []
+				},
+				{
+					"name": "use-boolean.svelte",
+					"directory": "src/lib/hooks",
+					"category": "hooks",
+					"tests": false,
+					"subdirectory": false,
+					"list": true,
+					"files": ["use-boolean.svelte.ts"],
 					"localDependencies": [],
 					"_imports_": {},
 					"dependencies": [],
@@ -579,7 +644,7 @@
 					"localDependencies": [],
 					"_imports_": {},
 					"dependencies": [],
-					"devDependencies": ["nanoid@^5.0.9"]
+					"devDependencies": ["nanoid@^5.1.0"]
 				}
 			]
 		},
