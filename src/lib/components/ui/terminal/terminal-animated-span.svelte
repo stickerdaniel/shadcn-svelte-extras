@@ -21,7 +21,7 @@
 </script>
 
 {#if playAnimation}
-	<span class={cn('block', className)} in:fly={{ y: -5, duration: 300 * animationSpeed }}>
+	<span class={cn('block', className)} in:fly={{ y: -5, duration: 300 / animationSpeed }}>
 		{@render children?.()}
 	</span>
 {/if}
