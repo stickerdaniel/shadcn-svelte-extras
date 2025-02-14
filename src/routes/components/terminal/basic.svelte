@@ -2,7 +2,7 @@
 	import * as Terminal from '$lib/components/ui/terminal';
 </script>
 
-<Terminal.Root class="m-6 max-w-xl">
+<Terminal.Root class="m-6 max-w-xl" delay={250}>
 	<Terminal.TypingAnimation>&gt; jsrepo add ui/terminal</Terminal.TypingAnimation>
 
 	<Terminal.AnimatedSpan delay={1500} class="text-green-500">

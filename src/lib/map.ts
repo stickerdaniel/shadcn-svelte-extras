@@ -138,7 +138,8 @@ const map: Record<string, Route[]> = {
 		},
 		{
 			name: 'Terminal',
-			description: 'A terminal window component.',
+			description:
+				'An implementation of the MacOS terminal. Useful for showcasing a command line interface.',
 			href: '/components/terminal',
 			specifier: 'ui/terminal',
 			source: 'src/lib/components/ui/terminal',

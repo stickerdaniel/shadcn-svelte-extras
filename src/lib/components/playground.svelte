@@ -32,14 +32,16 @@
 			<Tabs.Trigger value="code">Code</Tabs.Trigger>
 		</Tabs.List>
 		<Tabs.Content value="preview" class="size-full">
-			<Button
-				size="icon"
-				variant="outline"
-				class="absolute left-3 top-3"
-				onclick={() => remountCount++}
-			>
-				<RefreshCw class="size-4" />
-			</Button>
+			{#if replay}
+				<Button
+					size="icon"
+					variant="ghost"
+					class="absolute left-3 top-3"
+					onclick={() => remountCount++}
+				>
+					<RefreshCw class="size-4" />
+				</Button>
+			{/if}
 			{#key remountCount}
 				<div class="flex size-full place-items-center justify-center">
 					{@render children()}

@@ -9,23 +9,23 @@
 		class?: string;
 		delay?: number;
 		speed?: number;
-        autoplay?: boolean;
+		autoplay?: boolean;
 	}>;
 
 	let { delay = 0, speed = 1, autoplay = true, children, class: className }: Props = $props();
 
 	const terminal = useTerminalRoot({ delay, speed });
 
-    onMount(() => {
+	onMount(() => {
 		// we play here so that we don't play before it is visible (on the server)
-        if (autoplay) {
-            terminal.play();
-        }
+		if (autoplay) {
+			terminal.play();
+		}
 
-        return () => {
-            terminal.dispose();
-        }
-    })
+		return () => {
+			terminal.dispose();
+		};
+	});
 </script>
 
 <Window class={cn('', className)}>
