@@ -261,11 +261,12 @@
 					"subdirectory": true,
 					"list": true,
 					"files": ["file-drop-zone.svelte", "index.ts"],
-					"localDependencies": ["utils/utils"],
+					"localDependencies": ["utils/utils", "hooks/use-id"],
 					"dependencies": [],
 					"devDependencies": ["lucide-svelte@^0.475.0"],
 					"_imports_": {
-						"$lib/utils/utils": "{{utils/utils}}"
+						"$lib/utils/utils": "{{utils/utils}}",
+						"$lib/hooks/use-id": "{{hooks/use-id}}"
 					}
 				},
 				{
@@ -566,6 +567,19 @@
 					"_imports_": {},
 					"dependencies": [],
 					"devDependencies": []
+				},
+				{
+					"name": "use-id",
+					"directory": "src/lib/hooks",
+					"category": "hooks",
+					"tests": false,
+					"subdirectory": false,
+					"list": false,
+					"files": ["use-id.ts"],
+					"localDependencies": [],
+					"_imports_": {},
+					"dependencies": [],
+					"devDependencies": ["nanoid@^5.0.9"]
 				}
 			]
 		},
