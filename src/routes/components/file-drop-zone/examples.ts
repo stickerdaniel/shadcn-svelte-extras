@@ -3,7 +3,6 @@ import basicRaw from './basic.svelte?raw';
 import Form from './form.svelte';
 import formRaw from './form.svelte?raw';
 import schemaRaw from './schema.ts?raw';
-import serverRaw from './+page.server.ts?raw';
 
 const examples = {
 	basic: {
@@ -14,8 +13,7 @@ const examples = {
 		code: formRaw,
 		Component: Form
 	},
-	schema: schemaRaw,
-	server: serverRaw
+	schema: schemaRaw
 };
 
 export { examples };
