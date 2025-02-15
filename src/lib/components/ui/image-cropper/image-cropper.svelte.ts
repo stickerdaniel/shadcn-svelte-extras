@@ -10,21 +10,21 @@ export type ImageCropperRootProps = WritableBoxedValues<{
 
 class ImageCropperRootState {
 	#createdUrls = $state<string[]>([]);
-	#previousUrl = $state<string>();
+	tempUrl = $state<string>();
 	pixelCrop = $state<CropArea>();
 
 	constructor(readonly opts: ImageCropperRootProps) {}
 
 	onUpload(file: File) {
-		this.#previousUrl = this.opts.src.current;
-		this.opts.src.current = URL.createObjectURL(file);
+		this.tempUrl = URL.createObjectURL(file);
+		this.#createdUrls.push(this.tempUrl);
 		this.opts.open.current = true;
 	}
 
 	onCancel() {
-		this.opts.src.current = this.#previousUrl ?? '';
-
+		this.tempUrl = undefined;
 		this.opts.open.current = false;
+		this.pixelCrop = undefined;
 	}
 
 	dispose() {
@@ -69,10 +69,10 @@ class ImageCropperCropState {
 	}
 
 	async onclick() {
-		if (!this.rootState.pixelCrop) return;
+		if (!this.rootState.pixelCrop || !this.rootState.tempUrl) return;
 
 		this.rootState.opts.src.current = await getCroppedImg(
-			this.rootState.opts.src.current,
+			this.rootState.tempUrl,
 			this.rootState.pixelCrop
 		);
 

@@ -2,7 +2,7 @@
 	import * as ImageCropper from '$lib/components/ui/image-cropper';
 </script>
 
-<ImageCropper.Root>
+<ImageCropper.Root src="https://github.com/shadcn.png">
 	<ImageCropper.Trigger />
 	<ImageCropper.Dialog>
 		<ImageCropper.Cropper />

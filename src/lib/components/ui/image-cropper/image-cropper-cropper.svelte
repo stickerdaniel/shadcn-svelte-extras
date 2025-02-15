@@ -7,7 +7,8 @@
 
 <div class="relative h-full w-full">
 	<Cropper
-		image={cropperState.rootState.opts.src.current}
+		aspect={1}
+		image={cropperState.rootState.tempUrl}
 		oncropcomplete={cropperState.onCropComplete}
 	/>
 </div>
