@@ -39,7 +39,6 @@
 		"window",
 		"active.svelte",
 		"shortcut.svelte",
-		"context-provider",
 		"use-auto-scroll.svelte",
 		"use-boolean.svelte",
 		"use-clipboard.svelte"

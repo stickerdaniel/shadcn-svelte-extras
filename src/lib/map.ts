@@ -98,8 +98,7 @@ const map: Record<string, Route[]> = {
 			description: 'A simple link component.',
 			href: '/components/link',
 			specifier: 'ui/link',
-			source: 'src/lib/components/ui/link/link.svelte',
-			status: 'New'
+			source: 'src/lib/components/ui/link/link.svelte'
 		},
 		{
 			name: 'Modal',
@@ -113,8 +112,7 @@ const map: Record<string, Route[]> = {
 			description: 'A natural language date input with suggestions.',
 			href: '/components/nlp-date-input',
 			specifier: 'ui/nlp-date-input',
-			source: 'src/lib/components/ui/nlp-date-input/nlp-date-input.svelte',
-			status: 'New'
+			source: 'src/lib/components/ui/nlp-date-input/nlp-date-input.svelte'
 		},
 		{
 			name: 'Phone Input',
@@ -215,15 +213,6 @@ const map: Record<string, Route[]> = {
 			specifier: 'hooks/use-boolean.svelte',
 			source: 'src/lib/hooks/use-boolean.svelte.ts',
 			status: 'New'
-		}
-	],
-	Utils: [
-		{
-			name: 'Context Provider',
-			description: 'A context provider for safely shared state.',
-			href: '/utils/context-provider',
-			specifier: 'utils/context-provider',
-			source: 'src/lib/utils/context-provider.ts'
 		}
 	]
 };
