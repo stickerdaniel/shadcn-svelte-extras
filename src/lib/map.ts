@@ -65,6 +65,14 @@ const map: Record<string, Route[]> = {
 			status: 'New'
 		},
 		{
+			name: 'Image Cropper',
+			description: "A component for uploading and resizing images.",
+			href: '/components/image-cropper',
+			specifier: 'ui/image-cropper',
+			source: 'src/lib/components/ui/image-cropper',
+			status: 'New'
+		},
+		{
 			name: 'IPv4Address Input',
 			description: "An IPv4 address input with all the behavior you'd expect.",
 			href: '/components/ipv4address-input',
