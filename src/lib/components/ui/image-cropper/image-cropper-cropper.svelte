@@ -5,6 +5,7 @@
 	const cropperState = useImageCropperCropper();
 </script>
 
+<!-- This needs to be relative https://github.com/ValentinH/svelte-easy-crop#basic-usage -->
 <div class="relative h-full w-full">
 	<Cropper
 		aspect={1}

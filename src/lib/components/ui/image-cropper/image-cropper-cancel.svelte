@@ -4,7 +4,11 @@
 	import { useImageCropperCancel } from './image-cropper.svelte.js';
 	import { Trash2 } from 'lucide-svelte';
 
-	let { variant = 'outline', size = 'sm', ...rest }: WithoutChildren<ButtonProps> = $props();
+	let {
+		variant = 'outline',
+		size = 'sm',
+		...rest
+	}: Omit<WithoutChildren<ButtonProps>, 'onclick'> = $props();
 
 	const cancelState = useImageCropperCancel();
 </script>

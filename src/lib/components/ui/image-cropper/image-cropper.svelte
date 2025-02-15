@@ -4,7 +4,12 @@
 	import type { ImageCropperRootProps } from './types';
 	import { onDestroy } from 'svelte';
 
-	let { src = $bindable(''), open = $bindable(false), children }: ImageCropperRootProps = $props();
+	let {
+		src = $bindable(''),
+		open = $bindable(false),
+		onCropped = () => {},
+		children
+	}: ImageCropperRootProps = $props();
 
 	const rootState = useImageCropperRoot({
 		src: box.with(
@@ -14,7 +19,8 @@
 		open: box.with(
 			() => open,
 			(v) => (open = v)
-		)
+		),
+		onCropped
 	});
 
 	onDestroy(() => rootState.dispose());

@@ -1,12 +1,14 @@
 import type { ReadableBoxedValues, WritableBoxedValues } from '$lib/utils/box';
 import { Context } from 'runed';
 import type { CropArea, DispatchEvents } from 'svelte-easy-crop';
-import { getCroppedImg } from '.';
+import { getCroppedImg } from './utils';
 
 export type ImageCropperRootProps = WritableBoxedValues<{
 	src: string;
 	open: boolean;
-}>;
+}> & {
+	onCropped: (url: string) => void;
+};
 
 class ImageCropperRootState {
 	#createdUrls = $state<string[]>([]);
@@ -25,6 +27,16 @@ class ImageCropperRootState {
 		this.tempUrl = undefined;
 		this.opts.open.current = false;
 		this.pixelCrop = undefined;
+	}
+
+	async onCrop() {
+		if (!this.pixelCrop || !this.tempUrl) return;
+
+		this.opts.src.current = await getCroppedImg(this.tempUrl, this.pixelCrop);
+
+		this.opts.open.current = false;
+
+		this.opts.onCropped(this.opts.src.current);
 	}
 
 	dispose() {
@@ -68,15 +80,8 @@ class ImageCropperCropState {
 		this.onclick = this.onclick.bind(this);
 	}
 
-	async onclick() {
-		if (!this.rootState.pixelCrop || !this.rootState.tempUrl) return;
-
-		this.rootState.opts.src.current = await getCroppedImg(
-			this.rootState.tempUrl,
-			this.rootState.pixelCrop
-		);
-
-		this.rootState.opts.open.current = false;
+	onclick() {
+		this.rootState.onCrop();
 	}
 }
 

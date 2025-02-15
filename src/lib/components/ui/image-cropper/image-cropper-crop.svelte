@@ -4,7 +4,11 @@
 	import { useImageCropperCrop } from './image-cropper.svelte.js';
 	import { Crop } from 'lucide-svelte';
 
-	let { variant = 'default', size = 'sm', ...rest }: WithoutChildren<ButtonProps> = $props();
+	let {
+		variant = 'default',
+		size = 'sm',
+		...rest
+	}: Omit<WithoutChildren<ButtonProps>, 'onclick'> = $props();
 
 	const cropState = useImageCropperCrop();
 </script>
