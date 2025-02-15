@@ -1,0 +1,18 @@
+<script lang="ts">
+	import * as Dialog from '$lib/components/ui/dialog';
+	import { cn } from '$lib/utils/utils';
+	import { useImageCropperDialog } from './image-cropper.svelte.js';
+	import type { ImageCropperDialogProps } from './types';
+
+	let { children, class: className, ...rest }: ImageCropperDialogProps = $props();
+
+	const dialogState = useImageCropperDialog();
+</script>
+
+<Dialog.Root bind:open={dialogState.rootState.opts.open.current}>
+	<Dialog.Content {...rest} hideClose class={cn('min-h-96', className)}>
+		<div class="flex flex-col gap-4">
+			{@render children?.()}
+		</div>
+	</Dialog.Content>
+</Dialog.Root>

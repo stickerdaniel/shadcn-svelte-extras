@@ -66,7 +66,7 @@ const map: Record<string, Route[]> = {
 		},
 		{
 			name: 'Image Cropper',
-			description: "A component for uploading and resizing images.",
+			description: 'A component for uploading and resizing images.',
 			href: '/components/image-cropper',
 			specifier: 'ui/image-cropper',
 			source: 'src/lib/components/ui/image-cropper',
