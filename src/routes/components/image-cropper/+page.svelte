@@ -3,6 +3,7 @@
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import { Code } from '$lib/components/ui/code';
+	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
 </script>
 
@@ -30,3 +31,10 @@
 </ImageCropper.Root>`}
 	/>
 </div>
+<Subheading>Acknowledgements</Subheading>
+<p>
+	This component was inspired by
+	<Link href="https://github.com/sujjeee/shadcn-image-cropper" target="_blank">
+		sujjeee/shadcn-image-cropper
+	</Link>.
+</p>
