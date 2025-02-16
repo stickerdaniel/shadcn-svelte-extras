@@ -31,6 +31,10 @@
 </ImageCropper.Root>`}
 	/>
 </div>
+<Subheading>Square Preview</Subheading>
+<Playground code={examples.squarePreview.code}>
+	<examples.squarePreview.Component />
+</Playground>
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This component was inspired by
