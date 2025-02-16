@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.15.0...v1.16.0) (2025-02-16)
+
+
+### Features
+
+* `ui/image-cropper` ([028f6ec](https://github.com/ieedan/shadcn-svelte-extras/commit/028f6ec9a4fe7d4d0a19699727b8daa21d1bfd4d))
+
 ## [1.15.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.14.1...v1.15.0) (2025-02-14)
 
 
