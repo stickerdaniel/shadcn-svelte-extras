@@ -89,9 +89,9 @@
 					"devDependencies": [
 						"tailwind-variants@^0.3.1",
 						"isomorphic-dompurify@^2.21.0",
-						"shiki@^2.3.2",
-						"@shikijs/langs@^2.3.2",
-						"@shikijs/themes@^2.3.2"
+						"shiki@^2.4.1",
+						"@shikijs/langs@^2.4.1",
+						"@shikijs/themes@^2.4.1"
 					],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
@@ -261,12 +261,48 @@
 					"subdirectory": true,
 					"list": true,
 					"files": ["file-drop-zone.svelte", "index.ts"],
-					"localDependencies": ["utils/utils", "hooks/use-id"],
+					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["lucide-svelte@^0.475.0"],
+					"devDependencies": ["lucide-svelte@^0.475.0", "bits-ui@1.1.0"],
 					"_imports_": {
+						"$lib/utils/utils": "{{utils/utils}}"
+					}
+				},
+				{
+					"name": "image-cropper",
+					"directory": "src/lib/components/ui/image-cropper",
+					"category": "ui",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"image-cropper-cancel.svelte",
+						"image-cropper-controls.svelte",
+						"image-cropper-crop.svelte",
+						"image-cropper-cropper.svelte",
+						"image-cropper-dialog.svelte",
+						"image-cropper-trigger.svelte",
+						"image-cropper.svelte",
+						"image-cropper.svelte.ts",
+						"index.ts",
+						"types.ts",
+						"utils.ts"
+					],
+					"localDependencies": ["ui/button", "utils/utils", "ui/dialog", "ui/avatar", "utils/box"],
+					"dependencies": [],
+					"devDependencies": [
+						"bits-ui@1.1.0",
+						"lucide-svelte@^0.475.0",
+						"svelte-easy-crop@^4.0.0",
+						"svelte-toolbelt@^0.7.1",
+						"runed@^0.23.4"
+					],
+					"_imports_": {
+						"$lib/components/ui/button": "{{ui/button}}",
 						"$lib/utils/utils": "{{utils/utils}}",
-						"$lib/hooks/use-id": "{{hooks/use-id}}"
+						"$lib/components/ui/dialog": "{{ui/dialog}}",
+						"$lib/components/ui/avatar": "{{ui/avatar}}",
+						"$lib/utils/box": "{{utils/box}}"
 					}
 				},
 				{
@@ -486,7 +522,7 @@
 					],
 					"localDependencies": ["utils/utils", "actions/typewriter.svelte", "ui/window"],
 					"dependencies": [],
-					"devDependencies": ["runed@^0.23.3", "bits-ui@1.1.0"],
+					"devDependencies": ["runed@^0.23.4", "bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
 						"$lib/actions/typewriter.svelte": "{{actions/typewriter.svelte}}",
@@ -632,19 +668,6 @@
 					"_imports_": {},
 					"dependencies": [],
 					"devDependencies": []
-				},
-				{
-					"name": "use-id",
-					"directory": "src/lib/hooks",
-					"category": "hooks",
-					"tests": false,
-					"subdirectory": false,
-					"list": false,
-					"files": ["use-id.ts"],
-					"localDependencies": [],
-					"_imports_": {},
-					"dependencies": [],
-					"devDependencies": ["nanoid@^5.1.0"]
 				}
 			]
 		},
@@ -652,17 +675,17 @@
 			"name": "utils",
 			"blocks": [
 				{
-					"name": "context-provider",
+					"name": "box",
 					"directory": "src/lib/utils",
 					"category": "utils",
 					"tests": false,
 					"subdirectory": false,
-					"list": true,
-					"files": ["context-provider.ts"],
+					"list": false,
+					"files": ["box.ts"],
 					"localDependencies": [],
 					"_imports_": {},
 					"dependencies": [],
-					"devDependencies": []
+					"devDependencies": ["svelte-toolbelt@^0.7.1"]
 				},
 				{
 					"name": "ipv4-address",
