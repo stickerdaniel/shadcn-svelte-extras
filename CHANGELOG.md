@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.17.0...v1.18.0) (2025-02-16)
+
+
+### Features
+
+* Add `<Terminal.Loop/>` component ([41b73f9](https://github.com/ieedan/shadcn-svelte-extras/commit/41b73f90385ec8b4d9aa60e17609cf942df2e4d3))
+
 ## [1.17.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.16.0...v1.17.0) (2025-02-16)
 
 
