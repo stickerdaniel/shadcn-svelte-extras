@@ -12,9 +12,10 @@
 </Playground>
 <Installation specifier="ui/terminal" />
 <Subheading>Usage</Subheading>
-<Code
-	lang="svelte"
-	code={`\<script lang="ts"\>
+<div>
+	<Code
+		lang="svelte"
+		code={`\<script lang="ts"\>
 	import * as Terminal from '$lib/components/ui/terminal';
 \<\/script\>
 
@@ -22,15 +23,17 @@
 	<Terminal.TypingAnimation/>
 	<Terminal.AnimatedSpan/>
 </Terminal.Root>`}
-/>
+	/>
+</div>
 <p>
 	You can add a delay to <CodeSpan>{`<Terminal.Root/>`}</CodeSpan> to delay every animation by that amount
 	of time:
 </p>
-<Code
-	lang="svelte"
-	highlight={[5]}
-	code={`\<script lang="ts"\>
+<div>
+	<Code
+		lang="svelte"
+		highlight={[5]}
+		code={`\<script lang="ts"\>
 	import * as Terminal from '$lib/components/ui/terminal';
 \<\/script\>
 
@@ -38,14 +41,16 @@
 	<Terminal.TypingAnimation/>
 	<Terminal.AnimatedSpan/>
 </Terminal.Root>`}
-/>
+	/>
+</div>
 <p>
 	You can also change the speed of all animations from <CodeSpan>{`<Terminal.Root/>`}</CodeSpan>:
 </p>
-<Code
-	lang="svelte"
-	highlight={[5, 6]}
-	code={`\<script lang="ts"\>
+<div>
+	<Code
+		lang="svelte"
+		highlight={[5, 6]}
+		code={`\<script lang="ts"\>
 	import * as Terminal from '$lib/components/ui/terminal';
 \<\/script\>
 
@@ -54,7 +59,16 @@
 	<Terminal.TypingAnimation/>
 	<Terminal.AnimatedSpan/>
 </Terminal.Root>`}
-/>
+	/>
+</div>
+<Subheading>Loop</Subheading>
+<p>
+	You can make the terminal preview continuously loop using the
+	<CodeSpan>{'<Terminal.Loop/>'}</CodeSpan> component.
+</p>
+<Playground code={examples.loop.code}>
+	<examples.loop.Component />
+</Playground>
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This component was inspired by
