@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.16.0...v1.17.0) (2025-02-16)
+
+
+### Features
+
+* Add `Loading` component to `ui/terminal` ([c4b28bc](https://github.com/ieedan/shadcn-svelte-extras/commit/c4b28bc5f737b75312745e71368fcacaf0a4817d))
+
 ## [1.16.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.15.0...v1.16.0) (2025-02-16)
 
 
