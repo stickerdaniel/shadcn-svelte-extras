@@ -22,7 +22,7 @@
 
 	let { children } = $props();
 
-	const commandState = commandContext.init(false);
+	commandContext.set(false);
 
 	const getCurrentDoc = (
 		url: URL
@@ -51,7 +51,7 @@
 		ctrl: true,
 		key: 'k',
 		callback: () => {
-			$commandState = true;
+			commandContext.set(true);
 		}
 	}}
 />

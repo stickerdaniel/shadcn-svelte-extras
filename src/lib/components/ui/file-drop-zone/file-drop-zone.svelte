@@ -49,10 +49,10 @@
 	import { cn } from '$lib/utils/utils';
 	import { Upload } from 'lucide-svelte';
 	import { displaySize } from '.';
-	import { useId } from '$lib/hooks/use-id';
+	import { useId } from 'bits-ui';
 
 	let {
-		id = useId('file-drop-zone'),
+		id = useId(),
 		children,
 		maxFiles,
 		maxFileSize,

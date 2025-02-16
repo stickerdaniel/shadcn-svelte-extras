@@ -1,3 +1,3 @@
-import { context } from './utils/context-provider';
+import { Context } from 'runed';
 
-export const commandContext = context<boolean>('command-menu-context');
+export const commandContext = new Context<boolean>('command-menu-context');

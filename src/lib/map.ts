@@ -65,6 +65,14 @@ const map: Record<string, Route[]> = {
 			status: 'New'
 		},
 		{
+			name: 'Image Cropper',
+			description: 'A component for uploading and resizing images.',
+			href: '/components/image-cropper',
+			specifier: 'ui/image-cropper',
+			source: 'src/lib/components/ui/image-cropper',
+			status: 'New'
+		},
+		{
 			name: 'IPv4Address Input',
 			description: "An IPv4 address input with all the behavior you'd expect.",
 			href: '/components/ipv4address-input',
@@ -90,8 +98,7 @@ const map: Record<string, Route[]> = {
 			description: 'A simple link component.',
 			href: '/components/link',
 			specifier: 'ui/link',
-			source: 'src/lib/components/ui/link/link.svelte',
-			status: 'New'
+			source: 'src/lib/components/ui/link/link.svelte'
 		},
 		{
 			name: 'Modal',
@@ -105,8 +112,7 @@ const map: Record<string, Route[]> = {
 			description: 'A natural language date input with suggestions.',
 			href: '/components/nlp-date-input',
 			specifier: 'ui/nlp-date-input',
-			source: 'src/lib/components/ui/nlp-date-input/nlp-date-input.svelte',
-			status: 'New'
+			source: 'src/lib/components/ui/nlp-date-input/nlp-date-input.svelte'
 		},
 		{
 			name: 'Phone Input',
@@ -207,15 +213,6 @@ const map: Record<string, Route[]> = {
 			specifier: 'hooks/use-boolean.svelte',
 			source: 'src/lib/hooks/use-boolean.svelte.ts',
 			status: 'New'
-		}
-	],
-	Utils: [
-		{
-			name: 'Context Provider',
-			description: 'A context provider for safely shared state.',
-			href: '/utils/context-provider',
-			specifier: 'utils/context-provider',
-			source: 'src/lib/utils/context-provider.ts'
 		}
 	]
 };

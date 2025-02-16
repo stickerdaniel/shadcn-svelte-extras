@@ -4,11 +4,13 @@
 	import { goto } from '$app/navigation';
 	import { commandContext } from '$lib/context';
 	import { map } from '$lib/map';
-
-	const open = commandContext.get();
 </script>
 
-<Modal bind:open={$open} class="p-0" hideClose>
+<Modal
+	bind:open={() => commandContext.get(), (val) => commandContext.set(val)}
+	class="p-0"
+	hideClose
+>
 	<Command.Root>
 		<Command.Input placeholder="Search for extras..." />
 		<Command.List class="min-h-[300px]">
@@ -19,7 +21,7 @@
 						<Command.Item
 							onclick={async () => {
 								await goto(route.href);
-								$open = false;
+								commandContext.set(false);
 							}}
 						>
 							{route.name}
