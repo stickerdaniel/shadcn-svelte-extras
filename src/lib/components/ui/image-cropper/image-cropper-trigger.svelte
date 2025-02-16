@@ -7,7 +7,12 @@
 	import { Upload } from 'lucide-svelte';
 	import { cn } from '$lib/utils/utils';
 
-	let { id = useId(), class: className, ...rest }: ImageCropperTriggerProps = $props();
+	let {
+		id = useId(),
+		class: className,
+		accept = 'image/*',
+		...rest
+	}: ImageCropperTriggerProps = $props();
 
 	const triggerState = useImageCropperTrigger({ id: box.with(() => id) });
 </script>
@@ -19,6 +24,7 @@
 		<Avatar.Image src={triggerState.rootState.opts.src?.current} />
 		<Avatar.Fallback>
 			<Upload class="size-4" />
+			<span class="sr-only">Upload image</span>
 		</Avatar.Fallback>
 	</Avatar.Root>
 	<input
@@ -30,8 +36,8 @@
 			// reset so that we can reupload the same file
 			(e.target! as HTMLInputElement).value = '';
 		}}
-		accept="image/*"
 		type="file"
+		{accept}
 		{id}
 		style="display: none;"
 	/>

@@ -19,7 +19,7 @@
 	import * as ImageCropper from '$lib/components/ui/image-cropper';
 \<\/script\>
 
-<ImageCropper.Root>
+<ImageCropper.Root bind:src onUpload>
 	<ImageCropper.Trigger/>
 	<ImageCropper.Dialog>
 		<ImageCropper.Cropper/>
@@ -34,6 +34,10 @@
 <Subheading>Square Preview</Subheading>
 <Playground code={examples.squarePreview.code}>
 	<examples.squarePreview.Component />
+</Playground>
+<Subheading>No Default Image</Subheading>
+<Playground code={examples.noDefaultImage.code}>
+	<examples.noDefaultImage.Component />
 </Playground>
 <Subheading>Acknowledgements</Subheading>
 <p>

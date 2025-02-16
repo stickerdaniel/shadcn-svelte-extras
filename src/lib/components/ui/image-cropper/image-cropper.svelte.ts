@@ -5,27 +5,32 @@ import { getCroppedImg } from './utils';
 
 export type ImageCropperRootProps = WritableBoxedValues<{
 	src: string;
-	open: boolean;
 }> & {
 	onCropped: (url: string) => void;
 };
 
 class ImageCropperRootState {
 	#createdUrls = $state<string[]>([]);
+	open = $state(false);
 	tempUrl = $state<string>();
 	pixelCrop = $state<CropArea>();
 
-	constructor(readonly opts: ImageCropperRootProps) {}
+	constructor(readonly opts: ImageCropperRootProps) {
+		this.onUpload = this.onUpload.bind(this);
+		this.onCancel = this.onCancel.bind(this);
+		this.onCrop = this.onCrop.bind(this);
+		this.dispose = this.dispose.bind(this);
+	}
 
 	onUpload(file: File) {
 		this.tempUrl = URL.createObjectURL(file);
 		this.#createdUrls.push(this.tempUrl);
-		this.opts.open.current = true;
+		this.open = true;
 	}
 
 	onCancel() {
 		this.tempUrl = undefined;
-		this.opts.open.current = false;
+		this.open = false;
 		this.pixelCrop = undefined;
 	}
 
@@ -34,7 +39,7 @@ class ImageCropperRootState {
 
 		this.opts.src.current = await getCroppedImg(this.tempUrl, this.pixelCrop);
 
-		this.opts.open.current = false;
+		this.open = false;
 
 		this.opts.onCropped(this.opts.src.current);
 	}
@@ -54,7 +59,9 @@ class ImageCropperTriggerState {
 	constructor(
 		readonly rootState: ImageCropperRootState,
 		readonly opts: ImageCropperTriggerProps
-	) {}
+	) {
+		this.onUpload = this.onUpload.bind(this);
+	}
 
 	onUpload(file: File) {
 		this.rootState.onUpload(file);

@@ -2,10 +2,10 @@
 	import * as ImageCropper from '$lib/components/ui/image-cropper';
 </script>
 
-<ImageCropper.Root src="https://github.com/shadcn.png">
-	<ImageCropper.Trigger class="rounded-md" />
+<ImageCropper.Root>
+	<ImageCropper.Trigger />
 	<ImageCropper.Dialog>
-		<ImageCropper.Cropper cropShape="rect" />
+		<ImageCropper.Cropper />
 		<ImageCropper.Controls>
 			<ImageCropper.Cancel />
 			<ImageCropper.Crop />
