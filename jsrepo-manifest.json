@@ -516,6 +516,7 @@
 						"index.ts",
 						"state.svelte.ts",
 						"terminal-animated-span.svelte",
+						"terminal-loading.svelte",
 						"terminal-typing-animation.svelte",
 						"terminal.svelte",
 						"types.ts"
