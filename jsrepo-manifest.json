@@ -514,16 +514,17 @@
 					"list": true,
 					"files": [
 						"index.ts",
-						"state.svelte.ts",
 						"terminal-animated-span.svelte",
 						"terminal-loading.svelte",
+						"terminal-loop.svelte",
 						"terminal-typing-animation.svelte",
 						"terminal.svelte",
+						"terminal.svelte.ts",
 						"types.ts"
 					],
 					"localDependencies": ["utils/utils", "actions/typewriter.svelte", "ui/window"],
 					"dependencies": [],
-					"devDependencies": ["runed@^0.23.4", "bits-ui@1.1.0"],
+					"devDependencies": ["bits-ui@1.1.0", "runed@^0.23.4"],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
 						"$lib/actions/typewriter.svelte": "{{actions/typewriter.svelte}}",
