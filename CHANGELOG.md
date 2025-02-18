@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.2](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.18.1...v1.18.2) (2025-02-18)
+
+
+### Bug Fixes
+
+* Improve `<Terminal.Loading/>` with snippets ([36a8358](https://github.com/ieedan/shadcn-svelte-extras/commit/36a8358a1c82e2d2376b66a4f4178db5e26dba2d))
+
 ## [1.18.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.18.0...v1.18.1) (2025-02-18)
 
 
