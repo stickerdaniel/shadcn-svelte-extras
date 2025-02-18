@@ -20,7 +20,9 @@
 \<\/script\>
 
 <ImageCropper.Root bind:src onUpload>
-	<ImageCropper.Trigger/>
+	<ImageCropper.Trigger>
+		<ImageCropper.Preview/>
+	</ImageCropper.Trigger>
 	<ImageCropper.Dialog>
 		<ImageCropper.Cropper/>
 		<ImageCropper.Controls>
@@ -38,6 +40,14 @@
 <Subheading>No Default Image</Subheading>
 <Playground code={examples.noDefaultImage.code}>
 	<examples.noDefaultImage.Component />
+</Playground>
+<Subheading>Custom Trigger</Subheading>
+<Playground code={examples.customTrigger.code}>
+	<examples.customTrigger.Component />
+</Playground>
+<Subheading>Custom Preview</Subheading>
+<Playground code={examples.customPreview.code}>
+	<examples.customPreview.Component />
 </Playground>
 <Subheading>Acknowledgements</Subheading>
 <p>

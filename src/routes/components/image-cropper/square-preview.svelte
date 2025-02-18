@@ -3,7 +3,9 @@
 </script>
 
 <ImageCropper.Root src="https://github.com/shadcn.png">
-	<ImageCropper.Trigger class="rounded-md" />
+	<ImageCropper.UploadTrigger>
+		<ImageCropper.Preview class="rounded-md" />
+	</ImageCropper.UploadTrigger>
 	<ImageCropper.Dialog>
 		<ImageCropper.Cropper cropShape="rect" />
 		<ImageCropper.Controls>

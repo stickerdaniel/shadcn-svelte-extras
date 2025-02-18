@@ -5,9 +5,12 @@ import { getCroppedImg } from './utils';
 
 export type ImageCropperRootProps = WritableBoxedValues<{
 	src: string;
-}> & {
-	onCropped: (url: string) => void;
-};
+}> &
+	ReadableBoxedValues<{
+		id: string;
+	}> & {
+		onCropped: (url: string) => void;
+	};
 
 class ImageCropperRootState {
 	#createdUrls = $state<string[]>([]);
@@ -44,6 +47,14 @@ class ImageCropperRootState {
 		this.opts.onCropped(this.opts.src.current);
 	}
 
+	get src() {
+		return this.opts.src.current;
+	}
+
+	get id() {
+		return this.opts.id.current;
+	}
+
 	dispose() {
 		for (const url of this.#createdUrls) {
 			URL.revokeObjectURL(url);
@@ -56,16 +67,11 @@ export type ImageCropperTriggerProps = ReadableBoxedValues<{
 }>;
 
 class ImageCropperTriggerState {
-	constructor(
-		readonly rootState: ImageCropperRootState,
-		readonly opts: ImageCropperTriggerProps
-	) {
-		this.onUpload = this.onUpload.bind(this);
-	}
+	constructor(readonly rootState: ImageCropperRootState) {}
+}
 
-	onUpload(file: File) {
-		this.rootState.onUpload(file);
-	}
+class ImageCropperPreviewState {
+	constructor(readonly rootState: ImageCropperRootState) {}
 }
 
 class ImageCropperDialogState {
@@ -108,10 +114,16 @@ export const useImageCropperRoot = (props: ImageCropperRootProps) => {
 	return ImageCropperRootContext.set(new ImageCropperRootState(props));
 };
 
-export const useImageCropperTrigger = (props: ImageCropperTriggerProps) => {
+export const useImageCropperTrigger = () => {
 	const rootState = ImageCropperRootContext.get();
 
-	return new ImageCropperTriggerState(rootState, props);
+	return new ImageCropperTriggerState(rootState);
+};
+
+export const useImageCropperPreview = () => {
+	const rootState = ImageCropperRootContext.get();
+
+	return new ImageCropperPreviewState(rootState);
 };
 
 export const useImageCropperDialog = () => {
