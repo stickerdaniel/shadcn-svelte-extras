@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.18.0...v1.18.1) (2025-02-18)
+
+
+### Bug Fixes
+
+* Ensure `ui/file-drop-zone` respects max files ([be18146](https://github.com/ieedan/shadcn-svelte-extras/commit/be18146b9eac179d97dacbdcd74966fcc45f22f6))
+
 ## [1.18.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.17.0...v1.18.0) (2025-02-16)
 
 
