@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import { onDestroy } from 'svelte';
+	import { onDestroy, type Snippet } from 'svelte';
 	import { useAnimation } from './terminal.svelte.js';
 	import type { TerminalAnimationProps } from './types';
 	import { fly } from 'svelte/transition';
 
 	const frames = ['◒', '◐', '◓', '◑'];
-	const check = '✔';
 
 	let {
 		delay = 0,
@@ -15,8 +14,8 @@
 		duration = 1000,
 		class: className
 	}: Omit<TerminalAnimationProps, 'children'> & {
-		loadingMessage: string;
-		completeMessage: string;
+		loadingMessage: Snippet<[]>;
+		completeMessage: Snippet<[]>;
 		duration?: number;
 	} = $props();
 
@@ -31,7 +30,7 @@
 		playAnimation = true;
 		animationSpeed = speed;
 
-		interval = setInterval(nextFrame, 100 / animationSpeed);
+		interval = setInterval(nextFrame, 75 / animationSpeed);
 		timeout = setTimeout(() => {
 			complete = true;
 			animation.onComplete?.();
@@ -60,12 +59,11 @@
 
 {#if playAnimation && !complete}
 	<span class={cn('block', className)} in:fly={{ y: -5, duration: flyDuration }}>
-		<span>{frames[frameIndex]}</span>
-		{loadingMessage}
+		<span class="text-cyan-400">{frames[frameIndex]}</span>
+		{@render loadingMessage()}
 	</span>
 {:else if playAnimation}
 	<span class={cn('block', className)} data-completed in:fly={{ y: -5, duration: flyDuration }}>
-		{check}
-		{completeMessage}
+		{@render completeMessage()}
 	</span>
 {/if}

@@ -102,8 +102,8 @@ importers:
         specifier: ^0.3.28
         version: 0.3.28(svelte@5.20.1)
       svelte-tel-input:
-        specifier: ^3.5.2
-        version: 3.5.2(svelte@5.20.1)
+        specifier: ^3.6.0
+        version: 3.6.0(svelte@5.20.1)
       svelte-toolbelt:
         specifier: ^0.7.1
         version: 0.7.1(svelte@5.20.1)
@@ -2430,8 +2430,8 @@ packages:
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
 
-  svelte-tel-input@3.5.2:
-    resolution: {integrity: sha512-YEkr+Ij8keasqC8nHhZh4oF+T/N2QW4ij8jLtAmL0ZI6sc4c7taGL0d8HfvDR+wSmE7yjt7AeLpmM0RTbkkbUg==}
+  svelte-tel-input@3.6.0:
+    resolution: {integrity: sha512-bzgtYVWpO3cke8tqRM2JvcHO94wIp8X0C5E4SItobrmGWT8Do07jzkHN8Z+KU6RaY6Q1aBomH8neJ2LEAZAfqg==}
     engines: {node: '>= 18', npm: '>= 8', pnpm: '>= 8', yarn: '>= 1'}
     peerDependencies:
       svelte: ^3.58.0 || ^4.0.0 || ^5.0.0
@@ -5186,7 +5186,7 @@ snapshots:
     dependencies:
       svelte: 5.20.1
 
-  svelte-tel-input@3.5.2(svelte@5.20.1):
+  svelte-tel-input@3.6.0(svelte@5.20.1):
     dependencies:
       libphonenumber-js: 1.10.43
       svelte: 5.20.1
