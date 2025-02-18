@@ -24,9 +24,9 @@
 				{/snippet}
 			</DropdownMenu.Trigger>
 			<DropdownMenu.Content align="start">
-				<DropdownMenu.Item>
-					<ImageCropper.UploadTrigger>Upload a photo...</ImageCropper.UploadTrigger>
-				</DropdownMenu.Item>
+				<ImageCropper.UploadTrigger>
+					<DropdownMenu.Item>Upload a photo...</DropdownMenu.Item>
+				</ImageCropper.UploadTrigger>
 				<DropdownMenu.Item onclick={() => (src = '')}>Remove photo</DropdownMenu.Item>
 			</DropdownMenu.Content>
 		</DropdownMenu.Root>
