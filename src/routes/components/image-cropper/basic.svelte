@@ -12,7 +12,9 @@
 		console.log(file);
 	}}
 >
-	<ImageCropper.Trigger />
+	<ImageCropper.UploadTrigger>
+		<ImageCropper.Preview />
+	</ImageCropper.UploadTrigger>
 	<ImageCropper.Dialog>
 		<ImageCropper.Cropper />
 		<ImageCropper.Controls>
