@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.18.2...v1.19.0) (2025-02-18)
+
+
+### Features
+
+* Allow for customization of the image cropper trigger ([51ff02e](https://github.com/ieedan/shadcn-svelte-extras/commit/51ff02ef9c20b7379de5d9e14c23671eb60c6a77))
+
 ## [1.18.2](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.18.1...v1.18.2) (2025-02-18)
 
 
