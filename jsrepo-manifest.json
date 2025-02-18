@@ -415,7 +415,7 @@
 						"utils/utils"
 					],
 					"dependencies": [],
-					"devDependencies": ["lucide-svelte@^0.475.0", "svelte-tel-input@^3.5.2"],
+					"devDependencies": ["lucide-svelte@^0.475.0", "svelte-tel-input@^3.6.0"],
 					"_imports_": {
 						"$lib/components/ui/popover": "{{ui/popover}}",
 						"$lib/components/ui/button": "{{ui/button}}",
