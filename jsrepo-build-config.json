@@ -16,6 +16,7 @@
 	"doNotListBlocks": [],
 	"doNotListCategories": [],
 	"listBlocks": [
+		"avatar-group",
 		"button",
 		"chat",
 		"code",

@@ -1,11 +1,9 @@
-name: build-n-release
+name: release-please
 
 on:
   push:
     branches:
       - main
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 permissions:
   contents: write
@@ -15,6 +13,10 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      # Required for pushing to the repository
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -48,25 +50,12 @@ jobs:
           branch: build-manifest
           commit-message: build `jsrepo-manifest.json`
 
-  release:
+  release-please:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Release Please
+        uses: googleapis/release-please-action@v4
+        id: release
         with:
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Create Release Pull Request or Publish to GitHub
-        uses: changesets/action@v1
-        with:
-          commit: 'chore(release): version package'
-          title: 'chore(release): version package'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{secrets.GITHUB_TOKEN}}
