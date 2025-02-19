@@ -45,7 +45,7 @@
 			<Button
 				type="button"
 				variant="outline"
-				class={cn('flex gap-1 rounded-e-none rounded-s-lg px-3')}
+				class={cn('flex shrink-0 gap-1 rounded-e-none rounded-s-lg px-3')}
 				{disabled}
 				{...props}
 			>

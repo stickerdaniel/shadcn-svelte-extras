@@ -8,7 +8,7 @@
 	let { country = null }: Props = $props();
 </script>
 
-<span class="flex h-4 w-6 overflow-hidden rounded-sm bg-foreground/20">
+<span class="flex h-4 w-6 shrink-0 overflow-hidden rounded-sm bg-foreground/20">
 	{#if country}
 		<span
 			aria-label="{country.name} flag."
