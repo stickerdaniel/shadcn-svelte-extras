@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.20.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.19.1...v1.20.0) (2025-02-19)
+
+
+### Features
+
+* Add `ui/avatar-group` component ([dc992fd](https://github.com/ieedan/shadcn-svelte-extras/commit/dc992fd40ed9b256ba0b20f7a5f4ada23c7be369))
+
 ## [1.19.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.19.0...v1.19.1) (2025-02-19)
 
 
