@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.20.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.20.0...v1.20.1) (2025-02-20)
+
+
+### Bug Fixes
+
+* Simplify styles for `ui/avatar-group` with `-space` classes ([872cafe](https://github.com/ieedan/shadcn-svelte-extras/commit/872cafe27847f8db9887ed76c90c921d01f9e437))
+
 ## [1.20.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.19.1...v1.20.0) (2025-02-19)
 
 
