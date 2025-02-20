@@ -1,5 +1,5 @@
 {
-	"$schema": "https://unpkg.com/jsrepo@1.32.0/schemas/registry-config.json",
+	"$schema": "https://unpkg.com/jsrepo@1.39.0/schemas/registry-config.json",
 	"meta": {
 		"authors": ["Aidan Bleser"],
 		"bugs": "https://github.com/ieedan/shadcn-svelte-extras/issues",
@@ -7,6 +7,13 @@
 		"homepage": "https://www.shadcn-svelte-extras.com/",
 		"repository": "https://github.com/ieedan/shadcn-svelte-extras",
 		"tags": ["svelte", "shadcn", "typescript", "components", "utilities"]
+	},
+	"peerDependencies": {
+		"svelte": "5.x.x",
+		"tailwindcss": {
+			"version": "3.x.x",
+			"message": "Tailwindcss@v4 support is in progress see: https://github.com/huntabyte/shadcn-svelte/issues/1643"
+		}
 	},
 	"dirs": ["./src/lib/components", "./src/lib"],
 	"includeBlocks": [],
