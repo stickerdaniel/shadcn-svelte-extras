@@ -11,7 +11,7 @@
 
 <div
 	class={cn(
-		'relative flex size-10 items-center justify-center rounded-full bg-accent text-sm ring ring-background group-data-[orientation="horizontal"]/avatar-group:-ml-2 group-data-[orientation="vertical"]/avatar-group:-mt-2',
+		'relative flex size-10 items-center justify-center rounded-full bg-accent text-sm ring-2 ring-background',
 		className
 	)}
 >
