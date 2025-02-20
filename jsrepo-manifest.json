@@ -7,13 +7,6 @@
 		"repository": "https://github.com/ieedan/shadcn-svelte-extras",
 		"tags": ["svelte", "shadcn", "typescript", "components", "utilities"]
 	},
-	"peerDependencies": {
-		"svelte": "5.x.x",
-		"tailwindcss": {
-			"version": "3.x.x",
-			"message": "Tailwindcss@v4 support is in progress see: https://github.com/huntabyte/shadcn-svelte/issues/1643"
-		}
-	},
 	"categories": [
 		{
 			"name": "ui",
@@ -28,7 +21,7 @@
 					"files": ["avatar-fallback.svelte", "avatar-image.svelte", "avatar.svelte", "index.ts"],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.3.2"],
+					"devDependencies": ["bits-ui@1.3.1"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -48,7 +41,7 @@
 					],
 					"localDependencies": ["utils/utils", "ui/avatar"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.3.2"],
+					"devDependencies": ["bits-ui@1.3.1"],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
 						"../avatar/avatar.svelte": "{{ui/avatar}}/avatar.svelte",
@@ -68,7 +61,7 @@
 					"dependencies": [],
 					"devDependencies": [
 						"lucide-svelte@^0.475.0",
-						"bits-ui@1.3.2",
+						"bits-ui@1.3.1",
 						"tailwind-variants@^0.3.1"
 					],
 					"_imports_": {
@@ -97,7 +90,7 @@
 						"hooks/use-auto-scroll.svelte"
 					],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.3.2", "lucide-svelte@^0.475.0"],
+					"devDependencies": ["bits-ui@1.3.1", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/components/ui/avatar": "{{ui/avatar}}",
 						"$lib/utils/utils.js": "{{utils/utils}}.js",
@@ -118,7 +111,7 @@
 					"dependencies": [],
 					"devDependencies": [
 						"tailwind-variants@^0.3.1",
-						"isomorphic-dompurify@^2.22.0",
+						"isomorphic-dompurify@^2.21.0",
 						"shiki@^3.0.0",
 						"@shikijs/langs@^3.0.0",
 						"@shikijs/themes@^3.0.0"
@@ -138,7 +131,7 @@
 					"files": ["index.ts"],
 					"localDependencies": [],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.3.2"],
+					"devDependencies": ["bits-ui@1.3.1"],
 					"_imports_": {}
 				},
 				{
@@ -163,7 +156,7 @@
 					],
 					"localDependencies": ["ui/dialog", "utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.3.2", "lucide-svelte@^0.475.0"],
+					"devDependencies": ["bits-ui@1.3.1", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
@@ -204,7 +197,7 @@
 					],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.3.2", "lucide-svelte@^0.475.0"],
+					"devDependencies": ["bits-ui@1.3.1", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -229,7 +222,7 @@
 					],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.3.2"],
+					"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.3.1"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -256,7 +249,7 @@
 					],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.3.2", "lucide-svelte@^0.475.0"],
+					"devDependencies": ["bits-ui@1.3.1", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -277,7 +270,7 @@
 					],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.3.2", "tailwind-variants@^0.3.1"],
+					"devDependencies": ["bits-ui@1.3.1", "tailwind-variants@^0.3.1"],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
@@ -293,7 +286,7 @@
 					"files": ["file-drop-zone.svelte", "index.ts"],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["lucide-svelte@^0.475.0", "bits-ui@1.3.2"],
+					"devDependencies": ["lucide-svelte@^0.475.0", "bits-ui@1.3.1"],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}"
 					}
@@ -322,7 +315,7 @@
 					"localDependencies": ["ui/button", "utils/utils", "ui/dialog", "ui/avatar", "utils/box"],
 					"dependencies": [],
 					"devDependencies": [
-						"bits-ui@1.3.2",
+						"bits-ui@1.3.1",
 						"lucide-svelte@^0.475.0",
 						"svelte-easy-crop@^4.0.0",
 						"svelte-toolbelt@^0.7.1",
@@ -485,7 +478,7 @@
 					"files": ["index.ts", "popover-content.svelte"],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.3.2"],
+					"devDependencies": ["bits-ui@1.3.1"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -500,7 +493,7 @@
 					"files": ["index.ts", "scroll-area-scrollbar.svelte", "scroll-area.svelte"],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.3.2"],
+					"devDependencies": ["bits-ui@1.3.1"],
 					"_imports_": {
 						"$lib/utils/utils.js": "{{utils/utils}}.js"
 					}
@@ -555,7 +548,7 @@
 					],
 					"localDependencies": ["utils/utils", "actions/typewriter.svelte", "ui/window"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.3.2", "runed@^0.23.4"],
+					"devDependencies": ["bits-ui@1.3.1", "runed@^0.23.4"],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}",
 						"$lib/actions/typewriter.svelte": "{{actions/typewriter.svelte}}",
@@ -609,7 +602,7 @@
 					"files": ["index.ts", "window.svelte"],
 					"localDependencies": ["utils/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.3.2"],
+					"devDependencies": ["bits-ui@1.3.1"],
 					"_imports_": {
 						"$lib/utils/utils": "{{utils/utils}}"
 					}
