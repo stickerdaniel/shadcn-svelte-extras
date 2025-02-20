@@ -10,11 +10,4 @@
 	}: AvatarPrimitive.RootProps = $props();
 </script>
 
-<AvatarRoot
-	bind:ref
-	class={cn(
-		'bg-accent ring ring-background first:ml-0 first:mt-0 group-data-[orientation="horizontal"]/avatar-group:-ml-2 group-data-[orientation="vertical"]/avatar-group:-mt-2',
-		className
-	)}
-	{...restProps}
-/>
+<AvatarRoot bind:ref class={cn('bg-accent ring-2 ring-background', className)} {...restProps} />
