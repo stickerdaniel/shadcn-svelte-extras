@@ -3,7 +3,7 @@
 </script>
 
 <Terminal.Loop delay={5000}>
-	<Terminal.Root class="leading-5">
+	<Terminal.Root class="h-[275px] leading-5">
 		<Terminal.TypingAnimation>jsrepo add ui/terminal</Terminal.TypingAnimation>
 		<br />
 		<Terminal.AnimatedSpan delay={1400}>
@@ -37,8 +37,8 @@
 		</Terminal.Loading>
 		<Terminal.AnimatedSpan delay={3850} class="text-muted-foreground">│</Terminal.AnimatedSpan>
 		<Terminal.AnimatedSpan delay={3900} class="text-green-500">
-            <span class="text-muted-foreground">└</span>
-            ✓ All done!
-        </Terminal.AnimatedSpan>
+			<span class="text-muted-foreground">└</span>
+			✓ All done!
+		</Terminal.AnimatedSpan>
 	</Terminal.Root>
 </Terminal.Loop>

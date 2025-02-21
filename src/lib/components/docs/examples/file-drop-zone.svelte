@@ -81,7 +81,9 @@
 	/>
 	<div class="flex flex-col gap-2">
 		{#each files as file, i}
-			<div class="flex place-items-center justify-between gap-2 border-border border rounded-md p-2">
+			<div
+				class="flex place-items-center justify-between gap-2 rounded-md border border-border p-2"
+			>
 				<div class="flex place-items-center gap-2">
 					{#await file.url then src}
 						<div class="relative size-9 overflow-clip">

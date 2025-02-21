@@ -1,10 +1,10 @@
-![image](https://github.com/user-attachments/assets/276803e5-8370-483d-acee-f8e1e6f3abd9)
-
 # shadcn-svelte-extras
 
 [![jsrepo](https://jsrepo.dev/badges/build/passing.svg)](https://jsrepo.dev/registry?url=github/ieedan/shadcn-svelte-extras)
 
 Turn key shadcn-svelte components to help finish you your app.
+
+![image](./static/og.png)
 
 ## Components
 
