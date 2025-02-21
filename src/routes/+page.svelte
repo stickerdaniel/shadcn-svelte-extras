@@ -4,32 +4,73 @@
 		ConfigureDevice,
 		PhoneNumberSetting,
 		CodeBlock,
-		EditorFileTree
+		EditorFileTree,
+		FileDropZone,
+		Terminal,
+		PmCommand
 	} from '$lib/components/docs/examples';
-	import ShadcnSvelteExtras from '$lib/components/shadcn-svelte-extras.svelte';
 	import { Snippet } from '$lib/components/ui/snippet';
 	import SearchButton from '$lib/components/search-button.svelte';
 	import ChatExample from './components/chat/basic.svelte';
 	import { TagsInput } from '$lib/components/ui/tags-input';
+	import { LucideArrowRight, TerminalIcon } from 'lucide-svelte';
+	import { map } from '$lib/map';
 
 	let tags = $state(['shadcn-svelte', 'extras']);
+
+	const components = $derived(
+		Array.from(Object.entries(map))
+			.filter(([cat]) => cat === 'Components')
+			.flatMap(([_, components]) =>
+				components.map((comp, i) => `${i === components.length - 1 ? 'and ' : ''}${comp.name}`)
+			)
+			.join(', ')
+	);
 </script>
 
-<p>
-	<ShadcnSvelteExtras /> provides you with the rest of the components you need to finish your application.
-</p>
-<div class="grid grid-cols-1 gap-4 rounded-lg border p-6 lg:grid-cols-2">
-	<div class="flex flex-col gap-4 lg:col-start-1">
-		<LoginForm />
-		<CodeBlock />
-		<TagsInput bind:value={tags} placeholder="Add a tag" />
-		<ChatExample />
-		<SearchButton />
+<svelte:head>
+	<title>shadcn-svelte-extras</title>
+	<meta
+		name="description"
+		content="Finish your app with awesome svelte components like {components}"
+	/>
+</svelte:head>
+
+<div class="flex flex-col gap-8 p-8">
+	<div class="flex flex-col gap-2">
+		<a href="/components/terminal" class="flex place-items-center gap-1 text-sm font-medium">
+			<TerminalIcon class="size-4" />
+			<span class="hover:underline">{'jsrepo add ui/terminal'}</span>
+			<LucideArrowRight class="size-4" />
+		</a>
+		<h1 class="text-5xl font-bold">shadcn-svelte-extras</h1>
+		<p class="text-lg text-muted-foreground">Finish your app.</p>
 	</div>
-	<div class="flex flex-col gap-4 lg:col-start-2">
-		<PhoneNumberSetting />
-		<Snippet text="npx shadcn-svelte@next init" />
-		<ConfigureDevice />
-		<EditorFileTree />
+	<div class="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
+		<div class="flex flex-col gap-4 lg:col-start-1">
+			<ChatExample />
+			<TagsInput bind:value={tags} placeholder="Add a tag" />
+			<LoginForm />
+			<SearchButton />
+			<div class="flex flex-col gap-4 2xl:hidden">
+				<EditorFileTree />
+			</div>
+		</div>
+		<div class="flex flex-col gap-4 lg:col-start-2">
+			<PhoneNumberSetting />
+			<CodeBlock />
+			<ConfigureDevice />
+			<Snippet text="npx shadcn-svelte@next init" />
+			<FileDropZone />
+			<div class="flex flex-col gap-4 2xl:hidden">
+				<Terminal />
+				<PmCommand />
+			</div>
+		</div>
+		<div class="hidden flex-col gap-4 2xl:col-start-3 2xl:flex">
+			<Terminal />
+			<PmCommand />
+			<EditorFileTree />
+		</div>
 	</div>
 </div>

@@ -88,8 +88,12 @@
 				<LightSwitch variant="ghost" />
 			</div>
 		</header>
-		<PageWrapper doc={currentDoc}>
+		{#if page.url.pathname !== '/'}
+			<PageWrapper doc={currentDoc}>
+				{@render children()}
+			</PageWrapper>
+		{:else}
 			{@render children()}
-		</PageWrapper>
+		{/if}
 	</Sidebar.Inset>
 </Sidebar.Provider>
