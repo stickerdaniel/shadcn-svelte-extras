@@ -208,6 +208,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/hooks/use-auto-scroll.svelte.ts'
 		},
 		{
+			name: 'UseBoolean',
+			description: 'A hook to simplify working with boolean values.',
+			href: '/hooks/use-boolean',
+			specifier: 'hooks/use-boolean.svelte',
+			source: 'src/lib/hooks/use-boolean.svelte.ts',
+			status: 'New'
+		},
+		{
 			name: 'UseClipboard',
 			description: 'A hook to simplify copying text to the clipboard.',
 			href: '/hooks/use-clipboard',
@@ -215,11 +223,11 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/hooks/use-clipboard.svelte.ts'
 		},
 		{
-			name: 'UseBoolean',
-			description: 'A hook to simplify working with boolean values.',
-			href: '/hooks/use-boolean',
-			specifier: 'hooks/use-boolean.svelte',
-			source: 'src/lib/hooks/use-boolean.svelte.ts',
+			name: 'UsePromise',
+			description: 'A hook to manage the state of a promise reactively in the absence of {#await}.',
+			href: '/hooks/use-promise',
+			specifier: 'hooks/use-promise.svelte',
+			source: 'src/lib/hooks/use-promise.svelte.ts',
 			status: 'New'
 		}
 	]
