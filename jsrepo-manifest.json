@@ -701,6 +701,19 @@
 					"_imports_": {},
 					"dependencies": [],
 					"devDependencies": []
+				},
+				{
+					"name": "use-promise.svelte",
+					"directory": "src/lib/hooks",
+					"category": "hooks",
+					"tests": false,
+					"subdirectory": false,
+					"list": true,
+					"files": ["use-promise.svelte.ts"],
+					"localDependencies": [],
+					"_imports_": {},
+					"dependencies": [],
+					"devDependencies": []
 				}
 			]
 		},
