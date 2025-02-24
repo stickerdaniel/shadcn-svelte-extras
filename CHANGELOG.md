@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.20.2...v1.21.0) (2025-02-24)
+
+
+### Features
+
+* Add hook `hooks/use-promise.svelte` ([386ad66](https://github.com/ieedan/shadcn-svelte-extras/commit/386ad666910feddd08444928e6aa49d9b4b1e54e))
+
 ## [1.20.2](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.20.1...v1.20.2) (2025-02-21)
 
 
