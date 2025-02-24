@@ -49,7 +49,8 @@
 		"shortcut.svelte",
 		"use-auto-scroll.svelte",
 		"use-boolean.svelte",
-		"use-clipboard.svelte"
+		"use-clipboard.svelte",
+		"use-promise.svelte"
 	],
 	"listCategories": [],
 	"excludeDeps": ["svelte"],
