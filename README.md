@@ -4,7 +4,7 @@
 
 Turn key shadcn-svelte components to help finish you your app.
 
-![image](./static/og.png)
+![image](https://github.com/ieedan/shadcn-svelte-extras/blob/main/static/og.png?raw=true)
 
 ## Components
 
