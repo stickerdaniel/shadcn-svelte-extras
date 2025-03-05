@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.21.0...v1.21.1) (2025-03-05)
+
+
+### Bug Fixes
+
+* Prevent scrollbar / scroll to bottom flash on message for `ui/chat` ([6855ff1](https://github.com/ieedan/shadcn-svelte-extras/commit/6855ff147006bfabffd1663c60b3f6de52beb01b))
+
 ## [1.21.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.20.2...v1.21.0) (2025-02-24)
 
 
