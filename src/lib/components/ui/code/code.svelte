@@ -11,7 +11,7 @@
 		base: 'not-prose relative h-full max-h-[650px] overflow-auto rounded-lg border',
 		variants: {
 			variant: {
-				default: 'border-border bg-transparent',
+				default: 'border-border bg-background',
 				secondary: 'border-transparent bg-secondary/50'
 			}
 		}
