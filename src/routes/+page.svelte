@@ -40,7 +40,7 @@
 	<div class="flex flex-col gap-2">
 		<a href="/components/terminal" class="flex place-items-center gap-1 text-sm font-medium">
 			<TerminalIcon class="size-4" />
-			<span class="hover:underline">{'jsrepo add ui/terminal'}</span>
+			<span class="hover:underline">jsrepo add ui/terminal</span>
 			<LucideArrowRight class="size-4" />
 		</a>
 		<h1 class="text-5xl font-bold">shadcn-svelte-extras</h1>

@@ -9,7 +9,7 @@
 <Playground replay code={examples.basic.code}>
 	<examples.basic.Component />
 </Playground>
-<Installation specifier={'hooks/use-clipboard.svelte'} />
+<Installation specifier="hooks/use-clipboard.svelte" />
 <Subheading>Usage</Subheading>
 <p>Set a default value for the version until it is streamed back from the server.</p>
 <div>

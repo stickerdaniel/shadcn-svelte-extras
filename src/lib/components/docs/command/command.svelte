@@ -13,9 +13,9 @@
 		<Command.Input placeholder="Search for extras..." />
 		<Command.List class="min-h-[300px]">
 			<Command.Empty>No results found.</Command.Empty>
-			{#each Object.entries(map) as [group, routes]}
+			{#each Object.entries(map) as [group, routes] (group)}
 				<Command.Group heading={group}>
-					{#each routes as route}
+					{#each routes as route (route.name)}
 						<Command.Item
 							onclick={async () => {
 								await goto(route.href);

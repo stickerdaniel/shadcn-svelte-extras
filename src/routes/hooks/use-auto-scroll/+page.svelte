@@ -4,7 +4,7 @@
 	import { Code } from '$lib/components/ui/code';
 </script>
 
-<Installation specifier={'hooks/use-auto-scroll.svelte'} />
+<Installation specifier="hooks/use-auto-scroll.svelte" />
 <Subheading>Usage</Subheading>
 <p>Create a container that automatically scrolls to the bottom.</p>
 <Code

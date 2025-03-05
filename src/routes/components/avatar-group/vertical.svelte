@@ -18,7 +18,7 @@
 </script>
 
 <AvatarGroup.Root orientation="vertical">
-	{#each members as member}
+	{#each members as member (member.username)}
 		<AvatarGroup.Member>
 			<AvatarGroup.MemberImage src={member.image} alt={member.username} />
 			<AvatarGroup.MemberFallback>

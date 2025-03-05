@@ -6,6 +6,8 @@ import Variants from './variants.svelte';
 import variantsRaw from './variants.svelte?raw';
 import HighlightLines from './highlight-lines.svelte';
 import highlightLinesRaw from './highlight-lines.svelte?raw';
+import Overflow from './overflow.svelte';
+import overflowRaw from './overflow.svelte?raw';
 
 const examples = {
 	basic: {
@@ -23,6 +25,10 @@ const examples = {
 	highlightLines: {
 		code: highlightLinesRaw,
 		Component: HighlightLines
+	},
+	overflow: {
+		code: overflowRaw,
+		Component: Overflow
 	}
 };
 

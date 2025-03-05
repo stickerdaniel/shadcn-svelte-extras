@@ -33,7 +33,7 @@
 			{text}
 		</pre>
 	{:else}
-		{#each text as line}
+		{#each text as line, i (i)}
 			<pre class={cn('overflow-y-auto whitespace-nowrap text-left font-mono text-sm')}>
 			{line}
 		</pre>

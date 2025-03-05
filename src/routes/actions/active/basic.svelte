@@ -23,7 +23,7 @@
 <div class="flex w-full max-w-[200px] flex-col gap-1">
 	<span class="text-xs font-medium text-muted-foreground"> Components </span>
 	<div class="flex flex-col">
-		{#each links as { title, href, isHash }}
+		{#each links as { title, href, isHash } (title)}
 			<a
 				{href}
 				use:active={{ isHash }}
