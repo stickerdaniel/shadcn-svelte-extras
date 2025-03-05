@@ -37,6 +37,6 @@
 	<examples.highlightLines.Component />
 </Playground>
 <Subheading>Overflow</Subheading>
-<Playground code={examples.overflow.code} >
+<Playground code={examples.overflow.code}>
 	<examples.overflow.Component />
 </Playground>

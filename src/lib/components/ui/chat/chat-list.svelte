@@ -25,7 +25,7 @@
 
 <div class="relative">
 	<div
-		class={cn('flex h-full w-full flex-col gap-4 overflow-y-auto p-4 no-scrollbar', className, {
+		class={cn('no-scrollbar flex h-full w-full flex-col gap-4 overflow-y-auto p-4', className, {
 			'scroll-smooth': canScrollSmooth
 		})}
 		bind:this={autoScroll.ref}
@@ -33,7 +33,10 @@
 		{@render children?.()}
 	</div>
 	{#if !autoScroll.isAtBottom}
-		<div in:scale={{ start: 0.85, duration: 100, delay: 250 }} out:scale={{ start: 0.85, duration: 100 }}>
+		<div
+			in:scale={{ start: 0.85, duration: 100, delay: 250 }}
+			out:scale={{ start: 0.85, duration: 100 }}
+		>
 			<Button
 				onclick={() => autoScroll.scrollToBottom()}
 				variant="outline"
