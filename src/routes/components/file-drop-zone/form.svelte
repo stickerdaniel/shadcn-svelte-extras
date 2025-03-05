@@ -57,7 +57,7 @@
 	/>
 	<input name="attachments" type="file" bind:files={$files} class="hidden" />
 	<div class="flex flex-col gap-2">
-		{#each Array.from($files) as file, i}
+		{#each Array.from($files) as file, i (file.name)}
 			<div class="flex place-items-center justify-between gap-2">
 				<div class="flex flex-col">
 					<span>{file.name}</span>

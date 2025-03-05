@@ -80,7 +80,7 @@
 		fileCount={files.length}
 	/>
 	<div class="flex flex-col gap-2">
-		{#each files as file, i}
+		{#each files as file, i (file.name)}
 			<div class="flex place-items-center justify-between gap-2">
 				<div class="flex place-items-center gap-2">
 					{#await file.url then src}

@@ -7,13 +7,15 @@
 </script>
 
 <p>
-	Adds a <CodeSpan>data-active</CodeSpan> attribute to the <CodeSpan>{`<a/>`}</CodeSpan> tag to be used
-	for styling.
+	Adds a <CodeSpan>data-active</CodeSpan> attribute to the
+	<CodeSpan>
+		{`<a/>`}
+	</CodeSpan> tag to be used for styling.
 </p>
 <Playground code={examples.basic.code}>
 	<examples.basic.Component />
 </Playground>
-<Installation specifier={'actions/active'} />
+<Installation specifier="actions/active" />
 <Subheading>Usage</Subheading>
 <Code
 	lang="svelte"

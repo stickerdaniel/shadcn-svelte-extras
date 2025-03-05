@@ -9,7 +9,7 @@
 <Playground code={examples.basic.code}>
 	<examples.basic.Component />
 </Playground>
-<Installation specifier={'actions/shortcut.svelte'} />
+<Installation specifier="actions/shortcut.svelte" />
 <Subheading>Usage</Subheading>
 <div>
 	<Code

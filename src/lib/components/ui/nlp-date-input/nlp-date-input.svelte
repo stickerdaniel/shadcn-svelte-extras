@@ -30,7 +30,7 @@
 	<Command.Input {placeholder} bind:value />
 	<Command.List>
 		<Command.Group>
-			{#each suggestions as suggestion}
+			{#each suggestions as suggestion (suggestion)}
 				<Command.Item
 					onSelect={() => {
 						onChoice?.(suggestion);

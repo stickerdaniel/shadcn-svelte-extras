@@ -4,7 +4,7 @@
 	import { Code } from '$lib/components/ui/code';
 </script>
 
-<Installation specifier={'hooks/use-clipboard.svelte'} />
+<Installation specifier="hooks/use-clipboard.svelte" />
 <Subheading>Usage</Subheading>
 <p>Create a button that copies some text to the clipboard.</p>
 <div>

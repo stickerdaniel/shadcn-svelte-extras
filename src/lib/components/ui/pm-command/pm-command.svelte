@@ -44,7 +44,7 @@
 <div class={cn(style({ variant }), className)}>
 	<div class="flex place-items-end justify-between border-b border-border p-2 pb-0">
 		<div class="flex place-items-center gap-1">
-			{#each agents as pm}
+			{#each agents as pm (pm)}
 				<button
 					type="button"
 					class={{

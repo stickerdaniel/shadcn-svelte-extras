@@ -5,7 +5,7 @@
 	import { Link } from '$lib/components/ui/link';
 </script>
 
-<Installation specifier={'hooks/use-boolean.svelte'} />
+<Installation specifier="hooks/use-boolean.svelte" />
 <Subheading>Usage</Subheading>
 <p>Use this hook to manage boolean values with more concise syntax.</p>
 <p>Before:</p>

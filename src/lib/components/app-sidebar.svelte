@@ -30,7 +30,7 @@
 	<Sidebar.Content>
 		<Sidebar.Group>
 			<Sidebar.Menu>
-				{#each Object.entries(map) as [group, routes]}
+				{#each Object.entries(map) as [group, routes] (group)}
 					<Sidebar.Group>
 						<Sidebar.GroupLabel>{group}</Sidebar.GroupLabel>
 						<Sidebar.GroupContent>

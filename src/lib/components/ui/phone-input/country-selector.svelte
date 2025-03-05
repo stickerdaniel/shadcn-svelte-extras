@@ -63,7 +63,7 @@
 				<ScrollArea class="h-72">
 					<Command.Empty>No country found.</Command.Empty>
 					<Command.Group>
-						{#each countries.sort(order) as country}
+						{#each countries.sort(order) as country (country.id)}
 							<Command.Item
 								class="gap-2"
 								value={country.name}
