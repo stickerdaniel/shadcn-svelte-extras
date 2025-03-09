@@ -6,7 +6,6 @@
 ### Bug Fixes
 
 * add subtree to autoscroll observer ([94e8d01](https://github.com/ieedan/shadcn-svelte-extras/commit/94e8d01eaa1070245d8d41eddb07f6c3ff11b6ac))
-* add subtree to autoscroll observer ([19cbb77](https://github.com/ieedan/shadcn-svelte-extras/commit/19cbb778ddb1df063215a153eea2401bda41663a))
 
 ## [1.21.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.21.0...v1.21.1) (2025-03-05)
 
