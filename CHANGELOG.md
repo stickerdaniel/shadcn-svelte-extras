@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.2](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.21.1...v1.21.2) (2025-03-09)
+
+
+### Bug Fixes
+
+* add subtree to autoscroll observer ([94e8d01](https://github.com/ieedan/shadcn-svelte-extras/commit/94e8d01eaa1070245d8d41eddb07f6c3ff11b6ac))
+
 ## [1.21.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.21.0...v1.21.1) (2025-03-05)
 
 
