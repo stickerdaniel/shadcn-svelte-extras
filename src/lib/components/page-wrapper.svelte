@@ -4,6 +4,7 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import { Code } from 'lucide-svelte';
 	import * as Navigation from '$lib/components/ui/prev-next';
+	import { UseToc } from '$lib/hooks/use-toc.svelte';
 
 	type Props = {
 		doc: { group: string; doc: Route; next?: Route; prev?: Route } | undefined;
@@ -11,6 +12,8 @@
 	};
 
 	let { children, doc }: Props = $props();
+
+	const toc = new UseToc();
 </script>
 
 <svelte:head>
@@ -50,7 +53,9 @@
 					{/if}
 				</div>
 			{/if}
-			{@render children()}
+			<div bind:this={toc.ref} style="display: contents;">
+				{@render children()}
+			</div>
 		</div>
 		<Navigation.Root class="pt-10">
 			{#snippet previous()}
