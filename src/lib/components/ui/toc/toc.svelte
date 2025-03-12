@@ -14,7 +14,7 @@
 </script>
 
 <ul class={cn('m-0 list-none text-sm font-medium', { 'pl-4': isChild })}>
-	{#each toc as heading}
+	{#each toc as heading (heading.index)}
 		<li
 			class={cn('mt-0 pt-2 text-muted-foreground transition-all', {
 				'text-foreground': heading.active
