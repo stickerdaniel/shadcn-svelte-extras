@@ -26,8 +26,7 @@ const map: Record<string, Route[]> = {
 			description: 'A composable avatar grouping component.',
 			href: '/components/avatar-group',
 			specifier: 'ui/avatar-group',
-			source: 'src/lib/components/ui/avatar-group',
-			status: 'New'
+			source: 'src/lib/components/ui/avatar-group'
 		},
 		{
 			name: 'Button',
@@ -69,16 +68,14 @@ const map: Record<string, Route[]> = {
 			description: 'A file drop zone component.',
 			href: '/components/file-drop-zone',
 			specifier: 'ui/file-drop-zone',
-			source: 'src/lib/components/ui/file-drop-zone/file-drop-zone.svelte',
-			status: 'New'
+			source: 'src/lib/components/ui/file-drop-zone/file-drop-zone.svelte'
 		},
 		{
 			name: 'Image Cropper',
 			description: 'A component for uploading and resizing images.',
 			href: '/components/image-cropper',
 			specifier: 'ui/image-cropper',
-			source: 'src/lib/components/ui/image-cropper',
-			status: 'New'
+			source: 'src/lib/components/ui/image-cropper'
 		},
 		{
 			name: 'IPv4Address Input',
@@ -156,8 +153,7 @@ const map: Record<string, Route[]> = {
 				'An implementation of the MacOS terminal. Useful for showcasing a command line interface.',
 			href: '/components/terminal',
 			specifier: 'ui/terminal',
-			source: 'src/lib/components/ui/terminal',
-			status: 'New'
+			source: 'src/lib/components/ui/terminal'
 		},
 		{
 			name: 'Theme Selector',
@@ -165,6 +161,14 @@ const map: Record<string, Route[]> = {
 			href: '/components/theme-selector',
 			specifier: 'ui/theme-selector',
 			source: 'src/lib/components/ui/theme-selector/theme-selector.svelte'
+		},
+		{
+			name: 'Table of Contents',
+			description: 'A component for displaying a table of contents.',
+			href: '/components/toc',
+			specifier: 'ui/toc',
+			source: 'src/lib/components/ui/toc',
+			status: 'New'
 		},
 		{
 			name: 'Tree View',
@@ -178,8 +182,7 @@ const map: Record<string, Route[]> = {
 			description: 'A window component.',
 			href: '/components/window',
 			specifier: 'ui/window',
-			source: 'src/lib/components/ui/window',
-			status: 'New'
+			source: 'src/lib/components/ui/window'
 		}
 	],
 	Actions: [
@@ -212,8 +215,7 @@ const map: Record<string, Route[]> = {
 			description: 'A hook to simplify working with boolean values.',
 			href: '/hooks/use-boolean',
 			specifier: 'hooks/use-boolean.svelte',
-			source: 'src/lib/hooks/use-boolean.svelte.ts',
-			status: 'New'
+			source: 'src/lib/hooks/use-boolean.svelte.ts'
 		},
 		{
 			name: 'UseClipboard',
@@ -227,7 +229,14 @@ const map: Record<string, Route[]> = {
 			description: 'A hook to manage the state of a promise reactively in the absence of {#await}.',
 			href: '/hooks/use-promise',
 			specifier: 'hooks/use-promise.svelte',
-			source: 'src/lib/hooks/use-promise.svelte.ts',
+			source: 'src/lib/hooks/use-promise.svelte.ts'
+		},
+		{
+			name: 'UseToc',
+			description: 'A hook used to generate a table of contents based on the page content',
+			href: '/hooks/use-toc',
+			specifier: 'hooks/use-toc.svelte',
+			source: 'src/lib/hooks/use-toc.svelte.ts',
 			status: 'New'
 		}
 	]

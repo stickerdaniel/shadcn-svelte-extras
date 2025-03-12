@@ -4,6 +4,8 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import { Code } from 'lucide-svelte';
 	import * as Navigation from '$lib/components/ui/prev-next';
+	import { UseToc } from '$lib/hooks/use-toc.svelte';
+	import * as Toc from '$lib/components/ui/toc';
 
 	type Props = {
 		doc: { group: string; doc: Route; next?: Route; prev?: Route } | undefined;
@@ -11,6 +13,8 @@
 	};
 
 	let { children, doc }: Props = $props();
+
+	const toc = new UseToc();
 </script>
 
 <svelte:head>
@@ -20,11 +24,10 @@
 	{/if}
 </svelte:head>
 
-<div class="flex flex-col p-6 md:px-10 lg:place-items-center lg:px-20">
-	<div
-		class="flex w-full max-w-3xl flex-col justify-between gap-5"
-		style="min-height: calc(100svh - 112px);"
-	>
+<div
+	class="relative flex w-full justify-center gap-4 px-6 py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]"
+>
+	<div class="mx-auto w-full min-w-0 max-w-2xl" style="min-height: calc(100svh - 112px);">
 		<div class="flex flex-col gap-5">
 			{#if doc}
 				<div class="flex flex-col gap-1">
@@ -50,7 +53,9 @@
 					{/if}
 				</div>
 			{/if}
-			{@render children()}
+			<div bind:this={toc.ref} style="display: contents;">
+				{@render children()}
+			</div>
 		</div>
 		<Navigation.Root class="pt-10">
 			{#snippet previous()}
@@ -68,5 +73,15 @@
 				{/if}
 			{/snippet}
 		</Navigation.Root>
+	</div>
+	<div class="hidden xl:block">
+		<div class="sticky top-20 -mt-6 h-[calc(100vh-7rem)] pt-4">
+			<div class="no-scrollbar h-full overflow-auto pb-10">
+				<div class="space-y-2">
+					<span class="text-sm font-medium text-foreground">On This Page</span>
+					<Toc.Root toc={toc.current} />
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

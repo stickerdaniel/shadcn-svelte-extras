@@ -43,6 +43,7 @@
 		"tags-input",
 		"terminal",
 		"theme-selector",
+		"toc",
 		"tree-view",
 		"window",
 		"active.svelte",
@@ -50,7 +51,8 @@
 		"use-auto-scroll.svelte",
 		"use-boolean.svelte",
 		"use-clipboard.svelte",
-		"use-promise.svelte"
+		"use-promise.svelte",
+		"use-toc.svelte"
 	],
 	"listCategories": [],
 	"excludeDeps": ["svelte"],
