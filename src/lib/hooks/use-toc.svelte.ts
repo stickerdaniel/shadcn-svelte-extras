@@ -13,6 +13,20 @@ export type Heading = {
 
 export const INDEX_ATTRIBUTE = 'data-toc-index';
 
+/** A hook for generating a table of contents using the page content.
+ * 
+ * ## Usage
+ * ```svelte
+ * <script lang="ts">
+ * 		const toc = new UseToc();
+ * </script>
+ * 
+ * <div bind:this={toc.ref} style="display: contents;">
+ * 		<h1>Table of Contents</h1>
+ * 		<h2>Usage</h2>
+ * </div>
+ * ```
+ */
 export class UseToc {
 	#ref = $state<HTMLElement>();
 	#toc = $state<Heading[]>([]);
@@ -79,6 +93,7 @@ export class UseToc {
 		return this.#ref;
 	}
 
+	/** The generated table of contents */
 	get current() {
 		return this.#toc;
 	}
