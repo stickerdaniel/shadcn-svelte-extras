@@ -75,7 +75,7 @@
 		</Navigation.Root>
 	</div>
 	<div class="hidden xl:block">
-		<div class="sticky top-20 -mt-6 h-[calc(100vh-3.5rem)] pt-4">
+		<div class="sticky top-20 -mt-6 h-[calc(100vh-7rem)] pt-4">
 			<div class="no-scrollbar h-full overflow-auto pb-10">
 				<div class="space-y-2">
 					<span class="text-sm font-medium text-foreground">On This Page</span>
