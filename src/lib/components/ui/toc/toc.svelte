@@ -13,7 +13,7 @@
 	let { toc, isChild = false, class: className }: Props = $props();
 </script>
 
-<ul class={cn('m-0 list-none text-sm', { 'pl-4': isChild })}>
+<ul class={cn('m-0 list-none text-sm font-medium', { 'pl-4': isChild })}>
 	{#each toc as heading}
 		<li class="mt-0 pt-2 text-muted-foreground">
 			{#if heading.id}
