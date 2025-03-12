@@ -3,4 +3,4 @@
 	import { toc } from './toc';
 </script>
 
-<Toc.Root {toc} />
+<Toc.Root toc={toc as never} />

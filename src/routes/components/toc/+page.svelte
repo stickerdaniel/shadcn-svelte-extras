@@ -6,7 +6,7 @@
 	import { examples } from './examples';
 </script>
 
-<Playground code={examples.basic.code} class="min-h-[600px]">
+<Playground code={examples.basic.code}>
 	<examples.basic.Component />
 </Playground>
 <Installation specifier="ui/toc" />
