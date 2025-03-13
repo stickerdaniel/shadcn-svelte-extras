@@ -10,13 +10,18 @@
 	let { class: className = undefined, children, ...rest }: Props = $props();
 
 	let ref = $state<HTMLHeadingElement>();
-	let id = $state<string>()
+	let id = $state<string>();
 
 	onMount(() => {
 		id = ref?.innerText.split(' ').join('-').toLowerCase();
-	})
+	});
 </script>
 
-<h2 bind:this={ref} {id} class={cn('mt-6 border-b pb-1 text-2xl font-semibold scroll-m-20', className)} {...rest}>
+<h2
+	bind:this={ref}
+	{id}
+	class={cn('mt-6 scroll-m-20 border-b pb-1 text-2xl font-semibold', className)}
+	{...rest}
+>
 	{@render children?.()}
 </h2>
