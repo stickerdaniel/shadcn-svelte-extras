@@ -47,7 +47,7 @@
 
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import { Upload } from 'lucide-svelte';
+	import { Upload } from '@lucide/svelte';
 	import { displaySize } from '.';
 	import { useId } from 'bits-ui';
 

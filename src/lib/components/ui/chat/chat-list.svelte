@@ -2,7 +2,7 @@
 	import { cn } from '$lib/utils/utils';
 	import { onMount, type Snippet } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { ArrowDown } from 'lucide-svelte';
+	import { ArrowDown } from '@lucide/svelte';
 	import { scale } from 'svelte/transition';
 	import { UseAutoScroll } from '$lib/hooks/use-auto-scroll.svelte.js';
 

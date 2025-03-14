@@ -2,7 +2,7 @@
 	import * as Chat from '$lib/components/ui/chat';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import { Button } from '$lib/components/ui/button';
-	import { Info, Paperclip, Phone, Send, VideoIcon } from 'lucide-svelte';
+	import { Info, Paperclip, Phone, Send, VideoIcon } from '@lucide/svelte';
 	import { Input } from '$lib/components/ui/input';
 	import * as data from './data';
 	import { formatShortTime, initials } from './utils';

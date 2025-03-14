@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as TreeView from '$lib/components/ui/tree-view';
 	import * as Icons from '$lib/components/icons';
-	import { FolderDot, FolderOpenDot } from 'lucide-svelte';
+	import { FolderDot, FolderOpenDot } from '@lucide/svelte';
 </script>
 
 <div class="h-40 w-72">

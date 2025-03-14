@@ -6,7 +6,7 @@
 		MEGABYTE,
 		type FileDropZoneProps
 	} from '$lib/components/ui/file-drop-zone';
-	import { X } from 'lucide-svelte';
+	import { X } from '@lucide/svelte';
 	import { toast } from 'svelte-sonner';
 	import { type SuperValidated, superForm, filesProxy } from 'sveltekit-superforms';
 	import SuperDebug from 'sveltekit-superforms';

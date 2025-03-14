@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Kbd } from '$lib/components/ui/kbd';
 	import { Button } from '$lib/components/ui/button';
-	import { Search, Command } from 'lucide-svelte';
+	import { Search, Command } from '@lucide/svelte';
 	import { cn } from '$lib/utils/utils';
 	import { commandContext } from '$lib/context';
 

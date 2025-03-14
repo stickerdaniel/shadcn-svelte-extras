@@ -2,7 +2,7 @@
 	import * as ImageCropper from '$lib/components/ui/image-cropper';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { Button } from '$lib/components/ui/button';
-	import { Edit } from 'lucide-svelte';
+	import { Edit } from '@lucide/svelte';
 
 	let src = $state('https://github.com/shadcn.png');
 </script>
