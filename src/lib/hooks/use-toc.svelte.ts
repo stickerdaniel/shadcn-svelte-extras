@@ -99,7 +99,7 @@ export class UseToc {
 	}
 }
 
-const createHeading = (element: Element, index: number): Heading => {
+const createHeading = (element: HTMLHeadingElement, index: number): Heading => {
 	const kind = element.tagName.toLowerCase() as HeadingKind;
 
 	element.setAttribute(INDEX_ATTRIBUTE, index.toString());
@@ -110,7 +110,7 @@ const createHeading = (element: Element, index: number): Heading => {
 		kind,
 		id: element.id,
 		level: parseInt(kind[1]),
-		label: element.textContent ?? '',
+		label: element.innerText ?? '',
 		active: true,
 		children: []
 	};
@@ -123,7 +123,7 @@ const createHeading = (element: Element, index: number): Heading => {
  */
 const getToc = (el: HTMLElement): Heading[] => {
 	const headings = Array.from(el.querySelectorAll('h1, h2, h3, h4, h5, h6')).map((h, i) =>
-		createHeading(h, i)
+		createHeading(h as HTMLHeadingElement, i)
 	);
 
 	if (headings.length === 0) return [];
