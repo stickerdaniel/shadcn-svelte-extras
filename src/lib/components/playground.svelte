@@ -4,7 +4,7 @@
 	import { Code } from '$lib/components/ui/code';
 	import { cn } from '$lib/utils/utils';
 	import { Button } from './ui/button';
-	import { RefreshCw } from 'lucide-svelte';
+	import { RefreshCw } from '@lucide/svelte';
 
 	type Props = {
 		code: string;

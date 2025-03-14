@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Kbd } from '$lib/components/ui/kbd';
-	import { Command } from 'lucide-svelte';
+	import { Command } from '@lucide/svelte';
 	import { toast } from 'svelte-sonner';
 	// import shortcut
 	import { shortcut } from '$lib/actions/shortcut.svelte';
