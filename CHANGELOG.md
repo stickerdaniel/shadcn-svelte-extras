@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.23.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.22.0...v1.23.0) (2025-03-14)
+
+
+### Features
+
+* Improvements to `ui/toc` ([fd5f7ea](https://github.com/ieedan/shadcn-svelte-extras/commit/fd5f7ea80b51bf8a3eead71cddc0df9225c8276d))
+
 ## [1.22.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.21.2...v1.22.0) (2025-03-12)
 
 
