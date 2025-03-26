@@ -2,7 +2,7 @@
 
 [![jsrepo](https://jsrepo.dev/badges/build/passing.svg)](https://jsrepo.dev/registry?url=github/ieedan/shadcn-svelte-extras)
 
-Turn key shadcn-svelte components to help finish you your app.
+Turn key shadcn-svelte components to help you finish your app.
 
 ![image](https://github.com/ieedan/shadcn-svelte-extras/blob/main/static/og.png?raw=true)
 
