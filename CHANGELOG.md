@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.23.1](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.23.0...v1.23.1) (2025-03-31)
+
+
+### Bug Fixes
+
+* bump `bits-ui` ([320c01e](https://github.com/ieedan/shadcn-svelte-extras/commit/320c01e8175955d049979635c82a34f7fe7bd8cf))
+* bump `bits-ui` ([861e827](https://github.com/ieedan/shadcn-svelte-extras/commit/861e8275a7bf7796f84d6cf7db4b628415559909))
+
 ## [1.23.0](https://github.com/ieedan/shadcn-svelte-extras/compare/v1.22.0...v1.23.0) (2025-03-14)
 
 
