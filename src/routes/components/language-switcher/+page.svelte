@@ -17,7 +17,13 @@
 </Playground>
 
 <Subheading>Paraglide Integration</Subheading>
-<p>Example of how to integrate with Paraglide for i18n routing:</p>
+<p>
+	Example of how to integrate with <a
+		href="https://inlang.com/m/gerre34r/library-inlang-paraglideJs/sveltekit"
+		target="_blank"
+		rel="noopener noreferrer">ParaglideJS</a
+	> to translate a "Hello world!":
+</p>
 <Playground code={examples.paraglide.code}>
 	<examples.paraglide.Component />
 </Playground>

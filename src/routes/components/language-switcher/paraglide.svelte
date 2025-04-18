@@ -1,35 +1,52 @@
 <script lang="ts">
 	import { LanguageSwitcher } from '$lib/components/ui/language-switcher';
+	import {
+		getLocale,
+		setLocale,
+		type Locale,
+		locales as availableLocales,
+		isLocale
+	} from '$lib/paraglide/runtime';
+	import { m } from '$lib/paraglide/messages.js';
+	import { browser } from '$app/environment';
 
-	// These import lines are for demonstration - they won't work without Paraglide setup
-	// import { languageTag, type AvailableLanguageTag } from '$lib/paraglide/runtime';
-	// import { i18n } from '$lib/i18n';
-	// import { page } from '$app/stores';
-	// import { goto } from '$app/navigation';
+	const languageLabels: Partial<Record<Locale, string>> = {
+		en: 'English',
+		de: 'Deutsch',
+		fr: 'Français'
+		// Add labels for all your configured locales in project.inlang/settings.json
+	};
 
-	// Example languages for Paraglide implementation
-	const languages = [
-		{ code: 'en', label: 'English' },
-		{ code: 'de', label: 'Deutsch' },
-		{ code: 'fr', label: 'Français' }
-	];
+	const languages = availableLocales.map((code) => ({
+		code,
+		label: languageLabels[code] ?? code.toUpperCase()
+	}));
 
-	// This would be the actual code in a real implementation
-	let currentLang = 'en'; // In real use: languageTag() || 'en'
+	let currentLang: Locale = getLocale();
+	$: currentLang = getLocale();
 
-	function handleLanguageChange(newLanguage) {
-		// In a real implementation with Paraglide, this would look like:
-		/*
-      if (typeof window !== 'undefined') {
-        const canonicalPath = i18n.route($page.url.pathname);
-        const localisedPath = i18n.resolveRoute(canonicalPath, newLanguage);
-        goto(localisedPath);
-      }
-      */
+	function handleLanguageChange(newLanguageCode: Locale) {
+		if (!browser) return;
 
-		// For demo purposes just update the local state
-		currentLang = newLanguage;
+		const currentLocale = getLocale();
+		if (newLanguageCode === currentLocale) {
+			return;
+		}
+
+		setLocale(newLanguageCode); // Triggers state update & reload
 	}
 </script>
 
-<LanguageSwitcher {languages} value={currentLang} onChange={handleLanguageChange} />
+<div class="flex flex-col items-center gap-4">
+	<h3>{m.example_message()}</h3>
+
+	<LanguageSwitcher
+		{languages}
+		value={currentLang}
+		onChange={(code: string) => {
+			if (isLocale(code)) {
+				handleLanguageChange(code as Locale);
+			}
+		}}
+	/>
+</div>
