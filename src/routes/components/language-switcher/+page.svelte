@@ -11,7 +11,13 @@
 </Playground>
 <Installation specifier="ui/language-switcher" />
 
-<Subheading>Ghost</Subheading>
+<Subheading>Ghost + Align</Subheading>
 <Playground code={examples.variants.code}>
 	<examples.variants.Component />
+</Playground>
+
+<Subheading>Paraglide Integration</Subheading>
+<p>Example of how to integrate with Paraglide for i18n routing:</p>
+<Playground code={examples.paraglide.code}>
+	<examples.paraglide.Component />
 </Playground>

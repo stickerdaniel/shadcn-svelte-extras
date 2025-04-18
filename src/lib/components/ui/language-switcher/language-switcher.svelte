@@ -9,7 +9,6 @@
 		languages = [],
 		value = $bindable(''),
 		align = 'end',
-		size = 'icon',
 		variant = 'outline',
 		onChange,
 		class: className
@@ -32,7 +31,7 @@
 
 <DropdownMenu.Root>
 	<DropdownMenu.Trigger
-		class={cn(buttonVariants({ variant, size }), className)}
+		class={cn(buttonVariants({ variant, size: 'icon' }), className)}
 		aria-label="Change language"
 	>
 		<Globe class="size-4" />
@@ -43,9 +42,7 @@
 		<DropdownMenu.RadioGroup bind:value>
 			{#each languages as language (language.code)}
 				<DropdownMenu.RadioItem value={language.code}>
-					<div class="flex items-center gap-2">
-						{language.label}
-					</div>
+					{language.label}
 				</DropdownMenu.RadioItem>
 			{/each}
 		</DropdownMenu.RadioGroup>

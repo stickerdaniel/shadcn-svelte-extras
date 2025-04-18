@@ -13,9 +13,6 @@ export interface LanguageSwitcherProps {
 	/** Dropdown alignment */
 	align?: 'start' | 'center' | 'end';
 
-	/** Button size */
-	size?: 'default' | 'sm' | 'lg' | 'icon';
-
 	/** Button variant */
 	variant?: 'outline' | 'ghost';
 

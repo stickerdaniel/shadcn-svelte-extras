@@ -5,7 +5,8 @@
 	const languages = [
 		{ code: 'en', label: 'English' },
 		{ code: 'de', label: 'Deutsch' },
-		{ code: 'fr', label: 'Français' }
+		{ code: 'fr', label: 'Français' },
+		{ code: 'es', label: 'Español' }
 	];
 
 	let value = 'en';

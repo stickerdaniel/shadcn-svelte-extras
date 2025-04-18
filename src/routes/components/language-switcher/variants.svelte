@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { LanguageSwitcher } from '$lib/components/ui/language-switcher';
 
-	// Sample languages with flags
+	// Sample languages
 	const languages = [
 		{ code: 'en', label: 'English' },
 		{ code: 'de', label: 'Deutsch' },
@@ -11,4 +11,10 @@
 	let value = 'en';
 </script>
 
-<LanguageSwitcher {languages} {value} variant="ghost" onChange={(code) => (value = code)} />
+<LanguageSwitcher
+	{languages}
+	{value}
+	variant="ghost"
+	align="start"
+	onChange={(code) => (value = code)}
+/>
