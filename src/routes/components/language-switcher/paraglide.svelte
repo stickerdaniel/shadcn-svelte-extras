@@ -22,8 +22,7 @@
 		label: languageLabels[code] ?? code.toUpperCase()
 	}));
 
-	let currentLang: Locale = getLocale();
-	$: currentLang = getLocale();
+	let currentLang = $state(getLocale());
 
 	function handleLanguageChange(newLanguageCode: Locale) {
 		if (!browser) return;
@@ -34,6 +33,7 @@
 		}
 
 		setLocale(newLanguageCode); // Triggers state update & reload
+		currentLang = newLanguageCode; // Update our local state
 	}
 </script>
 
