@@ -17,8 +17,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build and Lint
-        run: pnpm build && pnpm lint
+      - name: Generate i18n files and Lint
+        run: pnpm generate-i18n && pnpm lint
 
       - name: Check
         run: pnpm check
