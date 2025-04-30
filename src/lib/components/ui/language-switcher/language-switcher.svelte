@@ -21,12 +21,11 @@
 		}
 	});
 
-	// Call onChange when value changes
-	$effect(() => {
-		if (onChange && value) {
-			onChange(value);
+	function handleValueChange(newValue: string) {
+		if (onChange) {
+			onChange(newValue);
 		}
-	});
+	}
 </script>
 
 <DropdownMenu.Root>
@@ -39,7 +38,7 @@
 	</DropdownMenu.Trigger>
 
 	<DropdownMenu.Content {align}>
-		<DropdownMenu.RadioGroup bind:value>
+		<DropdownMenu.RadioGroup bind:value onValueChange={handleValueChange}>
 			{#each languages as language (language.code)}
 				<DropdownMenu.RadioItem value={language.code}>
 					{language.label}
