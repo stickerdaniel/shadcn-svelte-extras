@@ -40,7 +40,8 @@ export default ts.config(
 
 		languageOptions: {
 			parserOptions: {
-				projectService: true,
+				// it just ain't worth it man
+				// projectService: true,
 				extraFileExtensions: ['.svelte'],
 				parser: ts.parser,
 				svelteConfig

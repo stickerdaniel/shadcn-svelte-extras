@@ -93,7 +93,7 @@ const map: Record<string, Route[]> = {
 		},
 		{
 			name: 'Language Switcher',
-			description: 'Switch between languages easily.',
+			description: 'A component for switching your sites locale.',
 			href: '/components/language-switcher',
 			specifier: 'ui/language-switcher',
 			source: 'src/lib/components/ui/language-switcher',

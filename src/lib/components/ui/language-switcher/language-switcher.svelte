@@ -14,17 +14,9 @@
 		class: className
 	}: LanguageSwitcherProps = $props();
 
-	// Set default value if none provided
-	$effect(() => {
-		if (!value && languages.length > 0) {
-			value = languages[0].code;
-		}
-	});
-
-	function handleValueChange(newValue: string) {
-		if (onChange) {
-			onChange(newValue);
-		}
+	// set default code if there isn't one selected
+	if (value === '') {
+		value = languages[0].code;
 	}
 </script>
 
@@ -36,9 +28,8 @@
 		<Globe class="size-4" />
 		<span class="sr-only">Change language</span>
 	</DropdownMenu.Trigger>
-
 	<DropdownMenu.Content {align}>
-		<DropdownMenu.RadioGroup bind:value onValueChange={handleValueChange}>
+		<DropdownMenu.RadioGroup bind:value onValueChange={onChange}>
 			{#each languages as language (language.code)}
 				<DropdownMenu.RadioItem value={language.code}>
 					{language.label}

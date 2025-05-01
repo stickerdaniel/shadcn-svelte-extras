@@ -8,7 +8,6 @@
 		isLocale
 	} from '$lib/paraglide/runtime';
 	import { m } from '$lib/paraglide/messages.js';
-	import { browser } from '$app/environment';
 
 	const languageLabels: Partial<Record<Locale, string>> = {
 		en: 'English',
@@ -22,31 +21,17 @@
 		label: languageLabels[code] ?? code.toUpperCase()
 	}));
 
-	let currentLang = $state(getLocale());
-
-	function handleLanguageChange(newLanguageCode: Locale) {
-		if (!browser) return;
-
-		const currentLocale = getLocale();
-		if (newLanguageCode === currentLocale) {
-			return;
-		}
-
-		setLocale(newLanguageCode); // Triggers state update & reload
-		currentLang = newLanguageCode; // Update our local state
-	}
+	let currentLang = $derived(getLocale());
 </script>
 
 <div class="flex flex-col items-center gap-4">
-	<h3>{m.example_message()}</h3>
-
 	<LanguageSwitcher
 		{languages}
-		value={currentLang}
+		bind:value={currentLang}
 		onChange={(code: string) => {
-			if (isLocale(code)) {
-				handleLanguageChange(code as Locale);
-			}
+			if (isLocale(code)) setLocale(code);
 		}}
 	/>
+
+	<h3>{m.example_message()}</h3>
 </div>

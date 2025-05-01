@@ -1,6 +1,8 @@
 export interface Language {
-	code: string; // Language code (e.g., 'en', 'de')
-	label: string; // Display name (e.g., 'English', 'Deutsch')
+	/** Language code (e.g., 'en', 'de') */
+	code: string;
+	/** Display name (e.g., 'English', 'Deutsch') */
+	label: string;
 }
 
 export interface LanguageSwitcherProps {
@@ -19,6 +21,5 @@ export interface LanguageSwitcherProps {
 	/** Called when the language changes */
 	onChange?: (code: string) => void;
 
-	/** CSS class name */
 	class?: string;
 }
