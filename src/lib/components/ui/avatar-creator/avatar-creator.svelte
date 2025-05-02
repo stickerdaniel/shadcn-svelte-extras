@@ -7,6 +7,7 @@
 	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js';
 	import { Button } from '../button';
 	import DemoSvg from '@lucide/svelte/icons/bold';
+	import { ChevronsDown, ChevronsUp, Space } from '@lucide/svelte';
 </script>
 
 <Card.Root class="m-14 w-full">
@@ -22,20 +23,25 @@
 			</Avatar.Root>
 
 			<Tabs.Root value="face" class=" flex w-full gap-2">
-				<Tabs.List class="h-auto flex-col">
-					<Tabs.Trigger value="face">Face</Tabs.Trigger>
-					<Tabs.Trigger value="nose">Nose</Tabs.Trigger>
-					<Tabs.Trigger value="nose">Mouth</Tabs.Trigger>
-					<Tabs.Trigger value="nose">Eyes</Tabs.Trigger>
-					<Tabs.Trigger value="nose">Eyebrows</Tabs.Trigger>
-					<Tabs.Trigger value="nose">Glasses</Tabs.Trigger>
-					<Tabs.Trigger value="nose">Hair</Tabs.Trigger>
-					<Tabs.Trigger value="nose">Accessories</Tabs.Trigger>
-					<Tabs.Trigger value="nose">Details</Tabs.Trigger>
-					<Tabs.Trigger value="nose">Beard</Tabs.Trigger>
-				</Tabs.List>
+				<div class="flex flex-col gap-2">
+					<Button variant="secondary"><ChevronsUp /></Button>
+					<Tabs.List class="h-auto flex-col items-stretch">
+						<Tabs.Trigger value="face">Face</Tabs.Trigger>
+						<Tabs.Trigger value="nose">Nose</Tabs.Trigger>
+						<Tabs.Trigger value="mouth">Mouth</Tabs.Trigger>
+						<Tabs.Trigger value="eyes">Eyes</Tabs.Trigger>
+						<Tabs.Trigger value="eyebrows">Eyebrows</Tabs.Trigger>
+						<Tabs.Trigger value="glasses">Glasses</Tabs.Trigger>
+						<Tabs.Trigger value="hair">Hair</Tabs.Trigger>
+						<Tabs.Trigger value="accessories">Accessories</Tabs.Trigger>
+						<Tabs.Trigger value="details">Details</Tabs.Trigger>
+						<Tabs.Trigger value="beard">Beard</Tabs.Trigger>
+					</Tabs.List>
+					<Button variant="secondary"><ChevronsDown /></Button>
+				</div>
+
 				<Tabs.Content value="face" class="mt-0 w-full min-w-[118px]">
-					<ScrollArea class="h-72 w-full rounded-md border">
+					<ScrollArea class="h-full w-full rounded-md border">
 						<ToggleGroup.Root
 							type="single"
 							variant="outline"
