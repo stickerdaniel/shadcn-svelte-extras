@@ -10,11 +10,7 @@
 <Playground code={examples.basic.code}>
 	<examples.basic.Component />
 </Playground>
-<Link
-		href="https://notion-avatar.app/"
-		target="_blank"
-		rel="noopener noreferrer"
-	>
-		Notion Avatar Creator
-	</Link>
+<Link href="https://notion-avatar.app/" target="_blank" rel="noopener noreferrer">
+	Notion Avatar Creator
+</Link>
 <Installation specifier="ui/avatar-creator" />

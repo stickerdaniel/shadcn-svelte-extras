@@ -5,7 +5,7 @@ const examples = {
 	basic: {
 		code: basicRaw,
 		Component: Basic
-	},
+	}
 };
 
 export { examples };
