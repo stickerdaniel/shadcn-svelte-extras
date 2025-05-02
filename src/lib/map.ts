@@ -22,6 +22,13 @@ const map: Record<string, Route[]> = {
 	],
 	Components: [
 		{
+			name: 'Avatar Creator',
+			description: 'A component for generating notion like avatars.',
+			href: '/components/avatar-creator',
+			specifier: 'ui/avatar-creator',
+			source: 'src/lib/components/ui/avatar-creator'
+		},
+		{
 			name: 'Avatar Group',
 			description: 'A composable avatar grouping component.',
 			href: '/components/avatar-group',
