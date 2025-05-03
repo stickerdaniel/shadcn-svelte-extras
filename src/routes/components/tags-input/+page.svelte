@@ -33,7 +33,7 @@
 	<Code lang="typescript" code={examples.customValidateCode} />
 </div>
 <p>
-	Pass the function to the <CodeSpan>{'<TagsInput/>'}</CodeSpan> component:
+	Pass the function to the <CodeSpan>&lt;TagsInput/&gt;</CodeSpan> component:
 </p>
 <Playground code={examples.lowercase.code}>
 	<examples.lowercase.Component />

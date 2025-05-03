@@ -7,7 +7,7 @@
 
 <div class="h-72 w-full py-6">
 	<NLPDateInput
-		placeholder={'E.g. "this evening" or "2 hours from now"'}
+		placeholder="E.g. &quot;this evening&quot; or &quot;2 hours from now&quot;"
 		min={new Date()}
 		max={new Date(Date.now() + DAY)}
 		onChoice={({ date, label }) =>

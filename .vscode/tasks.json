@@ -18,7 +18,7 @@
 		{
 			"label": "Format",
 			"type": "shell",
-			"command": "pnpm format",
+			"command": "pnpm format --write",
 			"problemMatcher": [],
 			"presentation": {
 				"panel": "dedicated",
@@ -28,7 +28,7 @@
 		{
 			"label": "Lint",
 			"type": "shell",
-			"command": "pnpm lint",
+			"command": "pnpm lint --fix",
 			"problemMatcher": ["$eslint-stylish"],
 			"presentation": {
 				"panel": "dedicated",

@@ -8,9 +8,7 @@
 
 <p>
 	Adds a <CodeSpan>data-active</CodeSpan> attribute to the
-	<CodeSpan>
-		{`<a/>`}
-	</CodeSpan> tag to be used for styling.
+	<CodeSpan>&lt;a/&gt;</CodeSpan> tag to be used for styling.
 </p>
 <Playground code={examples.basic.code}>
 	<examples.basic.Component />

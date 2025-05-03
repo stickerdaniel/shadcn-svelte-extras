@@ -27,9 +27,7 @@
 </div>
 <p>
 	You can add a delay to
-	<CodeSpan>
-		{`<Terminal.Root/>`}
-	</CodeSpan> to delay every animation by that amount of time:
+	<CodeSpan>&lt;Terminal.Root/&gt;</CodeSpan> to delay every animation by that amount of time:
 </p>
 <div>
 	<Code
@@ -47,9 +45,7 @@
 </div>
 <p>
 	You can also change the speed of all animations from
-	<CodeSpan>
-		{`<Terminal.Root/>`}
-	</CodeSpan>:
+	<CodeSpan>&lt;Terminal.Root/&gt;</CodeSpan>:
 </p>
 <div>
 	<Code
@@ -69,9 +65,7 @@
 <Subheading>Loop</Subheading>
 <p>
 	You can make the terminal preview continuously loop using the
-	<CodeSpan>
-		{'<Terminal.Loop/>'}
-	</CodeSpan> component.
+	<CodeSpan>&lt;Terminal.Loop/&gt;</CodeSpan> component.
 </p>
 <Playground code={examples.loop.code}>
 	<examples.loop.Component />
