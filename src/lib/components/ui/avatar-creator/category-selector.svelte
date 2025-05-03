@@ -2,25 +2,39 @@
 	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
 	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js';
-	import { Button } from '../button';
+	import { Button } from '$lib/components/ui/button/index.js';
 	import { ChevronsDown, ChevronsUp } from '@lucide/svelte';
-
-	type SelectedItems = { [key: string]: number | null };
+	import { type Category, type SelectedItems, getPreviewImagePath } from './types';
 
 	let {
 		selectedItems = $bindable<SelectedItems>(),
 		activeTab = $bindable<string>(),
 		categories
+	}: {
+		selectedItems?: SelectedItems;
+		activeTab?: string;
+		categories: Category[];
 	} = $props();
 
-	function getPreviewImagePath(category: string, index: number): string {
-		return `/avatar-creator/preview/${category}/${index}.svg`;
+	// Navigation between tabs
+	function scrollTabs(direction: 'up' | 'down') {
+		const categoryIds = categories.map((category) => category.id);
+		const currentIndex = categoryIds.indexOf(activeTab);
+
+		const n = categoryIds.length;
+		const delta = direction === 'up' ? -1 : 1;
+		const newIndex = (currentIndex + delta + n) % n;
+
+		// Update active tab
+		activeTab = categoryIds[newIndex];
 	}
 
-	// TODO: Implement scroll functionality for tabs
-	function scrollTabs(direction: 'up' | 'down') {
-		// Add logic to go to the next or previous tab
-		console.warn(`Scrolling ${direction} is not implemented yet.`);
+	// Handle item selection
+	function handleItemSelect(category: Category, index: number) {
+		selectedItems = {
+			...selectedItems,
+			[category.id]: index
+		};
 	}
 </script>
 
@@ -62,7 +76,13 @@
 				<ToggleGroup.Root
 					type="single"
 					variant="outline"
-					value={selectedItems?.[category.id]?.toString() ?? ''}
+					value={selectedItems[category.id]?.toString() ?? ''}
+					onValueChange={(value: string) => {
+						if (value) {
+							const index = parseInt(value.replace(category.id, ''), 10);
+							handleItemSelect(category, index);
+						}
+					}}
 					class="flex flex-wrap justify-start gap-1 p-2"
 				>
 					{#each { length: category.maxItems } as _, index (index)}
