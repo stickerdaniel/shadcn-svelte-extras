@@ -20,12 +20,35 @@
 		class: className,
 		size = 'default',
 		variant = 'default',
+		requireSelection = false,
 		...restProps
-	}: ToggleGroupPrimitive.RootProps & ToggleVariants = $props();
+	}: ToggleGroupPrimitive.RootProps &
+		ToggleVariants & {
+			requireSelection?: boolean;
+		} = $props();
 
 	setToggleGroupCtx({
 		variant,
 		size
+	});
+
+	// Store the last valid value to prevent deselection when requireSelection is true
+	let lastValue = $state<string | string[] | undefined>(value);
+
+	// Watch for changes in value and enforce requireSelection
+	$effect(() => {
+		// Only enforce for 'single' type toggle groups
+		const isSingle = restProps.type === 'single';
+
+		if (requireSelection && isSingle) {
+			// If value is empty but we had a previous value, restore it
+			if ((!value || value === '') && lastValue) {
+				value = lastValue;
+			} else if (value) {
+				// Update lastValue when we have a valid selection
+				lastValue = value;
+			}
+		}
 	});
 </script>
 

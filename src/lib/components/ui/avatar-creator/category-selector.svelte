@@ -102,6 +102,7 @@
 				<ToggleGroup.Root
 					type="single"
 					variant="outline"
+					requireSelection={true}
 					bind:value={selectedValues[category.id]}
 					class="flex flex-wrap justify-start gap-1 p-2"
 				>
