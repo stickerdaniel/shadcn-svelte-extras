@@ -1,20 +1,22 @@
 <script lang="ts">
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
+
 	// Accept layers from parent component
 	let {
 		layers = $bindable([]),
-		size = 250,
-		flipped = false
+		flipped = false,
+		alt = 'Avatar'
 	}: {
 		layers: string[];
-		size?: number;
 		flipped?: boolean;
+		alt?: string;
 	} = $props();
 
 	// Generate a unique ID for SVG filter
 	const avatarId = $derived(`avatar-${Math.random().toString(36).substring(2, 9)}`);
 
-	// State for the combined SVG
-	let combinedSvg = $state('');
+	// State for the SVG data URL
+	let svgDataUrl = $state('');
 
 	// Load and combine SVGs when layers change
 	$effect(() => {
@@ -28,10 +30,10 @@
 				const response = await fetch(path);
 				const svgText = await response.text();
 
-				// More robust check for face layer: could be "/face/" or "face-", etc.
+				// Check for face layer
 				const isFace = path.toLowerCase().includes('face');
 
-				// Create a temporary DOM element to parse the SVG
+				// Parse the SVG
 				const parser = new DOMParser();
 				const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
 
@@ -72,8 +74,8 @@
 			})
 		);
 
-		// Combine into a single SVG with Notion-style filter
-		combinedSvg = `
+		// Create combined SVG with Notion-style filter
+		const svgString = `
       <svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
           <filter id="${avatarId}-filter" x="-20%" y="-20%" width="140%" height="140%" 
@@ -93,14 +95,19 @@
         </g>
       </svg>
     `;
+
+		// Convert the SVG to a data URL
+		svgDataUrl = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgString)))}`;
 	}
 </script>
 
-<div
-	class="relative flex aspect-square items-center justify-center overflow-hidden rounded-full bg-background"
-	style="width: {size}px; height: {size}px;"
->
-	<div class="h-full w-full">
-		{@html combinedSvg}
-	</div>
-</div>
+<Avatar.Root class="h-36 w-36 bg-green-400">
+	{#if svgDataUrl}
+		<Avatar.Image src={svgDataUrl} {alt} />
+	{:else}
+		<Avatar.Fallback>
+			<!-- Placeholder while loading -->
+			...
+		</Avatar.Fallback>
+	{/if}
+</Avatar.Root>
