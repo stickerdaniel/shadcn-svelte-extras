@@ -21,88 +21,78 @@
 		loadSvgLayers(layers);
 	});
 
-	// Function to load and modify SVG layers
+	// Function to properly load and process SVG layers
 	async function loadSvgLayers(layerPaths: string[]) {
-		try {
-			const layerContents = await Promise.all(
-				layerPaths.map(async (path, index) => {
-					const response = await fetch(path);
-					let svgContent = await response.text();
+		const layerContents = await Promise.all(
+			layerPaths.map(async (path, index) => {
+				const response = await fetch(path);
+				const svgText = await response.text();
 
-					// Check if this is the face layer
-					const isFace = path.includes('/face/');
+				// More robust check for face layer: could be "/face/" or "face-", etc.
+				const isFace = path.toLowerCase().includes('face');
 
-					// Extract the g element with all its attributes
-					const gMatch = svgContent.match(/<g[^>]*>([\s\S]*?)<\/g>/);
-					if (!gMatch) return '';
+				// Create a temporary DOM element to parse the SVG
+				const parser = new DOMParser();
+				const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
 
-					// Get all the g element attributes
-					const gAttributes = svgContent.match(/<g([^>]*)>/)?.[1] || '';
+				// Get the g element
+				const gElement = svgDoc.querySelector('g');
+				if (!gElement) return '';
 
-					// Create a new g element with preserved attributes
-					// For face layer, override the fill to be white
-					let newG = `<g ${gAttributes} ${isFace ? 'fill="white"' : ''} 
-                       id="${avatarId}-layer-${index}" 
-                       ${flipped ? 'transform="scale(-1,1) translate(-1080, 0)"' : ''}>
-                       ${gMatch[1]}
-                     </g>`;
+				// Clone the g element to manipulate it
+				const gClone = gElement.cloneNode(true) as Element;
 
-					return newG;
-				})
-			);
+				// For face layer, set fill attribute on the group level
+				if (isFace) {
+					// Force white fill on the group level
+					gClone.setAttribute('fill', 'white');
 
-			// Combine into a single SVG
-			combinedSvg = `
-        <svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="${avatarId}-filter" x="-20%" y="-20%" width="140%" height="140%" 
-                    filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" 
-                    color-interpolation-filters="linearRGB">
-              <feMorphology operator="dilate" radius="20 20" in="SourceAlpha" result="morphology"/>
-              <feFlood flood-color="#ffffff" flood-opacity="1" result="flood"/>
-              <feComposite in="flood" in2="morphology" operator="in" result="composite"/>
-              <feMerge result="merge">
-                <feMergeNode in="composite" result="mergeNode"/>
-                <feMergeNode in="SourceGraphic" result="mergeNode1"/>
-              </feMerge>
-            </filter>
-          </defs>
-          <g filter="url(#${avatarId}-filter)">
-            ${layerContents.join('\n')}
-          </g>
-        </svg>
-      `;
-		} catch (error) {
-			console.error('Error loading SVG layers:', error);
+					// Additionally, find all paths and ensure they use the fill
+					const paths = gClone.querySelectorAll('path');
+					paths.forEach((path) => {
+						// Remove any explicit fill that would override our group fill
+						if (path.hasAttribute('fill')) {
+							path.removeAttribute('fill');
+						}
+					});
+				}
 
-			// Fallback to rendering images if SVG processing fails
-			combinedSvg = `
-        <svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="${avatarId}-filter" x="-20%" y="-20%" width="140%" height="140%" 
-                    filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" 
-                    color-interpolation-filters="linearRGB">
-              <feMorphology operator="dilate" radius="20 20" in="SourceAlpha" result="morphology"/>
-              <feFlood flood-color="#ffffff" flood-opacity="1" result="flood"/>
-              <feComposite in="flood" in2="morphology" operator="in" result="composite"/>
-              <feMerge result="merge">
-                <feMergeNode in="composite" result="mergeNode"/>
-                <feMergeNode in="SourceGraphic" result="mergeNode1"/>
-              </feMerge>
-            </filter>
-          </defs>
-          <g filter="url(#${avatarId}-filter)" transform="${flipped ? 'scale(-1,1) translate(-1080, 0)' : ''}">
-            ${layers
-							.map(
-								(layer, i) => `
-              <image href="${layer}" width="1080" height="1080" preserveAspectRatio="xMidYMid meet" />
-            `
-							)
-							.join('\n')}
-          </g>
-        </svg>
-      `;
-		}
+				// Add our custom attributes to the g element
+				gClone.setAttribute('id', `${avatarId}-layer-${index}`);
+
+				// Apply transform for flipping if needed
+				if (flipped) {
+					const currentTransform = gClone.getAttribute('transform') || '';
+					gClone.setAttribute('transform', `scale(-1,1) translate(-1080, 0) ${currentTransform}`);
+				}
+
+				// Get the g element's outer HTML
+				const serializer = new XMLSerializer();
+				return serializer.serializeToString(gClone);
+			})
+		);
+
+		// Combine into a single SVG with Notion-style filter
+		combinedSvg = `
+      <svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <filter id="${avatarId}-filter" x="-20%" y="-20%" width="140%" height="140%" 
+                  filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" 
+                  color-interpolation-filters="linearRGB">
+            <feMorphology operator="dilate" radius="20 20" in="SourceAlpha" result="morphology"/>
+            <feFlood flood-color="#ffffff" flood-opacity="1" result="flood"/>
+            <feComposite in="flood" in2="morphology" operator="in" result="composite"/>
+            <feMerge result="merge">
+              <feMergeNode in="composite" result="mergeNode"/>
+              <feMergeNode in="SourceGraphic" result="mergeNode1"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#${avatarId}-filter)">
+          ${layerContents.join('\n')}
+        </g>
+      </svg>
+    `;
 	}
 </script>
 
