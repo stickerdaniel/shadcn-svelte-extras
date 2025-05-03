@@ -5,12 +5,6 @@
 	import { Button } from '../button';
 	import { ChevronsDown, ChevronsUp } from '@lucide/svelte';
 
-	type Category = {
-		id: string;
-		name: string;
-		maxItems: number;
-	};
-
 	type SelectedItems = { [key: string]: number | null };
 
 	let {
@@ -23,22 +17,16 @@
 		return `/avatar-creator/preview/${category}/${index}.svg`;
 	}
 
-	function selectItem(categoryId: string, index: number | null) {
-		if (selectedItems) {
-			selectedItems[categoryId] = index;
-		}
-	}
-
-	// TODO: Implement scroll functionality for tabs if needed
+	// TODO: Implement scroll functionality for tabs
 	function scrollTabs(direction: 'up' | 'down') {
-		console.warn('Tab scrolling not implemented yet.');
-		// Add logic to scroll the Tabs.List if it overflows
-		console.log(`Scroll ${direction}`);
+		// Add logic to go to the next or previous tab
+		console.warn(`Scrolling ${direction} is not implemented yet.`);
 	}
 </script>
 
-<Tabs.Root bind:value={activeTab} class="flex w-full gap-2">
-	<div class="flex flex-col gap-2">
+<Tabs.Root bind:value={activeTab} class="flex items-start gap-2">
+	<!-- Tab list with scroll buttons -->
+	<div class="flex h-fit flex-col gap-2">
 		<Button
 			class="w-full"
 			variant="secondary"
@@ -48,11 +36,14 @@
 		>
 			<ChevronsUp class="h-4 w-4" />
 		</Button>
-		<Tabs.List class="h-auto flex-col items-stretch">
+
+		<!-- Tab list -->
+		<Tabs.List class="h-fit flex-col items-stretch">
 			{#each categories as category (category.id)}
 				<Tabs.Trigger value={category.id}>{category.name}</Tabs.Trigger>
 			{/each}
 		</Tabs.List>
+
 		<Button
 			class="w-full"
 			variant="secondary"
@@ -64,9 +55,10 @@
 		</Button>
 	</div>
 
+	<!-- Tab content -->
 	{#each categories as category (category.id)}
-		<Tabs.Content value={category.id} class="mt-0 w-full min-w-[118px]">
-			<ScrollArea class="h-full w-full rounded-md border">
+		<Tabs.Content value={category.id} class="mt-0 h-fit lg:w-[12.2rem]">
+			<ScrollArea class="h-[26.5rem] w-full rounded-md border">
 				<ToggleGroup.Root
 					type="single"
 					variant="outline"
@@ -76,10 +68,9 @@
 					{#each { length: category.maxItems } as _, index (index)}
 						{@const imageSrc = getPreviewImagePath(category.id, index)}
 						<ToggleGroup.Item
-							value={index.toString()}
+							value={category.id + index.toString()}
 							aria-label={`Select ${category.name} ${index + 1}`}
-							class="h-14 w-14 p-1"
-							onclick={() => selectItem(category.id, index)}
+							class="h-14 w-14"
 						>
 							<img
 								src={imageSrc}
@@ -89,19 +80,6 @@
 							/>
 						</ToggleGroup.Item>
 					{/each}
-					{#if category.id === 'accessories' || category.id === 'glasses' || category.id === 'beard' || category.id === 'details'}
-						<ToggleGroup.Item
-							value="-1"
-							aria-label={`Remove ${category.name}`}
-							class="h-14 w-14 p-1"
-							onclick={() => selectItem(category.id, null)}
-							data-state={selectedItems?.[category.id] === null ? 'on' : 'off'}
-						>
-							<div class="flex h-full w-full items-center justify-center text-muted-foreground">
-								None
-							</div>
-						</ToggleGroup.Item>
-					{/if}
 				</ToggleGroup.Root>
 			</ScrollArea>
 		</Tabs.Content>

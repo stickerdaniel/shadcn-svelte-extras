@@ -3,6 +3,8 @@
 	import { Button } from '../button';
 	import AvatarPreview from './avatar-preview.svelte';
 	import CategorySelector from './category-selector.svelte';
+	import { Input } from '$lib/components/ui/input/index.js';
+	import { Label } from '$lib/components/ui/label/index.js';
 
 	type Category = {
 		id: string;
@@ -11,16 +13,16 @@
 	};
 
 	const categories: Category[] = [
-		{ id: 'face', name: 'Face', maxItems: 5 }, // Example maxItems, adjust as needed
-		{ id: 'nose', name: 'Nose', maxItems: 4 },
-		{ id: 'mouth', name: 'Mouth', maxItems: 6 },
-		{ id: 'eyes', name: 'Eyes', maxItems: 8 },
-		{ id: 'eyebrows', name: 'Eyebrows', maxItems: 7 },
-		{ id: 'glasses', name: 'Glasses', maxItems: 3 },
-		{ id: 'hair', name: 'Hair', maxItems: 10 },
-		{ id: 'accessories', name: 'Accessories', maxItems: 4 },
-		{ id: 'details', name: 'Details', maxItems: 2 },
-		{ id: 'beard', name: 'Beard', maxItems: 5 }
+		{ id: 'face', name: 'Face', maxItems: 16 },
+		{ id: 'nose', name: 'Nose', maxItems: 14 },
+		{ id: 'mouth', name: 'Mouth', maxItems: 20 },
+		{ id: 'eyes', name: 'Eyes', maxItems: 14 },
+		{ id: 'eyebrows', name: 'Eyebrows', maxItems: 16 },
+		{ id: 'glasses', name: 'Glasses', maxItems: 15 },
+		{ id: 'hair', name: 'Hair', maxItems: 59 },
+		{ id: 'accessories', name: 'Accessories', maxItems: 15 },
+		{ id: 'details', name: 'Details', maxItems: 14 },
+		{ id: 'beard', name: 'Beard', maxItems: 17 }
 	];
 
 	let selectedItems = $state<{ [key: string]: number | null }>({});
@@ -83,15 +85,24 @@
 	}
 </script>
 
-<Card.Root class="m-14 w-full max-w-3xl">
+<Card.Root class="m-4 w-full max-w-4xl">
 	<Card.Header>
 		<Card.Title>Avatar Creator</Card.Title>
 		<Card.Description>Customize your profile picture.</Card.Description>
 	</Card.Header>
 	<Card.Content>
-		<div class="flex w-full items-start justify-center gap-6">
-			<AvatarPreview layers={avatarLayers} />
+		<div class="flex w-full flex-col-reverse justify-center gap-4 lg:flex-row">
 			<CategorySelector bind:activeTab bind:selectedItems {categories} />
+			<div class="flex grow flex-col items-center gap-4">
+				<div class="flex grow items-center">
+					<AvatarPreview layers={avatarLayers} />
+				</div>
+				<div class="grid w-full flex-col items-start gap-1.5">
+					<Label for="username">Your Username</Label>
+					<Input type="username" class="w-full" id="username" placeholder="Display Name" />
+					<!--p class="text-sm text-muted-foreground">Enter your username.</p-->
+				</div>
+			</div>
 		</div>
 	</Card.Content>
 	<Card.Footer class="flex justify-end space-x-2">
