@@ -16,6 +16,40 @@
 		categories: Category[];
 	} = $props();
 
+	// Initialize selectedValues for each category using $state
+	let selectedValues = $state<Record<string, string>>({});
+
+	// Watch for changes in selectedValues and update selectedItems
+	$effect(() => {
+		const newSelectedItems: SelectedItems = {};
+
+		for (const [categoryId, value] of Object.entries(selectedValues)) {
+			if (value) {
+				// Extract the index from the value and ensure it's a valid number
+				const indexStr = value.replace(categoryId, '');
+				const parsedIndex = parseInt(indexStr, 10);
+
+				// Only add if it's a valid number
+				if (!isNaN(parsedIndex)) {
+					newSelectedItems[categoryId] = parsedIndex;
+				}
+			}
+		}
+
+		selectedItems = newSelectedItems;
+	});
+
+	// Initialize selectedValues from selectedItems prop
+	$effect(() => {
+		if (selectedItems) {
+			for (const [categoryId, indexValue] of Object.entries(selectedItems)) {
+				if (indexValue !== undefined && indexValue !== null) {
+					selectedValues[categoryId] = categoryId + indexValue.toString();
+				}
+			}
+		}
+	});
+
 	// Navigation between tabs
 	function scrollTabs(direction: 'up' | 'down') {
 		const categoryIds = categories.map((category) => category.id);
@@ -27,14 +61,6 @@
 
 		// Update active tab
 		activeTab = categoryIds[newIndex];
-	}
-
-	// Handle item selection
-	function handleItemSelect(category: Category, index: number) {
-		selectedItems = {
-			...selectedItems,
-			[category.id]: index
-		};
 	}
 </script>
 
@@ -76,13 +102,7 @@
 				<ToggleGroup.Root
 					type="single"
 					variant="outline"
-					value={selectedItems[category.id]?.toString() ?? ''}
-					onValueChange={(value: string) => {
-						if (value) {
-							const index = parseInt(value.replace(category.id, ''), 10);
-							handleItemSelect(category, index);
-						}
-					}}
+					bind:value={selectedValues[category.id]}
 					class="flex flex-wrap justify-start gap-1 p-2"
 				>
 					{#each { length: category.maxItems } as _, index (index)}
