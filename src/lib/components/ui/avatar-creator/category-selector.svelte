@@ -4,7 +4,7 @@
 	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { ChevronsDown, ChevronsUp } from '@lucide/svelte';
-	import { type Category, type SelectedItems, getPreviewImagePath } from './types';
+	import { type Category, type SelectedItems, getPartImagePath } from './types';
 
 	let {
 		selectedItems = $bindable<SelectedItems>(),
@@ -86,7 +86,7 @@
 					class="flex flex-wrap justify-start gap-1 p-2"
 				>
 					{#each { length: category.maxItems } as _, index (index)}
-						{@const imageSrc = getPreviewImagePath(category.id, index)}
+						{@const imageSrc = getPartImagePath(category.id, index)}
 						<ToggleGroup.Item
 							value={category.id + index.toString()}
 							aria-label={`Select ${category.name} ${index + 1}`}

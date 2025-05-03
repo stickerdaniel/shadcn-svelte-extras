@@ -95,7 +95,7 @@ export function generateAvatarLayers(selectedItems: SelectedItems): string[] {
 	return LAYER_ORDER.map((categoryId) => {
 		const selectedIndex = selectedItems[categoryId];
 		if (selectedIndex !== null && selectedIndex >= 0) {
-			return getPartImagePath(categoryId, selectedIndex);
+			return getPreviewImagePath(categoryId, selectedIndex);
 		}
 		return null;
 	}).filter((path): path is string => path !== null); // Filter out null/unselected paths
