@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Kit Sync
+        run: pnpm sync
+
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
