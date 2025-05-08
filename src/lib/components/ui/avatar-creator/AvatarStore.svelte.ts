@@ -29,49 +29,49 @@ export const AVATAR_COLOR_STYLES: Record<
 		base: 'bg-rose-400',
 		hover: 'hover:bg-rose-300',
 		selected:
-			'data-[state=on]:bg-rose-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-rose-600'
+			'data-[state=on]:bg-rose-400 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-rose-600'
 	},
 	pink: {
 		base: 'bg-pink-400',
 		hover: 'hover:bg-pink-300',
 		selected:
-			'data-[state=on]:bg-pink-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-pink-600'
+			'data-[state=on]:bg-pink-400 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-pink-600'
 	},
 	purple: {
 		base: 'bg-purple-400',
 		hover: 'hover:bg-purple-300',
 		selected:
-			'data-[state=on]:bg-purple-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-purple-600'
+			'data-[state=on]:bg-purple-400 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-purple-600'
 	},
 	blue: {
 		base: 'bg-blue-400',
 		hover: 'hover:bg-blue-300',
 		selected:
-			'data-[state=on]:bg-blue-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-blue-600'
+			'data-[state=on]:bg-blue-400 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-blue-600'
 	},
 	teal: {
 		base: 'bg-teal-400',
 		hover: 'hover:bg-teal-300',
 		selected:
-			'data-[state=on]:bg-teal-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-teal-600'
+			'data-[state=on]:bg-teal-400 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-teal-600'
 	},
 	green: {
 		base: 'bg-green-400',
 		hover: 'hover:bg-green-300',
 		selected:
-			'data-[state=on]:bg-green-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-green-600'
+			'data-[state=on]:bg-green-400 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-green-600'
 	},
 	yellow: {
 		base: 'bg-yellow-300',
 		hover: 'hover:bg-yellow-200',
 		selected:
-			'data-[state=on]:bg-yellow-200 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-yellow-500'
+			'data-[state=on]:bg-yellow-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-yellow-500'
 	},
 	orange: {
-		base: 'bg-orange-300', // Note: original had text-orange-500 here
+		base: 'bg-orange-300',
 		hover: 'hover:bg-orange-200',
 		selected:
-			'data-[state=on]:bg-orange-200 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-orange-500'
+			'data-[state=on]:bg-orange-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-orange-500'
 	}
 };
 
