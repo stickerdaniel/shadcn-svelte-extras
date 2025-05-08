@@ -16,42 +16,50 @@
 		rose: {
 			base: 'bg-rose-400',
 			hover: 'hover:bg-rose-300',
-			selected: 'data-[state=on]:bg-rose-300 data-[state=on]:ring-rose-600'
+			selected:
+				'data-[state=on]:bg-rose-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-rose-600'
 		},
 		pink: {
 			base: 'bg-pink-400',
 			hover: 'hover:bg-pink-300',
-			selected: 'data-[state=on]:bg-pink-300 data-[state=on]:ring-pink-600'
+			selected:
+				'data-[state=on]:bg-pink-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-pink-600'
 		},
 		purple: {
 			base: 'bg-purple-400',
 			hover: 'hover:bg-purple-300',
-			selected: 'data-[state=on]:bg-purple-300 data-[state=on]:ring-purple-600'
+			selected:
+				'data-[state=on]:bg-purple-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-purple-600'
 		},
 		blue: {
 			base: 'bg-blue-400',
 			hover: 'hover:bg-blue-300',
-			selected: 'data-[state=on]:bg-blue-300 data-[state=on]:ring-blue-600'
+			selected:
+				'data-[state=on]:bg-blue-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-blue-600'
 		},
 		teal: {
 			base: 'bg-teal-400',
 			hover: 'hover:bg-teal-300',
-			selected: 'data-[state=on]:bg-teal-300 data-[state=on]:ring-teal-600'
+			selected:
+				'data-[state=on]:bg-teal-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-teal-600'
 		},
 		green: {
 			base: 'bg-green-400',
 			hover: 'hover:bg-green-300',
-			selected: 'data-[state=on]:bg-green-300 data-[state=on]:ring-green-600'
+			selected:
+				'data-[state=on]:bg-green-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-green-600'
 		},
 		yellow: {
 			base: 'bg-yellow-400',
 			hover: 'hover:bg-yellow-300',
-			selected: 'data-[state=on]:bg-yellow-300 data-[state=on]:ring-yellow-600'
+			selected:
+				'data-[state=on]:bg-yellow-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-yellow-600'
 		},
 		orange: {
 			base: 'bg-orange-400 text-orange-500',
 			hover: 'hover:bg-orange-300',
-			selected: 'data-[state=on]:bg-orange-300 data-[state=on]:ring-orange-600'
+			selected:
+				'data-[state=on]:bg-orange-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-orange-600'
 		}
 	};
 </script>
