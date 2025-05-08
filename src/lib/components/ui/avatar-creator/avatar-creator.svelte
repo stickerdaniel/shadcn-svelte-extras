@@ -65,6 +65,10 @@
 		}
 		// Update the state
 		selectedItems = newSelectedItems;
+
+		// Set a random background color
+		const randomColorIndex = Math.floor(Math.random() * COLORS.length);
+		selectedAvatarColorName = COLORS[randomColorIndex] as ColorName;
 	}
 
 	function saveAvatar() {
