@@ -5,11 +5,13 @@
 	let {
 		layers = $bindable([]),
 		flipped = false,
-		alt = 'Avatar'
+		alt = 'Avatar',
+		previewBgClass = 'bg-green-400' // Default background color
 	}: {
 		layers: string[];
 		flipped?: boolean;
 		alt?: string;
+		previewBgClass?: string;
 	} = $props();
 
 	// Generate a unique ID for SVG filter
@@ -87,7 +89,7 @@
 	}
 </script>
 
-<Avatar.Root class="h-36 w-36 bg-green-400">
+<Avatar.Root class="h-36 w-36 {previewBgClass}">
 	{#if svgDataUrl}
 		<Avatar.Image src={svgDataUrl} {alt} />
 	{:else}

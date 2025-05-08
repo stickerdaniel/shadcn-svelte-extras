@@ -3,16 +3,20 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import AvatarPreview from './avatar-preview.svelte';
 	import CategorySelector from './category-selector.svelte';
+	import ColorSelector from './color-selector.svelte';
 	import { Input } from '$lib/components/ui/input/index.js';
 	import { Label } from '$lib/components/ui/label/index.js';
 	import { Dice5 } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 	import {
+		COLORS,
 		createDefaultSelectedItems,
 		DEFAULT_CATEGORIES,
 		generateAvatarLayers,
+		AVATAR_BACKGROUND_CLASSES,
 		type Category,
-		type SelectedItems
+		type SelectedItems,
+		type ColorName
 	} from './types';
 
 	// Use our shared types and defaults
@@ -20,9 +24,11 @@
 	let selectedItems = $state<SelectedItems>(createDefaultSelectedItems());
 	let activeTab = $state(categories[0]?.id ?? '');
 	let username = $state('');
+	let selectedAvatarColorName = $state<ColorName>(COLORS[0] as ColorName);
 
 	// Derived state for the layers of the avatar preview
 	const avatarLayers = $derived(generateAvatarLayers(selectedItems));
+	const avatarPreviewBgClass = $derived(AVATAR_BACKGROUND_CLASSES[selectedAvatarColorName]);
 
 	// Generate a random avatar configuration
 	function generateRandomAvatar() {
@@ -85,17 +91,22 @@
 			<CategorySelector bind:activeTab bind:selectedItems {categories} />
 			<div class="flex grow flex-col items-center gap-4">
 				<div class="flex grow items-center">
-					<AvatarPreview layers={avatarLayers} />
+					<AvatarPreview layers={avatarLayers} previewBgClass={avatarPreviewBgClass} />
 				</div>
-				<Button
-					variant="secondary"
-					size="icon"
-					class="mb-2"
-					onclick={generateRandomAvatar}
-					aria-label="Generate random avatar"
+				<div
+					class="flex w-full flex-col items-end justify-between gap-4 sm:flex-row-reverse md:flex-row-reverse lg:flex-col lg:items-end"
 				>
-					<Dice5 class="h-5 w-5" />
-				</Button>
+					<Button
+						variant="secondary"
+						size="icon"
+						onclick={generateRandomAvatar}
+						aria-label="Generate random avatar"
+					>
+						<Dice5 />
+					</Button>
+					<ColorSelector colors={COLORS as ColorName[]} bind:selectedColor={selectedAvatarColorName}
+					></ColorSelector>
+				</div>
 				<div class="grid w-full flex-col items-start gap-1.5">
 					<Label for="username">Your Username</Label>
 					<Input

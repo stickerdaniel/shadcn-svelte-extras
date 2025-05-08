@@ -56,17 +56,7 @@ export function createDefaultSelectedItems(): SelectedItems {
 	const selectedItems: SelectedItems = {};
 
 	for (const category of DEFAULT_CATEGORIES) {
-		// Default to first item, except for optional categories which default to null (None)
-		if (
-			category.id === 'accessories' ||
-			category.id === 'glasses' ||
-			category.id === 'beard' ||
-			category.id === 'details'
-		) {
-			selectedItems[category.id] = null;
-		} else {
-			selectedItems[category.id] = 0;
-		}
+		selectedItems[category.id] = 0;
 	}
 
 	return selectedItems;
@@ -100,3 +90,28 @@ export function generateAvatarLayers(selectedItems: SelectedItems): string[] {
 		return null;
 	}).filter((path): path is string => path !== null); // Filter out null/unselected paths
 }
+
+
+export const COLORS: string[] = [
+	'rose',
+	'pink',
+	'purple',
+	'blue',
+	'teal',
+	'green',
+	'yellow',
+	'orange'
+]
+
+export type ColorName = (typeof COLORS)[number];
+
+export const AVATAR_BACKGROUND_CLASSES: Record<ColorName, string> = {
+	rose: 'bg-rose-400',
+	pink: 'bg-pink-400',
+	purple: 'bg-purple-400',
+	blue: 'bg-blue-400',
+	teal: 'bg-teal-400',
+	green: 'bg-green-400',
+	yellow: 'bg-yellow-400',
+	orange: 'bg-orange-400'
+};
