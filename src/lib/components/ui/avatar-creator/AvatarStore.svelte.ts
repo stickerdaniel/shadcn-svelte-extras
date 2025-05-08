@@ -86,7 +86,20 @@ export const COLOR_SELECTOR_CLASSES: Record<
 	}
 };
 
-export class Avatar {
+// Interface for the Avatar store
+export interface IAvatar {
+	selectedItems: SelectedItems;
+	username: string;
+	selectedAvatarColorName: ColorName;
+	readonly categories: Category[]; // categories are not meant to be changed from outside
+	readonly avatarLayers: string[]; // Derived, so readonly from an external perspective
+	readonly avatarPreviewBgClass: string; // Derived, so readonly
+
+	generateRandomAvatar: () => void;
+	saveAvatar: () => void;
+}
+
+export class Avatar implements IAvatar {
 	selectedItems = $state<SelectedItems>(createDefaultSelectedItems());
 	username = $state('');
 	selectedAvatarColorName = $state<ColorName>(COLORS[0]);
