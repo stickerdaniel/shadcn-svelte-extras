@@ -74,7 +74,7 @@
 		<ToggleGroup.Item
 			value={color}
 			aria-label={`Select color ${color}`}
-			class={`rounded-full ring-2 ring-background ${colorClasses[color].base} ${colorClasses[color].hover} ${colorClasses[color].selected}`}
+			class={`transform rounded-full ring-2 ring-background transition-transform duration-150 ease-in-out ${colorClasses[color].base} ${colorClasses[color].hover} ${colorClasses[color].selected} hover:scale-105 data-[state=on]:scale-105`}
 		>
 			{#if selectedColor === color}<Check color="" />{/if}
 		</ToggleGroup.Item>
