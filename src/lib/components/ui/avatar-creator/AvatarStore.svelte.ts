@@ -20,19 +20,8 @@ export const COLORS = [
 ] as const;
 export type ColorName = (typeof COLORS)[number];
 
-export const AVATAR_BACKGROUND_CLASSES: Record<ColorName, string> = {
-	rose: 'bg-rose-400',
-	pink: 'bg-pink-400',
-	purple: 'bg-purple-400',
-	blue: 'bg-blue-400',
-	teal: 'bg-teal-400',
-	green: 'bg-green-400',
-	yellow: 'bg-yellow-400',
-	orange: 'bg-orange-400'
-};
-
-// For color-selector.svelte, to provide more detailed classes for hover, selection states etc.
-export const COLOR_SELECTOR_CLASSES: Record<
+// Renamed from COLOR_SELECTOR_CLASSES to AVATAR_COLOR_STYLES
+export const AVATAR_COLOR_STYLES: Record<
 	ColorName,
 	{ base: string; hover: string; selected: string }
 > = {
@@ -73,16 +62,16 @@ export const COLOR_SELECTOR_CLASSES: Record<
 			'data-[state=on]:bg-green-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-green-600'
 	},
 	yellow: {
-		base: 'bg-yellow-400',
-		hover: 'hover:bg-yellow-300',
+		base: 'bg-yellow-300',
+		hover: 'hover:bg-yellow-200',
 		selected:
-			'data-[state=on]:bg-yellow-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-yellow-600'
+			'data-[state=on]:bg-yellow-200 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-yellow-500'
 	},
 	orange: {
-		base: 'bg-orange-400 text-orange-500', // Note: original had text-orange-500 here
-		hover: 'hover:bg-orange-300',
+		base: 'bg-orange-300', // Note: original had text-orange-500 here
+		hover: 'hover:bg-orange-200',
 		selected:
-			'data-[state=on]:bg-orange-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-orange-600'
+			'data-[state=on]:bg-orange-200 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-orange-500'
 	}
 };
 
@@ -106,7 +95,7 @@ export class Avatar implements IAvatar {
 	categories: Category[] = DEFAULT_CATEGORIES;
 
 	avatarLayers = $derived(this._generateAvatarLayers());
-	avatarPreviewBgClass = $derived(AVATAR_BACKGROUND_CLASSES[this.selectedAvatarColorName]);
+	avatarPreviewBgClass = $derived(AVATAR_COLOR_STYLES[this.selectedAvatarColorName].base);
 
 	constructor() {
 		// Optional: Trigger initial random generation here if desired,
