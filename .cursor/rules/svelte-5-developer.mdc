@@ -5,7 +5,7 @@ alwaysApply: true
 ---
 ## Svelte Project Coding Instructions
 
-Use Svelte 5's new syntax with TypeScript for reactivity, props, events, and content passing. Prioritize this over Svelte 4 syntax. Use `bun` as the package manager ("bun add", "bunx").
+Use Svelte 5's new syntax with TypeScript for reactivity, props, events, and content passing. Prioritize this over Svelte 4 syntax. Use `bun` as the package manager ("bun add", "bun add -d (for dev dependencies), "bunx").
 
 **Key Svelte 5 Syntax Changes & Rune Usage:**
 
@@ -46,6 +46,7 @@ This pattern uses JavaScript classes combined with Svelte Runes (`$state`) to cr
         // src/lib/MyStore.svelte.ts
         import { $state } from 'svelte';
 
+        // important good practice - always define interface
         export interface IMyStoreState { count: number; increment: () => void; }
         export class MyStoreClass implements IMyStoreState {
           count = $state(0);
@@ -64,7 +65,7 @@ This pattern uses JavaScript classes combined with Svelte Runes (`$state`) to cr
         ```
 
     3.  **Share State via Runed Context (Recommended & SSR Safe):**
-        *   **a) Install Runed:** `bun add -d runed`
+        *   **a) Install Runed:** `bun add runed`
         *   **b) Define Context (`context.ts` or `MyStore.svelte.ts`):**
             ```typescript
             // src/lib/import { Context } from 'runed';
@@ -97,7 +98,7 @@ This pattern uses JavaScript classes combined with Svelte Runes (`$state`) to cr
 
 **Tooling Suggestions:**
 
-*   **Runed (`bun add -d runed`):** A collection of utilities specifically for Svelte 5 Runes. Highly recommended for simplifying common patterns. Key utilities include:
+*   **Runed (`bun add runed`):** A collection of utilities specifically for Svelte 5 Runes. Highly recommended for simplifying common patterns. Key utilities include:
     *   **`<Context>`:** Provides a type-safe and ergonomic wrapper around Svelte's context API. **Use this for sharing class-based stores.**
     *   **`resource`:** Combines reactive state with async data fetching, handling loading/error states and cancellation.
     *   **`watch`:** Similar to `$effect`, but with explicitly defined reactive dependencies. Useful for more control over when effects run. Variants like `watch.pre` exist.
@@ -108,5 +109,5 @@ This pattern uses JavaScript classes combined with Svelte Runes (`$state`) to cr
     *   **(Other utilities):** Runed offers many more utilities for element interaction (`ElementRect`, `useIntersectionObserver`), sensor data (`useGeolocation`), animation (`AnimationFrames`), state history (`StateHistory`), debouncing (`Debounced`, `useDebounce`), and more.
     *   **Recommendation:** Familiarize yourself with the Runed utilities and use them where they fit the problem domain. Request the [Runed documentation](https://runed.dev/docs) when considering a specific utility for detailed usage instructions.
 *   **Shadcn-Svelte:** High-quality, accessible UI components. Follow setup at [next.shadcn-svelte.com](https://next.shadcn-svelte.com). (`bunx --bun shadcn-svelte-add@latest init`)
-*   **Superforms/Formsnap:** Robust form handling with validation. Requires Zod (`bun add -d zod`) and Superforms (`bun add -d superforms sveltekit-superforms zod-form-data`). Follow form setup at [next.shadcn-svelte.com/docs/components/form](https://next.shadcn-svelte.com/docs/components/form).
+*   **Superforms/Formsnap:** Robust form handling with validation. Implementation in next.shadcn-svelte form uses Superforms, Formasnap and Zod. Follow form setup at [next.shadcn-svelte.com/docs/components/form](https://next.shadcn-svelte.com/docs/components/form).
 *   **Threlte, Svelte Flow:** Consider for specialized UI needs: 3D graphics, node-based diagrams, respectively.
