@@ -1,0 +1,155 @@
+import {
+	DEFAULT_CATEGORIES,
+	LAYER_ORDER,
+	getPreviewImagePath,
+	createDefaultSelectedItems,
+	type Category,
+	type SelectedItems
+} from './types';
+
+// Centralized Color Definitions
+export const COLORS = [
+	'rose',
+	'pink',
+	'purple',
+	'blue',
+	'teal',
+	'green',
+	'yellow',
+	'orange'
+] as const;
+export type ColorName = (typeof COLORS)[number];
+
+export const AVATAR_BACKGROUND_CLASSES: Record<ColorName, string> = {
+	rose: 'bg-rose-400',
+	pink: 'bg-pink-400',
+	purple: 'bg-purple-400',
+	blue: 'bg-blue-400',
+	teal: 'bg-teal-400',
+	green: 'bg-green-400',
+	yellow: 'bg-yellow-400',
+	orange: 'bg-orange-400'
+};
+
+// For color-selector.svelte, to provide more detailed classes for hover, selection states etc.
+export const COLOR_SELECTOR_CLASSES: Record<
+	ColorName,
+	{ base: string; hover: string; selected: string }
+> = {
+	rose: {
+		base: 'bg-rose-400',
+		hover: 'hover:bg-rose-300',
+		selected:
+			'data-[state=on]:bg-rose-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-rose-600'
+	},
+	pink: {
+		base: 'bg-pink-400',
+		hover: 'hover:bg-pink-300',
+		selected:
+			'data-[state=on]:bg-pink-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-pink-600'
+	},
+	purple: {
+		base: 'bg-purple-400',
+		hover: 'hover:bg-purple-300',
+		selected:
+			'data-[state=on]:bg-purple-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-purple-600'
+	},
+	blue: {
+		base: 'bg-blue-400',
+		hover: 'hover:bg-blue-300',
+		selected:
+			'data-[state=on]:bg-blue-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-blue-600'
+	},
+	teal: {
+		base: 'bg-teal-400',
+		hover: 'hover:bg-teal-300',
+		selected:
+			'data-[state=on]:bg-teal-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-teal-600'
+	},
+	green: {
+		base: 'bg-green-400',
+		hover: 'hover:bg-green-300',
+		selected:
+			'data-[state=on]:bg-green-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-green-600'
+	},
+	yellow: {
+		base: 'bg-yellow-400',
+		hover: 'hover:bg-yellow-300',
+		selected:
+			'data-[state=on]:bg-yellow-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-yellow-600'
+	},
+	orange: {
+		base: 'bg-orange-400 text-orange-500', // Note: original had text-orange-500 here
+		hover: 'hover:bg-orange-300',
+		selected:
+			'data-[state=on]:bg-orange-300 data-[state=on]:ring-offset-2 data-[state=on]:ring-offset-background data-[state=on]:ring-2 data-[state=on]:ring-orange-600'
+	}
+};
+
+export class Avatar {
+	selectedItems = $state<SelectedItems>(createDefaultSelectedItems());
+	username = $state('');
+	selectedAvatarColorName = $state<ColorName>(COLORS[0]);
+	categories: Category[] = DEFAULT_CATEGORIES;
+
+	avatarLayers = $derived(this._generateAvatarLayers());
+	avatarPreviewBgClass = $derived(AVATAR_BACKGROUND_CLASSES[this.selectedAvatarColorName]);
+
+	constructor() {
+		// Optional: Trigger initial random generation here if desired,
+		// or let the component using the store call it.
+		// this.generateRandomAvatar();
+	}
+
+	private _generateAvatarLayers(): string[] {
+		return LAYER_ORDER.map((categoryId) => {
+			const selectedIndex = this.selectedItems[categoryId];
+			if (selectedIndex !== null && selectedIndex >= 0) {
+				// This uses getPreviewImagePath, consistent with original generateAvatarLayers for avatar-creator
+				return getPreviewImagePath(categoryId, selectedIndex);
+			}
+			return null;
+		}).filter((path): path is string => path !== null);
+	}
+
+	generateRandomAvatar = () => {
+		const newSelectedItems: SelectedItems = {};
+		const INCLUDE_GLASSES_PROBABILITY = 0.4;
+
+		for (const category of this.categories) {
+			let selectedItemIndex: number;
+			switch (category.id) {
+				case 'beard':
+				case 'accessories':
+				case 'details':
+					selectedItemIndex = 0; // Default to 'none' (index 0)
+					break;
+				case 'glasses':
+					if (Math.random() < INCLUDE_GLASSES_PROBABILITY && category.maxItems > 1) {
+						selectedItemIndex = Math.floor(Math.random() * (category.maxItems - 1)) + 1; // Other than 'none'
+					} else {
+						selectedItemIndex = 0; // 'none'
+					}
+					break;
+				default:
+					selectedItemIndex =
+						category.maxItems > 0 ? Math.floor(Math.random() * category.maxItems) : 0;
+					break;
+			}
+			newSelectedItems[category.id] = selectedItemIndex;
+		}
+		this.selectedItems = newSelectedItems;
+
+		const randomColorIndex = Math.floor(Math.random() * COLORS.length);
+		this.selectedAvatarColorName = COLORS[randomColorIndex];
+	};
+
+	saveAvatar = () => {
+		console.log('Saving avatar configuration:', {
+			username: this.username,
+			selectedItems: this.selectedItems,
+			color: this.selectedAvatarColorName
+		});
+		// Future: Add logic to save the configuration (e.g., API call, localStorage)
+	};
+}

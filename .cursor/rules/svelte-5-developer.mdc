@@ -31,7 +31,7 @@ Use Svelte 5's new syntax with TypeScript for reactivity, props, events, and con
 *   **Events:** Use standard HTML event attributes (`onclick={handler}`, `onsubmit={handler}`) instead of `on:`.
 *   **Content/Slots:** Use `{#snippet name()}...{/snippet}` to define content snippets and `{@render name()}` to render them. Pass snippets as props: `let { header } = $props<{ header: Snippet }>();`. The default content passed between component tags is available via the implicit `children` snippet prop.
 *   **TypeScript:** Always use `<script lang="ts">`. Explicitly type variables, props, function arguments/returns, and derived arrays.
-
+Runes are a core Svelte 5 feature and dont require any imports.
 **State Management: Class-Based Stores (Pattern Summary)**
 
 This pattern uses JavaScript classes combined with Svelte Runes (`$state`) to create powerful, encapsulated, and reusable state containers, often replacing or complementing traditional Svelte stores (`writable`, `readable`).

@@ -8,80 +8,23 @@
 	import { Label } from '$lib/components/ui/label/index.js';
 	import { Dice5 } from '@lucide/svelte';
 	import { onMount } from 'svelte';
-	import {
-		COLORS,
-		createDefaultSelectedItems,
-		DEFAULT_CATEGORIES,
-		generateAvatarLayers,
-		AVATAR_BACKGROUND_CLASSES,
-		type Category,
-		type SelectedItems,
-		type ColorName
-	} from './types';
+	import { Avatar } from './AvatarStore.svelte';
+	import { DEFAULT_CATEGORIES, type Category } from './types';
 
-	// Use our shared types and defaults
+	// Instantiate the Avatar store
+	const avatarStore = new Avatar();
+
+	// Local state for UI, like activeTab, if not part of the store's direct responsibility
+	// It seems DEFAULT_CATEGORIES is still useful for passing to CategorySelector if it expects the raw list.
 	const categories: Category[] = DEFAULT_CATEGORIES;
-	let selectedItems = $state<SelectedItems>(createDefaultSelectedItems());
 	let activeTab = $state(categories[0]?.id ?? '');
-	let username = $state('');
-	let selectedAvatarColorName = $state<ColorName>(COLORS[0] as ColorName);
 
-	// Derived state for the layers of the avatar preview
-	const avatarLayers = $derived(generateAvatarLayers(selectedItems));
-	const avatarPreviewBgClass = $derived(AVATAR_BACKGROUND_CLASSES[selectedAvatarColorName]);
+	// All other state (selectedItems, username, selectedAvatarColorName, avatarLayers, avatarPreviewBgClass)
+	// will now be accessed from avatarStore.
 
-	// Generate a random avatar configuration
-	function generateRandomAvatar() {
-		const newSelectedItems: SelectedItems = {};
-		const INCLUDE_GLASSES_PROBABILITY = 0.4; // 40% chance to wear glasses
-
-		for (const category of categories) {
-			let selectedItemIndex: number;
-
-			switch (category.id) {
-				case 'beard':
-				case 'accessories':
-				case 'details':
-					// These categories are optional and default to 'none' (index 0)
-					selectedItemIndex = 0;
-					break;
-				case 'glasses':
-					// Glasses are optional with a specific probability
-					if (Math.random() < INCLUDE_GLASSES_PROBABILITY && category.maxItems > 1) {
-						// Select a random item *other than* 'none' (index 0)
-						selectedItemIndex = Math.floor(Math.random() * (category.maxItems - 1)) + 1;
-					} else {
-						selectedItemIndex = 0; // none
-					}
-					break;
-				default:
-					// For other categories, select any random item
-					// Ensure maxItems is at least 1 to avoid issues with Math.random() * 0
-					selectedItemIndex =
-						category.maxItems > 0 ? Math.floor(Math.random() * category.maxItems) : 0;
-					break;
-			}
-			newSelectedItems[category.id] = selectedItemIndex;
-		}
-		// Update the state
-		selectedItems = newSelectedItems;
-
-		// Set a random background color
-		const randomColorIndex = Math.floor(Math.random() * COLORS.length);
-		selectedAvatarColorName = COLORS[randomColorIndex] as ColorName;
-	}
-
-	function saveAvatar() {
-		console.log('Saving avatar configuration:', {
-			username,
-			selectedItems
-		});
-		// Add logic to save the selectedItems configuration
-	}
-
-	// Generate a random avatar on initial load
+	// Generate a random avatar on initial load using the store's method
 	onMount(() => {
-		generateRandomAvatar();
+		avatarStore.generateRandomAvatar();
 	});
 </script>
 
@@ -92,10 +35,17 @@
 	</Card.Header>
 	<Card.Content>
 		<div class="flex w-full flex-col-reverse justify-center gap-4 lg:flex-row">
-			<CategorySelector bind:activeTab bind:selectedItems {categories} />
+			<CategorySelector
+				bind:activeTab
+				bind:selectedItems={avatarStore.selectedItems}
+				{categories}
+			/>
 			<div class="flex grow flex-col items-center gap-4">
 				<div class="flex grow items-center">
-					<AvatarPreview layers={avatarLayers} previewBgClass={avatarPreviewBgClass} />
+					<AvatarPreview
+						layers={avatarStore.avatarLayers}
+						previewBgClass={avatarStore.avatarPreviewBgClass}
+					/>
 				</div>
 				<div
 					class="flex w-full flex-col items-end justify-between gap-4 sm:flex-row-reverse md:flex-row-reverse lg:flex-col lg:items-end"
@@ -103,13 +53,12 @@
 					<Button
 						variant="secondary"
 						size="icon"
-						onclick={generateRandomAvatar}
+						onclick={avatarStore.generateRandomAvatar}
 						aria-label="Generate random avatar"
 					>
 						<Dice5 />
 					</Button>
-					<ColorSelector colors={COLORS as ColorName[]} bind:selectedColor={selectedAvatarColorName}
-					></ColorSelector>
+					<ColorSelector bind:selectedColor={avatarStore.selectedAvatarColorName}></ColorSelector>
 				</div>
 				<div class="grid w-full flex-col items-start gap-1.5">
 					<Label for="username">Your Username</Label>
@@ -118,13 +67,13 @@
 						class="w-full"
 						id="username"
 						placeholder="Display Name"
-						bind:value={username}
+						bind:value={avatarStore.username}
 					/>
 				</div>
 			</div>
 		</div>
 	</Card.Content>
 	<Card.Footer class="flex justify-end space-x-2">
-		<Button onclick={saveAvatar}>Save</Button>
+		<Button onclick={avatarStore.saveAvatar}>Save</Button>
 	</Card.Footer>
 </Card.Root>
