@@ -19,9 +19,6 @@
 	const categories: Category[] = DEFAULT_CATEGORIES;
 	let activeTab = $state(categories[0]?.id ?? '');
 
-	// All other state (selectedItems, username, selectedAvatarColorName, avatarLayers, avatarPreviewBgClass)
-	// will now be accessed from avatarStore.
-
 	// Generate a random avatar on initial load using the store's method
 	onMount(() => {
 		avatarStore.generateRandomAvatar();

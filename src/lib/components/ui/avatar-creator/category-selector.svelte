@@ -80,7 +80,11 @@
 		<!-- Tab list -->
 		<Tabs.List class="h-fit flex-col items-stretch">
 			{#each categories as category (category.id)}
-				<Tabs.Trigger value={category.id}>{category.name}</Tabs.Trigger>
+				<Tabs.Trigger
+					value={category.id}
+					class={`transform transition-transform duration-75 ease-in-out active:scale-95 ${category.id !== activeTab ? 'hover:scale-105' : ''}`}
+					>{category.name}</Tabs.Trigger
+				>
 			{/each}
 		</Tabs.List>
 
@@ -111,14 +115,18 @@
 						<ToggleGroup.Item
 							value={category.id + index.toString()}
 							aria-label={`Select ${category.name} ${index + 1}`}
-							class="h-14 w-14"
+							class="h-14 w-14 p-0 transition-transform duration-75 ease-in-out active:scale-95"
 						>
-							<img
-								src={imageSrc}
-								alt={`${category.name} Preview ${index + 1}`}
-								class="h-full w-full object-contain"
-								loading="lazy"
-							/>
+							<div
+								class={`duration-5 flex h-full w-full transform items-center justify-center transition-transform ease-in-out ${selectedValues[category.id] !== category.id + index.toString() ? 'hover:scale-110' : ''} active:scale-100 active:duration-0`}
+							>
+								<img
+									src={imageSrc}
+									alt={`${category.name} Preview ${index + 1}`}
+									class="h-full w-full scale-50 object-contain"
+									loading="lazy"
+								/>
+							</div>
 						</ToggleGroup.Item>
 					{/each}
 				</ToggleGroup.Root>

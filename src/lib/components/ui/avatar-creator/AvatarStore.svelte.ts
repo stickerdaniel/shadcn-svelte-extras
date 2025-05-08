@@ -94,14 +94,17 @@ export class Avatar implements IAvatar {
 	selectedAvatarColorName = $state<ColorName>(COLORS[0]);
 	categories: Category[] = DEFAULT_CATEGORIES;
 
-	avatarLayers = $derived(this._generateAvatarLayers());
-	avatarPreviewBgClass = $derived(AVATAR_COLOR_STYLES[this.selectedAvatarColorName].base);
-
 	constructor() {
-		// Optional: Trigger initial random generation here if desired,
-		// or let the component using the store call it.
-		// this.generateRandomAvatar();
+		//this.generateRandomAvatar();
 	}
+
+	avatarLayers = $derived(this._generateAvatarLayers());
+	avatarPreviewBgClass = $derived.by(() => {
+		// Ensure selectedAvatarColorName is a valid key, otherwise fallback to the first color
+		const colorKey = COLORS.includes(this.selectedAvatarColorName) ? this.selectedAvatarColorName : COLORS[0];
+		const newClass = AVATAR_COLOR_STYLES[colorKey].base;
+		return newClass;
+	});
 
 	private _generateAvatarLayers(): string[] {
 		return LAYER_ORDER.map((categoryId) => {
