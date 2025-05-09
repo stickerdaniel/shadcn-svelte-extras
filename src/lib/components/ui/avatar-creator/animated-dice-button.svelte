@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button, type ButtonProps } from '$lib/components/ui/button/index.js';
 	import { Dice1, Dice2, Dice3, Dice4, Dice5, Dice6 } from '@lucide/svelte';
-	import { onMount, onDestroy, createEventDispatcher } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { Spring } from 'svelte/motion';
 
 	// Props for the button, allowing customization from the parent
@@ -10,15 +10,15 @@
 		class: className = '',
 		variant = 'secondary' as ButtonProps['variant'],
 		size = 'icon' as ButtonProps['size'],
-		ariaLabel = 'Generate random'
+		ariaLabel = 'Generate random',
+		onDicethrow
 	}: {
 		class?: string;
 		variant?: ButtonProps['variant'];
 		size?: ButtonProps['size'];
 		ariaLabel?: string;
+		onDicethrow?: () => void;
 	} = $props();
-
-	const dispatch = createEventDispatcher<{ dicethrow: void }>();
 
 	// State for the dice number
 	let diceNumber = $state(5);
@@ -28,7 +28,7 @@
 		{ scale: 1, rotate: 0 },
 		{
 			stiffness: 0.18,
-			damping: 0.3
+			damping: 0.25
 		}
 	);
 
@@ -43,7 +43,7 @@
 	});
 
 	async function handleDiceClick() {
-		dispatch('dicethrow'); // Emit event for parent to handle avatar generation
+		onDicethrow?.();
 		const newDiceNumber = Math.floor(Math.random() * 6) + 1;
 
 		if (diceAnimationTimeoutId) {

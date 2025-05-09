@@ -27,8 +27,8 @@
 
 <Card.Root class="m-4 w-full max-w-4xl">
 	<Card.Header>
-		<Card.Title>Avatar Creator</Card.Title>
-		<Card.Description>Customize your profile picture.</Card.Description>
+		<Card.Title>Hello, stranger! Let's fix that.</Card.Title>
+		<Card.Description>Put a face to your username.</Card.Description>
 	</Card.Header>
 	<Card.Content>
 		<div class="flex w-full flex-col-reverse justify-center gap-4 lg:flex-row">
@@ -48,7 +48,7 @@
 					class="flex w-full flex-col items-end justify-between gap-4 sm:flex-row-reverse md:flex-row-reverse lg:flex-col lg:items-end"
 				>
 					<AnimatedDiceButton
-						on:dicethrow={avatarStore.generateRandomAvatar}
+						onDicethrow={avatarStore.generateRandomAvatar}
 						ariaLabel="Generate random avatar"
 						variant="secondary"
 						size="icon"
