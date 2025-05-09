@@ -57,13 +57,7 @@
 				</div>
 				<div class="grid w-full flex-col items-start gap-1.5">
 					<Label for="username">Your Username</Label>
-					<Input
-						type="text"
-						class="w-full"
-						id="username"
-						placeholder="Display Name"
-						bind:value={avatarStore.username}
-					/>
+					<Input type="text" class="w-full" id="username" bind:value={avatarStore.username} />
 				</div>
 			</div>
 		</div>
