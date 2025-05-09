@@ -6,7 +6,7 @@
 	import ColorSelector from './color-selector.svelte';
 	import { Input } from '$lib/components/ui/input/index.js';
 	import { Label } from '$lib/components/ui/label/index.js';
-	import { Dice5 } from '@lucide/svelte';
+	import { Dice1, Dice2, Dice3, Dice4, Dice5, Dice6 } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 	import { Avatar } from './AvatarStore.svelte';
 	import { DEFAULT_CATEGORIES, type Category } from './types';
@@ -19,10 +19,20 @@
 	const categories: Category[] = DEFAULT_CATEGORIES;
 	let activeTab = $state(categories[0]?.id ?? '');
 
+	// State for the dice number
+	let diceNumber = $state(5);
+
 	// Generate a random avatar on initial load using the store's method
 	onMount(() => {
 		avatarStore.generateRandomAvatar();
+		// Also set an initial random dice number on mount
+		diceNumber = Math.floor(Math.random() * 6) + 1;
 	});
+
+	function handleDiceClick() {
+		avatarStore.generateRandomAvatar();
+		diceNumber = Math.floor(Math.random() * 6) + 1;
+	}
 </script>
 
 <Card.Root class="m-4 w-full max-w-4xl">
@@ -50,10 +60,17 @@
 					<Button
 						variant="secondary"
 						size="icon"
-						onclick={avatarStore.generateRandomAvatar}
+						onclick={handleDiceClick}
 						aria-label="Generate random avatar"
+						class="transform transition-transform duration-75 ease-in-out hover:scale-105 active:scale-95"
 					>
-						<Dice5 />
+						{#if diceNumber === 1}<Dice1 />
+						{:else if diceNumber === 2}<Dice2 />
+						{:else if diceNumber === 3}<Dice3 />
+						{:else if diceNumber === 4}<Dice4 />
+						{:else if diceNumber === 5}<Dice5 />
+						{:else if diceNumber === 6}<Dice6 />
+						{/if}
 					</Button>
 					<ColorSelector bind:selectedColor={avatarStore.selectedAvatarColorName}></ColorSelector>
 				</div>
