@@ -68,13 +68,17 @@
 	<!-- Tab list with scroll buttons -->
 	<div class="flex h-fit flex-col gap-2">
 		<Button
-			class="w-full"
+			class="w-full transform transition-transform duration-75 ease-in-out active:scale-95"
 			variant="secondary"
 			size="icon"
 			aria-label="Scroll Up"
 			onclick={() => scrollTabs('up')}
 		>
-			<ChevronsUp class="h-4 w-4" />
+			<div
+				class="flex h-full w-full transform items-center justify-center transition-transform duration-150 ease-in-out hover:scale-125"
+			>
+				<ChevronsUp class="h-4 w-4" />
+			</div>
 		</Button>
 
 		<!-- Tab list -->
@@ -89,13 +93,17 @@
 		</Tabs.List>
 
 		<Button
-			class="w-full"
+			class="w-full transform transition-transform duration-75 ease-in-out active:scale-95"
 			variant="secondary"
 			size="icon"
 			aria-label="Scroll Down"
 			onclick={() => scrollTabs('down')}
 		>
-			<ChevronsDown class="h-4 w-4" />
+			<div
+				class="flex h-full w-full transform items-center justify-center transition-transform duration-150 ease-in-out hover:scale-125"
+			>
+				<ChevronsDown class="h-4 w-4" />
+			</div>
 		</Button>
 	</div>
 
