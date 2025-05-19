@@ -13,7 +13,7 @@
 	import SearchButton from '$lib/components/search-button.svelte';
 	import ChatExample from './components/chat/basic.svelte';
 	import { TagsInput } from '$lib/components/ui/tags-input';
-	import { LucideArrowRight, TerminalIcon } from '@lucide/svelte';
+	import { ArrowRightIcon } from '@lucide/svelte';
 	import { map } from '$lib/map';
 
 	let tags = $state(['shadcn-svelte', 'extras']);
@@ -38,13 +38,12 @@
 
 <div class="flex flex-col gap-8 p-8">
 	<div class="flex flex-col gap-2">
-		<a href="/components/terminal" class="flex place-items-center gap-1 text-sm font-medium">
-			<TerminalIcon class="size-4" />
-			<span class="hover:underline">jsrepo add ui/terminal</span>
-			<LucideArrowRight class="size-4" />
+		<a href="/docs/using-extras" class="flex place-items-center gap-1 text-sm font-medium">
+			<span class="hover:underline">Now with Tailwindcss v4 support!</span>
+			<ArrowRightIcon class="size-3.5" />
 		</a>
 		<h1 class="text-5xl font-bold">shadcn-svelte-extras</h1>
-		<p class="text-lg text-muted-foreground">Finish your app.</p>
+		<p class="text-muted-foreground text-lg">Finish your app.</p>
 	</div>
 	<div class="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
 		<div class="flex flex-col gap-4 lg:col-start-1">

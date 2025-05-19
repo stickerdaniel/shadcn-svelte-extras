@@ -6,7 +6,7 @@
 		MEGABYTE,
 		type FileDropZoneProps
 	} from '$lib/components/ui/file-drop-zone';
-	import { X } from '@lucide/svelte';
+	import { XIcon } from '@lucide/svelte';
 	import { toast } from 'svelte-sonner';
 	import { type SuperValidated, superForm, filesProxy } from 'sveltekit-superforms';
 	import SuperDebug from 'sveltekit-superforms';
@@ -61,7 +61,7 @@
 			<div class="flex place-items-center justify-between gap-2">
 				<div class="flex flex-col">
 					<span>{file.name}</span>
-					<span class="text-xs text-muted-foreground">{displaySize(file.size)}</span>
+					<span class="text-muted-foreground text-xs">{displaySize(file.size)}</span>
 				</div>
 				<Button
 					variant="outline"
@@ -71,7 +71,7 @@
 						files.set([...Array.from($files).slice(0, i), ...Array.from($files).slice(i + 1)]);
 					}}
 				>
-					<X />
+					<XIcon />
 				</Button>
 			</div>
 		{/each}

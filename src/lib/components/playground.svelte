@@ -4,7 +4,7 @@
 	import { Code } from '$lib/components/ui/code';
 	import { cn } from '$lib/utils/utils';
 	import { Button } from './ui/button';
-	import { RefreshCw } from '@lucide/svelte';
+	import { RefreshCwIcon } from '@lucide/svelte';
 
 	type Props = {
 		code: string;
@@ -22,12 +22,12 @@
 
 <div
 	class={cn(
-		'relative flex min-h-[400px] place-items-center justify-center rounded-lg border border-border',
+		'border-border relative flex min-h-[400px] place-items-center justify-center rounded-lg border',
 		className
 	)}
 >
 	<Tabs.Root bind:value={tab} class="size-full">
-		<Tabs.List class="absolute right-3 top-3 z-10">
+		<Tabs.List class="absolute top-3 right-3 z-10">
 			<Tabs.Trigger value="preview">Preview</Tabs.Trigger>
 			<Tabs.Trigger value="code">Code</Tabs.Trigger>
 		</Tabs.List>
@@ -36,10 +36,10 @@
 				<Button
 					size="icon"
 					variant="ghost"
-					class="absolute left-3 top-3"
+					class="absolute top-3 left-3"
 					onclick={() => remountCount++}
 				>
-					<RefreshCw class="size-4" />
+					<RefreshCwIcon class="size-4" />
 				</Button>
 			{/if}
 			{#key remountCount}
@@ -49,7 +49,7 @@
 			{/key}
 		</Tabs.Content>
 		<Tabs.Content value="code" class="size-full pb-4">
-			<Code lang="svelte" {code} class="size-full border-none" hideLines hideCopy />
+			<Code lang="svelte" {code} class="size-full border-none bg-transparent" hideLines hideCopy />
 		</Tabs.Content>
 	</Tabs.Root>
 </div>

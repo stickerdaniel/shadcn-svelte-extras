@@ -4,14 +4,14 @@
 	import type { Command, Agent } from 'package-manager-detector';
 	import { resolveCommand } from 'package-manager-detector/commands';
 	import CopyButton from '../copy-button/copy-button.svelte';
-	import { Clipboard } from '@lucide/svelte';
+	import { ClipboardIcon } from '@lucide/svelte';
 
 	const style = tv({
-		base: 'w-full rounded-lg border border-border',
+		base: 'border-border w-full rounded-lg border',
 		variants: {
 			variant: {
-				default: 'bg-background',
-				secondary: 'border-transparent bg-secondary/50'
+				default: 'bg-card',
+				secondary: 'bg-secondary/50 border-transparent'
 			}
 		}
 	});
@@ -28,7 +28,7 @@
 	};
 
 	let {
-		variant,
+		variant = 'default',
 		class: className,
 		command,
 		agents = ['npm', 'pnpm', 'yarn', 'bun'],
@@ -42,7 +42,7 @@
 </script>
 
 <div class={cn(style({ variant }), className)}>
-	<div class="flex place-items-end justify-between border-b border-border p-2 pb-0">
+	<div class="border-border flex place-items-end justify-between border-b p-2 pb-0">
 		<div class="flex place-items-center gap-1">
 			{#each agents as pm (pm)}
 				<button
@@ -59,12 +59,12 @@
 		</div>
 		<CopyButton text={commandText} class="mb-1 size-6 [&_svg]:size-3">
 			{#snippet icon()}
-				<Clipboard />
+				<ClipboardIcon />
 			{/snippet}
 		</CopyButton>
 	</div>
 	<div class="no-scrollbar overflow-x-auto p-3">
-		<span class="text-nowrap font-mono text-sm">
+		<span class="font-mono text-sm text-nowrap">
 			{commandText}
 		</span>
 	</div>

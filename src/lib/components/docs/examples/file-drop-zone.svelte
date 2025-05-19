@@ -8,7 +8,7 @@
 	} from '$lib/components/ui/file-drop-zone';
 	import { Progress } from '$lib/components/ui/progress';
 	import { sleep } from '$lib/utils/sleep';
-	import { X } from '@lucide/svelte';
+	import { XIcon } from '@lucide/svelte';
 	import { onDestroy } from 'svelte';
 	import { toast } from 'svelte-sonner';
 	import { SvelteDate } from 'svelte/reactivity';
@@ -82,7 +82,7 @@
 	<div class="flex flex-col gap-2">
 		{#each files as file, i (file.name)}
 			<div
-				class="flex place-items-center justify-between gap-2 rounded-md border border-border p-2"
+				class="border-border flex place-items-center justify-between gap-2 rounded-md border p-2"
 			>
 				<div class="flex place-items-center gap-2">
 					{#await file.url then src}
@@ -90,18 +90,18 @@
 							<img
 								{src}
 								alt={file.name}
-								class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-clip"
+								class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-clip"
 							/>
 						</div>
 					{/await}
 					<div class="flex flex-col">
 						<span class="text-nowrap">{file.name}</span>
-						<span class="text-xs text-muted-foreground">{displaySize(file.size)}</span>
+						<span class="text-muted-foreground text-xs">{displaySize(file.size)}</span>
 					</div>
 				</div>
 				{#await file.url}
 					<Progress
-						class="h-2 w-full flex-grow"
+						class="h-2 w-full grow"
 						value={((date.getTime() - file.uploadedAt) / 1000) * 100}
 						max={100}
 					/>
@@ -114,7 +114,7 @@
 							files = [...files.slice(0, i), ...files.slice(i + 1)];
 						}}
 					>
-						<X />
+						<XIcon />
 					</Button>
 				{/await}
 			</div>

@@ -171,7 +171,7 @@
 
 <div
 	class={cn(
-		'flex min-h-[50px] w-full flex-wrap place-items-center gap-2 rounded-md border border-input bg-background px-2 py-2 disabled:opacity-50 aria-disabled:cursor-not-allowed',
+		'border-input bg-background selection:bg-primary dark:bg-input/30 flex min-h-[36px] w-full flex-wrap place-items-center gap-1 rounded-md border py-0.5 pr-1 pl-1 disabled:opacity-50 aria-disabled:cursor-not-allowed',
 		className
 	)}
 	aria-disabled={disabled}
@@ -187,6 +187,6 @@
 		{placeholder}
 		data-invalid={invalid}
 		onkeydown={keydown}
-		class="min-w-16 shrink grow basis-0 border-none bg-transparent px-2 outline-none placeholder:text-muted-foreground focus:outline-none disabled:cursor-not-allowed data-[invalid=true]:text-red-500 md:text-sm"
+		class="placeholder:text-muted-foreground min-w-16 shrink grow basis-0 border-none bg-transparent px-2 outline-hidden focus:outline-hidden disabled:cursor-not-allowed data-[invalid=true]:text-red-500 md:text-sm"
 	/>
 </div>

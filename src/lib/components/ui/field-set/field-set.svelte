@@ -5,11 +5,10 @@
 	import { tv, type VariantProps } from 'tailwind-variants';
 
 	const style = tv({
-		base: 'flex h-fit w-full flex-col rounded-lg border border-border',
+		base: 'border-border flex h-fit w-full flex-col rounded-lg border',
 		variants: {
 			variant: {
-				default: 'border-border',
-				primary: 'border-primary',
+				default: 'border-border bg-card',
 				destructive: 'border-destructive'
 			}
 		}

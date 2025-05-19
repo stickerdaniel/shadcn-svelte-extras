@@ -3,7 +3,7 @@
 	import { map } from '$lib/map';
 	import type { ComponentProps } from 'svelte';
 	import Logo from './logo.svelte';
-	import { Badge } from './ui/badge';
+	import { Badge } from '$lib/components/ui/badge';
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
 
@@ -42,15 +42,9 @@
 												<a {href} {...props}>
 													{name}
 													{#if status}
-														{#if status === 'New'}
-															<Badge class="bg-brand text-white hover:bg-brand">
-																{status}
-															</Badge>
-														{:else}
-															<Badge variant="secondary">
-																{status}
-															</Badge>
-														{/if}
+														<Badge class="bg-brand hover:bg-brand text-white">
+															{status}
+														</Badge>
 													{/if}
 												</a>
 											{/snippet}

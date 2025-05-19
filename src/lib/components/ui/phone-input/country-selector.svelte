@@ -3,7 +3,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Command from '$lib/components/ui/command';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
-	import { Check, ChevronsUpDown } from '@lucide/svelte';
+	import { CheckIcon, ChevronsUpDownIcon } from '@lucide/svelte';
 	import { cn } from '$lib/utils/utils';
 	import Flag from './flag.svelte';
 	import type { Country, CountryCode } from 'svelte-tel-input/types';
@@ -45,14 +45,14 @@
 	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button
+				{...props}
 				type="button"
 				variant="outline"
-				class={cn('flex shrink-0 gap-1 rounded-e-none rounded-s-lg px-3')}
+				class={cn('flex shrink-0 gap-1 rounded-l-lg rounded-r-none px-3')}
 				{disabled}
-				{...props}
 			>
 				<Flag country={selectedCountry} />
-				<ChevronsUpDown
+				<ChevronsUpDownIcon
 					class={cn('-mr-2 h-4 w-4 opacity-50', disabled ? 'hidden' : 'opacity-100')}
 				/>
 			</Button>
@@ -81,12 +81,12 @@
 							>
 								<Flag {country} />
 								<span class="flex-1 text-sm">{country.name}</span>
-								<span class="text-sm text-foreground/50">
+								<span class="text-foreground/50 text-sm">
 									+{country.dialCode}
 								</span>
 								<div class="w-4">
 									{#if country.iso2 == selected}
-										<Check class="size-4" />
+										<CheckIcon class="size-4" />
 									{/if}
 								</div>
 							</Command.Item>
