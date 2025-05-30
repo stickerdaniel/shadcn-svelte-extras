@@ -8,6 +8,10 @@ import Readonly from './readonly.svelte';
 import readonlyRaw from './readonly.svelte?raw';
 import CustomColor from './custom-color.svelte';
 import customColorRaw from './custom-color.svelte?raw';
+import HalfRating from './half-rating.svelte';
+import halfRatingRaw from './half-rating.svelte?raw';
+import CustomSize from './custom-size.svelte';
+import customSizeRaw from './custom-size.svelte?raw';
 
 const examples = {
 	basic: {
@@ -29,6 +33,14 @@ const examples = {
 	customColor: {
 		code: customColorRaw,
 		Component: CustomColor
+	},
+	halfRating: {
+		code: halfRatingRaw,
+		Component: HalfRating
+	},
+	customSize: {
+		code: customSizeRaw,
+		Component: CustomSize
 	}
 };
 
