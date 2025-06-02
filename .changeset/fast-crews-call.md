@@ -2,4 +2,4 @@
 'shadcn-svelte-extras': patch
 ---
 
-Updated cursor rules name to not be the generic Curor Rules config name to prevent issues with other jsrepos
+fix(rules): Updated cursor rules name so as not to conflict with other jsrepo registries.
